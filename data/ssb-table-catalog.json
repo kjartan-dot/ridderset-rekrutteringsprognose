@@ -1,0 +1,96 @@
+[
+  {
+    "table": "03321",
+    "label": "03321: Sysselsatte (15-74 år), etter arbeidssteds- og bostedskommune. Pendlingsstrømmer. 4. kvartal (K) 2000-2025",
+    "dimensions": {
+      "ArbstedKomm": "arbeidsstedskommune",
+      "Bokommuen": "bostedskommune",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "år"
+    },
+    "years": [
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "table": "07459",
+    "label": "07459: Alders- og kjønnsfordeling i kommuner, fylker og hele landets befolkning (K) 1986-2026",
+    "dimensions": {
+      "Region": "region",
+      "Kjonn": "kjønn",
+      "Alder": "alder",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "år"
+    },
+    "years": [
+      "2024",
+      "2025",
+      "2026"
+    ]
+  },
+  {
+    "table": "09588",
+    "label": "09588: Alle flyttinger til/fra hele landet, fylker og kommuner (K) 2002-2025",
+    "dimensions": {
+      "Region": "region",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "år"
+    },
+    "years": [
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "table": "01222",
+    "label": "01222: Endringar i befolkninga i løpet av kvartalet, for kommunar, fylke og heile landet (K) 1997K4-2026K2",
+    "dimensions": {
+      "Region": "region",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "kvartal"
+    },
+    "years": [
+      "2025K4",
+      "2026K1",
+      "2026K2"
+    ]
+  },
+  {
+    "table": "07984",
+    "label": "07984: Alder- og næringsfordeling (17 grupper) blant sysselsatte, etter kjønn. 4. kvartal  (K) 2008-2025",
+    "dimensions": {
+      "Region": "region",
+      "NACE2007": "næring (SN2007)",
+      "Kjonn": "kjønn",
+      "Alder": "alder",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "år"
+    },
+    "years": [
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "table": "11615",
+    "label": "11615: Fagfelt og utdanningsnivå, kjønn og alder blant sysselsatte. 4. kvartal  (K) 2000-2025",
+    "dimensions": {
+      "Region": "region",
+      "Kjonn": "kjønn",
+      "Alder": "alder",
+      "Fagfelt": "fagfelt",
+      "UtdNivaa": "utdanningsnivå",
+      "ContentsCode": "statistikkvariabel",
+      "Tid": "år"
+    },
+    "years": [
+      "2023",
+      "2024",
+      "2025"
+    ]
+  }
+]

@@ -1,0 +1,4751 @@
+{
+  "version": 1,
+  "period": "2026-10",
+  "surveyPeriod": "2026",
+  "sources": {
+    "nav-vacancies-county.xlsx": {
+      "file": "nav-vacancies-county.xlsx",
+      "url": "https://www.nav.no/_/attachment/download/2fc4e004-d3dc-4998-b262-6cd926c61906:2d36aab39ef2b9a6cae0b1738e7354d178809561/202610_STIL030%20Tilgang%20ledige%20stillinger.%20Fylke.%20Tidsserie%20maaned.xlsx",
+      "sha256": "eedb09237f038a1454dc3d01a992548dd1ef995f2f8da0a876547a84c627823f",
+      "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+    },
+    "nav-vacancies-occupation.xlsx": {
+      "file": "nav-vacancies-occupation.xlsx",
+      "url": "https://www.nav.no/_/attachment/download/d5925da6-3861-4831-9db1-fae9aa4d202b:d48784efe0eb5254a4fb5dedc7a2d4b9c448c69d/202610_STIL040%20Tilgang%20ledige%20stillinger.%20Yrke.%20Tidsserie%20maaned.xlsx",
+      "sha256": "1fb31f9f24d860c6f43417d2f6111f7e790e791ea991f183696f1c15c723ddb1",
+      "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+    },
+    "nav-survey-2026.xlsx": {
+      "file": "nav-survey-2026.xlsx",
+      "url": "https://www.nav.no/_/attachment/download/4849fd6f-b3c8-4608-aab6-a30a14023370:d323c9fb1ebd14d3096a146aafcf3f890926b032/Navs%20bedriftsunders%C3%B8kelse%202026%20Figurer%20og%20tabeller.xlsx",
+      "sha256": "f201888fc3d87638134c02f311a6a52454207c26bcaf3df2fd549b8eee6135a1",
+      "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+    }
+  },
+  "countyVacancies": [
+    {
+      "code": "00",
+      "name": "I alt",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 56893
+        },
+        {
+          "period": "2026-02",
+          "value": 49758
+        },
+        {
+          "period": "2026-03",
+          "value": 54348
+        },
+        {
+          "period": "2026-04",
+          "value": 52190
+        },
+        {
+          "period": "2026-05",
+          "value": 49006
+        },
+        {
+          "period": "2026-06",
+          "value": 44635
+        },
+        {
+          "period": "2026-07",
+          "value": 25370
+        },
+        {
+          "period": "2026-08",
+          "value": 30587
+        },
+        {
+          "period": "2026-09",
+          "value": 44538
+        },
+        {
+          "period": "2026-10",
+          "value": 34224
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 9
+    },
+    {
+      "code": "03",
+      "name": "Oslo - Oslove",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 8807
+        },
+        {
+          "period": "2026-02",
+          "value": 8335
+        },
+        {
+          "period": "2026-03",
+          "value": 9269
+        },
+        {
+          "period": "2026-04",
+          "value": 9154
+        },
+        {
+          "period": "2026-05",
+          "value": 9173
+        },
+        {
+          "period": "2026-06",
+          "value": 7563
+        },
+        {
+          "period": "2026-07",
+          "value": 4906
+        },
+        {
+          "period": "2026-08",
+          "value": 5955
+        },
+        {
+          "period": "2026-09",
+          "value": 9028
+        },
+        {
+          "period": "2026-10",
+          "value": 6178
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 10
+    },
+    {
+      "code": "11",
+      "name": "Rogaland",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 6396
+        },
+        {
+          "period": "2026-02",
+          "value": 4637
+        },
+        {
+          "period": "2026-03",
+          "value": 5706
+        },
+        {
+          "period": "2026-04",
+          "value": 5080
+        },
+        {
+          "period": "2026-05",
+          "value": 5095
+        },
+        {
+          "period": "2026-06",
+          "value": 4419
+        },
+        {
+          "period": "2026-07",
+          "value": 2624
+        },
+        {
+          "period": "2026-08",
+          "value": 2797
+        },
+        {
+          "period": "2026-09",
+          "value": 4400
+        },
+        {
+          "period": "2026-10",
+          "value": 3563
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 11
+    },
+    {
+      "code": "15",
+      "name": "Møre og Romsdal",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2622
+        },
+        {
+          "period": "2026-02",
+          "value": 1822
+        },
+        {
+          "period": "2026-03",
+          "value": 2167
+        },
+        {
+          "period": "2026-04",
+          "value": 2092
+        },
+        {
+          "period": "2026-05",
+          "value": 2059
+        },
+        {
+          "period": "2026-06",
+          "value": 2075
+        },
+        {
+          "period": "2026-07",
+          "value": 920
+        },
+        {
+          "period": "2026-08",
+          "value": 1148
+        },
+        {
+          "period": "2026-09",
+          "value": 1779
+        },
+        {
+          "period": "2026-10",
+          "value": 1200
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 12
+    },
+    {
+      "code": "18",
+      "name": "Nordland - Nordlánnda",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2775
+        },
+        {
+          "period": "2026-02",
+          "value": 2465
+        },
+        {
+          "period": "2026-03",
+          "value": 2624
+        },
+        {
+          "period": "2026-04",
+          "value": 2461
+        },
+        {
+          "period": "2026-05",
+          "value": 2297
+        },
+        {
+          "period": "2026-06",
+          "value": 2340
+        },
+        {
+          "period": "2026-07",
+          "value": 1491
+        },
+        {
+          "period": "2026-08",
+          "value": 1297
+        },
+        {
+          "period": "2026-09",
+          "value": 2221
+        },
+        {
+          "period": "2026-10",
+          "value": 1589
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 13
+    },
+    {
+      "code": "31",
+      "name": "Østfold",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2290
+        },
+        {
+          "period": "2026-02",
+          "value": 1963
+        },
+        {
+          "period": "2026-03",
+          "value": 2139
+        },
+        {
+          "period": "2026-04",
+          "value": 2133
+        },
+        {
+          "period": "2026-05",
+          "value": 2051
+        },
+        {
+          "period": "2026-06",
+          "value": 1722
+        },
+        {
+          "period": "2026-07",
+          "value": 1149
+        },
+        {
+          "period": "2026-08",
+          "value": 1537
+        },
+        {
+          "period": "2026-09",
+          "value": 1923
+        },
+        {
+          "period": "2026-10",
+          "value": 1490
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 14
+    },
+    {
+      "code": "32",
+      "name": "Akershus",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 5972
+        },
+        {
+          "period": "2026-02",
+          "value": 5780
+        },
+        {
+          "period": "2026-03",
+          "value": 5947
+        },
+        {
+          "period": "2026-04",
+          "value": 5757
+        },
+        {
+          "period": "2026-05",
+          "value": 5669
+        },
+        {
+          "period": "2026-06",
+          "value": 4603
+        },
+        {
+          "period": "2026-07",
+          "value": 2401
+        },
+        {
+          "period": "2026-08",
+          "value": 3439
+        },
+        {
+          "period": "2026-09",
+          "value": 4589
+        },
+        {
+          "period": "2026-10",
+          "value": 4062
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 15
+    },
+    {
+      "code": "33",
+      "name": "Buskerud",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2440
+        },
+        {
+          "period": "2026-02",
+          "value": 1996
+        },
+        {
+          "period": "2026-03",
+          "value": 2434
+        },
+        {
+          "period": "2026-04",
+          "value": 2049
+        },
+        {
+          "period": "2026-05",
+          "value": 1823
+        },
+        {
+          "period": "2026-06",
+          "value": 1890
+        },
+        {
+          "period": "2026-07",
+          "value": 1130
+        },
+        {
+          "period": "2026-08",
+          "value": 1188
+        },
+        {
+          "period": "2026-09",
+          "value": 1977
+        },
+        {
+          "period": "2026-10",
+          "value": 1450
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 16
+    },
+    {
+      "code": "34",
+      "name": "Innlandet",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 3334
+        },
+        {
+          "period": "2026-02",
+          "value": 2812
+        },
+        {
+          "period": "2026-03",
+          "value": 3095
+        },
+        {
+          "period": "2026-04",
+          "value": 3026
+        },
+        {
+          "period": "2026-05",
+          "value": 3021
+        },
+        {
+          "period": "2026-06",
+          "value": 2564
+        },
+        {
+          "period": "2026-07",
+          "value": 1214
+        },
+        {
+          "period": "2026-08",
+          "value": 1555
+        },
+        {
+          "period": "2026-09",
+          "value": 2205
+        },
+        {
+          "period": "2026-10",
+          "value": 1812
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 17
+    },
+    {
+      "code": "39",
+      "name": "Vestfold",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2025
+        },
+        {
+          "period": "2026-02",
+          "value": 2102
+        },
+        {
+          "period": "2026-03",
+          "value": 1959
+        },
+        {
+          "period": "2026-04",
+          "value": 2123
+        },
+        {
+          "period": "2026-05",
+          "value": 1908
+        },
+        {
+          "period": "2026-06",
+          "value": 1731
+        },
+        {
+          "period": "2026-07",
+          "value": 979
+        },
+        {
+          "period": "2026-08",
+          "value": 1094
+        },
+        {
+          "period": "2026-09",
+          "value": 1705
+        },
+        {
+          "period": "2026-10",
+          "value": 1303
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 18
+    },
+    {
+      "code": "40",
+      "name": "Telemark",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 1605
+        },
+        {
+          "period": "2026-02",
+          "value": 1503
+        },
+        {
+          "period": "2026-03",
+          "value": 1624
+        },
+        {
+          "period": "2026-04",
+          "value": 1600
+        },
+        {
+          "period": "2026-05",
+          "value": 1213
+        },
+        {
+          "period": "2026-06",
+          "value": 1261
+        },
+        {
+          "period": "2026-07",
+          "value": 500
+        },
+        {
+          "period": "2026-08",
+          "value": 864
+        },
+        {
+          "period": "2026-09",
+          "value": 1169
+        },
+        {
+          "period": "2026-10",
+          "value": 890
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 19
+    },
+    {
+      "code": "42",
+      "name": "Agder",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2847
+        },
+        {
+          "period": "2026-02",
+          "value": 2117
+        },
+        {
+          "period": "2026-03",
+          "value": 2136
+        },
+        {
+          "period": "2026-04",
+          "value": 2351
+        },
+        {
+          "period": "2026-05",
+          "value": 2394
+        },
+        {
+          "period": "2026-06",
+          "value": 2160
+        },
+        {
+          "period": "2026-07",
+          "value": 1022
+        },
+        {
+          "period": "2026-08",
+          "value": 1349
+        },
+        {
+          "period": "2026-09",
+          "value": 1925
+        },
+        {
+          "period": "2026-10",
+          "value": 1276
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 20
+    },
+    {
+      "code": "46",
+      "name": "Vestland",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 7717
+        },
+        {
+          "period": "2026-02",
+          "value": 6553
+        },
+        {
+          "period": "2026-03",
+          "value": 7043
+        },
+        {
+          "period": "2026-04",
+          "value": 7020
+        },
+        {
+          "period": "2026-05",
+          "value": 5755
+        },
+        {
+          "period": "2026-06",
+          "value": 6015
+        },
+        {
+          "period": "2026-07",
+          "value": 3229
+        },
+        {
+          "period": "2026-08",
+          "value": 4088
+        },
+        {
+          "period": "2026-09",
+          "value": 5337
+        },
+        {
+          "period": "2026-10",
+          "value": 4095
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 21
+    },
+    {
+      "code": "50",
+      "name": "Trøndelag - Trööndelage",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 4774
+        },
+        {
+          "period": "2026-02",
+          "value": 4528
+        },
+        {
+          "period": "2026-03",
+          "value": 4962
+        },
+        {
+          "period": "2026-04",
+          "value": 4202
+        },
+        {
+          "period": "2026-05",
+          "value": 3826
+        },
+        {
+          "period": "2026-06",
+          "value": 3498
+        },
+        {
+          "period": "2026-07",
+          "value": 2288
+        },
+        {
+          "period": "2026-08",
+          "value": 2561
+        },
+        {
+          "period": "2026-09",
+          "value": 3558
+        },
+        {
+          "period": "2026-10",
+          "value": 3274
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 22
+    },
+    {
+      "code": "55",
+      "name": "Troms - Romsa - Tromssa",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2423
+        },
+        {
+          "period": "2026-02",
+          "value": 2377
+        },
+        {
+          "period": "2026-03",
+          "value": 2382
+        },
+        {
+          "period": "2026-04",
+          "value": 2286
+        },
+        {
+          "period": "2026-05",
+          "value": 1884
+        },
+        {
+          "period": "2026-06",
+          "value": 2047
+        },
+        {
+          "period": "2026-07",
+          "value": 1032
+        },
+        {
+          "period": "2026-08",
+          "value": 1190
+        },
+        {
+          "period": "2026-09",
+          "value": 2060
+        },
+        {
+          "period": "2026-10",
+          "value": 1494
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 23
+    },
+    {
+      "code": "56",
+      "name": "Finnmark - Finnmárku - Finmarkku",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 842
+        },
+        {
+          "period": "2026-02",
+          "value": 736
+        },
+        {
+          "period": "2026-03",
+          "value": 841
+        },
+        {
+          "period": "2026-04",
+          "value": 804
+        },
+        {
+          "period": "2026-05",
+          "value": 813
+        },
+        {
+          "period": "2026-06",
+          "value": 731
+        },
+        {
+          "period": "2026-07",
+          "value": 458
+        },
+        {
+          "period": "2026-08",
+          "value": 502
+        },
+        {
+          "period": "2026-09",
+          "value": 620
+        },
+        {
+          "period": "2026-10",
+          "value": 516
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 24
+    },
+    {
+      "code": "97",
+      "name": "Svalbard og øvrige områder",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 24
+        },
+        {
+          "period": "2026-02",
+          "value": 32
+        },
+        {
+          "period": "2026-03",
+          "value": 20
+        },
+        {
+          "period": "2026-04",
+          "value": 52
+        },
+        {
+          "period": "2026-05",
+          "value": 25
+        },
+        {
+          "period": "2026-06",
+          "value": 16
+        },
+        {
+          "period": "2026-07",
+          "value": 27
+        },
+        {
+          "period": "2026-08",
+          "value": 23
+        },
+        {
+          "period": "2026-09",
+          "value": 42
+        },
+        {
+          "period": "2026-10",
+          "value": 32
+        }
+      ],
+      "sheet": "1. Antall. Fylke",
+      "row": 25
+    }
+  ],
+  "occupationVacancies": [
+    {
+      "code": "5223",
+      "name": "Butikkmedarbeidere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 3494
+        },
+        {
+          "period": "2026-02",
+          "value": 3637
+        },
+        {
+          "period": "2026-03",
+          "value": 3717
+        },
+        {
+          "period": "2026-04",
+          "value": 4037
+        },
+        {
+          "period": "2026-05",
+          "value": 3760
+        },
+        {
+          "period": "2026-06",
+          "value": 3407
+        },
+        {
+          "period": "2026-07",
+          "value": 2156
+        },
+        {
+          "period": "2026-08",
+          "value": 2706
+        },
+        {
+          "period": "2026-09",
+          "value": 3180
+        },
+        {
+          "period": "2026-10",
+          "value": 2345
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 9
+    },
+    {
+      "code": "5311",
+      "name": "Barnehage- og skolefritidsassistenter mv.",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 3442
+        },
+        {
+          "period": "2026-02",
+          "value": 2492
+        },
+        {
+          "period": "2026-03",
+          "value": 2665
+        },
+        {
+          "period": "2026-04",
+          "value": 3348
+        },
+        {
+          "period": "2026-05",
+          "value": 3356
+        },
+        {
+          "period": "2026-06",
+          "value": 2415
+        },
+        {
+          "period": "2026-07",
+          "value": 1193
+        },
+        {
+          "period": "2026-08",
+          "value": 1986
+        },
+        {
+          "period": "2026-09",
+          "value": 2595
+        },
+        {
+          "period": "2026-10",
+          "value": 1956
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 10
+    },
+    {
+      "code": "2223",
+      "name": "Sykepleiere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 4341
+        },
+        {
+          "period": "2026-02",
+          "value": 3109
+        },
+        {
+          "period": "2026-03",
+          "value": 2775
+        },
+        {
+          "period": "2026-04",
+          "value": 2786
+        },
+        {
+          "period": "2026-05",
+          "value": 2537
+        },
+        {
+          "period": "2026-06",
+          "value": 2213
+        },
+        {
+          "period": "2026-07",
+          "value": 1070
+        },
+        {
+          "period": "2026-08",
+          "value": 1446
+        },
+        {
+          "period": "2026-09",
+          "value": 2208
+        },
+        {
+          "period": "2026-10",
+          "value": 2257
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 11
+    },
+    {
+      "code": "5321",
+      "name": "Helsefagarbeidere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 3624
+        },
+        {
+          "period": "2026-02",
+          "value": 2447
+        },
+        {
+          "period": "2026-03",
+          "value": 2251
+        },
+        {
+          "period": "2026-04",
+          "value": 1979
+        },
+        {
+          "period": "2026-05",
+          "value": 1454
+        },
+        {
+          "period": "2026-06",
+          "value": 1527
+        },
+        {
+          "period": "2026-07",
+          "value": 893
+        },
+        {
+          "period": "2026-08",
+          "value": 1155
+        },
+        {
+          "period": "2026-09",
+          "value": 1724
+        },
+        {
+          "period": "2026-10",
+          "value": 1327
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 12
+    },
+    {
+      "code": "5329",
+      "name": "Andre pleiemedarbeidere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 2847
+        },
+        {
+          "period": "2026-02",
+          "value": 1836
+        },
+        {
+          "period": "2026-03",
+          "value": 1744
+        },
+        {
+          "period": "2026-04",
+          "value": 1338
+        },
+        {
+          "period": "2026-05",
+          "value": 1035
+        },
+        {
+          "period": "2026-06",
+          "value": 1161
+        },
+        {
+          "period": "2026-07",
+          "value": 528
+        },
+        {
+          "period": "2026-08",
+          "value": 964
+        },
+        {
+          "period": "2026-09",
+          "value": 1145
+        },
+        {
+          "period": "2026-10",
+          "value": 749
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 13
+    },
+    {
+      "code": "5322",
+      "name": "Hjemmehjelper",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 1594
+        },
+        {
+          "period": "2026-02",
+          "value": 1238
+        },
+        {
+          "period": "2026-03",
+          "value": 1338
+        },
+        {
+          "period": "2026-04",
+          "value": 1342
+        },
+        {
+          "period": "2026-05",
+          "value": 1184
+        },
+        {
+          "period": "2026-06",
+          "value": 1311
+        },
+        {
+          "period": "2026-07",
+          "value": 736
+        },
+        {
+          "period": "2026-08",
+          "value": 1175
+        },
+        {
+          "period": "2026-09",
+          "value": 1338
+        },
+        {
+          "period": "2026-10",
+          "value": 896
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 14
+    },
+    {
+      "code": "2342",
+      "name": "Førskolelærere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 1109
+        },
+        {
+          "period": "2026-02",
+          "value": 761
+        },
+        {
+          "period": "2026-03",
+          "value": 1309
+        },
+        {
+          "period": "2026-04",
+          "value": 1612
+        },
+        {
+          "period": "2026-05",
+          "value": 1352
+        },
+        {
+          "period": "2026-06",
+          "value": 1222
+        },
+        {
+          "period": "2026-07",
+          "value": 352
+        },
+        {
+          "period": "2026-08",
+          "value": 547
+        },
+        {
+          "period": "2026-09",
+          "value": 1041
+        },
+        {
+          "period": "2026-10",
+          "value": 717
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 15
+    },
+    {
+      "code": "3412",
+      "name": "Miljøarbeidere innen sosiale fagfelt",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 1178
+        },
+        {
+          "period": "2026-02",
+          "value": 1203
+        },
+        {
+          "period": "2026-03",
+          "value": 1142
+        },
+        {
+          "period": "2026-04",
+          "value": 972
+        },
+        {
+          "period": "2026-05",
+          "value": 872
+        },
+        {
+          "period": "2026-06",
+          "value": 937
+        },
+        {
+          "period": "2026-07",
+          "value": 564
+        },
+        {
+          "period": "2026-08",
+          "value": 686
+        },
+        {
+          "period": "2026-09",
+          "value": 863
+        },
+        {
+          "period": "2026-10",
+          "value": 709
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 16
+    },
+    {
+      "code": "9112",
+      "name": "Renholdere i bedrifter",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 973
+        },
+        {
+          "period": "2026-02",
+          "value": 1202
+        },
+        {
+          "period": "2026-03",
+          "value": 1341
+        },
+        {
+          "period": "2026-04",
+          "value": 1110
+        },
+        {
+          "period": "2026-05",
+          "value": 782
+        },
+        {
+          "period": "2026-06",
+          "value": 1003
+        },
+        {
+          "period": "2026-07",
+          "value": 402
+        },
+        {
+          "period": "2026-08",
+          "value": 588
+        },
+        {
+          "period": "2026-09",
+          "value": 984
+        },
+        {
+          "period": "2026-10",
+          "value": 660
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 17
+    },
+    {
+      "code": "4321",
+      "name": "Lagermedarbeidere og materialforvaltere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 680
+        },
+        {
+          "period": "2026-02",
+          "value": 796
+        },
+        {
+          "period": "2026-03",
+          "value": 1076
+        },
+        {
+          "period": "2026-04",
+          "value": 904
+        },
+        {
+          "period": "2026-05",
+          "value": 936
+        },
+        {
+          "period": "2026-06",
+          "value": 773
+        },
+        {
+          "period": "2026-07",
+          "value": 489
+        },
+        {
+          "period": "2026-08",
+          "value": 595
+        },
+        {
+          "period": "2026-09",
+          "value": 802
+        },
+        {
+          "period": "2026-10",
+          "value": 703
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 18
+    },
+    {
+      "code": "5246",
+      "name": "Gatekjøkken- og kafémedarbeidere mv.",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 609
+        },
+        {
+          "period": "2026-02",
+          "value": 957
+        },
+        {
+          "period": "2026-03",
+          "value": 893
+        },
+        {
+          "period": "2026-04",
+          "value": 805
+        },
+        {
+          "period": "2026-05",
+          "value": 858
+        },
+        {
+          "period": "2026-06",
+          "value": 707
+        },
+        {
+          "period": "2026-07",
+          "value": 372
+        },
+        {
+          "period": "2026-08",
+          "value": 452
+        },
+        {
+          "period": "2026-09",
+          "value": 654
+        },
+        {
+          "period": "2026-10",
+          "value": 295
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 19
+    },
+    {
+      "code": "3322",
+      "name": "Selgere (engros)",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 626
+        },
+        {
+          "period": "2026-02",
+          "value": 451
+        },
+        {
+          "period": "2026-03",
+          "value": 556
+        },
+        {
+          "period": "2026-04",
+          "value": 843
+        },
+        {
+          "period": "2026-05",
+          "value": 1147
+        },
+        {
+          "period": "2026-06",
+          "value": 823
+        },
+        {
+          "period": "2026-07",
+          "value": 423
+        },
+        {
+          "period": "2026-08",
+          "value": 480
+        },
+        {
+          "period": "2026-09",
+          "value": 597
+        },
+        {
+          "period": "2026-10",
+          "value": 504
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 20
+    },
+    {
+      "code": "2341",
+      "name": "Grunnskolelærere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 820
+        },
+        {
+          "period": "2026-02",
+          "value": 970
+        },
+        {
+          "period": "2026-03",
+          "value": 1002
+        },
+        {
+          "period": "2026-04",
+          "value": 1004
+        },
+        {
+          "period": "2026-05",
+          "value": 811
+        },
+        {
+          "period": "2026-06",
+          "value": 661
+        },
+        {
+          "period": "2026-07",
+          "value": 141
+        },
+        {
+          "period": "2026-08",
+          "value": 305
+        },
+        {
+          "period": "2026-09",
+          "value": 451
+        },
+        {
+          "period": "2026-10",
+          "value": 240
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 21
+    },
+    {
+      "code": "7411",
+      "name": "Elektrikere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 775
+        },
+        {
+          "period": "2026-02",
+          "value": 681
+        },
+        {
+          "period": "2026-03",
+          "value": 666
+        },
+        {
+          "period": "2026-04",
+          "value": 742
+        },
+        {
+          "period": "2026-05",
+          "value": 660
+        },
+        {
+          "period": "2026-06",
+          "value": 614
+        },
+        {
+          "period": "2026-07",
+          "value": 349
+        },
+        {
+          "period": "2026-08",
+          "value": 305
+        },
+        {
+          "period": "2026-09",
+          "value": 460
+        },
+        {
+          "period": "2026-10",
+          "value": 265
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 22
+    },
+    {
+      "code": "7115",
+      "name": "Tømrere og snekkere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 655
+        },
+        {
+          "period": "2026-02",
+          "value": 486
+        },
+        {
+          "period": "2026-03",
+          "value": 447
+        },
+        {
+          "period": "2026-04",
+          "value": 624
+        },
+        {
+          "period": "2026-05",
+          "value": 619
+        },
+        {
+          "period": "2026-06",
+          "value": 740
+        },
+        {
+          "period": "2026-07",
+          "value": 333
+        },
+        {
+          "period": "2026-08",
+          "value": 556
+        },
+        {
+          "period": "2026-09",
+          "value": 665
+        },
+        {
+          "period": "2026-10",
+          "value": 387
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 23
+    },
+    {
+      "code": "5414",
+      "name": "Vektere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 489
+        },
+        {
+          "period": "2026-02",
+          "value": 494
+        },
+        {
+          "period": "2026-03",
+          "value": 1050
+        },
+        {
+          "period": "2026-04",
+          "value": 609
+        },
+        {
+          "period": "2026-05",
+          "value": 628
+        },
+        {
+          "period": "2026-06",
+          "value": 390
+        },
+        {
+          "period": "2026-07",
+          "value": 477
+        },
+        {
+          "period": "2026-08",
+          "value": 335
+        },
+        {
+          "period": "2026-09",
+          "value": 446
+        },
+        {
+          "period": "2026-10",
+          "value": 475
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 24
+    },
+    {
+      "code": "3119",
+      "name": "Andre ingeniører",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 754
+        },
+        {
+          "period": "2026-02",
+          "value": 486
+        },
+        {
+          "period": "2026-03",
+          "value": 598
+        },
+        {
+          "period": "2026-04",
+          "value": 577
+        },
+        {
+          "period": "2026-05",
+          "value": 653
+        },
+        {
+          "period": "2026-06",
+          "value": 524
+        },
+        {
+          "period": "2026-07",
+          "value": 342
+        },
+        {
+          "period": "2026-08",
+          "value": 324
+        },
+        {
+          "period": "2026-09",
+          "value": 489
+        },
+        {
+          "period": "2026-10",
+          "value": 473
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 25
+    },
+    {
+      "code": "5120",
+      "name": "Kokker",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 555
+        },
+        {
+          "period": "2026-02",
+          "value": 556
+        },
+        {
+          "period": "2026-03",
+          "value": 623
+        },
+        {
+          "period": "2026-04",
+          "value": 640
+        },
+        {
+          "period": "2026-05",
+          "value": 538
+        },
+        {
+          "period": "2026-06",
+          "value": 538
+        },
+        {
+          "period": "2026-07",
+          "value": 324
+        },
+        {
+          "period": "2026-08",
+          "value": 381
+        },
+        {
+          "period": "2026-09",
+          "value": 540
+        },
+        {
+          "period": "2026-10",
+          "value": 483
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 26
+    },
+    {
+      "code": "7231",
+      "name": "Bilmekanikere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 539
+        },
+        {
+          "period": "2026-02",
+          "value": 670
+        },
+        {
+          "period": "2026-03",
+          "value": 798
+        },
+        {
+          "period": "2026-04",
+          "value": 427
+        },
+        {
+          "period": "2026-05",
+          "value": 493
+        },
+        {
+          "period": "2026-06",
+          "value": 496
+        },
+        {
+          "period": "2026-07",
+          "value": 275
+        },
+        {
+          "period": "2026-08",
+          "value": 428
+        },
+        {
+          "period": "2026-09",
+          "value": 637
+        },
+        {
+          "period": "2026-10",
+          "value": 400
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 27
+    },
+    {
+      "code": "1219",
+      "name": "Andre administrative ledere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 724
+        },
+        {
+          "period": "2026-02",
+          "value": 436
+        },
+        {
+          "period": "2026-03",
+          "value": 614
+        },
+        {
+          "period": "2026-04",
+          "value": 554
+        },
+        {
+          "period": "2026-05",
+          "value": 593
+        },
+        {
+          "period": "2026-06",
+          "value": 459
+        },
+        {
+          "period": "2026-07",
+          "value": 377
+        },
+        {
+          "period": "2026-08",
+          "value": 357
+        },
+        {
+          "period": "2026-09",
+          "value": 519
+        },
+        {
+          "period": "2026-10",
+          "value": 451
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 28
+    },
+    {
+      "code": "5131",
+      "name": "Servitører",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 479
+        },
+        {
+          "period": "2026-02",
+          "value": 539
+        },
+        {
+          "period": "2026-03",
+          "value": 754
+        },
+        {
+          "period": "2026-04",
+          "value": 599
+        },
+        {
+          "period": "2026-05",
+          "value": 470
+        },
+        {
+          "period": "2026-06",
+          "value": 430
+        },
+        {
+          "period": "2026-07",
+          "value": 332
+        },
+        {
+          "period": "2026-08",
+          "value": 360
+        },
+        {
+          "period": "2026-09",
+          "value": 578
+        },
+        {
+          "period": "2026-10",
+          "value": 339
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 29
+    },
+    {
+      "code": "9412",
+      "name": "Kjøkkenassistenter",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 489
+        },
+        {
+          "period": "2026-02",
+          "value": 643
+        },
+        {
+          "period": "2026-03",
+          "value": 472
+        },
+        {
+          "period": "2026-04",
+          "value": 499
+        },
+        {
+          "period": "2026-05",
+          "value": 474
+        },
+        {
+          "period": "2026-06",
+          "value": 528
+        },
+        {
+          "period": "2026-07",
+          "value": 358
+        },
+        {
+          "period": "2026-08",
+          "value": 375
+        },
+        {
+          "period": "2026-09",
+          "value": 586
+        },
+        {
+          "period": "2026-10",
+          "value": 411
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 30
+    },
+    {
+      "code": "8332",
+      "name": "Lastebil- og trailersjåfører",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 383
+        },
+        {
+          "period": "2026-02",
+          "value": 499
+        },
+        {
+          "period": "2026-03",
+          "value": 697
+        },
+        {
+          "period": "2026-04",
+          "value": 566
+        },
+        {
+          "period": "2026-05",
+          "value": 670
+        },
+        {
+          "period": "2026-06",
+          "value": 548
+        },
+        {
+          "period": "2026-07",
+          "value": 243
+        },
+        {
+          "period": "2026-08",
+          "value": 297
+        },
+        {
+          "period": "2026-09",
+          "value": 567
+        },
+        {
+          "period": "2026-10",
+          "value": 258
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 31
+    },
+    {
+      "code": "2511",
+      "name": "Systemanalytikere/-arkitekter",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 532
+        },
+        {
+          "period": "2026-02",
+          "value": 394
+        },
+        {
+          "period": "2026-03",
+          "value": 514
+        },
+        {
+          "period": "2026-04",
+          "value": 528
+        },
+        {
+          "period": "2026-05",
+          "value": 512
+        },
+        {
+          "period": "2026-06",
+          "value": 357
+        },
+        {
+          "period": "2026-07",
+          "value": 339
+        },
+        {
+          "period": "2026-08",
+          "value": 236
+        },
+        {
+          "period": "2026-09",
+          "value": 547
+        },
+        {
+          "period": "2026-10",
+          "value": 423
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 32
+    },
+    {
+      "code": "2224",
+      "name": "Vernepleiere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 615
+        },
+        {
+          "period": "2026-02",
+          "value": 401
+        },
+        {
+          "period": "2026-03",
+          "value": 416
+        },
+        {
+          "period": "2026-04",
+          "value": 453
+        },
+        {
+          "period": "2026-05",
+          "value": 358
+        },
+        {
+          "period": "2026-06",
+          "value": 388
+        },
+        {
+          "period": "2026-07",
+          "value": 218
+        },
+        {
+          "period": "2026-08",
+          "value": 282
+        },
+        {
+          "period": "2026-09",
+          "value": 450
+        },
+        {
+          "period": "2026-10",
+          "value": 279
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 33
+    },
+    {
+      "code": "8160",
+      "name": "Operatører innen næringsmiddelproduksjon",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 409
+        },
+        {
+          "period": "2026-02",
+          "value": 468
+        },
+        {
+          "period": "2026-03",
+          "value": 459
+        },
+        {
+          "period": "2026-04",
+          "value": 414
+        },
+        {
+          "period": "2026-05",
+          "value": 514
+        },
+        {
+          "period": "2026-06",
+          "value": 442
+        },
+        {
+          "period": "2026-07",
+          "value": 234
+        },
+        {
+          "period": "2026-08",
+          "value": 275
+        },
+        {
+          "period": "2026-09",
+          "value": 354
+        },
+        {
+          "period": "2026-10",
+          "value": 250
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 34
+    },
+    {
+      "code": "8322",
+      "name": "Bil-, drosje- og varebilførere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 354
+        },
+        {
+          "period": "2026-02",
+          "value": 369
+        },
+        {
+          "period": "2026-03",
+          "value": 456
+        },
+        {
+          "period": "2026-04",
+          "value": 586
+        },
+        {
+          "period": "2026-05",
+          "value": 510
+        },
+        {
+          "period": "2026-06",
+          "value": 440
+        },
+        {
+          "period": "2026-07",
+          "value": 252
+        },
+        {
+          "period": "2026-08",
+          "value": 241
+        },
+        {
+          "period": "2026-09",
+          "value": 352
+        },
+        {
+          "period": "2026-10",
+          "value": 256
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 35
+    },
+    {
+      "code": "5419",
+      "name": "Andre sikkerhetsarbeidere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 269
+        },
+        {
+          "period": "2026-02",
+          "value": 329
+        },
+        {
+          "period": "2026-03",
+          "value": 524
+        },
+        {
+          "period": "2026-04",
+          "value": 439
+        },
+        {
+          "period": "2026-05",
+          "value": 500
+        },
+        {
+          "period": "2026-06",
+          "value": 425
+        },
+        {
+          "period": "2026-07",
+          "value": 357
+        },
+        {
+          "period": "2026-08",
+          "value": 327
+        },
+        {
+          "period": "2026-09",
+          "value": 314
+        },
+        {
+          "period": "2026-10",
+          "value": 268
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 36
+    },
+    {
+      "code": "2211",
+      "name": "Allmennpraktiserende leger",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 681
+        },
+        {
+          "period": "2026-02",
+          "value": 368
+        },
+        {
+          "period": "2026-03",
+          "value": 375
+        },
+        {
+          "period": "2026-04",
+          "value": 494
+        },
+        {
+          "period": "2026-05",
+          "value": 356
+        },
+        {
+          "period": "2026-06",
+          "value": 383
+        },
+        {
+          "period": "2026-07",
+          "value": 169
+        },
+        {
+          "period": "2026-08",
+          "value": 237
+        },
+        {
+          "period": "2026-09",
+          "value": 344
+        },
+        {
+          "period": "2026-10",
+          "value": 342
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 37
+    },
+    {
+      "code": "9629",
+      "name": "Andre hjelpearbeidere",
+      "series": [
+        {
+          "period": "2026-01",
+          "value": 214
+        },
+        {
+          "period": "2026-02",
+          "value": 835
+        },
+        {
+          "period": "2026-03",
+          "value": 500
+        },
+        {
+          "period": "2026-04",
+          "value": 324
+        },
+        {
+          "period": "2026-05",
+          "value": 281
+        },
+        {
+          "period": "2026-06",
+          "value": 275
+        },
+        {
+          "period": "2026-07",
+          "value": 116
+        },
+        {
+          "period": "2026-08",
+          "value": 356
+        },
+        {
+          "period": "2026-09",
+          "value": 325
+        },
+        {
+          "period": "2026-10",
+          "value": 225
+        }
+      ],
+      "sheet": "4. Antall. Top 30 i perioden",
+      "row": 38
+    }
+  ],
+  "countyShortages": [
+    {
+      "code": "31",
+      "name": "Østfold",
+      "value": 1050,
+      "low": 850,
+      "high": 1250,
+      "sheet": "Tabell 1 - 26",
+      "row": 4
+    },
+    {
+      "code": "32",
+      "name": "Akershus",
+      "value": 2700,
+      "low": 2200,
+      "high": 3500,
+      "sheet": "Tabell 1 - 26",
+      "row": 5
+    },
+    {
+      "code": "03",
+      "name": "Oslo",
+      "value": 2650,
+      "low": 1900,
+      "high": 3600,
+      "sheet": "Tabell 1 - 26",
+      "row": 6
+    },
+    {
+      "code": "34",
+      "name": "Innlandet",
+      "value": 2550,
+      "low": 1950,
+      "high": 3000,
+      "sheet": "Tabell 1 - 26",
+      "row": 7
+    },
+    {
+      "code": "33",
+      "name": "Buskerud",
+      "value": 1700,
+      "low": 1300,
+      "high": 2300,
+      "sheet": "Tabell 1 - 26",
+      "row": 8
+    },
+    {
+      "code": "39",
+      "name": "Vestfold",
+      "value": 1100,
+      "low": 900,
+      "high": 1400,
+      "sheet": "Tabell 1 - 26",
+      "row": 9
+    },
+    {
+      "code": "40",
+      "name": "Telemark",
+      "value": 800,
+      "low": 650,
+      "high": 1000,
+      "sheet": "Tabell 1 - 26",
+      "row": 10
+    },
+    {
+      "code": "42",
+      "name": "Agder",
+      "value": 1650,
+      "low": 1300,
+      "high": 2150,
+      "sheet": "Tabell 1 - 26",
+      "row": 11
+    },
+    {
+      "code": "11",
+      "name": "Rogaland",
+      "value": 3750,
+      "low": 2950,
+      "high": 4600,
+      "sheet": "Tabell 1 - 26",
+      "row": 12
+    },
+    {
+      "code": "46",
+      "name": "Vestland",
+      "value": 6300,
+      "low": 5050,
+      "high": 8050,
+      "sheet": "Tabell 1 - 26",
+      "row": 13
+    },
+    {
+      "code": "15",
+      "name": "Møre og Romsdal",
+      "value": 1800,
+      "low": 1400,
+      "high": 2350,
+      "sheet": "Tabell 1 - 26",
+      "row": 14
+    },
+    {
+      "code": "50",
+      "name": "Trøndelag",
+      "value": 1850,
+      "low": 1450,
+      "high": 2250,
+      "sheet": "Tabell 1 - 26",
+      "row": 15
+    },
+    {
+      "code": "18",
+      "name": "Nordland",
+      "value": 2950,
+      "low": 2450,
+      "high": 3450,
+      "sheet": "Tabell 1 - 26",
+      "row": 16
+    },
+    {
+      "code": "55",
+      "name": "Troms",
+      "value": 2050,
+      "low": 1650,
+      "high": 2450,
+      "sheet": "Tabell 1 - 26",
+      "row": 17
+    },
+    {
+      "code": "56",
+      "name": "Finnmark",
+      "value": 850,
+      "low": 700,
+      "high": 1050,
+      "sheet": "Tabell 1 - 26",
+      "row": 18
+    },
+    {
+      "code": "00",
+      "name": "I alt",
+      "value": 33750,
+      "low": 26700,
+      "high": 42300,
+      "sheet": "Tabell 1 - 26",
+      "row": 19
+    }
+  ],
+  "occupationShortages": [
+    {
+      "code": "5321",
+      "name": "Helsefagarbeidere",
+      "value": 3650,
+      "low": 2850,
+      "high": 4450,
+      "sheet": "Tabell V2 - 26",
+      "row": 4
+    },
+    {
+      "code": "2223",
+      "name": "Sykepleiere",
+      "value": 1850,
+      "low": 1550,
+      "high": 2400,
+      "sheet": "Tabell V2 - 26",
+      "row": 5
+    },
+    {
+      "code": "3259",
+      "name": "Andre helseyrker",
+      "value": 1350,
+      "low": 1000,
+      "high": 1800,
+      "sheet": "Tabell V2 - 26",
+      "row": 6
+    },
+    {
+      "code": "7115",
+      "name": "Tømrere og snekkere",
+      "value": 1150,
+      "low": 700,
+      "high": 1750,
+      "sheet": "Tabell V2 - 26",
+      "row": 7
+    },
+    {
+      "code": "7411",
+      "name": "Elektrikere",
+      "value": 1100,
+      "low": 650,
+      "high": 1650,
+      "sheet": "Tabell V2 - 26",
+      "row": 8
+    },
+    {
+      "code": "7549",
+      "name": "Andre håndverkere",
+      "value": 950,
+      "low": 600,
+      "high": 1300,
+      "sheet": "Tabell V2 - 26",
+      "row": 9
+    },
+    {
+      "code": "5120",
+      "name": "Kokker",
+      "value": 700,
+      "low": 500,
+      "high": 950,
+      "sheet": "Tabell V2 - 26",
+      "row": 10
+    },
+    {
+      "code": "2342",
+      "name": "Førskolelærere",
+      "value": 650,
+      "low": 450,
+      "high": 850,
+      "sheet": "Tabell V2 - 26",
+      "row": 11
+    },
+    {
+      "code": "7126",
+      "name": "Rørleggere og VVS-montører",
+      "value": 600,
+      "low": 450,
+      "high": 800,
+      "sheet": "Tabell V2 - 26",
+      "row": 12
+    },
+    {
+      "code": "7231",
+      "name": "Bilmekanikere",
+      "value": 600,
+      "low": 350,
+      "high": 900,
+      "sheet": "Tabell V2 - 26",
+      "row": 13
+    },
+    {
+      "code": "7233",
+      "name": "Anleggsmaskin- og industrimekanikere",
+      "value": 600,
+      "low": 450,
+      "high": 800,
+      "sheet": "Tabell V2 - 26",
+      "row": 14
+    },
+    {
+      "code": "2212",
+      "name": "Legespesialister",
+      "value": 550,
+      "low": 450,
+      "high": 700,
+      "sheet": "Tabell V2 - 26",
+      "row": 15
+    },
+    {
+      "code": "8332",
+      "name": "Lastebil- og trailersjåfører",
+      "value": 550,
+      "low": 300,
+      "high": 1000,
+      "sheet": "Tabell V2 - 26",
+      "row": 16
+    },
+    {
+      "code": "8331",
+      "name": "Bussjåfører og trikkeførere",
+      "value": 500,
+      "low": 150,
+      "high": 900,
+      "sheet": "Tabell V2 - 26",
+      "row": 17
+    },
+    {
+      "code": "5413",
+      "name": "Fengselsbetjenter",
+      "value": 450,
+      "low": 200,
+      "high": 850,
+      "sheet": "Tabell V2 - 26",
+      "row": 18
+    },
+    {
+      "code": "9112",
+      "name": "Renholdere i bedrifter",
+      "value": 450,
+      "low": 100,
+      "high": 800,
+      "sheet": "Tabell V2 - 26",
+      "row": 19
+    },
+    {
+      "code": "2320",
+      "name": "Yrkesfaglærere",
+      "value": 400,
+      "low": 250,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 20
+    },
+    {
+      "code": "2341",
+      "name": "Grunnskolelærere",
+      "value": 400,
+      "low": 250,
+      "high": 600,
+      "sheet": "Tabell V2 - 26",
+      "row": 21
+    },
+    {
+      "code": "3355",
+      "name": "Politibetjenter mv.",
+      "value": 400,
+      "low": 150,
+      "high": 650,
+      "sheet": "Tabell V2 - 26",
+      "row": 22
+    },
+    {
+      "code": "5311",
+      "name": "Barnehage- og skolefritidsassistenter mv.",
+      "value": 400,
+      "low": 250,
+      "high": 600,
+      "sheet": "Tabell V2 - 26",
+      "row": 23
+    },
+    {
+      "code": "7119",
+      "name": "Andre bygningsarbeidere",
+      "value": 400,
+      "low": 250,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 24
+    },
+    {
+      "code": "7132",
+      "name": "Overflatebehandlere og lakkerere",
+      "value": 400,
+      "low": 200,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 25
+    },
+    {
+      "code": "2221",
+      "name": "Spesialsykepleiere",
+      "value": 350,
+      "low": 250,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 26
+    },
+    {
+      "code": "5131",
+      "name": "Servitører",
+      "value": 350,
+      "low": 250,
+      "high": 500,
+      "sheet": "Tabell V2 - 26",
+      "row": 27
+    },
+    {
+      "code": "5223",
+      "name": "Butikkmedarbeidere",
+      "value": 350,
+      "low": 50,
+      "high": 800,
+      "sheet": "Tabell V2 - 26",
+      "row": 28
+    },
+    {
+      "code": "5249",
+      "name": "Andre salgsmedarbeidere",
+      "value": 350,
+      "low": 200,
+      "high": 500,
+      "sheet": "Tabell V2 - 26",
+      "row": 29
+    },
+    {
+      "code": "5329",
+      "name": "Andre pleiemedarbeidere",
+      "value": 350,
+      "low": 200,
+      "high": 500,
+      "sheet": "Tabell V2 - 26",
+      "row": 30
+    },
+    {
+      "code": "7413",
+      "name": "Energimontører",
+      "value": 350,
+      "low": 100,
+      "high": 700,
+      "sheet": "Tabell V2 - 26",
+      "row": 31
+    },
+    {
+      "code": "9212",
+      "name": "Hjelpearbeidere i husdyrproduksjon",
+      "value": 350,
+      "low": 100,
+      "high": 650,
+      "sheet": "Tabell V2 - 26",
+      "row": 32
+    },
+    {
+      "code": "3114",
+      "name": "Elektronikkingeniører",
+      "value": 300,
+      "low": 150,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 33
+    },
+    {
+      "code": "7212",
+      "name": "Sveisere",
+      "value": 300,
+      "low": 200,
+      "high": 450,
+      "sheet": "Tabell V2 - 26",
+      "row": 34
+    },
+    {
+      "code": "8189",
+      "name": "Andre stasjonære maskinoperatører",
+      "value": 300,
+      "low": 200,
+      "high": 400,
+      "sheet": "Tabell V2 - 26",
+      "row": 35
+    },
+    {
+      "code": "2224",
+      "name": "Vernepleiere",
+      "value": 250,
+      "low": 100,
+      "high": 600,
+      "sheet": "Tabell V2 - 26",
+      "row": 36
+    },
+    {
+      "code": "3119",
+      "name": "Andre ingeniører",
+      "value": 250,
+      "low": 50,
+      "high": 400,
+      "sheet": "Tabell V2 - 26",
+      "row": 37
+    },
+    {
+      "code": "3212",
+      "name": "Bioingeniører",
+      "value": 250,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 38
+    },
+    {
+      "code": "4110",
+      "name": "Kontormedarbeidere",
+      "value": 250,
+      "low": 150,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 39
+    },
+    {
+      "code": "5169",
+      "name": "Andre personlige tjenesteytere",
+      "value": 250,
+      "low": 150,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 40
+    },
+    {
+      "code": "6129",
+      "name": "Andre dyreoppdrettere og røktere",
+      "value": 250,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 41
+    },
+    {
+      "code": "7223",
+      "name": "Metalldreiere mv.",
+      "value": 250,
+      "low": 150,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 42
+    },
+    {
+      "code": "8160",
+      "name": "Operatører innen næringsmiddelproduksjon",
+      "value": 250,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 43
+    },
+    {
+      "code": "2634",
+      "name": "Psykologer",
+      "value": 200,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 44
+    },
+    {
+      "code": "5113",
+      "name": "Reiseledere og guider",
+      "value": 200,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 45
+    },
+    {
+      "code": "5132",
+      "name": "Bartendere",
+      "value": 200,
+      "low": 100,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 46
+    },
+    {
+      "code": "5246",
+      "name": "Gatekjøkken- og kafémedarbeidere mv.",
+      "value": 200,
+      "low": 100,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 47
+    },
+    {
+      "code": "5414",
+      "name": "Vektere",
+      "value": 200,
+      "low": 100,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 48
+    },
+    {
+      "code": "7114",
+      "name": "Betongarbeidere",
+      "value": 200,
+      "low": 100,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 49
+    },
+    {
+      "code": "7124",
+      "name": "Isolatører mv.",
+      "value": 200,
+      "low": 100,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 50
+    },
+    {
+      "code": "7412",
+      "name": "Automatikere",
+      "value": 200,
+      "low": 0,
+      "high": 450,
+      "sheet": "Tabell V2 - 26",
+      "row": 51
+    },
+    {
+      "code": "7511",
+      "name": "Slaktere, fiskehandlere mv.",
+      "value": 200,
+      "low": 50,
+      "high": 400,
+      "sheet": "Tabell V2 - 26",
+      "row": 52
+    },
+    {
+      "code": "8322",
+      "name": "Bil-, drosje- og varebilførere",
+      "value": 200,
+      "low": 0,
+      "high": 400,
+      "sheet": "Tabell V2 - 26",
+      "row": 53
+    },
+    {
+      "code": "8342",
+      "name": "Anleggsmaskinførere",
+      "value": 200,
+      "low": 100,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 54
+    },
+    {
+      "code": "9412",
+      "name": "Kjøkkenassistenter",
+      "value": 200,
+      "low": 100,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 55
+    },
+    {
+      "code": "1223",
+      "name": "Forsknings- og utviklingsledere",
+      "value": 150,
+      "low": 50,
+      "high": 550,
+      "sheet": "Tabell V2 - 26",
+      "row": 56
+    },
+    {
+      "code": "2141",
+      "name": "Sivilingeniører (industri og produksjon",
+      "value": 150,
+      "low": 50,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 57
+    },
+    {
+      "code": "2144",
+      "name": "Sivilingeniører (maskin- og marin- teknikk)",
+      "value": 150,
+      "low": 50,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 58
+    },
+    {
+      "code": "2352",
+      "name": "Spesiallærere / spesialpedagoger",
+      "value": 150,
+      "low": 50,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 59
+    },
+    {
+      "code": "2359",
+      "name": "Andre lærere",
+      "value": 150,
+      "low": 50,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 60
+    },
+    {
+      "code": "2512",
+      "name": "Programvareutviklere",
+      "value": 150,
+      "low": 50,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 61
+    },
+    {
+      "code": "3113",
+      "name": "Elkraftingeniører",
+      "value": 150,
+      "low": 50,
+      "high": 250,
+      "sheet": "Tabell V2 - 26",
+      "row": 62
+    },
+    {
+      "code": "3115",
+      "name": "Maskiningeniører",
+      "value": 150,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 63
+    },
+    {
+      "code": "3412",
+      "name": "Miljøarbeidere innen sosiale fagfelt",
+      "value": 150,
+      "low": 50,
+      "high": 500,
+      "sheet": "Tabell V2 - 26",
+      "row": 64
+    },
+    {
+      "code": "4311",
+      "name": "Regnskapsmedarbeidere",
+      "value": 150,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 65
+    },
+    {
+      "code": "7214",
+      "name": "Platearbeidere",
+      "value": 150,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 66
+    },
+    {
+      "code": "7512",
+      "name": "Bakere, konditorer mv.",
+      "value": 150,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 67
+    },
+    {
+      "code": "8112",
+      "name": "Prosessoperatører (oppredning)",
+      "value": 150,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 68
+    },
+    {
+      "code": "1219",
+      "name": "Andre administrative ledere",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 69
+    },
+    {
+      "code": "1321",
+      "name": "Ledere av industriproduksjon mv.",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 70
+    },
+    {
+      "code": "1342",
+      "name": "Ledere av helsetjenester",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 71
+    },
+    {
+      "code": "1349",
+      "name": "Andre ledere av produksjon og tjenesteyting",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 72
+    },
+    {
+      "code": "2152",
+      "name": "Sivilingeniører (elektronikk)",
+      "value": 100,
+      "low": 0,
+      "high": 350,
+      "sheet": "Tabell V2 - 26",
+      "row": 73
+    },
+    {
+      "code": "2211",
+      "name": "Allmennpraktiserende leger",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 74
+    },
+    {
+      "code": "2222",
+      "name": "Jordmødre",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 75
+    },
+    {
+      "code": "2351",
+      "name": "Spesialister i pedagogikk",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 77
+    },
+    {
+      "code": "2411",
+      "name": "Revisorer, regnskapsrådgivere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 78
+    },
+    {
+      "code": "2422",
+      "name": "Høyere saksbehandlere i offentlig og privat virksomhet",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 79
+    },
+    {
+      "code": "2511",
+      "name": "Systemanalytikere/-arkitekter",
+      "value": 100,
+      "low": 50,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 80
+    },
+    {
+      "code": "2514",
+      "name": "Applikasjonsprogrammerere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 81
+    },
+    {
+      "code": "2611",
+      "name": "Jurister og advokater",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 82
+    },
+    {
+      "code": "3211",
+      "name": "Radiografer mv.",
+      "value": 100,
+      "low": 0,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 83
+    },
+    {
+      "code": "3513",
+      "name": "Nettverks- og systemteknikere, IKT",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 84
+    },
+    {
+      "code": "5141",
+      "name": "Frisører",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 85
+    },
+    {
+      "code": "5244",
+      "name": "Telefon- og nettselgere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 86
+    },
+    {
+      "code": "7112",
+      "name": "Murere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 87
+    },
+    {
+      "code": "7121",
+      "name": "Taktekkere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 88
+    },
+    {
+      "code": "7421",
+      "name": "Serviceelektronikere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 89
+    },
+    {
+      "code": "7522",
+      "name": "Møbelsnekkere",
+      "value": 100,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 90
+    },
+    {
+      "code": "8122",
+      "name": "Operatører innen metallflatebehandling",
+      "value": 100,
+      "low": 50,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 91
+    },
+    {
+      "code": "8142",
+      "name": "Operatører innen plastprodukter",
+      "value": 100,
+      "low": 0,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 92
+    },
+    {
+      "code": "8212",
+      "name": "Montører av elektriske og elektroniske produkter",
+      "value": 100,
+      "low": 0,
+      "high": 300,
+      "sheet": "Tabell V2 - 26",
+      "row": 93
+    },
+    {
+      "code": "1112",
+      "name": "Toppledere i offentlig administrasjon",
+      "value": 50,
+      "low": 50,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 95
+    },
+    {
+      "code": "1211",
+      "name": "Finans- og økonomisjefer",
+      "value": 50,
+      "low": 0,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 96
+    },
+    {
+      "code": "1212",
+      "name": "Personalsjefer",
+      "value": 50,
+      "low": 0,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 97
+    },
+    {
+      "code": "1221",
+      "name": "Salgs- og markedssjefer",
+      "value": 50,
+      "low": 50,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 98
+    },
+    {
+      "code": "1343",
+      "name": "Ledere av eldreomsorg",
+      "value": 50,
+      "low": 0,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 100
+    },
+    {
+      "code": "1412",
+      "name": "Restaurantsjefer",
+      "value": 50,
+      "low": 0,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 101
+    },
+    {
+      "code": "2120",
+      "name": "Matematikere, statistikere mv.",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 102
+    },
+    {
+      "code": "2142",
+      "name": "Sivilingeniører (bygg og anlegg)",
+      "value": 50,
+      "low": 0,
+      "high": 200,
+      "sheet": "Tabell V2 - 26",
+      "row": 103
+    },
+    {
+      "code": "2149",
+      "name": "Andre sivilingeniører (unntatt elektroteknologi",
+      "value": 50,
+      "low": 0,
+      "high": 150,
+      "sheet": "Tabell V2 - 26",
+      "row": 104
+    },
+    {
+      "code": "2330",
+      "name": "Lektorer mv. (videregående skole)",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 105
+    },
+    {
+      "code": "2431",
+      "name": "Reklame- og markedsføringsrådgivere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 106
+    },
+    {
+      "code": "2519",
+      "name": "Andre programvare- og applikasjonsutviklere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 107
+    },
+    {
+      "code": "2521",
+      "name": "Databasedesignere og -administratorer",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 108
+    },
+    {
+      "code": "2522",
+      "name": "Systemadministratorer",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 109
+    },
+    {
+      "code": "2631",
+      "name": "Rådgivere/forskere, samfunns-økonomi",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 110
+    },
+    {
+      "code": "2635",
+      "name": "Rådgivere innen sosiale fagfelt",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 111
+    },
+    {
+      "code": "2636",
+      "name": "Geistlige yrker",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 112
+    },
+    {
+      "code": "3112",
+      "name": "Bygningsingeniører",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 113
+    },
+    {
+      "code": "3122",
+      "name": "Arbeidsleder, industri",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 114
+    },
+    {
+      "code": "3123",
+      "name": "Arbeidsleder, bygg og anlegg",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 115
+    },
+    {
+      "code": "3151",
+      "name": "Skipsmaskinister",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 116
+    },
+    {
+      "code": "3256",
+      "name": "Helsesekretærer",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 117
+    },
+    {
+      "code": "3258",
+      "name": "Ambulansepersonell",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 118
+    },
+    {
+      "code": "3334",
+      "name": "Eiendomsmeglere og –forvaltere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 119
+    },
+    {
+      "code": "3413",
+      "name": "Religiøse yrker",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 120
+    },
+    {
+      "code": "3423",
+      "name": "Sports- og aktivitetsinstruktører",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 121
+    },
+    {
+      "code": "3434",
+      "name": "Sjefskokker",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 122
+    },
+    {
+      "code": "3439",
+      "name": "Andre yrker innen estetiske fag",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 123
+    },
+    {
+      "code": "3511",
+      "name": "Driftsteknikere, IKT",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 124
+    },
+    {
+      "code": "4224",
+      "name": "Hotellresepsjonister",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 125
+    },
+    {
+      "code": "5151",
+      "name": "Renholdsledere i bedrifter",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 126
+    },
+    {
+      "code": "5222",
+      "name": "Butikkavdelingssjefer",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 127
+    },
+    {
+      "code": "5312",
+      "name": "Skoleassistenter",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 128
+    },
+    {
+      "code": "6221",
+      "name": "Havbruksarbeidere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 130
+    },
+    {
+      "code": "7122",
+      "name": "Gulv- og flisleggere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 131
+    },
+    {
+      "code": "7127",
+      "name": "Kuldemontører mv.",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 132
+    },
+    {
+      "code": "7131",
+      "name": "Malere og byggtapetserere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 133
+    },
+    {
+      "code": "7213",
+      "name": "Kopper- og blikkenslagere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 134
+    },
+    {
+      "code": "7222",
+      "name": "Verktøymaker, låsesmeder mv.",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 135
+    },
+    {
+      "code": "7323",
+      "name": "Innbindere mv.",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 136
+    },
+    {
+      "code": "7422",
+      "name": "Tele- og IKT-installatører",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 137
+    },
+    {
+      "code": "8114",
+      "name": "Operatører innen produksjon av betong mv.",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 138
+    },
+    {
+      "code": "8121",
+      "name": "Operatører innen metallurgiske prosessfag",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 139
+    },
+    {
+      "code": "8131",
+      "name": "Operatører innen kjemisk industri",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 140
+    },
+    {
+      "code": "8171",
+      "name": "Operatører innen treforedling",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 141
+    },
+    {
+      "code": "8211",
+      "name": "Montører av mekaniske produkter",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 142
+    },
+    {
+      "code": "8219",
+      "name": "Andre montører",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 143
+    },
+    {
+      "code": "8344",
+      "name": "Truckførere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 144
+    },
+    {
+      "code": "9111",
+      "name": "Renholdere i private hjem",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 145
+    },
+    {
+      "code": "9122",
+      "name": "Bilvaskere",
+      "value": 50,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 146
+    },
+    {
+      "code": "9311",
+      "name": "Hjelpearbeidere i bergverk",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 147
+    },
+    {
+      "code": "9312",
+      "name": "Hjelpearbeidere i anlegg",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 148
+    },
+    {
+      "code": "9329",
+      "name": "Andre hjelpearbeidere i industri",
+      "value": 50,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 149
+    },
+    {
+      "code": "1120",
+      "name": "Administrerende direktører",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 150
+    },
+    {
+      "code": "1213",
+      "name": "Strategi- og planleggingssjefer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 151
+    },
+    {
+      "code": "1222",
+      "name": "PR- og informasjonssjefer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 152
+    },
+    {
+      "code": "1341",
+      "name": "Ledere av omsorgstjenester for barn",
+      "value": 0,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 153
+    },
+    {
+      "code": "1344",
+      "name": "Ledere av sosialomsorg",
+      "value": 0,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 154
+    },
+    {
+      "code": "1411",
+      "name": "Hotellsjefer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 155
+    },
+    {
+      "code": "1420",
+      "name": "Varehandelssjefer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 156
+    },
+    {
+      "code": "1439",
+      "name": "Andre daglige ledere i tjenesteytende virksomheter",
+      "value": 0,
+      "low": 0,
+      "high": 100,
+      "sheet": "Tabell V2 - 26",
+      "row": 157
+    },
+    {
+      "code": "2112",
+      "name": "Meteorologer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 158
+    },
+    {
+      "code": "2113",
+      "name": "Kjemikere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 159
+    },
+    {
+      "code": "2114",
+      "name": "Geologer og geofysikere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 160
+    },
+    {
+      "code": "2132",
+      "name": "Sivilagronomer mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 161
+    },
+    {
+      "code": "2133",
+      "name": "Miljøvernrådgivere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 162
+    },
+    {
+      "code": "2143",
+      "name": "Sivilingeniører (miljøteknikk)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 163
+    },
+    {
+      "code": "2145",
+      "name": "Sivilingeniører (kjemi)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 164
+    },
+    {
+      "code": "2146",
+      "name": "Sivilingeniører (geofag, petro- leumsteknologi, metallurgi mv.)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 165
+    },
+    {
+      "code": "2151",
+      "name": "Sivilingeniører (elkraftteknikk)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 166
+    },
+    {
+      "code": "2164",
+      "name": "Arealplanleggere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 167
+    },
+    {
+      "code": "2165",
+      "name": "Landmålere, kartografer mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 168
+    },
+    {
+      "code": "2261",
+      "name": "Tannleger",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 169
+    },
+    {
+      "code": "2262",
+      "name": "Farmasøyter",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 170
+    },
+    {
+      "code": "2263",
+      "name": "Helse- og miljørådgivere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 171
+    },
+    {
+      "code": "2266",
+      "name": "Audiografer og logopeder",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 172
+    },
+    {
+      "code": "2267",
+      "name": "Ergoterapeuter",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 173
+    },
+    {
+      "code": "2269",
+      "name": "Kiropraktorer mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 174
+    },
+    {
+      "code": "2353",
+      "name": "Andre språklærere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 175
+    },
+    {
+      "code": "2412",
+      "name": "Finans- og investeringsrådgivere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 176
+    },
+    {
+      "code": "2413",
+      "name": "Finansanalytikere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 177
+    },
+    {
+      "code": "2424",
+      "name": "Rådgivere innen kompetanseutvikling",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 178
+    },
+    {
+      "code": "2434",
+      "name": "Salgskonsulenter innen IKT-produkter",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 179
+    },
+    {
+      "code": "2513",
+      "name": "Nett- og multimediautviklere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 180
+    },
+    {
+      "code": "2523",
+      "name": "Nettverksansvarlige",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 181
+    },
+    {
+      "code": "2529",
+      "name": "Sikkerhetsanalytikere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 182
+    },
+    {
+      "code": "2619",
+      "name": "Andre juridiske yrker",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 183
+    },
+    {
+      "code": "2621",
+      "name": "Arkivarer og kuratorer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 184
+    },
+    {
+      "code": "2622",
+      "name": "Bibliotekarer og andre informasjonsarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 185
+    },
+    {
+      "code": "2632",
+      "name": "Rådgivere/forskere, samfunns-vitenskap",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 186
+    },
+    {
+      "code": "2633",
+      "name": "Rådgivere/forskere, humanistiske fag",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 187
+    },
+    {
+      "code": "2642",
+      "name": "Journalister",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 188
+    },
+    {
+      "code": "2643",
+      "name": "Oversettere, tolker mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 189
+    },
+    {
+      "code": "2652",
+      "name": "Dirigenter, komponister, musikere og sangere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 190
+    },
+    {
+      "code": "3117",
+      "name": "Ingeniører innen petroleum, bergverk og metallurgi",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 191
+    },
+    {
+      "code": "3118",
+      "name": "Tekniske tegnere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 192
+    },
+    {
+      "code": "3152",
+      "name": "Dekksoffiserer og loser",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 193
+    },
+    {
+      "code": "3213",
+      "name": "Reseptarer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 194
+    },
+    {
+      "code": "3214",
+      "name": "Protese- og tannteknikere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 195
+    },
+    {
+      "code": "3230",
+      "name": "Yrker innen alternativ medisin",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 196
+    },
+    {
+      "code": "3251",
+      "name": "Tannpleiere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 197
+    },
+    {
+      "code": "3254",
+      "name": "Optikere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 198
+    },
+    {
+      "code": "3257",
+      "name": "Helse- og miljøkontrollører",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 199
+    },
+    {
+      "code": "3311",
+      "name": "Finansmeglere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 200
+    },
+    {
+      "code": "3312",
+      "name": "Kundebehandlere lån og kreditt",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 201
+    },
+    {
+      "code": "3313",
+      "name": "Regnskapsførere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 202
+    },
+    {
+      "code": "3323",
+      "name": "Innkjøpere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 203
+    },
+    {
+      "code": "3331",
+      "name": "Speditører og befraktere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 204
+    },
+    {
+      "code": "3339",
+      "name": "Andre yrker innen forretningstjenester",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 205
+    },
+    {
+      "code": "3353",
+      "name": "Saksbehandlere innen sosiale ytelser",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 206
+    },
+    {
+      "code": "3359",
+      "name": "Andre yrker innen offentlig forvaltning",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 207
+    },
+    {
+      "code": "3421",
+      "name": "Idrettsutøvere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 208
+    },
+    {
+      "code": "3422",
+      "name": "Trenere og idrettsdommere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 209
+    },
+    {
+      "code": "3431",
+      "name": "Fotografer og filmfotografer",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 210
+    },
+    {
+      "code": "3512",
+      "name": "Brukerstøtte, IKT",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 211
+    },
+    {
+      "code": "4211",
+      "name": "Kundebehandlere, bank og postkontor",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 212
+    },
+    {
+      "code": "4212",
+      "name": "Bingoverter, bookmakere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 213
+    },
+    {
+      "code": "4222",
+      "name": "Kundesentermedarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 214
+    },
+    {
+      "code": "4226",
+      "name": "Resepsjonister (ekskl. hotell)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 215
+    },
+    {
+      "code": "4229",
+      "name": "Andre opplysningsmedarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 216
+    },
+    {
+      "code": "4312",
+      "name": "Forsikrings- og finansmedarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 217
+    },
+    {
+      "code": "4321",
+      "name": "Lagermedarbeidere og materialforvaltere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 218
+    },
+    {
+      "code": "4322",
+      "name": "Logistikkmedarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 219
+    },
+    {
+      "code": "5142",
+      "name": "Kosmetologer mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 220
+    },
+    {
+      "code": "5153",
+      "name": "Vaktmestre",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 221
+    },
+    {
+      "code": "5164",
+      "name": "Dyrepassere og –trenere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 222
+    },
+    {
+      "code": "5230",
+      "name": "Billettselgere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 223
+    },
+    {
+      "code": "5245",
+      "name": "Servicemedarbeidere (bensinstasjon)",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 224
+    },
+    {
+      "code": "5322",
+      "name": "Hjemmehjelper",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 225
+    },
+    {
+      "code": "5411",
+      "name": "Brannkonstabler",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 226
+    },
+    {
+      "code": "5419",
+      "name": "Andre sikkerhetsarbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 227
+    },
+    {
+      "code": "6112",
+      "name": "Frukt- og bærprodusenter",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 228
+    },
+    {
+      "code": "6113",
+      "name": "Gartnere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 229
+    },
+    {
+      "code": "6114",
+      "name": "Kombinasjonsbrukere, nyttevekster",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 230
+    },
+    {
+      "code": "6122",
+      "name": "Egg- og fjærfeprodusenter",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 231
+    },
+    {
+      "code": "6210",
+      "name": "Skogbrukere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 233
+    },
+    {
+      "code": "6222",
+      "name": "Fiskere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 234
+    },
+    {
+      "code": "7133",
+      "name": "Feiere, fasaderenholdere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 235
+    },
+    {
+      "code": "7224",
+      "name": "Metallslipere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 236
+    },
+    {
+      "code": "7232",
+      "name": "Mekanikere innen flytekniske fag",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 237
+    },
+    {
+      "code": "7234",
+      "name": "Sykkelreparatører mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 238
+    },
+    {
+      "code": "7311",
+      "name": "Presisjonsinstrumentmakere og -reparatører",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 239
+    },
+    {
+      "code": "7312",
+      "name": "Musikkinstrumentmakere og – stemmere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 240
+    },
+    {
+      "code": "7318",
+      "name": "Vevere, strikkere mv. (innen husflidsproduksjon)",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 241
+    },
+    {
+      "code": "7319",
+      "name": "Andre kunsthåndverkere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 242
+    },
+    {
+      "code": "7322",
+      "name": "Trykkere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 243
+    },
+    {
+      "code": "7531",
+      "name": "Skreddere, buntmakere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 244
+    },
+    {
+      "code": "7536",
+      "name": "Skomakere",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 245
+    },
+    {
+      "code": "7541",
+      "name": "Yrkesdykkere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 246
+    },
+    {
+      "code": "7544",
+      "name": "Desinfeksjonsarbeidere og skadedyrbekjempere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 247
+    },
+    {
+      "code": "8132",
+      "name": "Operatører innen produksjon av fotofilm og –papir mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 248
+    },
+    {
+      "code": "8141",
+      "name": "Operatører innen produksjon av gummiprodukter",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 249
+    },
+    {
+      "code": "8143",
+      "name": "Operatører innen papirprodukter",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 250
+    },
+    {
+      "code": "8151",
+      "name": "Spinne- og nøstemaskinoperatører",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 251
+    },
+    {
+      "code": "8152",
+      "name": "Operatører innen tekstilproduksjon mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 252
+    },
+    {
+      "code": "8157",
+      "name": "Renseri- og vaskerimaskinoperatører",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 253
+    },
+    {
+      "code": "8172",
+      "name": "Operatører innen trelastproduksjon",
+      "value": 0,
+      "low": 0,
+      "high": 50,
+      "sheet": "Tabell V2 - 26",
+      "row": 254
+    },
+    {
+      "code": "8183",
+      "name": "Pakke-, tappe- og etikettmaskinoperatører",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 255
+    },
+    {
+      "code": "8311",
+      "name": "Lokomotiv og T-baneførere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 256
+    },
+    {
+      "code": "8341",
+      "name": "Jordbruks- og skogbruksmaskin- førere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 257
+    },
+    {
+      "code": "8343",
+      "name": "Kran- og heisførere mv.",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 258
+    },
+    {
+      "code": "8350",
+      "name": "Dekks- og maskinmannskap (skip)",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 259
+    },
+    {
+      "code": "9129",
+      "name": "Andre rengjørere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 260
+    },
+    {
+      "code": "9211",
+      "name": "Hjelpearbeidere i nyttevekstproduksjon",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 261
+    },
+    {
+      "code": "9215",
+      "name": "Hjelpearbeidere i skogbruk",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 262
+    },
+    {
+      "code": "9216",
+      "name": "Hjelpearbeidere innen havbruk",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 263
+    },
+    {
+      "code": "9622",
+      "name": "Altmuligmann",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 264
+    },
+    {
+      "code": "9629",
+      "name": "Andre hjelpearbeidere",
+      "value": 0,
+      "low": 0,
+      "high": 0,
+      "sheet": "Tabell V2 - 26",
+      "row": 265
+    }
+  ],
+  "notes": [
+    "Stillinger er tilgang i perioden, ikke aktive annonser.",
+    "STYRK-tabellen omfatter bare publisert topp 30.",
+    "Mangel er et utvalgsanslag med 95 % konfidensintervall. Ingen lokalisering av nasjonale yrkestall."
+  ]
+}

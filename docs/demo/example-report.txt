@@ -1,0 +1,93 @@
+RIDDERSET | REKRUTTERINGSINNSIKT
+Utarbeidet 12.11.2026 · metode 1.0
+
+BESTILLING
+Eksempelbedrift (demo) · oppgitt av arbeidsgiver · org.nr. Ikke oppgitt
+Hovedenhet: Ikke relevant / ikke oppgitt
+Kilde til virksomhet: Oppgitt av arbeidsgiver · oppslag 12.11.2026
+Personer oppgitt av arbeidsgiver: Ikke oppgitt (ikke årsverk)
+Næring: Ikke oppgitt · Ikke oppgitt
+Organisasjonsform: Ikke oppgitt
+Registrert adresse: Ikke oppgitt
+Bekreftet arbeidssted: HADSEL, Nordland
+Stillingstittel: Salgsjef – illustrativt eksempel
+Yrkesgruppe: Salgs- og markedssjefer · STYRK08 1221
+Antall ansettelser: 2
+Tilbudt månedslønn: 75 000 kr
+Krav: Illustrativ bestilling: salgsledelse og bransjeforståelse. Ingen faktiske kundedata.
+Ønsket oppstart: Ikke oppgitt (ingen beregnet ansettelsesdato)
+Søkeområde: Regionalt · fleksibilitet: På arbeidsstedet
+
+MARKEDSDATA
+Median månedslønn: 89 170 kr/måned
+SSB Statistikkbanken · 11418 · 2025 · Norge · Alle sektorer, begge kjønn, heltids- og deltidsansatte (heltidsekvivalenter) · cache
+Hentet 12.11.2026, oppdatert 28.8.2026. Median månedslønn inklusive uregelmessige tillegg og bonus, uten overtid. Nasjonalt nivå; ingen lokal median. Referansemåned november.
+Kilde: https://www.ssb.no/statbank/table/11418
+16 % under nasjonal median
+Publiserte stillinger, fylke / alle yrker: 1 589 publiserte stillinger i perioden
+NAV · 1. Antall. Fylke, rad 13 · 2026-10 · Nordland · Alle yrker · snapshot
+Hentet 12.11.2026, oppdatert Ikke oppgitt. Tilgang i måneden, ikke beholdning av aktive annonser. Ingen kobling mellom fylkes- og yrkestabell.
+Kilde: https://www.nav.no/_/attachment/download/2fc4e004-d3dc-4998-b262-6cd926c61906:2d36aab39ef2b9a6cae0b1738e7354d178809561/202610_STIL030%20Tilgang%20ledige%20stillinger.%20Fylke.%20Tidsserie%20maaned.xlsx
+Publiserte stillinger, yrke / Norge: Yrket er ikke i publisert topp 30-utvalg. Stillinger kan finnes selv om tallet mangler her.
+NAV · nav-vacancies-occupation.xlsx · 2026-10 · Norge · STYRK08 1221 · missing
+Hentet 12.11.2026, oppdatert Ikke oppgitt. Tilgang i måneden, ikke beholdning av aktive annonser. Ingen kobling mellom fylkes- og yrkestabell.
+Kilde: https://www.nav.no/_/attachment/download/d5925da6-3861-4831-9db1-fae9aa4d202b:d48784efe0eb5254a4fb5dedc7a2d4b9c448c69d/202610_STIL040%20Tilgang%20ledige%20stillinger.%20Yrke.%20Tidsserie%20maaned.xlsx
+Anslått mangel, yrke / Norge: 50 personer (anslått mangel) (95 % KI 50–100)
+NAV · Tabell V2 - 26, rad 98 · 2026 · Norge · STYRK08 1221 · snapshot
+Hentet 12.11.2026, oppdatert Ikke oppgitt. Utvalgsundersøkelse, 95 % konfidensintervall. Anslått udekket behov; ikke antall tilgjengelige kandidater.
+Kilde: https://www.nav.no/_/attachment/download/4849fd6f-b3c8-4608-aab6-a30a14023370:d323c9fb1ebd14d3096a146aafcf3f890926b032/Navs%20bedriftsunders%C3%B8kelse%202026%20Figurer%20og%20tabeller.xlsx
+Anslått mangel, fylke / alle yrker: 2 950 personer (anslått mangel) (95 % KI 2 450–3 450)
+NAV · Tabell 1 - 26, rad 16 · 2026 · Nordland · Alle yrker · snapshot
+Hentet 12.11.2026, oppdatert Ikke oppgitt. Utvalgsundersøkelse, 95 % konfidensintervall. Anslått udekket behov; ikke antall tilgjengelige kandidater.
+Kilde: https://www.nav.no/_/attachment/download/4849fd6f-b3c8-4608-aab6-a30a14023370:d323c9fb1ebd14d3096a146aafcf3f890926b032/Navs%20bedriftsunders%C3%B8kelse%202026%20Figurer%20og%20tabeller.xlsx
+Aktive annonser: NAV-feed er ikke aktivert. Ingen synkronisering eller søkeindeks kjører i fase 1.
+NAV stilling-feed · stilling-feed · Ikke hentet · Nordland · STYRK08 1221 · unavailable
+Hentet Ikke oppgitt, oppdatert Ikke oppgitt. Feed dekker ikke hele markedet, blant annet ikke Finn.no. Krever konsumenttilgang og serverstyrt synkronisering i fase 2.
+Kilde: https://navikt.github.io/pam-stilling-feed/
+Utlyste posisjoner i aktive annonser: NAV-feed er ikke aktivert. Ingen synkronisering eller søkeindeks kjører i fase 1.
+NAV stilling-feed · stilling-feed · Ikke hentet · Nordland · STYRK08 1221 · unavailable
+Hentet Ikke oppgitt, oppdatert Ikke oppgitt. Feed dekker ikke hele markedet, blant annet ikke Finn.no. Krever konsumenttilgang og serverstyrt synkronisering i fase 2.
+Kilde: https://navikt.github.io/pam-stilling-feed/
+
+ARBEIDSGIVERPROFIL · EGENVURDERING
+6 av 6 spørsmål besvart. Ingen validerte kandidat- eller medarbeidermålinger.
+Omdømme i kandidatmarkedet: 8/10
+Synlighet og troverdighet: 7/10
+Vi innfrir løftene fra rekrutteringen: 3/10
+Oppstart og integrering: 6/10
+Utvikling og mestring: 7/10
+Ledelse og oppfølging: 6/10
+Brand: 75/100 (illustrasjon, 2/2 besvart)
+Index: 55/100 (illustrasjon, 4/4 besvart)
+HR-støtte: Leder og administrasjon. Sett av konkret tid hos leder og administrasjon til søk, vurdering og oppstart.
+
+FORTOLKNING
+Det finnes ikke et tilstrekkelig grunnlag for å beregne samlet rekrutteringsrisiko, sannsynlighet eller tid til ansettelse.
+Aktive yrkesvise annonser og posisjoner er utilgjengelige. Publisert tilgang og mangelanslag måler andre forhold.
+Kvalifisert kandidattilgang og faktiske prosessutfall er ikke dokumentert. Worklife-svarene er arbeidsgiverens egne anslag.
+
+PRIORITERTE TILTAK
+1. Kontroller at «Salgsjef – illustrativt eksempel» faktisk tilhører STYRK08 1221 (Salgs- og markedssjefer). Skill nødvendige krav fra kompetanse som kan læres.
+2. Lønnstilbudet er 16 % under nasjonal median. Undersøk ansvar, tillegg, erfaring og sektor før dere fastsetter lønnsrammen.
+3. Sett av konkret tid hos leder og administrasjon til søk, vurdering og oppstart.
+4. Undersøk følgende forhold sammen med ansatte og kandidater: «Vi innfrir løftene fra rekrutteringen». Lav egenvurdering gir grunn til å undersøke videre.
+5. Kartlegg det valgte søkeområdet og avtal hvordan kandidater utenfor kommunen kan inkluderes.
+
+SCENARIO · HYPOTETISK
+Tenkt lønn: 100 000 kr · 12 % over nasjonal median
+Scenarioet er hypotetisk og endrer ikke markedsdataene eller den oppgitte bestillingen.
+Nasjonalt søk åpner en større geografi; faktisk kandidattilgang er ikke beregnet.
+Et opplæringsløp kan åpne for annen bakgrunn. Sett av ledertid, opplæring og budsjett.
+Avklar hvem som eier prosessen og hvor mye tid som er satt av.
+
+30/60/90-DAGERS PLAN
+Innen 30 dager: Avklar og undersøk
+Fastsett oppgaver, ufravikelige krav, lønnsramme og prosesseier.
+Kartlegg relevante kandidater og søkekanaler; kontroller arbeidssted og yrkeskode.
+Innen 60 dager: Test og juster
+Følg kvalifiserte kandidater, tilbakemeldinger og årsaker til frafall.
+Juster krav, lønn eller søkeområde på bakgrunn av observerte signaler.
+Innen 90 dager: Følg opp og lær
+Evaluer prosessen og dokumenter hva som faktisk virket.
+Følg opp forventninger og onboarding hvis noen er ansatt; fortsett markedstesten hvis stillingen står åpen.
+Planen er milepæler for arbeidet, ingen prognose for når stillingen blir besatt.

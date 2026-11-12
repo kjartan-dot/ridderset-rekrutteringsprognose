@@ -1,0 +1,58 @@
+{
+  "name": "ridderset-rekrutteringsinnsikt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"tsx watch src/server/index.ts\" \"vite --host 0.0.0.0\"",
+    "build": "tsc --noEmit && vite build && esbuild src/server/index.ts --bundle --platform=node --packages=external --format=esm --outfile=dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:live": "tsx scripts/check-live.ts",
+    "data:nav": "python scripts/import_nav.py",
+    "data:occupations": "python scripts/extract_occupations.py",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build",
+    "format": "prettier --write src tests scripts/*.ts *.ts *.json *.js index.html public/*.css integrations/wordpress/*.css docs/*.md .github/workflows/*.yml",
+    "demo": "tsx scripts/capture-demo.ts"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "undici": "^7.16.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "@types/compression": "^1.8.1",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.10.1",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "vite": "^7.2.2",
+    "vitest": "^3.2.4"
+  }
+}

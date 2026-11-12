@@ -1,0 +1,20 @@
+[
+  {
+    "file": "nav-vacancies-county.xlsx",
+    "url": "https://www.nav.no/_/attachment/download/2fc4e004-d3dc-4998-b262-6cd926c61906:2d36aab39ef2b9a6cae0b1738e7354d178809561/202610_STIL030%20Tilgang%20ledige%20stillinger.%20Fylke.%20Tidsserie%20maaned.xlsx",
+    "sha256": "eedb09237f038a1454dc3d01a992548dd1ef995f2f8da0a876547a84c627823f",
+    "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+  },
+  {
+    "file": "nav-vacancies-occupation.xlsx",
+    "url": "https://www.nav.no/_/attachment/download/d5925da6-3861-4831-9db1-fae9aa4d202b:d48784efe0eb5254a4fb5dedc7a2d4b9c448c69d/202610_STIL040%20Tilgang%20ledige%20stillinger.%20Yrke.%20Tidsserie%20maaned.xlsx",
+    "sha256": "1fb31f9f24d860c6f43417d2f6111f7e790e791ea991f183696f1c15c723ddb1",
+    "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+  },
+  {
+    "file": "nav-survey-2026.xlsx",
+    "url": "https://www.nav.no/_/attachment/download/4849fd6f-b3c8-4608-aab6-a30a14023370:d323c9fb1ebd14d3096a146aafcf3f890926b032/Navs%20bedriftsunders%C3%B8kelse%202026%20Figurer%20og%20tabeller.xlsx",
+    "sha256": "f201888fc3d87638134c02f311a6a52454207c26bcaf3df2fd549b8eee6135a1",
+    "retrievedAt": "2026-11-12T20:08:17.728725+00:00"
+  }
+]
