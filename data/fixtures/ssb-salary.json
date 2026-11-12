@@ -1,0 +1,273 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "11418: Yrkesfordelt månedslønn, etter statistikkmål, yrke, sektor, kjønn, avtalt/vanlig arbeidstid per uke og år",
+  "source": "Statistisk sentralbyrå",
+  "updated": "2026-08-28T06:00:00Z",
+  "note": [
+    "For 2015-tallene er referansemåneden september, og altså ikke november som er referansemåneden for årene etter 2015. I tillegg er metoden for å beregne arbeidstid annerledes for 2015-tallene enn for årene etter 2015. Man kan likevel sammenligne 2015 og 2016, men endringer må tolkes med forsiktighet. [Mer informasjon om lønnsstatistikken finnes under Om statistikken](https://www.ssb.no/lonnansatt)"
+  ],
+  "role": {
+    "time": [
+      "Tid"
+    ],
+    "metric": [
+      "ContentsCode"
+    ]
+  },
+  "id": [
+    "MaaleMetode",
+    "Yrke",
+    "Sektor",
+    "Kjonn",
+    "AvtaltVanlig",
+    "ContentsCode",
+    "Tid"
+  ],
+  "size": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "dimension": {
+    "MaaleMetode": {
+      "label": "statistikkmål",
+      "category": {
+        "index": {
+          "01": 0
+        },
+        "label": {
+          "01": "Median"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    },
+    "Yrke": {
+      "label": "yrke",
+      "category": {
+        "index": {
+          "1221": 0
+        },
+        "label": {
+          "1221": "Salgs- og markedssjefer"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "code_value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Yrke": "urn:ssb:classification:klass:7"
+            }
+          }
+        ]
+      }
+    },
+    "Sektor": {
+      "label": "sektor",
+      "category": {
+        "index": {
+          "ALLE": 0
+        },
+        "label": {
+          "ALLE": "Sum alle sektorer"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "ALLE",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Sektor": "urn:ssb:classification:klass:39"
+            }
+          }
+        ]
+      }
+    },
+    "Kjonn": {
+      "label": "kjønn",
+      "category": {
+        "index": {
+          "0": 0
+        },
+        "label": {
+          "0": "Begge kjønn"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "0",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Kjonn": "urn:ssb:classification:klass:2"
+            }
+          }
+        ]
+      }
+    },
+    "AvtaltVanlig": {
+      "label": "avtalt/vanlig arbeidstid per uke",
+      "category": {
+        "index": {
+          "0": 0
+        },
+        "label": {
+          "0": "I alt"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "0",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "AvtaltVanlig": "urn:ssb:classification:klass:149"
+            }
+          }
+        ]
+      }
+    },
+    "ContentsCode": {
+      "label": "statistikkvariabel",
+      "category": {
+        "index": {
+          "Manedslonn": 0
+        },
+        "label": {
+          "Manedslonn": "Månedslønn (kr)"
+        },
+        "unit": {
+          "Manedslonn": {
+            "base": "kr",
+            "decimals": 0
+          }
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "refperiod": {
+          "Manedslonn": "November"
+        },
+        "show": "value",
+        "measuringType": {
+          "Manedslonn": "Other"
+        },
+        "priceType": {
+          "Manedslonn": "NotApplicable"
+        },
+        "adjustment": {
+          "Manedslonn": "None"
+        },
+        "alternativeText": {
+          "Manedslonn": "Månedslønn (kr)"
+        }
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "Manedslonn": "urn:ssb:conceptvariable:vardok:187"
+            }
+          }
+        ]
+      }
+    },
+    "Tid": {
+      "label": "år",
+      "category": {
+        "index": {
+          "2025": 0
+        },
+        "label": {
+          "2025": "2025"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "code"
+      }
+    }
+  },
+  "extension": {
+    "px": {
+      "infofile": "None",
+      "tableid": "11418",
+      "decimals": 0,
+      "official-statistics": true,
+      "aggregallowed": false,
+      "copyright": false,
+      "language": "no",
+      "contents": "11418: Yrkesfordelt månedslønn,",
+      "descriptiondefault": false,
+      "heading": [
+        "ContentsCode",
+        "Tid"
+      ],
+      "stub": [
+        "MaaleMetode",
+        "Yrke",
+        "Sektor",
+        "Kjonn",
+        "AvtaltVanlig"
+      ],
+      "matrix": "11418",
+      "subject-code": "al",
+      "subject-area": "Arbeid og lønn"
+    },
+    "discontinued": null,
+    "contact": [
+      {
+        "name": "Arbeidsmarked",
+        "organization": "Statistisk sentralbyrå",
+        "phone": "62 88 50 00",
+        "mail": "arbeidsmarked@ssb.no",
+        "raw": " Arbeidsmarked, Statistisk sentralbyrå# +47 62 88 50 00#arbeidsmarked@ssb.no"
+      },
+      {
+        "name": "Håkon Grini",
+        "organization": "Statistisk sentralbyrå",
+        "phone": "48 20 51 63",
+        "mail": "gri@ssb.no",
+        "raw": "Håkon Grini, Statistisk sentralbyrå# +47 48 20 51 63#gri@ssb.no"
+      },
+      {
+        "name": "Knut Snellingen Bye",
+        "organization": "Statistisk sentralbyrå",
+        "phone": "40 81 13 26",
+        "mail": "ksb@ssb.no",
+        "raw": "Knut Snellingen Bye, Statistisk sentralbyrå# +47 40 81 13 26#ksb@ssb.no"
+      },
+      {
+        "name": "Magnus Berglund Johnsen",
+        "organization": "Statistisk sentralbyrå",
+        "phone": "40 90 23 75",
+        "mail": "mjo@ssb.no",
+        "raw": "Magnus Berglund Johnsen, Statistisk sentralbyrå# +47 40 90 23 75#mjo@ssb.no"
+      }
+    ]
+  },
+  "value": [
+    89170
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "1120": [
+    "daglig leder",
+    "administrerende direktør",
+    "konsernsjef",
+    "ceo",
+    "toppsjef",
+    "bedriftsleder"
+  ],
+  "1219": [
+    "administrasjonssjef",
+    "administrativ leder",
+    "kontorsjef",
+    "forvaltningssjef"
+  ],
+  "1211": [
+    "økonomisjef",
+    "finansdirektør",
+    "cfo",
+    "regnskapssjef"
+  ],
+  "1212": [
+    "hr-sjef",
+    "hr leder",
+    "hr-direktør",
+    "personalleder",
+    "hr manager"
+  ],
+  "1213": [
+    "strategisjef",
+    "utviklingssjef",
+    "planleggingssjef"
+  ],
+  "1221": [
+    "salgsjef",
+    "salgsdirektør",
+    "markedssjef",
+    "markedsdirektør",
+    "key account manager",
+    "kommersiell leder",
+    "salgssjef"
+  ],
+  "1222": [
+    "kommunikasjonssjef",
+    "kommunikasjonsdirektør"
+  ],
+  "1323": [
+    "anleggsleder",
+    "byggeleder",
+    "prosjektsjef bygg",
+    "entreprenør",
+    "driftsleder bygg",
+    "prosjektleder",
+    "prosjektsjef"
+  ],
+  "1312": [
+    "driftsleder oppdrett",
+    "oppdrettssjef",
+    "akvakulturleder",
+    "sjømatleder"
+  ],
+  "1321": [
+    "produksjonssjef",
+    "fabrikksjef",
+    "driftsleder industri"
+  ],
+  "1324": [
+    "logistikksjef",
+    "transportsjef",
+    "innkjøpssjef",
+    "lagersjef"
+  ],
+  "1330": [
+    "it sjef",
+    "it-leder",
+    "teknologisjef",
+    "cto",
+    "ikt-leder"
+  ],
+  "1342": [
+    "helsesjef",
+    "klinikksjef"
+  ],
+  "1345": [
+    "rektor",
+    "skolesjef",
+    "oppvekstleder"
+  ],
+  "1439": [
+    "daglig leder",
+    "virksomhetsleder"
+  ],
+  "1420": [
+    "butikksjef",
+    "varehussjef"
+  ],
+  "1412": [
+    "restaurantsjef",
+    "serveringsleder"
+  ],
+  "2142": [
+    "prosjektingeniør bygg",
+    "sivilingeniør bygg",
+    "byggingeniør"
+  ],
+  "3112": [
+    "byggingeniør",
+    "prosjektingeniør",
+    "prosjektleder bygg",
+    "byggetekniker",
+    "prosjektleder"
+  ],
+  "3123": [
+    "bas",
+    "formann bygg",
+    "arbeidsleder anlegg"
+  ],
+  "3113": [
+    "elkraftingeniør",
+    "elektroingeniør",
+    "energiingeniør"
+  ],
+  "3115": [
+    "maskiningeniør",
+    "mekanisk ingeniør",
+    "driftstekniker",
+    "mekanisk driftstekniker"
+  ],
+  "2223": [
+    "sykepleier",
+    "sykepleiere",
+    "sykepleiervikar"
+  ],
+  "2221": [
+    "intensivsykepleier",
+    "operasjonssykepleier",
+    "anestesisykepleier"
+  ],
+  "5321": [
+    "helsefagarbeider",
+    "hjelpepleier"
+  ],
+  "7411": [
+    "elektriker",
+    "elektromontør",
+    "elektroinstallasjon"
+  ],
+  "7412": [
+    "automatiker",
+    "automasjonstekniker"
+  ],
+  "7233": [
+    "industrimekaniker",
+    "servicemekaniker",
+    "anleggsmekaniker"
+  ],
+  "8342": [
+    "gravemaskinfører",
+    "maskinfører",
+    "hjullasterfører"
+  ],
+  "7115": [
+    "tømrer",
+    "snekker",
+    "byggfagarbeider"
+  ],
+  "7114": [
+    "betongarbeider",
+    "betongfagarbeider"
+  ],
+  "7212": [
+    "sveiser",
+    "sveisetekniker"
+  ],
+  "5120": [
+    "kokk",
+    "kokkefagarbeider",
+    "kjøkkenpersonale"
+  ],
+  "3434": [
+    "kjøkkensjef",
+    "chef"
+  ],
+  "8160": [
+    "fiskeindustri",
+    "produksjonsmedarbeider næringsmiddel",
+    "sjømatproduksjon"
+  ],
+  "5223": [
+    "butikkmedarbeider",
+    "selger butikk",
+    "kassemedarbeider"
+  ],
+  "3322": [
+    "bedriftsselger",
+    "b2b selger",
+    "salgskonsulent"
+  ],
+  "3313": [
+    "regnskapsfører",
+    "autorisert regnskapsfører"
+  ],
+  "4311": [
+    "regnskapsmedarbeider",
+    "lønningsmedarbeider"
+  ],
+  "2411": [
+    "revisor",
+    "regnskapsrådgiver"
+  ],
+  "2423": [
+    "hr-rådgiver",
+    "personalrådgiver",
+    "rekrutterer",
+    "karriererådgiver"
+  ],
+  "2431": [
+    "markedsfører",
+    "digital markedsfører",
+    "markedsføringsrådgiver"
+  ],
+  "2514": [
+    "programvareutvikler",
+    "utvikler",
+    "programmerer",
+    "software engineer"
+  ],
+  "2519": [
+    "systemutvikler",
+    "backendutvikler",
+    "frontendutvikler",
+    "it utvikler"
+  ],
+  "2521": [
+    "databaseadministrator",
+    "data engineer"
+  ],
+  "4132": [
+    "dataregistrering",
+    "administrasjonsmedarbeider"
+  ],
+  "4110": [
+    "kontormedarbeider",
+    "kontorassistent"
+  ],
+  "2421": [
+    "prosjektleder",
+    "prosjektsjef",
+    "organisasjonsrådgiver"
+  ],
+  "3511": [
+    "driftstekniker",
+    "it-driftstekniker"
+  ]
+}
