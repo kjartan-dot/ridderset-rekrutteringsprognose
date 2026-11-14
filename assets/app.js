@@ -106,6 +106,7 @@ async function initialize(){
     }
   }
   function selectCompany(raw,kind){
+    ++companyRequest;clearTimeout(companyDebounce);
     state.companyRaw=raw;
     state.company=companyFromRegistry(raw,kind);
     byId("company-query").value=state.company.name;byId("company-results").hidden=true;
@@ -144,12 +145,12 @@ async function initialize(){
       byId("company-results").hidden=true;
     }
   }
-  click("company-search",searchCompany);
+  click("company-search",()=>{clearTimeout(companyDebounce);searchCompany();});
   listen("company-query","input",()=>{clearTimeout(companyDebounce);companyDebounce=setTimeout(searchCompany,480);});
   listen("company-query","keydown",event=>{if(event.key==="Enter"){
     event.preventDefault();
     const first=!byId("company-results").hidden?byId("company-results").querySelector("button"):null;
-    if(first)first.click();else searchCompany();
+    if(first)first.click();else{clearTimeout(companyDebounce);searchCompany();}
   }});
   listen("search-units","change",()=>{++companyRequest;byId("company-results").hidden=true;byId("company-status").textContent="Søkemodus er endret. Søk igjen.";});
   listen("unit-select","change",()=>{
@@ -168,11 +169,13 @@ async function initialize(){
     byId("company-status").textContent="Underenhet valgt. Bekreft arbeidsstedet.";displayCompany();update();
   });
   click("company-clear",()=>{
+    ++companyRequest;clearTimeout(companyDebounce);
     state.company=null;state.companyRaw=null;units=[];byId("company-chosen").hidden=true;
     byId("unit-zone").hidden=true;byId("company-query").value="";byId("company-query").focus();
     byId("company-status").textContent="Søk etter en annen virksomhet.";update();
   });
   click("manual-save",()=>{
+    ++companyRequest;clearTimeout(companyDebounce);
     const name=byId("manual-name").value.trim(),org=byId("manual-org").value.replace(/\s/g,"").trim();
     if(name.length<2){byId("company-status").textContent="Skriv inn bedriftens navn.";byId("manual-name").focus();return;}
     if(org&&!/^\d{9}$/.test(org)){byId("company-status").textContent="Organisasjonsnummeret skal ha ni siffer eller stå tomt.";return;}
