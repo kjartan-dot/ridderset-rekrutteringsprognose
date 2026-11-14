@@ -1,40 +1,27 @@
 # Ridderset Rekrutteringsinnsikt
 
-Utviklingsprosjekt for et datadrevet og faglig etterprøvbart rekrutteringsverktøy på https://ridderset.no/rekrutteringsprognose/.
+**Status 14. november 2026: lokal testversjon, ikke produksjonsklar.** Dagens WordPress-verktøy er ikke erstattet.
 
-**Status 12. november 2026:** Dette repoet inneholder en kravspesifikasjon og eksisterende WordPress-kildekode. Det er ennå ikke en ferdig app, NAV-integrasjon eller validert statistisk prognose. Produksjonssiden skal ikke endres uten separat godkjenning.
+Testversjonen har serverbasert Brreg-søk for hoved-/underenheter, 407 yrkesnavn, SSB-lønnsoppslag, stillingsavklaring, seks eksplisitt bekreftede egenvurderinger og nedlastbar tekstrapport. Ingen NAV-feed, innlogging, database eller validert prognose.
 
-## Slik kommer du i gang i Codex
+## Kjør lokalt
 
-1. Åpne GitHub-repoet kjartan-dot/ridderset-rekrutteringsprognose i Codex.
-2. Les AGENTS.md. Den inneholder hele bestillingen, datakilder, foreslått arkitektur og akseptansekriterier.
-3. Les legacy/wordpress-page-2124.html. Dette er faktisk eldre WordPress-kode, ikke et fungerende prosjekt.
-4. Bruk oppdragsteksten nedenfor.
+Node 22 eller nyere. Ingen npm-pakker må installeres.
 
-### Kopier denne bestillingen til Codex
+```sh
+npm run check
+npm test
+npm start
+```
 
-> Les AGENTS.md og legacy/wordpress-page-2124.html. Gjennomfør fase 0 og fase 1 som en faktisk fungerende, testbar lokal applikasjon. Start med teknisk kartlegging og prioritering. Sett opp TypeScript-frontend, serverbaserte adaptere for Brønnøysundregistrene og SSB, støtte for tilgjengelige NAV-statistikkilder, yrkessøk, Worklife-egenvurdering, HR-kapasitet og en nedlastbar beslutningsrapport. Bygg Playwright-tester for mobil og PC, inkludert feilsituasjoner og søk. Skill live API-data, snapshots, simulerte testdata og antakelser. Ikke skriv til ridderset.no eller publiser i produksjon. Lever kode, tester, kjøreinstruksjoner, datakilderegister, metodebeskrivelse og stagingplan.
+Åpne http://127.0.0.1:3100. Brreg/SSB krever internett. Appen lagrer ikke svar; omlasting tømmer dem. Ikke legg inn kandidatopplysninger. Kun testbruk inntil nettleser-, mobil- og driftstester er fullført.
 
-## Prioriterte milepæler
+## Dokumentasjon
 
-| Fase | Leveranse | Akseptanse |
-| --- | --- | --- |
-| 0 | Kartlegging, kodeprosjekt og tester | Ingen endringer i publisert WordPress-side |
-| 1 | Virkende bedriftssøk, yrkessøk, SSB, Worklife og rapport | E2E-testet på mobil og PC |
-| 2 | NAV stilling-feed og søkbar annonsehistorikk | Godkjent tilgang, robust synkronisering og datakvalitet |
-| 3 | Flere regionale data og validert modell | Etterprøvd med faktiske rekrutteringsutfall |
+- [Teknisk revisjon](docs/legacy-audit.md)
+- [Arkitektur og utrulling](docs/architecture.md)
+- [Datakilderegister](docs/data-source-registry.md)
+- [Beregningsmetode](docs/calculation-method.md)
+- [Teststatus](docs/test-report.md)
 
-## Hvorfor egen kodebase?
-
-Den tidligere WordPress-modellen brukte lange HTML-blokker. WordPress erstattet av og til JavaScript-tegn med HTML-entiteter, som gjorde at blant annet yrkes- og bedriftsøket sluttet å virke. En versjonsstyrt frontend/backend med tester og egne JS/CSS-filer er derfor nødvendig.
-
-## Offentlige kilder
-
-- Brønnøysundregistrenes API: https://data.brreg.no/enhetsregisteret/api/dokumentasjon/no/index.html
-- SSB PxWeb API: https://www.ssb.no/api/pxwebapiv2
-- NAV stilling-feed: https://navikt.github.io/pam-stilling-feed/
-- NAV stillingsstatistikk: https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger
-
-**Sikkerhet:** Dette repoet er offentlig. Ikke publiser hemmeligheter, API-tokens, private kundedata eller kandidatopplysninger.
-
-**Faglig grense:** Arbeidsgivers egenvurderte Worklife-score er ikke en dokumentert medarbeidermåling eller statistisk validert prognose.
+13 automatiserte tester består. Visuell E2E-test er ikke fullført i dette miljøet. Se teststatus før demonstrasjon eller installasjon. Legacy-kilden er et urørt arkiv, ikke deploykode. Ingen hemmeligheter eller private dokumenter skal legges i dette offentlige repoet.

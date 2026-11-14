@@ -1,0 +1,13 @@
+# Datakilderegister, 14. november 2026
+
+| Kilde | Status i ny testversjon | Tilgang og rettigheter | Oppløsning / metadata | Oppdatering og begrensninger |
+|---|---|---|---|---|
+| [Brreg Enhetsregisteret](https://data.brreg.no/enhetsregisteret/api/dokumentasjon/no/index.html) | Serveradapter bygget; hoved- og underenhetssøk testet live | Offentlig API, ingen nøkkel; NLOD, ingen betalt avtale etablert | Organisasjonsnummer, enhetstype, overordnet enhet, registrert adresse, næring, registrerte personer, oppslagstid | Cache 1 time, maksimum 300 URL-er totalt. Ingen HR- eller turnoverinformasjon. 12 treff per søk, ikke komplett registeruttrekk. Rate limit må avklares før offentlig drift. |
+| [SSB 11418 API](https://data.ssb.no/api/pxwebapi/v2/tables/11418/metadata?lang=no) | Metadata og datapunkt hentes live | Offentlig API uten nøkkel; kildeangivelse påkrevd, SSBs gjeldende gjenbruksvilkår må følge produksjonsleveransen | Nasjonal median, sektor/kjønn/arbeidstid eksplisitt; år og publiseringstid | Cache 1 time. Metadata kontrollert: år 2025, oppdatert 28.08.2026. Supprimerte verdier blir null/mangler. Rate limits må håndteres i driftslaget. |
+| STYRK08-navn fra legacy | 407 lokale navn/koder gjenbrukt | Opprinnelig SSB Klass, offentlig klassifikasjon | Eksplisitt yrkeskode, manuelt valg | Ikke automatisk oppdatert. Synonymer er hjelp til valg, ikke autoritativ koding. Prosjektleder kan ha flere forslag. |
+| [NAV stilling-feed](https://navikt.github.io/pam-stilling-feed/) | Ikke koblet til; utilgjengelig i UI/API | JWT og konsumentavtale for produksjon; ingen token er hentet eller publisert | Hendelsesfeed, krever worker, indeks, status og utløpshåndtering | Finn-annonser er ikke inkludert. Annonser og posisjoner må telles separat. Ingen synk er bygget. |
+| NAV publisert statistikk / Bedriftsundersøkelsen | Arkivet inneholder snapshots; ikke overført som nye live-data | Originalkilder må kontrolleres før gjenbruk | Fylkes-/yrkesnivå, undersøkelsesanslag med intervaller | Ikke kandidattilgang for én arbeidsgiver; ingen statistisk prediktor validert. |
+| NHO / KS | Ikke implementert | Datatilgang og gjenbruksrett må avklares | Rapport-/bransjesignaler | Ingen tall brukes i testversjonen. |
+| WorkLife | Manuell egenvurdering | Ingen ekstern måling, ingen benchmark | Seks bekreftede svar, kilde: ledelsen | Ikke validert indeks eller prediktor. Ingen data lagres server-side. |
+
+API-feil gir en eksplisitt feil, ikke falske nulltall. Ingen API-token, kundedata eller private dokumenter finnes i kodeleveransen. Oppslagstidspunkt i rapporten er tidspunkt for appens oppslag; kilden kan være levert fra appens timecache.
