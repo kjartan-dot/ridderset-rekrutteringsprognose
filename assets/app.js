@@ -21,7 +21,7 @@ async function initialize(){
   const template=await fetch(templateUrl);
   if(!template.ok)throw new Error("Malfilen kan ikke lastes.");
   root.innerHTML=await template.text();
-  const state={company:null,companyRaw:null,occupation:null,location:"",region:"18",positions:1,offer:null,answers:{},touched:[],hr:"unknown"};
+  const state={company:null,companyRaw:null,occupation:null,location:"",region:"",positions:1,offer:null,answers:{},touched:[],hr:"unknown"};
   const base=root.dataset.apiBase||"/wp-json/ridderset/v1/";
   let occupations=[],units=[],companyRequest=0,companyDebounce=null;
   const worklife=()=>worklifeScore(state.answers,state.touched);
@@ -75,6 +75,11 @@ async function initialize(){
     state.occupation=null;byId("job-chosen").hidden=true;byId("job-query").value="";
     byId("job-query").focus();update();
   });
+  function selectRegisteredRegion(company){
+    const code=String(company.municipalityNumber||"").slice(0,2);
+    const region=["18","55","56"].includes(code)?code:"other";
+    state.region=region;byId("region").value=region;
+  }
   function displayCompany(){
     const company=state.company;if(!company)return;
     byId("company-chosen").hidden=false;byId("company-name").textContent=company.name;
@@ -109,6 +114,7 @@ async function initialize(){
     ++companyRequest;clearTimeout(companyDebounce);
     state.companyRaw=raw;
     state.company=companyFromRegistry(raw,kind);
+    selectRegisteredRegion(state.company);
     byId("company-query").value=state.company.name;byId("company-results").hidden=true;
     byId("company-status").textContent="Virksomheten er valgt. Kontroller riktig arbeidssted.";
     if(!byId("location").value.trim()&&state.company.municipality!=="Ikke oppgitt"){
@@ -158,13 +164,14 @@ async function initialize(){
     if(!number){
       if(state.companyRaw){
         state.company=companyFromRegistry(state.companyRaw,"enheter");
-        displayCompany();update();
+        selectRegisteredRegion(state.company);displayCompany();update();
       }
       return;
     }
     const unit=units.find(x=>x.organisasjonsnummer===number);
     if(!unit)return;
     state.company=companyFromRegistry(unit,"underenheter");
+    selectRegisteredRegion(state.company);
     state.location=state.company.municipality;byId("location").value=state.location;
     byId("company-status").textContent="Underenhet valgt. Bekreft arbeidsstedet.";displayCompany();update();
   });
