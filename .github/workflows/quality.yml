@@ -40,6 +40,20 @@ jobs:
         env:
           CI: "1"
           MOCK_API: "1"
+      - name: Package WordPress plugin for STAGING only
+        if: success()
+        run: |
+          mkdir -p build/ridderset-rekrutteringsinnsikt
+          cp ridderset-rekrutteringsinnsikt.php build/ridderset-rekrutteringsinnsikt/
+          cp -R assets src data build/ridderset-rekrutteringsinnsikt/
+          ( cd build && zip -qr ../ridderset-rekrutteringsinnsikt-staging.zip ridderset-rekrutteringsinnsikt )
+      - name: Upload staging plugin ZIP
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ridderset-innsikt-staging-plugin
+          path: ridderset-rekrutteringsinnsikt-staging.zip
+          retention-days: 14
       - name: Upload evidence on failure
         if: failure()
         uses: actions/upload-artifact@v4
