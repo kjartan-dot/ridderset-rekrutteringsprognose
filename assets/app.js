@@ -79,7 +79,7 @@ async function initialize(){
     const company=state.company;if(!company)return;
     byId("company-chosen").hidden=false;byId("company-name").textContent=company.name;
     byId("company-meta").textContent=(company.org||"Org.nr. ikke oppgitt")+" · "+company.municipality+" · "
-      +(company.employees===null?"Ansatte ikke registrert":fmt(company.employees)+" registrerte ansatte")+" · "
+      +(company.employees===null?"Antall ansatte ikke oppgitt":fmt(company.employees)+(company.reported?" ansatte (egenoppgitt)":" registrerte ansatte"))+" · "
       +(company.reported?"Egenrapportert":"Enhetsregisteret");
   }
   async function getUnits(raw){
