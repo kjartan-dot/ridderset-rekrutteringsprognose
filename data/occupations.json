@@ -1,0 +1,2453 @@
+{
+  "source": "SSB Statistikkbanken 11418 (historisk datakopi fra Ridderset WordPress, hentet 2026-11-12)",
+  "publishedSalaryYears": [
+    2024,
+    2025
+  ],
+  "verifiedLive": false,
+  "description": "407 yrkesgrupper. Lønnsdata må kontrolleres mot originaltabellen ved produksjonssetting. Ikke lokal lønn.",
+  "occupations": [
+    {
+      "code": "1120",
+      "name": "Administrerende direktører",
+      "median2025": 84000,
+      "median2024": 80000
+    },
+    {
+      "code": "3342",
+      "name": "Advokatsekretær",
+      "median2025": 54930,
+      "median2024": 52170
+    },
+    {
+      "code": "3142",
+      "name": "Agroteknikere",
+      "median2025": 58690,
+      "median2024": 55090
+    },
+    {
+      "code": "2211",
+      "name": "Allmennpraktiserende leger",
+      "median2025": 83080,
+      "median2024": 79400
+    },
+    {
+      "code": "9622",
+      "name": "Altmuligmann",
+      "median2025": 43540,
+      "median2024": 41590
+    },
+    {
+      "code": "3258",
+      "name": "Ambulansepersonell",
+      "median2025": 59260,
+      "median2024": 57820
+    },
+    {
+      "code": "1219",
+      "name": "Andre administrative ledere",
+      "median2025": 79170,
+      "median2024": 75000
+    },
+    {
+      "code": "7119",
+      "name": "Andre bygningsarbeidere",
+      "median2025": 46470,
+      "median2024": 44520
+    },
+    {
+      "code": "1439",
+      "name": "Andre daglige ledere i tjenesteytende virksomheter",
+      "median2025": 55000,
+      "median2024": 53300
+    },
+    {
+      "code": "6129",
+      "name": "Andre dyreoppdrettere og røktere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "7549",
+      "name": "Andre håndverkere",
+      "median2025": 41520,
+      "median2024": 39940
+    },
+    {
+      "code": "3259",
+      "name": "Andre helseyrker",
+      "median2025": 51850,
+      "median2024": 50000
+    },
+    {
+      "code": "9629",
+      "name": "Andre hjelpearbeidere",
+      "median2025": 40230,
+      "median2024": 39770
+    },
+    {
+      "code": "9329",
+      "name": "Andre hjelpearbeidere i industri",
+      "median2025": 47090,
+      "median2024": 44940
+    },
+    {
+      "code": "2356",
+      "name": "Andre IKT-lærere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3119",
+      "name": "Andre ingeniører",
+      "median2025": 68780,
+      "median2024": 65700
+    },
+    {
+      "code": "2619",
+      "name": "Andre juridiske yrker",
+      "median2025": 72920,
+      "median2024": 68130
+    },
+    {
+      "code": "7319",
+      "name": "Andre kunsthåndverkere",
+      "median2025": 45750,
+      "median2024": 43780
+    },
+    {
+      "code": "2359",
+      "name": "Andre lærere",
+      "median2025": 57220,
+      "median2024": 54640
+    },
+    {
+      "code": "2355",
+      "name": "Andre lærere i estetiske fag",
+      "median2025": 50970,
+      "median2024": 48710
+    },
+    {
+      "code": "1349",
+      "name": "Andre ledere av produksjon og tjenesteyting",
+      "median2025": 85320,
+      "median2024": 81630
+    },
+    {
+      "code": "8219",
+      "name": "Andre montører",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2354",
+      "name": "Andre musikklærere",
+      "median2025": 56680,
+      "median2024": 55030
+    },
+    {
+      "code": "8159",
+      "name": "Andre operatører innen produksjon av tekstiler, pels, skinn og lær",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "4229",
+      "name": "Andre opplysningsmedarbeidere",
+      "median2025": 44570,
+      "median2024": 45080
+    },
+    {
+      "code": "5169",
+      "name": "Andre personlige tjenesteytere",
+      "median2025": 41800,
+      "median2024": 39510
+    },
+    {
+      "code": "5329",
+      "name": "Andre pleiemedarbeidere",
+      "median2025": 45070,
+      "median2024": 43780
+    },
+    {
+      "code": "2519",
+      "name": "Andre programvare- og applikasjonsutviklere",
+      "median2025": 74170,
+      "median2024": 70690
+    },
+    {
+      "code": "3139",
+      "name": "Andre prosesskontrolloperatører",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "9129",
+      "name": "Andre rengjørere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5249",
+      "name": "Andre salgsmedarbeidere",
+      "median2025": 44970,
+      "median2024": 43520
+    },
+    {
+      "code": "5419",
+      "name": "Andre sikkerhetsarbeidere",
+      "median2025": 42340,
+      "median2024": 41020
+    },
+    {
+      "code": "2149",
+      "name": "Andre sivilingeniører (unntatt elektroteknologi)",
+      "median2025": 77770,
+      "median2024": 75240
+    },
+    {
+      "code": "2353",
+      "name": "Andre språklærere",
+      "median2025": 46670,
+      "median2024": 47210
+    },
+    {
+      "code": "8189",
+      "name": "Andre stasjonære maskinoperatører",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2659",
+      "name": "Andre utøvende kunstneriske yrker",
+      "median2025": 57730,
+      "median2024": 56260
+    },
+    {
+      "code": "3439",
+      "name": "Andre yrker innen estetiske fag",
+      "median2025": 53750,
+      "median2024": 51950
+    },
+    {
+      "code": "3339",
+      "name": "Andre yrker innen forretningstjenester",
+      "median2025": 68940,
+      "median2024": null
+    },
+    {
+      "code": "3359",
+      "name": "Andre yrker innen offentlig forvaltning",
+      "median2025": 52540,
+      "median2024": 50380
+    },
+    {
+      "code": "7233",
+      "name": "Anleggsmaskin- og industrimekanikere",
+      "median2025": 53540,
+      "median2024": 51250
+    },
+    {
+      "code": "8342",
+      "name": "Anleggsmaskinførere",
+      "median2025": 51510,
+      "median2024": 49570
+    },
+    {
+      "code": "2514",
+      "name": "Applikasjonsprogrammerere",
+      "median2025": 70700,
+      "median2024": 68330
+    },
+    {
+      "code": "3333",
+      "name": "Arbeidsformidlere",
+      "median2025": 51440,
+      "median2024": 50000
+    },
+    {
+      "code": "3121",
+      "name": "Arbeidsleder, bergfag",
+      "median2025": 72610,
+      "median2024": 69740
+    },
+    {
+      "code": "3123",
+      "name": "Arbeidsleder, bygg og anlegg",
+      "median2025": 66550,
+      "median2024": 63970
+    },
+    {
+      "code": "3122",
+      "name": "Arbeidsleder, industri",
+      "median2025": 60350,
+      "median2024": 57550
+    },
+    {
+      "code": "3341",
+      "name": "Arbeidsledere for kontorpersonell",
+      "median2025": 68330,
+      "median2024": 64970
+    },
+    {
+      "code": "2164",
+      "name": "Arealplanleggere",
+      "median2025": 68140,
+      "median2024": 64580
+    },
+    {
+      "code": "2621",
+      "name": "Arkivarer og kuratorer",
+      "median2025": 56080,
+      "median2024": 53370
+    },
+    {
+      "code": "4415",
+      "name": "Arkivassistenter",
+      "median2025": 51800,
+      "median2024": 48440
+    },
+    {
+      "code": "5161",
+      "name": "Astrologer mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2266",
+      "name": "Audiografer og logopeder",
+      "median2025": 54410,
+      "median2024": 52060
+    },
+    {
+      "code": "7412",
+      "name": "Automatikere",
+      "median2025": 60080,
+      "median2024": 57010
+    },
+    {
+      "code": "7512",
+      "name": "Bakere, konditorer mv.",
+      "median2025": 42490,
+      "median2024": 41040
+    },
+    {
+      "code": "5311",
+      "name": "Barnehage- og skolefritidsassistenter mv.",
+      "median2025": 41610,
+      "median2024": 39980
+    },
+    {
+      "code": "5132",
+      "name": "Bartendere",
+      "median2025": 37480,
+      "median2024": 35850
+    },
+    {
+      "code": "0210",
+      "name": "Befal med sersjant grad",
+      "median2025": 80760,
+      "median2024": 74790
+    },
+    {
+      "code": "5163",
+      "name": "Begravelsesbyrå- og krematoriearbeidere",
+      "median2025": 52790,
+      "median2024": 50880
+    },
+    {
+      "code": "8111",
+      "name": "Bergfagarbeidere",
+      "median2025": 55570,
+      "median2024": 53910
+    },
+    {
+      "code": "7114",
+      "name": "Betongarbeidere",
+      "median2025": 53420,
+      "median2024": 51310
+    },
+    {
+      "code": "2622",
+      "name": "Bibliotekarer og andre informasjonsarbeidere",
+      "median2025": 53360,
+      "median2024": 51350
+    },
+    {
+      "code": "4411",
+      "name": "Bibliotekassistenter",
+      "median2025": 45670,
+      "median2024": 44110
+    },
+    {
+      "code": "8322",
+      "name": "Bil-, drosje- og varebilførere",
+      "median2025": 41570,
+      "median2024": 40000
+    },
+    {
+      "code": "5230",
+      "name": "Billettselgere",
+      "median2025": 43230,
+      "median2024": 45520
+    },
+    {
+      "code": "7231",
+      "name": "Bilmekanikere",
+      "median2025": 48500,
+      "median2024": 46460
+    },
+    {
+      "code": "9122",
+      "name": "Bilvaskere",
+      "median2025": 39960,
+      "median2024": 38480
+    },
+    {
+      "code": "4212",
+      "name": "Bingoverter, bookmakere mv.",
+      "median2025": 37020,
+      "median2024": 35740
+    },
+    {
+      "code": "3212",
+      "name": "Bioingeniører",
+      "median2025": 56270,
+      "median2024": 53910
+    },
+    {
+      "code": "2131",
+      "name": "Biologer, botanikere, zoologer mv.",
+      "median2025": 68640,
+      "median2024": 65290
+    },
+    {
+      "code": "3141",
+      "name": "Bioteknikere (ikke-medisinske laboratorier)",
+      "median2025": 51790,
+      "median2024": 50000
+    },
+    {
+      "code": "6123",
+      "name": "Birøktere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5411",
+      "name": "Brannkonstabler",
+      "median2025": 60510,
+      "median2024": 58960
+    },
+    {
+      "code": "3512",
+      "name": "Brukerstøtte, IKT",
+      "median2025": 57800,
+      "median2024": 54160
+    },
+    {
+      "code": "9621",
+      "name": "Bud mv.",
+      "median2025": 39260,
+      "median2024": 41590
+    },
+    {
+      "code": "8331",
+      "name": "Bussjåfører og trikkeførere",
+      "median2025": 47270,
+      "median2024": 45280
+    },
+    {
+      "code": "5222",
+      "name": "Butikkavdelingssjefer",
+      "median2025": 47680,
+      "median2024": 45730
+    },
+    {
+      "code": "5223",
+      "name": "Butikkmedarbeidere",
+      "median2025": 42020,
+      "median2024": 40290
+    },
+    {
+      "code": "3112",
+      "name": "Bygningsingeniører",
+      "median2025": 66720,
+      "median2024": 64000
+    },
+    {
+      "code": "2521",
+      "name": "Databasedesignere og -administratorer",
+      "median2025": 75150,
+      "median2024": 71270
+    },
+    {
+      "code": "4132",
+      "name": "Dataregistrere",
+      "median2025": 59280,
+      "median2024": 56970
+    },
+    {
+      "code": "8350",
+      "name": "Dekks- og maskinmannskap (skip)",
+      "median2025": 58940,
+      "median2024": 55240
+    },
+    {
+      "code": "3152",
+      "name": "Dekksoffiserer og loser",
+      "median2025": 80000,
+      "median2024": 74920
+    },
+    {
+      "code": "7316",
+      "name": "Dekormalere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5242",
+      "name": "Demonstrasjonsselgere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "7544",
+      "name": "Desinfeksjonsarbeidere og skadedyrbekjempere",
+      "median2025": 46300,
+      "median2024": 44490
+    },
+    {
+      "code": "2652",
+      "name": "Dirigenter, komponister, musikere og sangere",
+      "median2025": 61710,
+      "median2024": 59530
+    },
+    {
+      "code": "2612",
+      "name": "Dommere",
+      "median2025": 118470,
+      "median2024": 112640
+    },
+    {
+      "code": "5243",
+      "name": "Dørselgere",
+      "median2025": 48230,
+      "median2024": 43320
+    },
+    {
+      "code": "3511",
+      "name": "Driftsteknikere, IKT",
+      "median2025": 64680,
+      "median2024": 61130
+    },
+    {
+      "code": "5164",
+      "name": "Dyrepassere og - trenere mv.",
+      "median2025": 36670,
+      "median2024": 34600
+    },
+    {
+      "code": "3240",
+      "name": "Dyrepleiere",
+      "median2025": 42290,
+      "median2024": 40400
+    },
+    {
+      "code": "6122",
+      "name": "Egg- og fjærfeprodusenter",
+      "median2025": 43520,
+      "median2024": 41730
+    },
+    {
+      "code": "3334",
+      "name": "Eiendomsmeglere og - forvaltere",
+      "median2025": 72090,
+      "median2024": 69250
+    },
+    {
+      "code": "7411",
+      "name": "Elektrikere",
+      "median2025": 54930,
+      "median2024": 52770
+    },
+    {
+      "code": "3114",
+      "name": "Elektronikkingeniører",
+      "median2025": 70830,
+      "median2024": 67500
+    },
+    {
+      "code": "3113",
+      "name": "Elkraftingeniører",
+      "median2025": 72390,
+      "median2024": 68850
+    },
+    {
+      "code": "3131",
+      "name": "Energikontrolloperatører",
+      "median2025": 72360,
+      "median2024": 67240
+    },
+    {
+      "code": "7413",
+      "name": "Energimontører",
+      "median2025": 58140,
+      "median2024": 55530
+    },
+    {
+      "code": "2267",
+      "name": "Ergoterapeuter",
+      "median2025": 52780,
+      "median2024": 51150
+    },
+    {
+      "code": "2265",
+      "name": "Ernæringsfysiologer",
+      "median2025": 59380,
+      "median2024": 58120
+    },
+    {
+      "code": "6224",
+      "name": "Fangstfolk",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2262",
+      "name": "Farmasøyter",
+      "median2025": 62840,
+      "median2024": 60180
+    },
+    {
+      "code": "7133",
+      "name": "Feiere, fasaderenholdere mv.",
+      "median2025": 47800,
+      "median2024": 46280
+    },
+    {
+      "code": "5413",
+      "name": "Fengselsbetjenter",
+      "median2025": 55900,
+      "median2024": 51240
+    },
+    {
+      "code": "2412",
+      "name": "Finans- og investeringsrådgivere",
+      "median2025": 74680,
+      "median2024": 70830
+    },
+    {
+      "code": "1211",
+      "name": "Finans- og økonomisjefer",
+      "median2025": 101670,
+      "median2024": 96360
+    },
+    {
+      "code": "2413",
+      "name": "Finansanalytikere",
+      "median2025": 75360,
+      "median2024": 71100
+    },
+    {
+      "code": "3311",
+      "name": "Finansmeglere",
+      "median2025": 88680,
+      "median2024": 81670
+    },
+    {
+      "code": "6222",
+      "name": "Fiskere",
+      "median2025": 48500,
+      "median2024": 44660
+    },
+    {
+      "code": "3154",
+      "name": "Flygeledere",
+      "median2025": 121910,
+      "median2024": 119730
+    },
+    {
+      "code": "3153",
+      "name": "Flygere",
+      "median2025": 118440,
+      "median2024": 116350
+    },
+    {
+      "code": "5111",
+      "name": "Flyverter, båtverter mv.",
+      "median2025": 41510,
+      "median2024": 38900
+    },
+    {
+      "code": "9331",
+      "name": "Førere av ikke-motorisert kjøretøy",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2641",
+      "name": "Forfattere mv.",
+      "median2025": 66300,
+      "median2024": 63750
+    },
+    {
+      "code": "4312",
+      "name": "Forsikrings- og finansmedarbeidere",
+      "median2025": 58560,
+      "median2024": 55830
+    },
+    {
+      "code": "3321",
+      "name": "Forsikringsagenter",
+      "median2025": 66100,
+      "median2024": 63460
+    },
+    {
+      "code": "1223",
+      "name": "Forsknings- og utviklingsledere",
+      "median2025": 96010,
+      "median2024": 92500
+    },
+    {
+      "code": "2342",
+      "name": "Førskole-/barnehagelærere",
+      "median2025": 53550,
+      "median2024": 51430
+    },
+    {
+      "code": "7321",
+      "name": "Førtrykkere",
+      "median2025": 47350,
+      "median2024": 45700
+    },
+    {
+      "code": "3431",
+      "name": "Fotografer og filmfotografer",
+      "median2025": 55220,
+      "median2024": 52590
+    },
+    {
+      "code": "5141",
+      "name": "Frisører",
+      "median2025": 39670,
+      "median2024": 38330
+    },
+    {
+      "code": "6112",
+      "name": "Frukt- og bærprodusenter",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8182",
+      "name": "Fyrkjele- og turbinoperatører",
+      "median2025": 54930,
+      "median2024": 52960
+    },
+    {
+      "code": "2111",
+      "name": "Fysikere og astronomer",
+      "median2025": 75790,
+      "median2024": 71120
+    },
+    {
+      "code": "2264",
+      "name": "Fysioterapeuter",
+      "median2025": 54350,
+      "median2024": 52590
+    },
+    {
+      "code": "6113",
+      "name": "Gartnere",
+      "median2025": 43860,
+      "median2024": 41860
+    },
+    {
+      "code": "9613",
+      "name": "Gatefeiere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5246",
+      "name": "Gatekjøkken- og kafémedarbeidere mv.",
+      "median2025": 36360,
+      "median2024": 34750
+    },
+    {
+      "code": "5212",
+      "name": "Gateselgere, mat",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2636",
+      "name": "Geistlige yrker",
+      "median2025": 64500,
+      "median2024": 61810
+    },
+    {
+      "code": "2114",
+      "name": "Geologer og geofysikere",
+      "median2025": 93990,
+      "median2024": 91580
+    },
+    {
+      "code": "7123",
+      "name": "Gips- og sparklingsarbeidere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "9612",
+      "name": "Gjenvinningsarbeidere",
+      "median2025": 44200,
+      "median2024": 42150
+    },
+    {
+      "code": "7125",
+      "name": "Glassarbeidere",
+      "median2025": 47120,
+      "median2024": 45870
+    },
+    {
+      "code": "7315",
+      "name": "Glasshåndverkere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "7532",
+      "name": "Gradører",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2166",
+      "name": "Grafiske- og multimediadesignere",
+      "median2025": 60520,
+      "median2024": 57760
+    },
+    {
+      "code": "2341",
+      "name": "Grunnskolelærere",
+      "median2025": 58750,
+      "median2024": 56720
+    },
+    {
+      "code": "7313",
+      "name": "Gull- og sølvsmeder, gravører mv.",
+      "median2025": 48000,
+      "median2024": 45950
+    },
+    {
+      "code": "7122",
+      "name": "Gulv- og flisleggere",
+      "median2025": 48710,
+      "median2024": 47090
+    },
+    {
+      "code": "3324",
+      "name": "Handels- og skipsmeglere",
+      "median2025": 105000,
+      "median2024": 97530
+    },
+    {
+      "code": "9321",
+      "name": "Håndpakkere mv.",
+      "median2025": 43880,
+      "median2024": 41660
+    },
+    {
+      "code": "6221",
+      "name": "Havbruksarbeidere",
+      "median2025": 59270,
+      "median2024": 56200
+    },
+    {
+      "code": "3257",
+      "name": "Helse- og miljøkontrollører",
+      "median2025": 69150,
+      "median2024": 63230
+    },
+    {
+      "code": "2263",
+      "name": "Helse- og miljørådgivere",
+      "median2025": 66740,
+      "median2024": 62690
+    },
+    {
+      "code": "5321",
+      "name": "Helsefagarbeidere",
+      "median2025": 51430,
+      "median2024": 49870
+    },
+    {
+      "code": "3256",
+      "name": "Helsesekretærer",
+      "median2025": 45710,
+      "median2024": 44390
+    },
+    {
+      "code": "9312",
+      "name": "Hjelpearbeidere i anlegg",
+      "median2025": 48520,
+      "median2024": 46280
+    },
+    {
+      "code": "9311",
+      "name": "Hjelpearbeidere i bergverk",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "9313",
+      "name": "Hjelpearbeidere i bygg",
+      "median2025": 43690,
+      "median2024": 41780
+    },
+    {
+      "code": "9214",
+      "name": "Hjelpearbeidere i gartneri mv.",
+      "median2025": 43130,
+      "median2024": 40950
+    },
+    {
+      "code": "9212",
+      "name": "Hjelpearbeidere i husdyrproduksjon",
+      "median2025": 32470,
+      "median2024": 30930
+    },
+    {
+      "code": "9213",
+      "name": "Hjelpearbeidere i kombinasjonsbruk",
+      "median2025": 36530,
+      "median2024": 32480
+    },
+    {
+      "code": "9211",
+      "name": "Hjelpearbeidere i nyttevekstproduksjon",
+      "median2025": 31390,
+      "median2024": 27970
+    },
+    {
+      "code": "9215",
+      "name": "Hjelpearbeidere i skogbruk",
+      "median2025": 34910,
+      "median2024": 30850
+    },
+    {
+      "code": "9216",
+      "name": "Hjelpearbeidere innen havbruk",
+      "median2025": 39300,
+      "median2024": 41160
+    },
+    {
+      "code": "5322",
+      "name": "Hjemmehjelper",
+      "median2025": 42370,
+      "median2024": 40550
+    },
+    {
+      "code": "4224",
+      "name": "Hotellresepsjonister",
+      "median2025": 39630,
+      "median2024": 38120
+    },
+    {
+      "code": "1411",
+      "name": "Hotellsjefer",
+      "median2025": 52610,
+      "median2024": 50910
+    },
+    {
+      "code": "2422",
+      "name": "Høyere saksbehandlere i offentlig og privat virksomhet",
+      "median2025": 61630,
+      "median2024": 58300
+    },
+    {
+      "code": "5152",
+      "name": "Husholdere",
+      "median2025": 52120,
+      "median2024": 48060
+    },
+    {
+      "code": "3421",
+      "name": "Idrettsutøvere",
+      "median2025": 42030,
+      "median2024": 40320
+    },
+    {
+      "code": "8153",
+      "name": "Industrisyere",
+      "median2025": 43310,
+      "median2024": 41430
+    },
+    {
+      "code": "2432",
+      "name": "Informasjonsrådgivere",
+      "median2025": 64330,
+      "median2024": 61020
+    },
+    {
+      "code": "4225",
+      "name": "Informasjonsskrankemedarbeidere",
+      "median2025": 50340,
+      "median2024": 49040
+    },
+    {
+      "code": "3117",
+      "name": "Ingeniører innen petroleum, bergverk og metallurgi",
+      "median2025": 85470,
+      "median2024": 80980
+    },
+    {
+      "code": "4214",
+      "name": "Inkassomedarbeidere mv.",
+      "median2025": 48630,
+      "median2024": 45770
+    },
+    {
+      "code": "7323",
+      "name": "Innbindere mv.",
+      "median2025": 43110,
+      "median2024": 40870
+    },
+    {
+      "code": "5221",
+      "name": "Innehavere av kiosk/liten butikk",
+      "median2025": 50000,
+      "median2024": 45330
+    },
+    {
+      "code": "3323",
+      "name": "Innkjøpere",
+      "median2025": 65540,
+      "median2024": 61260
+    },
+    {
+      "code": "3432",
+      "name": "Interiørdesignere og dekoratører",
+      "median2025": 47900,
+      "median2024": 46280
+    },
+    {
+      "code": "3514",
+      "name": "Internett-teknikere",
+      "median2025": 62500,
+      "median2024": 58900
+    },
+    {
+      "code": "4227",
+      "name": "Intervjuere",
+      "median2025": 32540,
+      "median2024": 32710
+    },
+    {
+      "code": "7124",
+      "name": "Isolatører mv.",
+      "median2025": 47740,
+      "median2024": 45120
+    },
+    {
+      "code": "8341",
+      "name": "Jordbruks- og skogbruksmaskinførere",
+      "median2025": 46250,
+      "median2024": 43920
+    },
+    {
+      "code": "2222",
+      "name": "Jordmødre",
+      "median2025": 69660,
+      "median2024": 67930
+    },
+    {
+      "code": "2642",
+      "name": "Journalister",
+      "median2025": 64630,
+      "median2024": 62350
+    },
+    {
+      "code": "2611",
+      "name": "Jurister og advokater",
+      "median2025": 80830,
+      "median2024": 77000
+    },
+    {
+      "code": "7314",
+      "name": "Keramikere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2269",
+      "name": "Kiropraktorer mv.",
+      "median2025": 65900,
+      "median2024": 62500
+    },
+    {
+      "code": "3116",
+      "name": "Kjemiingeniører",
+      "median2025": 66310,
+      "median2024": 63580
+    },
+    {
+      "code": "2113",
+      "name": "Kjemikere",
+      "median2025": 78390,
+      "median2024": 73750
+    },
+    {
+      "code": "9412",
+      "name": "Kjøkkenassistenter",
+      "median2025": 38140,
+      "median2024": 36530
+    },
+    {
+      "code": "5165",
+      "name": "Kjøreskolelærere",
+      "median2025": 58310,
+      "median2024": 55150
+    },
+    {
+      "code": "4413",
+      "name": "Kodere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5120",
+      "name": "Kokker",
+      "median2025": 41610,
+      "median2024": 40110
+    },
+    {
+      "code": "6114",
+      "name": "Kombinasjonsbrukere, nyttevekster",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "5112",
+      "name": "Konduktører",
+      "median2025": 66330,
+      "median2024": 63950
+    },
+    {
+      "code": "3332",
+      "name": "Konferanse- og arrangementsplanleggere mv.",
+      "median2025": 55940,
+      "median2024": 54170
+    },
+    {
+      "code": "4110",
+      "name": "Kontormedarbeidere",
+      "median2025": 49430,
+      "median2024": 47250
+    },
+    {
+      "code": "3133",
+      "name": "Kontrolloperatører innen kjemisk prosessindustri",
+      "median2025": 67060,
+      "median2024": 63580
+    },
+    {
+      "code": "3135",
+      "name": "Kontrolloperatører innen metallproduksjon",
+      "median2025": 58420,
+      "median2024": 55710
+    },
+    {
+      "code": "3132",
+      "name": "Kontrolloperatører ved forbrennings- kjøle- og vannrenseanlegg mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3134",
+      "name": "Kontrolloperatører ved olje- og naturgassraffineringsanlegg",
+      "median2025": 78930,
+      "median2024": 74270
+    },
+    {
+      "code": "7213",
+      "name": "Kopper- og blikkenslagere",
+      "median2025": 50330,
+      "median2024": 48280
+    },
+    {
+      "code": "2653",
+      "name": "Koreografer og dansere",
+      "median2025": 54670,
+      "median2024": 50630
+    },
+    {
+      "code": "6111",
+      "name": "Korn- og grønnsaksprodusenter",
+      "median2025": 40270,
+      "median2024": 38970
+    },
+    {
+      "code": "5142",
+      "name": "Kosmetologer mv.",
+      "median2025": 39330,
+      "median2024": 37670
+    },
+    {
+      "code": "8343",
+      "name": "Kran- og heisførere mv.",
+      "median2025": 54560,
+      "median2024": 51960
+    },
+    {
+      "code": "7127",
+      "name": "Kuldemontører mv.",
+      "median2025": 56830,
+      "median2024": 53920
+    },
+    {
+      "code": "3312",
+      "name": "Kundebehandlere lån og kreditt",
+      "median2025": 63130,
+      "median2024": 60210
+    },
+    {
+      "code": "4211",
+      "name": "Kundebehandlere, bank og postkontor",
+      "median2025": 47300,
+      "median2024": 45690
+    },
+    {
+      "code": "4222",
+      "name": "Kundesentermedarbeidere",
+      "median2025": 47130,
+      "median2024": 45110
+    },
+    {
+      "code": "7317",
+      "name": "Kunsthåndverkere i tre mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "4321",
+      "name": "Lagermedarbeidere og material-forvaltere",
+      "median2025": 48310,
+      "median2024": 46360
+    },
+    {
+      "code": "2165",
+      "name": "Landmålere, kartografer mv.",
+      "median2025": 63810,
+      "median2024": 59580
+    },
+    {
+      "code": "2162",
+      "name": "Landskapsarkitekter",
+      "median2025": 72500,
+      "median2024": 68960
+    },
+    {
+      "code": "9333",
+      "name": "Laste- og lossearbeidere",
+      "median2025": 46780,
+      "median2024": 44930
+    },
+    {
+      "code": "8332",
+      "name": "Lastebil- og trailersjåfører",
+      "median2025": 47260,
+      "median2024": 45370
+    },
+    {
+      "code": "1323",
+      "name": "Ledere av bygge- og anleggsvirksomhet",
+      "median2025": 73140,
+      "median2024": 70000
+    },
+    {
+      "code": "1343",
+      "name": "Ledere av eldreomsorg",
+      "median2025": 74530,
+      "median2024": 71060
+    },
+    {
+      "code": "1346",
+      "name": "Ledere av forsikring og finansvirksomhet",
+      "median2025": 108190,
+      "median2024": 101810
+    },
+    {
+      "code": "1342",
+      "name": "Ledere av helsetjenester",
+      "median2025": 71330,
+      "median2024": 68920
+    },
+    {
+      "code": "1330",
+      "name": "Ledere av IKT-enheter",
+      "median2025": 98510,
+      "median2024": 92830
+    },
+    {
+      "code": "1321",
+      "name": "Ledere av industriproduksjon mv.",
+      "median2025": 83330,
+      "median2024": 79870
+    },
+    {
+      "code": "1324",
+      "name": "Ledere av logistikk og transport mv.",
+      "median2025": 79220,
+      "median2024": 74100
+    },
+    {
+      "code": "1322",
+      "name": "Ledere av olje- og gassutvinning mv.",
+      "median2025": 120670,
+      "median2024": 116510
+    },
+    {
+      "code": "1341",
+      "name": "Ledere av omsorgstjenester for barn",
+      "median2025": 68600,
+      "median2024": 65310
+    },
+    {
+      "code": "1344",
+      "name": "Ledere av sosialomsorg",
+      "median2025": 67070,
+      "median2024": 64420
+    },
+    {
+      "code": "1345",
+      "name": "Ledere av utdanning og undervisning",
+      "median2025": 75610,
+      "median2024": 72300
+    },
+    {
+      "code": "1311",
+      "name": "Ledere i skogbruk, gartnerier mv.",
+      "median2025": 67940,
+      "median2024": 65190
+    },
+    {
+      "code": "1312",
+      "name": "Ledere innen akvakultur mv.",
+      "median2025": 88000,
+      "median2024": 85570
+    },
+    {
+      "code": "2212",
+      "name": "Legespesialister",
+      "median2025": 107160,
+      "median2024": 103640
+    },
+    {
+      "code": "2330",
+      "name": "Lektorer mv. (videregående skole)",
+      "median2025": 61930,
+      "median2024": 59970
+    },
+    {
+      "code": "4322",
+      "name": "Logistikkmedarbeidere",
+      "median2025": 56200,
+      "median2024": 52500
+    },
+    {
+      "code": "8311",
+      "name": "Lokomotiv og T-baneførere",
+      "median2025": 74940,
+      "median2024": 71780
+    },
+    {
+      "code": "4313",
+      "name": "Lønningsmedarbeidere",
+      "median2025": 56920,
+      "median2024": 54480
+    },
+    {
+      "code": "9623",
+      "name": "Måleravlesere mv.",
+      "median2025": 42140,
+      "median2024": 42220
+    },
+    {
+      "code": "7131",
+      "name": "Malere og byggtapetserere",
+      "median2025": 45900,
+      "median2024": 43930
+    },
+    {
+      "code": "5241",
+      "name": "Mannekenger og modeller",
+      "median2025": 35600,
+      "median2024": 36670
+    },
+    {
+      "code": "3115",
+      "name": "Maskiningeniører",
+      "median2025": 65440,
+      "median2024": 62560
+    },
+    {
+      "code": "2120",
+      "name": "Matematikere, statistikere mv.",
+      "median2025": 66400,
+      "median2024": 61190
+    },
+    {
+      "code": "7232",
+      "name": "Mekanikere innen flytekniske fag",
+      "median2025": 65810,
+      "median2024": 61480
+    },
+    {
+      "code": "6121",
+      "name": "Melke- og husdyrprodusenter",
+      "median2025": 38160,
+      "median2024": 36260
+    },
+    {
+      "code": "0310",
+      "name": "Menige",
+      "median2025": 55680,
+      "median2024": 51970
+    },
+    {
+      "code": "7223",
+      "name": "Metalldreiere mv.",
+      "median2025": 50140,
+      "median2024": 47540
+    },
+    {
+      "code": "7224",
+      "name": "Metallslipere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2112",
+      "name": "Meteorologer",
+      "median2025": 66690,
+      "median2024": 61440
+    },
+    {
+      "code": "3412",
+      "name": "Miljøarbeidere innen sosiale fagfelt",
+      "median2025": 52680,
+      "median2024": 50660
+    },
+    {
+      "code": "2133",
+      "name": "Miljøvernrådgivere",
+      "median2025": 66430,
+      "median2024": 62720
+    },
+    {
+      "code": "7522",
+      "name": "Møbelsnekkere",
+      "median2025": 45300,
+      "median2024": 43240
+    },
+    {
+      "code": "7534",
+      "name": "Møbeltapetserere mv.",
+      "median2025": 46520,
+      "median2024": 45000
+    },
+    {
+      "code": "8212",
+      "name": "Montører av elektriske og elektroniske produkter",
+      "median2025": 49830,
+      "median2024": 46790
+    },
+    {
+      "code": "8211",
+      "name": "Montører av mekaniske produkter",
+      "median2025": 48230,
+      "median2024": 45680
+    },
+    {
+      "code": "7112",
+      "name": "Murere",
+      "median2025": 48710,
+      "median2024": 46760
+    },
+    {
+      "code": "7312",
+      "name": "Musikkinstrumentmakere og -stemmere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2513",
+      "name": "Nett- og multimediautviklere",
+      "median2025": 62500,
+      "median2024": 58330
+    },
+    {
+      "code": "3513",
+      "name": "Nettverks- og systemteknikere, IKT",
+      "median2025": 71490,
+      "median2024": 69070
+    },
+    {
+      "code": "2523",
+      "name": "Nettverksansvarlige",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "0110",
+      "name": "Offiserer fra fenrik og høyere grad",
+      "median2025": 88010,
+      "median2024": 80760
+    },
+    {
+      "code": "8113",
+      "name": "Operatører innen boring mv.",
+      "median2025": 80180,
+      "median2024": 76060
+    },
+    {
+      "code": "8181",
+      "name": "Operatører innen glass- og keramisk produksjon",
+      "median2025": 44540,
+      "median2024": 42490
+    },
+    {
+      "code": "8131",
+      "name": "Operatører innen kjemisk industri",
+      "median2025": 58810,
+      "median2024": 56110
+    },
+    {
+      "code": "8122",
+      "name": "Operatører innen metallflatebehandling",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8121",
+      "name": "Operatører innen metallurgiske prosessfag",
+      "median2025": 48440,
+      "median2024": 46310
+    },
+    {
+      "code": "8160",
+      "name": "Operatører innen næringsmiddelproduksjon",
+      "median2025": 43480,
+      "median2024": 41650
+    },
+    {
+      "code": "8143",
+      "name": "Operatører innen papirprodukter",
+      "median2025": 43830,
+      "median2024": 43150
+    },
+    {
+      "code": "8155",
+      "name": "Operatører innen pels, skinn- og lærbearbeiding",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8142",
+      "name": "Operatører innen plastprodukter",
+      "median2025": 46510,
+      "median2024": 44870
+    },
+    {
+      "code": "8114",
+      "name": "Operatører innen produksjon av betong mv.",
+      "median2025": 48070,
+      "median2024": 46220
+    },
+    {
+      "code": "8132",
+      "name": "Operatører innen produksjon av fotofilm og -papir mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8141",
+      "name": "Operatører innen produksjon av gummiprodukter",
+      "median2025": 46460,
+      "median2024": 42700
+    },
+    {
+      "code": "8156",
+      "name": "Operatører innen skinn og lærprodukter",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8154",
+      "name": "Operatører innen tekstilbearbeiding",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "8152",
+      "name": "Operatører innen tekstilproduksjon mv.",
+      "median2025": 43840,
+      "median2024": 41570
+    },
+    {
+      "code": "8171",
+      "name": "Operatører innen treforedling",
+      "median2025": 46210,
+      "median2024": 44500
+    },
+    {
+      "code": "8172",
+      "name": "Operatører innen trelastproduksjon",
+      "median2025": 43630,
+      "median2024": 41720
+    },
+    {
+      "code": "3254",
+      "name": "Optikere",
+      "median2025": 55940,
+      "median2024": 53830
+    },
+    {
+      "code": "2421",
+      "name": "Organisasjonsrådgivere mv.",
+      "median2025": 70310,
+      "median2024": 67110
+    },
+    {
+      "code": "7132",
+      "name": "Overflatebehandlere og lakkerere",
+      "median2025": 48690,
+      "median2024": 46930
+    },
+    {
+      "code": "2643",
+      "name": "Oversettere, tolker mv.",
+      "median2025": 53990,
+      "median2024": 53920
+    },
+    {
+      "code": "8183",
+      "name": "Pakke-, tappe- og etikettmaskinoperatører",
+      "median2025": 47980,
+      "median2024": 45140
+    },
+    {
+      "code": "4213",
+      "name": "Pantelånere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2423",
+      "name": "Personal- og karriererådgivere",
+      "median2025": 66480,
+      "median2024": 63290
+    },
+    {
+      "code": "4416",
+      "name": "Personalkontormedarbeidere",
+      "median2025": 58730,
+      "median2024": 55600
+    },
+    {
+      "code": "1212",
+      "name": "Personalsjefer",
+      "median2025": 96670,
+      "median2024": 89510
+    },
+    {
+      "code": "6130",
+      "name": "Plante- og husdyrprodusenter (kombinasjonsbruk)",
+      "median2025": 38100,
+      "median2024": 35720
+    },
+    {
+      "code": "7214",
+      "name": "Platearbeidere",
+      "median2025": 48950,
+      "median2024": 46710
+    },
+    {
+      "code": "3355",
+      "name": "Politibetjenter mv.",
+      "median2025": 63920,
+      "median2024": 61320
+    },
+    {
+      "code": "1111",
+      "name": "Politikere",
+      "median2025": 88680,
+      "median2024": 84410
+    },
+    {
+      "code": "4412",
+      "name": "Postbud og postsorterere",
+      "median2025": 45060,
+      "median2024": 43490
+    },
+    {
+      "code": "1222",
+      "name": "PR- og informasjonssjefer",
+      "median2025": 83130,
+      "median2024": 78210
+    },
+    {
+      "code": "7311",
+      "name": "Presisjonsinstrumentmakere og -reparatører",
+      "median2025": 55430,
+      "median2024": 53580
+    },
+    {
+      "code": "3411",
+      "name": "Privatetterforskere mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2163",
+      "name": "Produkt- og klesdesignere",
+      "median2025": 62670,
+      "median2024": 59580
+    },
+    {
+      "code": "7543",
+      "name": "Produkttestere (ikke matprodukter)",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2656",
+      "name": "Programledere i TV og radio",
+      "median2025": 72900,
+      "median2024": 67400
+    },
+    {
+      "code": "2512",
+      "name": "Programvareutviklere",
+      "median2025": 77420,
+      "median2024": 72500
+    },
+    {
+      "code": "8112",
+      "name": "Prosessoperatører (oppredning)",
+      "median2025": 66190,
+      "median2024": 62570
+    },
+    {
+      "code": "3214",
+      "name": "Protese- og tannteknikere",
+      "median2025": 57630,
+      "median2024": 54610
+    },
+    {
+      "code": "7515",
+      "name": "Prøvesmakere og kvalitetsbedømmere av mat og drikke",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "2634",
+      "name": "Psykologer",
+      "median2025": 66270,
+      "median2024": 63660
+    },
+    {
+      "code": "2424",
+      "name": "Rådgivere innen kompetanseutvikling",
+      "median2025": 65280,
+      "median2024": 62950
+    },
+    {
+      "code": "2635",
+      "name": "Rådgivere innen sosiale fagfelt",
+      "median2025": 56000,
+      "median2024": 53550
+    },
+    {
+      "code": "2633",
+      "name": "Rådgivere/forskere, humanistiske fag",
+      "median2025": 58380,
+      "median2024": 55620
+    },
+    {
+      "code": "2631",
+      "name": "Rådgivere/forskere, samfunnsøkonomi",
+      "median2025": 71120,
+      "median2024": 68540
+    },
+    {
+      "code": "2632",
+      "name": "Rådgivere/forskere, samfunnsvitenskap",
+      "median2025": 68360,
+      "median2024": 65920
+    },
+    {
+      "code": "3211",
+      "name": "Radiografer mv.",
+      "median2025": 58080,
+      "median2024": 55970
+    },
+    {
+      "code": "2654",
+      "name": "Regissører",
+      "median2025": 62500,
+      "median2024": 59760
+    },
+    {
+      "code": "3313",
+      "name": "Regnskapsførere",
+      "median2025": 61500,
+      "median2024": 58610
+    },
+    {
+      "code": "4311",
+      "name": "Regnskapsmedarbeidere",
+      "median2025": 55290,
+      "median2024": 53280
+    },
+    {
+      "code": "4221",
+      "name": "Reisebyråmedarbeidere mv.",
+      "median2025": 47120,
+      "median2024": 45350
+    },
+    {
+      "code": "5113",
+      "name": "Reiseledere og guider",
+      "median2025": 42220,
+      "median2024": 39500
+    },
+    {
+      "code": "2431",
+      "name": "Reklame- og markedsføringsrådgivere",
+      "median2025": 60800,
+      "median2024": 58330
+    },
+    {
+      "code": "9510",
+      "name": "Reklamedistributører mv.",
+      "median2025": 44040,
+      "median2024": 42220
+    },
+    {
+      "code": "3413",
+      "name": "Religiøse yrker",
+      "median2025": 51110,
+      "median2024": 48500
+    },
+    {
+      "code": "9112",
+      "name": "Renholdere i bedrifter",
+      "median2025": 41180,
+      "median2024": 39580
+    },
+    {
+      "code": "9111",
+      "name": "Renholdere i private hjem",
+      "median2025": 38970,
+      "median2024": 36950
+    },
+    {
+      "code": "5151",
+      "name": "Renholdsledere i bedrifter",
+      "median2025": 47600,
+      "median2024": 45860
+    },
+    {
+      "code": "9611",
+      "name": "Renovasjonsarbeidere",
+      "median2025": 46420,
+      "median2024": 44390
+    },
+    {
+      "code": "8157",
+      "name": "Renseri- og vaskerimaskinoperatører",
+      "median2025": 41420,
+      "median2024": 39930
+    },
+    {
+      "code": "4226",
+      "name": "Resepsjonister (ekskl. hotell)",
+      "median2025": 47500,
+      "median2024": 45370
+    },
+    {
+      "code": "3213",
+      "name": "Reseptarer",
+      "median2025": 53260,
+      "median2024": 51110
+    },
+    {
+      "code": "1412",
+      "name": "Restaurantsjefer",
+      "median2025": 50770,
+      "median2024": 48710
+    },
+    {
+      "code": "2411",
+      "name": "Revisorer, regnskapsrådgivere",
+      "median2025": 72300,
+      "median2024": 69020
+    },
+    {
+      "code": "7215",
+      "name": "Riggere og spleisere",
+      "median2025": 56450,
+      "median2024": 55060
+    },
+    {
+      "code": "7126",
+      "name": "Rørleggere og VVS-montører",
+      "median2025": 53750,
+      "median2024": 51930
+    },
+    {
+      "code": "7514",
+      "name": "Saftere, syltere mv. (gårdsproduksjon)",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3354",
+      "name": "Saksbehandlere for førerkort, importlisenser mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3353",
+      "name": "Saksbehandlere innen sosiale ytelser",
+      "median2025": 50060,
+      "median2024": 47860
+    },
+    {
+      "code": "1221",
+      "name": "Salgs- og markedssjefer",
+      "median2025": 89170,
+      "median2024": 85000
+    },
+    {
+      "code": "2434",
+      "name": "Salgskonsulenter innen IKT-produkter",
+      "median2025": 73790,
+      "median2024": 70800
+    },
+    {
+      "code": "2433",
+      "name": "Salgskonsulenter innen tekniske og medisinske produkter",
+      "median2025": 76120,
+      "median2024": 73510
+    },
+    {
+      "code": "3322",
+      "name": "Selgere (engros)",
+      "median2025": 64890,
+      "median2024": 62020
+    },
+    {
+      "code": "4223",
+      "name": "Sentralbordoperatører",
+      "median2025": 46600,
+      "median2024": 44430
+    },
+    {
+      "code": "7421",
+      "name": "Serviceelektronikere",
+      "median2025": 53570,
+      "median2024": 49040
+    },
+    {
+      "code": "5245",
+      "name": "Servicemedarbeidere (bensinstasjon)",
+      "median2025": 39670,
+      "median2024": 38060
+    },
+    {
+      "code": "5131",
+      "name": "Servitører",
+      "median2025": 37350,
+      "median2024": 35720
+    },
+    {
+      "code": "2529",
+      "name": "Sikkerhetsanalytikere mv.",
+      "median2025": 78010,
+      "median2024": 76640
+    },
+    {
+      "code": "2132",
+      "name": "Sivilagronomer mv.",
+      "median2025": 61830,
+      "median2024": 61140
+    },
+    {
+      "code": "2161",
+      "name": "Sivilarkitekter",
+      "median2025": 75010,
+      "median2024": 72080
+    },
+    {
+      "code": "2142",
+      "name": "Sivilingeniører (bygg og anlegg)",
+      "median2025": 75990,
+      "median2024": 72390
+    },
+    {
+      "code": "2152",
+      "name": "Sivilingeniører (elektronikk)",
+      "median2025": 83330,
+      "median2024": 78830
+    },
+    {
+      "code": "2151",
+      "name": "Sivilingeniører (elkraftteknikk)",
+      "median2025": 84580,
+      "median2024": 80890
+    },
+    {
+      "code": "2146",
+      "name": "Sivilingeniører (geofag, petro-leumsteknologi, metallurgi mv.)",
+      "median2025": 98500,
+      "median2024": 95410
+    },
+    {
+      "code": "2141",
+      "name": "Sivilingeniører (industri og produksjon)",
+      "median2025": 68690,
+      "median2024": 64790
+    },
+    {
+      "code": "2145",
+      "name": "Sivilingeniører (kjemi)",
+      "median2025": 72440,
+      "median2024": 69500
+    },
+    {
+      "code": "2144",
+      "name": "Sivilingeniører (maskin- og marin-teknikk)",
+      "median2025": 87200,
+      "median2024": 81260
+    },
+    {
+      "code": "2143",
+      "name": "Sivilingeniører (miljøteknikk)",
+      "median2025": 78690,
+      "median2024": 69300
+    },
+    {
+      "code": "2153",
+      "name": "Sivilingeniører (telekommunikasjon)",
+      "median2025": 81100,
+      "median2024": 74870
+    },
+    {
+      "code": "3434",
+      "name": "Sjefskokker",
+      "median2025": 47850,
+      "median2024": 45070
+    },
+    {
+      "code": "3343",
+      "name": "Sjefssekretærer",
+      "median2025": 56200,
+      "median2024": 53940
+    },
+    {
+      "code": "3352",
+      "name": "Skattefunksjonærer",
+      "median2025": 51640,
+      "median2024": 48680
+    },
+    {
+      "code": "8312",
+      "name": "Skiftekonduktører mv",
+      "median2025": null,
+      "median2024": 59500
+    },
+    {
+      "code": "7535",
+      "name": "Skinnberedere og garvere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3151",
+      "name": "Skipsmaskinister",
+      "median2025": 81310,
+      "median2024": 77250
+    },
+    {
+      "code": "6210",
+      "name": "Skogbrukere",
+      "median2025": 43090,
+      "median2024": 40590
+    },
+    {
+      "code": "3143",
+      "name": "Skogteknikere",
+      "median2025": 60230,
+      "median2024": 56670
+    },
+    {
+      "code": "5312",
+      "name": "Skoleassistenter",
+      "median2025": 39510,
+      "median2024": 37900
+    },
+    {
+      "code": "7536",
+      "name": "Skomakere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "7531",
+      "name": "Skreddere, buntmakere mv.",
+      "median2025": 49250,
+      "median2024": 46740
+    },
+    {
+      "code": "2655",
+      "name": "Skuespillere",
+      "median2025": 53840,
+      "median2024": 52230
+    },
+    {
+      "code": "2651",
+      "name": "Skulptører, kunstmalere og andre billedkunstnere",
+      "median2025": 50510,
+      "median2024": 49910
+    },
+    {
+      "code": "7542",
+      "name": "Skytebaser og sprengningsarbeidere",
+      "median2025": 67160,
+      "median2024": 66780
+    },
+    {
+      "code": "7511",
+      "name": "Slaktere, fiskehandlere mv.",
+      "median2025": 44650,
+      "median2024": 41820
+    },
+    {
+      "code": "7221",
+      "name": "Smeder",
+      "median2025": 49010,
+      "median2024": 46800
+    },
+    {
+      "code": "3331",
+      "name": "Speditører og befraktere",
+      "median2025": 56320,
+      "median2024": 53660
+    },
+    {
+      "code": "2351",
+      "name": "Spesialister i pedagogikk",
+      "median2025": 65980,
+      "median2024": 64170
+    },
+    {
+      "code": "2352",
+      "name": "Spesiallærere / spesialpedagoger",
+      "median2025": 56610,
+      "median2024": 54530
+    },
+    {
+      "code": "2221",
+      "name": "Spesialsykepleiere",
+      "median2025": 63810,
+      "median2024": 62090
+    },
+    {
+      "code": "8151",
+      "name": "Spinne- og nøstemaskinoperatører",
+      "median2025": 45210,
+      "median2024": 42130
+    },
+    {
+      "code": "3423",
+      "name": "Sports- og aktivitetsinstruktører",
+      "median2025": 44170,
+      "median2024": 41390
+    },
+    {
+      "code": "1431",
+      "name": "Sports-, rekreasjons- og kultursenterledere",
+      "median2025": 62500,
+      "median2024": 59760
+    },
+    {
+      "code": "7113",
+      "name": "Steinhoggere mv.",
+      "median2025": 50000,
+      "median2024": 48460
+    },
+    {
+      "code": "4131",
+      "name": "Stenografer mv.",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "7211",
+      "name": "Støpere",
+      "median2025": 46570,
+      "median2024": 45590
+    },
+    {
+      "code": "1213",
+      "name": "Strategi- og planleggingssjefer",
+      "median2025": 85560,
+      "median2024": 80830
+    },
+    {
+      "code": "7212",
+      "name": "Sveisere",
+      "median2025": 50500,
+      "median2024": 47640
+    },
+    {
+      "code": "2223",
+      "name": "Sykepleiere",
+      "median2025": 57830,
+      "median2024": 56150
+    },
+    {
+      "code": "7234",
+      "name": "Sykkelreparatører mv.",
+      "median2025": 35640,
+      "median2024": 35720
+    },
+    {
+      "code": "2522",
+      "name": "Systemadministratorer",
+      "median2025": 66240,
+      "median2024": 62910
+    },
+    {
+      "code": "2511",
+      "name": "Systemanalytikere/-arkitekter",
+      "median2025": 76330,
+      "median2024": 73340
+    },
+    {
+      "code": "3315",
+      "name": "Takstmenn",
+      "median2025": 59330,
+      "median2024": 57490
+    },
+    {
+      "code": "7121",
+      "name": "Taktekkere",
+      "median2025": 49560,
+      "median2024": 47890
+    },
+    {
+      "code": "2261",
+      "name": "Tannleger",
+      "median2025": 75000,
+      "median2024": 71000
+    },
+    {
+      "code": "3251",
+      "name": "Tannpleiere",
+      "median2025": 51460,
+      "median2024": 49430
+    },
+    {
+      "code": "3155",
+      "name": "Teknikere innen luftfartssikkerhet",
+      "median2025": 87240,
+      "median2024": 76500
+    },
+    {
+      "code": "3521",
+      "name": "Teknikere innen radio og tv",
+      "median2025": 57920,
+      "median2024": 55530
+    },
+    {
+      "code": "3522",
+      "name": "Teknikere innen telekom",
+      "median2025": 47170,
+      "median2024": 47330
+    },
+    {
+      "code": "3433",
+      "name": "Tekniske konservatorer",
+      "median2025": 53800,
+      "median2024": 51610
+    },
+    {
+      "code": "3118",
+      "name": "Tekniske tegnere",
+      "median2025": 62500,
+      "median2024": 60090
+    },
+    {
+      "code": "7422",
+      "name": "Tele- og IKT-installatører",
+      "median2025": 48590,
+      "median2024": 46270
+    },
+    {
+      "code": "5244",
+      "name": "Telefon- og nettselgere",
+      "median2025": 47440,
+      "median2024": 45140
+    },
+    {
+      "code": "3351",
+      "name": "Tollere",
+      "median2025": 53680,
+      "median2024": 51290
+    },
+    {
+      "code": "7115",
+      "name": "Tømrere og snekkere",
+      "median2025": 47900,
+      "median2024": 45630
+    },
+    {
+      "code": "1114",
+      "name": "Toppledere i interesseorganisasjoner",
+      "median2025": 75250,
+      "median2024": 71440
+    },
+    {
+      "code": "1112",
+      "name": "Toppledere i offentlig administrasjon",
+      "median2025": 119520,
+      "median2024": 113330
+    },
+    {
+      "code": "5211",
+      "name": "Torghandlere",
+      "median2025": 62500,
+      "median2024": 58330
+    },
+    {
+      "code": "4323",
+      "name": "Transportfunksjonærer",
+      "median2025": 55230,
+      "median2024": 53610
+    },
+    {
+      "code": "3422",
+      "name": "Trenere og idrettsdommere",
+      "median2025": 47000,
+      "median2024": 44990
+    },
+    {
+      "code": "8344",
+      "name": "Truckførere",
+      "median2025": 46520,
+      "median2024": 44720
+    },
+    {
+      "code": "7322",
+      "name": "Trykkere",
+      "median2025": 46730,
+      "median2024": 45000
+    },
+    {
+      "code": "2310",
+      "name": "Universitets- og høyskolelektorer/-lærere",
+      "median2025": 62740,
+      "median2024": 59070
+    },
+    {
+      "code": "0000",
+      "name": "Uoppgitt / yrker som ikke kan identifiseres",
+      "median2025": 42820,
+      "median2024": 44080
+    },
+    {
+      "code": "5153",
+      "name": "Vaktmestre",
+      "median2025": 48190,
+      "median2024": 46280
+    },
+    {
+      "code": "1420",
+      "name": "Varehandelssjefer",
+      "median2025": 55390,
+      "median2024": 53530
+    },
+    {
+      "code": "9334",
+      "name": "Varepåfyllere",
+      "median2025": 40590,
+      "median2024": 39620
+    },
+    {
+      "code": "5414",
+      "name": "Vektere",
+      "median2025": 43450,
+      "median2024": 41740
+    },
+    {
+      "code": "7222",
+      "name": "Verktøymaker, låsesmeder mv.",
+      "median2025": 52460,
+      "median2024": 49900
+    },
+    {
+      "code": "2224",
+      "name": "Vernepleiere",
+      "median2025": 57190,
+      "median2024": 55120
+    },
+    {
+      "code": "2250",
+      "name": "Veterinærer",
+      "median2025": 66270,
+      "median2024": 62080
+    },
+    {
+      "code": "7318",
+      "name": "Vevere, strikkere mv. (innen husflidsproduksjon)",
+      "median2025": 41310,
+      "median2024": 40000
+    },
+    {
+      "code": "9123",
+      "name": "Vinduspussere",
+      "median2025": null,
+      "median2024": null
+    },
+    {
+      "code": "3230",
+      "name": "Yrker innen alternativ medisin",
+      "median2025": 55000,
+      "median2024": 54270
+    },
+    {
+      "code": "7541",
+      "name": "Yrkesdykkere",
+      "median2025": 58250,
+      "median2024": 55210
+    },
+    {
+      "code": "2320",
+      "name": "Yrkesfaglærere",
+      "median2025": 56300,
+      "median2024": 54320
+    },
+    {
+      "code": "7513",
+      "name": "Ystere mv. (gårdsproduksjon)",
+      "median2025": null,
+      "median2024": null
+    }
+  ]
+}
