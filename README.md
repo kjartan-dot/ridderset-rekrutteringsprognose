@@ -1,40 +1,55 @@
 # Ridderset Rekrutteringsinnsikt
 
-Utviklingsprosjekt for et datadrevet og faglig etterprøvbart rekrutteringsverktøy på https://ridderset.no/rekrutteringsprognose/.
+Interaktivt beslutningsverktøy for arbeidsgivere. Målet er å kartlegge markedet og arbeidsgivers forutsetninger, og foreslå tiltak uten falsk presisjon.
 
-**Status 12. november 2026:** Dette repoet inneholder en kravspesifikasjon og eksisterende WordPress-kildekode. Det er ennå ikke en ferdig app, NAV-integrasjon eller validert statistisk prognose. Produksjonssiden skal ikke endres uten separat godkjenning.
+## Status: fungerende grunnstruktur i utviklingsgren, IKKE produksjon
 
-## Slik kommer du i gang i Codex
+**Utviklingsgren:** feature/mvp-beslutningsstudio. **Produksjonsnettsiden er ikke endret.**
 
-1. Åpne GitHub-repoet kjartan-dot/ridderset-rekrutteringsprognose i Codex.
-2. Les AGENTS.md. Den inneholder hele bestillingen, datakilder, foreslått arkitektur og akseptansekriterier.
-3. Les legacy/wordpress-page-2124.html. Dette er faktisk eldre WordPress-kode, ikke et fungerende prosjekt.
-4. Bruk oppdragsteksten nedenfor.
+Prosjektet inneholder kildekode for et WordPress-plugin, en mobiltilpasset frontend, 407 historiske STYRK08-yrker, Worklife-egenvurdering, serverbasert bedriftsoppslag og rapport. Koden er ikke satt opp på WordPress staging eller testet med levende Brreg-data i WordPress ennå. NAV stilling-feed er ikke tilkoblet. SSB 11418-datasettet er foreløpig en tydelig merket historisk kopi, ikke live.
 
-### Kopier denne bestillingen til Codex
+## Lokal oppstart
 
-> Les AGENTS.md og legacy/wordpress-page-2124.html. Gjennomfør fase 0 og fase 1 som en faktisk fungerende, testbar lokal applikasjon. Start med teknisk kartlegging og prioritering. Sett opp TypeScript-frontend, serverbaserte adaptere for Brønnøysundregistrene og SSB, støtte for tilgjengelige NAV-statistikkilder, yrkessøk, Worklife-egenvurdering, HR-kapasitet og en nedlastbar beslutningsrapport. Bygg Playwright-tester for mobil og PC, inkludert feilsituasjoner og søk. Skill live API-data, snapshots, simulerte testdata og antakelser. Ikke skriv til ridderset.no eller publiser i produksjon. Lever kode, tester, kjøreinstruksjoner, datakilderegister, metodebeskrivelse og stagingplan.
+1. Installer Node.js 20+.
+2. Kjør npm install.
+3. Kjør npm run dev, og åpne http://localhost:4173.
+4. Søk etter DEMO. Opplysningene er fiktive TESTDATA, ikke en reell virksomhet.
+5. Kjør npm run check:syntax og npm run test:unit.
+6. Kjør npx playwright install chromium og npm run test:e2e.
 
-## Prioriterte milepæler
+Om du vil prøve et reelt Brreg-oppslag i lokal utvikling, sett miljøvariabelen MOCK_API=0 når du starter npm run dev. Da brukes fortsatt en lokal proxy. Ikke bland dette med verifisert produksjonsintegrasjon.
 
-| Fase | Leveranse | Akseptanse |
-| --- | --- | --- |
-| 0 | Kartlegging, kodeprosjekt og tester | Ingen endringer i publisert WordPress-side |
-| 1 | Virkende bedriftssøk, yrkessøk, SSB, Worklife og rapport | E2E-testet på mobil og PC |
-| 2 | NAV stilling-feed og søkbar annonsehistorikk | Godkjent tilgang, robust synkronisering og datakvalitet |
-| 3 | Flere regionale data og validert modell | Etterprøvd med faktiske rekrutteringsutfall |
+## Prosjektstruktur
 
-## Hvorfor egen kodebase?
+| Mappe/fil | Innhold |
+| --- | --- |
+| ridderset-rekrutteringsinnsikt.php | WordPress-plugin, shortcode og server-side REST-adapter for Brreg |
+| assets/template.html | HTML-mal, bare statisk struktur |
+| assets/style.css | Responsivt Ridderset-design |
+| assets/app.js | Nettleserinteraksjon: bedrift, yrke, Worklife og rapport |
+| src/core.mjs | Rene beregninger, synonymer, kildebevisst rapport |
+| data/occupations.json | 407 historiske STYRK08-grupper og SSB 2024/2025 snapshot |
+| scripts/dev-server.mjs | Lokal testserver med fiktive data som standard |
+| tests/unit og tests/e2e | Node-test og Playwright på mobil/PC |
+| docs | Arkitektur, metode, datakilder, stagingplan og tidligere kodegjennomgang |
+| legacy | Kopi av tidligere publiserte WordPress HTML-blokker, KUN REFERANSE |
 
-Den tidligere WordPress-modellen brukte lange HTML-blokker. WordPress erstattet av og til JavaScript-tegn med HTML-entiteter, som gjorde at blant annet yrkes- og bedriftsøket sluttet å virke. En versjonsstyrt frontend/backend med tester og egne JS/CSS-filer er derfor nødvendig.
+## Installering på WordPress staging
 
-## Offentlige kilder
+Følg docs/staging-release.md. Plugin-mappen må inneholde PHP-filen, assets, src og data. Bruk kortkoden [ridderset_rekrutteringsinnsikt]. Ingen JavaScript skal limes inn i WordPress HTML-blokk. Test alle funksjoner på staging før publisering.
 
-- Brønnøysundregistrenes API: https://data.brreg.no/enhetsregisteret/api/dokumentasjon/no/index.html
-- SSB PxWeb API: https://www.ssb.no/api/pxwebapiv2
-- NAV stilling-feed: https://navikt.github.io/pam-stilling-feed/
-- NAV stillingsstatistikk: https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger
+## Status for datakilder
 
-**Sikkerhet:** Dette repoet er offentlig. Ikke publiser hemmeligheter, API-tokens, private kundedata eller kandidatopplysninger.
+- Brønnøysundregistrene: serveradapter implementert, oppsett på staging og faktisk live-søk gjenstår.
+- SSB 11418: historisk kopi (2024 og 2025), ikke ny API-synkronisering.
+- NAV: ingen live feed eller yrkesvise annonser ennå.
+- Worklife: kun arbeidsgiverens selvrapportering, ikke medarbeider-/kandidatundersøkelse.
+- Kartverket, SSB pendling, utdanning, HK-dir, NHO, KS og regnskapsdata: evaluert som fremtidige kilder, ikke integrert.
 
-**Faglig grense:** Arbeidsgivers egenvurderte Worklife-score er ikke en dokumentert medarbeidermåling eller statistisk validert prognose.
+## Sikkerhet og metode
+
+Repoet er offentlig. Ingen tokens eller personopplysninger skal legges inn. Fiktive testbedrifter må aldri presenteres som faktiske oppslag. Registrerte ansatte er ikke årsverk. Egenvurderte Worklife-scorer er ikke dokumenterte mål. Ingen rekrutteringssannsynlighet eller ansettelsestid vises uten kalibrerte utfallsdata.
+
+Les AGENTS.md for produktmål og docs/data-source-registry.md for full kildevurdering.
+
+**Ikke slå sammen til main eller deploy før testene er gjennomført og løsningen er kontrollert på staging.**
