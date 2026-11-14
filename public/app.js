@@ -19,7 +19,7 @@ $('download').addEventListener('click',()=>{const report=reportText(collect());t
 
 // Auto suggestions retain explicit selection; typing is never confirmation.
 let companyTimer,occupationTimer;
-$('company-query').addEventListener('input',()=>{clearTimeout(companyTimer);companyRequest++;$('company-results').replaceChildren();if($('company-query').value.trim().length>=2)companyTimer=setTimeout(()=>$('company-search').requestSubmit(),450);});
+$('company-query').addEventListener('input',()=>{clearTimeout(companyTimer);companyRequest++;state.company=null;$('company-selected').hidden=true;update();$('company-results').replaceChildren();if($('company-query').value.trim().length>=2)companyTimer=setTimeout(()=>$('company-search').requestSubmit(),450);});
 $('company-kind').addEventListener('change',()=>{if($('company-query').value.trim().length>=2)$('company-search').requestSubmit();});
-$('role-title').addEventListener('input',()=>{clearTimeout(occupationTimer);occupationRequest++;$('occupation-query').value=$('role-title').value;if($('role-title').value.trim().length>=2)occupationTimer=setTimeout(()=>$('occupation-search').requestSubmit(),450);});
+$('role-title').addEventListener('input',()=>{clearTimeout(occupationTimer);occupationRequest++;salaryRequest++;state.occupation=null;state.salary=null;text('occupation-selected','');text('salary-status','Bekreft yrkesgruppe for den nye stillingen.');$('salary-source').hidden=true;$('occupation-results').replaceChildren();update();$('occupation-query').value=$('role-title').value;if($('role-title').value.trim().length>=2)occupationTimer=setTimeout(()=>$('occupation-search').requestSubmit(),450);});
 update();

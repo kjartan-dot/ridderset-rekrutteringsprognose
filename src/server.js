@@ -29,4 +29,4 @@ export function makeServer(){return http.createServer(async(req,res)=>{
  json(404,{error:'Fant ikke siden'});
  }catch{json(503,{error:'Datakilden er utilgjengelig eller returnerte uventede data. Prøv igjen senere. Bedriften kan registreres manuelt.'});}
  });}
-if(process.argv[1]===fileURLToPath(import.meta.url))makeServer().listen(Number(process.env.PORT??3100),'127.0.0.1',()=>console.log('Testversjon: http://127.0.0.1:3100'));
+if(process.argv[1]===fileURLToPath(import.meta.url))makeServer().listen(Number(process.env.PORT??(process.argv.includes('--port')?process.argv[process.argv.indexOf('--port')+1]:3100)),process.env.HOST??'127.0.0.1',()=>console.log('Testversjon: http://127.0.0.1:3100'));
