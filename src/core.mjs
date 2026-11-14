@@ -147,7 +147,7 @@ export function buildReport(state) {
     "Tilbudt månedslønn: "+money(offer),
     "Avvik fra nasjonal median: "+(comparison===null?"Ikke beregnbart":percentage(comparison)),
     "Kilde: SSB tabell 11418, historisk datasnapshot. Ikke oppdatert live i denne versjonen.",
-    "Aktive yrkesvise stillingsannonser: Ikke integrert, ikke 0.",
+    "NAV stilling-feed / aktive yrkesvise stillingsannonser: Ikke integrert, ikke 0.",
     "",
     "WORKLIFE OG KAPASITET",
     "Egenvurdert Brand (kun fullstendig besvart): "+(worklife?.brand===null||worklife?.brand===undefined?"Ikke fullført":worklife.brand+"/100"),
