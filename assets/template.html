@@ -1,0 +1,106 @@
+
+<div class="rr-insight">
+ <header class="rr-hero">
+  <div class="rr-eyebrow"><span class="rr-dot"></span> RIDDERSET · BESLUTNINGSSTUDIO</div>
+  <div class="rr-hero-grid">
+    <div><h1>Hvor krevende blir det å <em>rekruttere?</em></h1><p>Finn arbeidsgiver og yrke, undersøk faktiske markedssignaler og vurder egne forutsetninger. Få en konkret plan for å lykkes.</p></div>
+    <div class="rr-hero-side"><span>METODEN</span><strong>Markedet.<br>Arbeidsgiveren.<br>Beslutningen.</strong><small>Uten oppdiktede prognoser.</small></div>
+  </div>
+  <nav class="rr-steps" aria-label="Deler av vurderingen">
+    <a href="#rr-company-section">01 <span>Virksomhet</span></a>
+    <a href="#rr-role-section">02 <span>Stilling</span></a>
+    <a href="#rr-worklife-section">03 <span>Worklife</span></a>
+    <a href="#rr-report-section">04 <span>Beslutning</span></a>
+  </nav>
+ </header>
+ <div class="rr-body">
+  <div id="rr-notice" class="rr-notice rr-info" role="status">Laster yrkesgrupper …</div>
+  <div class="rr-main-grid">
+   <div class="rr-inputs">
+    <section id="rr-company-section" class="rr-card" aria-labelledby="rr-company-title">
+     <div class="rr-section-kicker">01 / VIRKSOMHETEN</div>
+     <h2 id="rr-company-title">Hvem skal rekruttere?</h2>
+     <p class="rr-help">Søk i Brønnøysundregistrenes Enhetsregister. Velg hovedenhet eller underenhet. Bekreft deretter hvilket sted den nye medarbeideren skal arbeide.</p>
+     <div class="rr-field">
+      <label for="rr-company-query">Bedriftsnavn eller organisasjonsnummer</label>
+      <div class="rr-search-row"><input id="rr-company-query" type="search" autocomplete="off" placeholder="F.eks. Nordlaks eller organisasjonsnummer"><button id="rr-company-search" type="button" class="rr-primary">Søk</button></div>
+      <label class="rr-check"><input id="rr-search-units" type="checkbox"> Søk etter arbeidssted / underenhet</label>
+      <div id="rr-company-status" class="rr-status" role="status">Skriv minst to tegn for å søke.</div>
+      <div id="rr-company-results" class="rr-suggestions" aria-label="Bedriftsresultater" hidden></div>
+     </div>
+     <div id="rr-company-chosen" class="rr-selected" hidden><div><span class="rr-mini">VALGT VIRKSOMHET</span><strong id="rr-company-name"></strong><small id="rr-company-meta"></small></div><button type="button" class="rr-secondary" id="rr-company-clear">Bytt</button></div>
+     <div id="rr-unit-zone" class="rr-field" hidden><label for="rr-unit-select">Velg arbeidssted / underenhet</label><select id="rr-unit-select"></select><p id="rr-units-note" class="rr-hint"></p></div>
+     <details class="rr-manual">
+       <summary>Får du ikke treff? Registrer virksomheten manuelt</summary>
+       <div class="rr-form-grid">
+        <div class="rr-field"><label for="rr-manual-name">Virksomhetens navn</label><input id="rr-manual-name" placeholder="Navn"></div>
+        <div class="rr-field"><label for="rr-manual-org">Organisasjonsnummer (valgfritt)</label><input id="rr-manual-org" inputmode="numeric" maxlength="11" placeholder="9 siffer"></div>
+        <div class="rr-field"><label for="rr-manual-industry">Bransje</label><input id="rr-manual-industry" placeholder="F.eks. havbruk"></div>
+        <div class="rr-field"><label for="rr-manual-location">Arbeidssted / kommune</label><input id="rr-manual-location" placeholder="F.eks. Sortland"></div>
+        <div class="rr-field"><label for="rr-manual-employees">Antall ansatte (valgfritt)</label><input id="rr-manual-employees" type="number" min="0" step="1"></div>
+       </div>
+       <button id="rr-manual-save" type="button" class="rr-primary">Bruk opplysningene</button>
+       <p class="rr-hint">Manuelle opplysninger er egenrapporterte. De blir ikke presentert som registerdata.</p>
+     </details>
+    </section>
+    <section id="rr-role-section" class="rr-card" aria-labelledby="rr-role-title">
+      <div class="rr-section-kicker">02 / STILLINGEN</div><h2 id="rr-role-title">Hvilken kompetanse trenger dere?</h2>
+      <p class="rr-help">Søk etter vanlig stillingstittel og velg riktig STYRK08-yrke. Yrkesgrupper må ikke forveksles med aktive stillingsannonser.</p>
+      <div class="rr-field"><label for="rr-job-query">Stillingstittel eller fagområde</label>
+       <input id="rr-job-query" type="search" autocomplete="off" placeholder="Salgsjef, tømrer, elektriker …">
+       <div id="rr-job-results" class="rr-suggestions" aria-label="Yrkesgrupper" hidden></div>
+       <p id="rr-job-status" class="rr-hint">Søk i 407 yrkesgrupper.</p>
+      </div>
+      <div id="rr-job-chosen" class="rr-selected" hidden><div><span class="rr-mini">VALGT YRKESGRUPPE</span><strong id="rr-job-name"></strong><small id="rr-job-code"></small></div><button id="rr-job-clear" type="button" class="rr-secondary">Bytt</button></div>
+      <div class="rr-form-grid">
+       <div class="rr-field"><label for="rr-location">Faktisk arbeidssted / kommune</label><input id="rr-location" placeholder="F.eks. Harstad"><small>Kan være et annet sted enn bedriftens registrerte adresse.</small></div>
+       <div class="rr-field"><label for="rr-region">Fylke</label><select id="rr-region"><option value="">Velg fylke</option><option value="18">Nordland</option><option value="55">Troms</option><option value="56">Finnmark</option><option value="other">Andre fylker</option></select></div>
+       <div class="rr-field"><label for="rr-positions">Antall personer som skal ansettes</label><input id="rr-positions" type="number" min="1" max="100" step="1" value="1"></div>
+       <div class="rr-field"><label for="rr-offer">Tilbudt månedslønn, kr (valgfritt)</label><input id="rr-offer" type="number" min="0" step="1000" placeholder="F.eks. 65 000"></div>
+      </div>
+    </section>
+    <section id="rr-worklife-section" class="rr-card" aria-labelledby="rr-worklife-title">
+      <div class="rr-section-kicker">03 / WORKLIFE</div><h2 id="rr-worklife-title">Hvor sterk er dere som arbeidsgiver?</h2>
+      <p class="rr-help">Dette er arbeidsgiverens <strong>egenvurdering</strong>, ikke en målt Worklife Index eller uavhengig kandidatundersøkelse. Dra i søylene for å vurdere forholdene.</p>
+      <div class="rr-score-preview"><div><small>BRAND · UTSIDEN</small><strong id="rr-brand-inline">Ikke vurdert</strong></div><div><small>INDEX · INNSIDEN</small><strong id="rr-index-inline">Ikke vurdert</strong></div></div>
+      <h3 class="rr-subheading">Worklife Brand · oppfatningen utad</h3>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-reputation">Omdømme i kandidatmarkedet</label><output id="rr-out-reputation" for="rr-dim-reputation">Ikke besvart</output></div><p>Hvor attraktiv tror dere arbeidsplassen oppfattes av relevante kandidater?</p><input id="rr-dim-reputation" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-visibility">Synlighet og troverdighet</label><output id="rr-out-visibility" for="rr-dim-visibility">Ikke besvart</output></div><p>Finner kandidaten et troverdig bilde av arbeidsmiljø og muligheter?</p><input id="rr-dim-visibility" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <h3 class="rr-subheading">Worklife Index · arbeidslivet på innsiden</h3>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-promise">Løfter som innfris</label><output id="rr-out-promise" for="rr-dim-promise">Ikke besvart</output></div><p>Stemmer jobb, kultur og muligheter med forventningene fra rekrutteringen?</p><input id="rr-dim-promise" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-onboarding">Oppstart og integrering</label><output id="rr-out-onboarding" for="rr-dim-onboarding">Ikke besvart</output></div><p>Får nyansatte støtte, plan og tydelige milepæler?</p><input id="rr-dim-onboarding" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-development">Utvikling og mestring</label><output id="rr-out-development" for="rr-dim-development">Ikke besvart</output></div><p>Får medarbeiderne utvikle kompetansen sin og se en fremtid hos dere?</p><input id="rr-dim-development" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <div class="rr-slider"><div class="rr-slider-top"><label for="rr-dim-leadership">Ledelse og oppfølging</label><output id="rr-out-leadership" for="rr-dim-leadership">Ikke besvart</output></div><p>Gir lederne tilbakemelding, anerkjennelse og tydelig retning?</p><input id="rr-dim-leadership" type="range" min="0" max="10" step="1" value="5"><div class="rr-slider-scale"><span>0 · Svakt</span><span>10 · Sterkt</span></div></div>
+      <div class="rr-field rr-hr"><label for="rr-hr">Hvem støtter rekrutteringen?</label><select id="rr-hr"><option value="unknown">Ikke avklart</option><option value="dedicated">Egen HR-avdeling eller dedikert HR</option><option value="shared">HR fordelt mellom leder og administrasjon</option><option value="external">Ekstern HR-partner</option><option value="both">Både intern HR og ekstern støtte</option><option value="none">Ingen etablert HR-støtte</option></select><p class="rr-hint">En egen HR-avdeling er ikke automatisk et kvalitetsstempel.</p></div>
+      <div class="rr-between"><span id="rr-answered" class="rr-hint">0 av 6 forhold vurdert.</span><button id="rr-reset" type="button" class="rr-text-button">Nullstill</button></div>
+    </section>
+   </div>
+   <aside class="rr-outputs" aria-label="Markedsinnsikt og vurdering">
+    <section class="rr-panel rr-market">
+      <div class="rr-section-kicker">ARBEIDSMARKEDET</div><h2>Hva vet vi?</h2>
+      <div class="rr-metric"><span>Nasjonal median månedslønn, 2025</span><strong id="rr-salary">Velg yrke</strong><small>SSB 11418 · historisk kopi, ikke live og ikke lokal lønn</small></div>
+      <div class="rr-metric"><span>Tilbudet mot nasjonal median</span><strong id="rr-salary-delta">Ikke beregnbart</strong><small>Avvik sier ikke alene om tilbudet er konkurransedyktig</small></div>
+      <div class="rr-metric"><span>Aktive annonser i yrket og fylket</span><strong>Ikke tilgjengelig</strong><small>NAV stilling-feed er ikke tilkoblet. Dette betyr ikke null annonser.</small></div>
+      <a class="rr-source" target="_blank" rel="noopener noreferrer" href="https://www.ssb.no/api/pxwebapiv2">Kilde: SSB Statistikkbanken</a>
+      <a class="rr-source" target="_blank" rel="noopener noreferrer" href="https://navikt.github.io/pam-stilling-feed/">NAV: dataintegrasjon planlagt</a>
+    </section>
+    <section class="rr-panel rr-dark">
+      <div class="rr-section-kicker">ARBEIDSGIVERENS EGENVURDERING</div><h2>Hva kan dere påvirke?</h2>
+      <div class="rr-two-scores"><div><span>WORKLIFE BRAND</span><strong id="rr-brand-score">–</strong><small>Antatt oppfatning utad</small></div><div><span>WORKLIFE INDEX</span><strong id="rr-index-score">–</strong><small>Oppgitt intern praksis</small></div></div>
+      <p id="rr-worklife-hint">Svar på spørsmålene for å få to foreløpige egenvurderinger.</p>
+      <div class="rr-score-divider"></div><span class="rr-subtle-label">HR-KAPASITET</span><p id="rr-hr-status">Ikke avklart</p>
+    </section>
+    <section id="rr-report-section" class="rr-panel rr-actions">
+      <div class="rr-section-kicker">04 / BESLUTNINGSGRUNNLAG</div><h2>Dette ville jeg gjort</h2>
+      <p class="rr-help">Prioriterte, forklarbare tiltak. Ikke en statistisk beregnet sannsynlighet for ansettelse.</p>
+      <ol id="rr-actions"><li>Velg virksomhet og yrke for å begynne.</li></ol>
+      <div class="rr-plan"><h3>Plan 30 / 60 / 90 dager</h3><div><b>30</b><p>Avklar krav, lønn, ansvar og kandidatmarked.</p></div><div><b>60</b><p>Evaluer respons og korriger søk og vilkår.</p></div><div><b>90</b><p>Oppsummer erfaringer og sikre nyansattes oppfølging.</p></div></div>
+      <div class="rr-actions-buttons"><button id="rr-download" type="button" class="rr-primary">Last ned beslutningsnotat</button><button id="rr-print" type="button" class="rr-secondary">Skriv ut / PDF</button></div>
+      <p id="rr-download-status" role="status" class="rr-hint"></p>
+    </section>
+    <div class="rr-caution"><strong>Det vi ikke vet ennå</strong><p>Modellen kan ikke dokumentere antall kvalifiserte søkere, lokalt lønnsnivå eller tid til ansettelse. Slike tall skal ikke fremstilles som beregnede.</p></div>
+   </aside>
+  </div>
+ </div>
+ <footer class="rr-footer"><span>RIDDERSET REKRUTTERINGSINNSIKT · UTVIKLINGSVERSJON</span><a href="https://ridderset.no/kontakt/">Drøft rekrutteringsbehovet med oss</a></footer>
+</div>
