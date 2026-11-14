@@ -1,0 +1,20 @@
+{
+  "name": "ridderset-rekrutteringsinnsikt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "WordPress plugin and isolated development harness for Ridderset recruitment decision support",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "test": "npm run test:unit",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "playwright test",
+    "check:syntax": "node --check assets/app.js && node --check src/core.mjs && node --check scripts/dev-server.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
