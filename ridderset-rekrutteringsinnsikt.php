@@ -46,12 +46,14 @@ final class Ridderset_Rekrutteringsinnsikt {
         $config = [
             'apiBase' => esc_url_raw(rest_url('ridderset/v1/')),
             'occupationsUrl' => esc_url_raw(plugin_dir_url(__FILE__) . 'data/occupations.json'),
+            'templateUrl' => esc_url_raw(plugin_dir_url(__FILE__) . 'assets/template.html'),
             'mode' => 'live',
         ];
         $attributes = sprintf(
-            ' data-api-base="%s" data-occupations-url="%s" data-mode="%s"',
+            ' data-api-base="%s" data-occupations-url="%s" data-template-url="%s" data-mode="%s"',
             esc_attr($config['apiBase']),
             esc_attr($config['occupationsUrl']),
+            esc_attr($config['templateUrl']),
             esc_attr($config['mode'])
         );
         return '<div class="rr-insight-root"' . $attributes . '>'
