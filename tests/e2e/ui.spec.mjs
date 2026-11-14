@@ -63,7 +63,7 @@ test("manual company entry remains possible after no matches",async({page})=>{
   await page.locator("#rr-manual-save").click();
   await expect(page.locator("#rr-company-name")).toHaveText("MANUELT EKSEMPEL AS");
   await expect(page.locator("#rr-company-meta")).toContainText("Egenrapportert");
-  await expect(page.locator("#rr-company-meta")).toContainText("0 registrerte ansatte");
+  await expect(page.locator("#rr-company-meta")).toContainText("0 ansatte (egenoppgitt)");
 });
 
 test("Worklife sliders show results only after responses and update HR separately",async({page})=>{
