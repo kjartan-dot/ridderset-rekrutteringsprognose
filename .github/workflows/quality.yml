@@ -1,0 +1,51 @@
+name: Ridderset quality gate
+
+on:
+  push:
+    branches:
+      - "feature/**"
+      - "main"
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install test packages
+        run: npm install --no-fund --no-audit
+      - name: Verify JavaScript syntax
+        run: npm run check:syntax
+      - name: Run pure-function tests
+        run: npm run test:unit
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          tools: none
+      - name: Verify WordPress plugin PHP syntax
+        run: php -l ridderset-rekrutteringsinnsikt.php
+      - name: Install Chromium for browser tests
+        run: npx playwright install --with-deps chromium
+      - name: Test mobile and desktop user journeys
+        run: npm run test:e2e
+        env:
+          CI: "1"
+          MOCK_API: "1"
+      - name: Upload evidence on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failure-evidence
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
