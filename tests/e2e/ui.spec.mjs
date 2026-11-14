@@ -33,10 +33,12 @@ test("mock company search, main unit and worksite selection",async({page})=>{
   await page.locator("#rr-company-results .rr-suggestion").first().click();
   await expect(page.locator("#rr-company-name")).toHaveText("DEMO NORD AS");
   await expect(page.locator("#rr-company-meta")).toContainText("18 registrerte ansatte");
+  await expect(page.locator("#rr-region")).toHaveValue("55");
   await expect(page.locator("#rr-unit-zone")).toBeVisible();
   await page.locator("#rr-unit-select").selectOption("999999998");
   await expect(page.locator("#rr-company-name")).toContainText("SORTLAND");
   await expect(page.locator("#rr-location")).toHaveValue("SORTLAND");
+  await expect(page.locator("#rr-region")).toHaveValue("18");
 });
 
 test("searches subunits directly without inventing a parent company",async({page})=>{
