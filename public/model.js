@@ -1,3 +1,4 @@
+import {marketBrief} from './market.js';
 export const questions = [
  ['reputation','Hva tror dere aktuelle kandidater forbinder med arbeidsplassen?'],
  ['visibility','Hvor synlige og troverdige er dere for målgruppen?'],
@@ -27,7 +28,7 @@ export function reportText(state) {
  `Hva skal rollen løse? ${state.mission || 'Ikke avklart'}`,`Nødvendige krav: ${state.requirements || 'Ikke avklart'}`,`Slik undersøkes kravene: ${state.evidence || 'Ikke avklart'}`,
  '\nMARKEDSDATA',state.salary ? `SSB 11418: ${state.salary.value === null ? 'Mangler tall' : state.salary.value+' kr per måned'}. ${state.salary.description}. År ${state.salary.year}. Oppdatert ${state.salary.updated}. Hentet ${state.salary.fetchedAt}. Kilde: ${state.salary.source}` : 'SSB: Ikke hentet.',
  'NAV aktive annonser og posisjoner: Utilgjengelig. Ingen aktiv feed i denne testversjonen.',
- '\nLEDELSENS EGENVURDERING',`Besvart: ${a.answered}/6`,`Omdømme/synlighet: ${displayScore(a.brand)}`,`Arbeidshverdag/oppfølging: ${displayScore(a.experience)}`,
+ '\nREKRUTTERINGSBILDE',marketBrief(state).assessment,...marketBrief(state).facts,...marketBrief(state).unknowns.map(x=>'Mangler: '+x),...marketBrief(state).actions.map(x=>'Tiltak: '+x),'\nLEDELSENS EGENVURDERING',`Besvart: ${a.answered}/6`,`Omdømme/synlighet: ${displayScore(a.brand)}`,`Arbeidshverdag/oppfølging: ${displayScore(a.experience)}`,
  ...questions.map(([k,q])=>`${q} ${a.dimensions[k]===null?'Ikke besvart':a.dimensions[k]+'/10'}`),`HR-kapasitet: ${state.hr || 'Ikke avklart'}`,a.method,'Dette er ikke en medarbeidermåling, ekstern omdømmemåling eller validert WorkLife-indeks.',
  '\nFORESLÅTT OPPFØLGING','30 dager: Bekreft oppgaver, arbeidssted og nødvendige krav. Avklar ansvarlig og lønnsramme.','60 dager: Undersøk kandidatmarkedet og velg søke- og vurderingsmetoder.','90 dager: Følg opp gjennomførte tiltak og juster planen. Tidspunktene er en arbeidsplan, ikke en prognose for ansettelse.',...priorities(state.answers)
  ].join('\n');

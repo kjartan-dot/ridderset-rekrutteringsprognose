@@ -9,7 +9,7 @@ export function occupationSearch(q){
  const mapped=synonyms[q]??[];
  return occupations.filter(x=>mapped.includes(x.code)||x.name.toLocaleLowerCase('nb-NO').includes(q)||x.code===q).sort((a,b)=>Number(mapped.includes(b.code))-Number(mapped.includes(a.code))).slice(0,20);
 }
-const assets={'/':['index.html','text/html'],'/app.js':['app.js','text/javascript'],'/model.js':['model.js','text/javascript'],'/style.css':['style.css','text/css']};
+const assets={'/':['index.html','text/html'],'/app.js':['app.js','text/javascript'],'/market.js':['market.js','text/javascript'],'/model.js':['model.js','text/javascript'],'/style.css':['style.css','text/css']};
 export function makeServer(){return http.createServer(async(req,res)=>{
  const headers={'X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"};
  const json=(status,data)=>{res.writeHead(status,{...headers,'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));};

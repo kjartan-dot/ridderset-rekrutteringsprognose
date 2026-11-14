@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {marketBrief} from '../public/market.js';
+test('unknown market never produces invented forecast',()=>{const x=marketBrief({});assert.match(x.assessment,/uavklart/);assert.ok(x.unknowns.length>=4);assert.doesNotMatch(JSON.stringify(x),/høy risiko|lav risiko|søkere forventes/);});
+test('salary comparison uses real reference, never an empty input',()=>{const base={salary:{value:50000,year:'2025'}};assert.doesNotMatch(marketBrief({...base,offeredSalary:''}).facts.join(' '),/100 %/);assert.match(marketBrief({...base,offeredSalary:40000}).facts.join(' '),/20 % under/);});
+test('geography alone is not penalized',()=>{assert.equal(marketBrief({workplace:'Harstad'}).assessment,marketBrief({workplace:'Oslo'}).assessment);});
+test('explicit urgency and flexibility yield specific actions',()=>{const x=marketBrief({startWindow:'urgent',flexibility:'remote'});assert.ok(x.actions.some(t=>t.includes('læres')));assert.ok(x.actions.some(t=>t.includes('bredere')));});
