@@ -1,0 +1,58 @@
+/* The guided customer journey extends the site's existing petrol/sand design. */
+#rr-hurtigsjekk[data-journey=true] .rrh-progress ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+#rr-hurtigsjekk[data-journey=true] .rrh-intro h1{max-width:850px}
+#rr-hurtigsjekk[data-journey=true] .rrh-scorecard{padding:22px 25px}
+#rr-hurtigsjekk .rrh-lead{font-size:16px;line-height:1.6;color:var(--muted);max-width:820px;margin-top:12px}
+#rr-hurtigsjekk .rrh-prepare{margin-top:30px;border-top:5px solid var(--teal);padding-top:26px}
+#rr-hurtigsjekk .rrh-prepare-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin:20px 0 8px;font-size:14px}
+#rr-hurtigsjekk .rrh-prepare-top a{font-weight:650}
+#rr-hurtigsjekk .rrh-readiness-row{display:grid;grid-template-columns:minmax(0,1fr) 175px;gap:24px;align-items:center;padding:17px 0;border-top:1px solid var(--line)}
+#rr-hurtigsjekk .rrh-readiness-row label{font-size:16px;margin:0;font-weight:650}
+#rr-hurtigsjekk .rrh-readiness-row p{margin-top:5px;max-width:650px;font-size:14px}
+#rr-hurtigsjekk .rrh-readiness-row select{min-height:46px}
+#rr-hurtigsjekk .rrh-prepare .rrh-result-actions{margin:15px 0 12px}
+#rr-hurtigsjekk .rrh-plan{background:#fff;border-color:#a6bfbe;padding:28px}
+#rr-hurtigsjekk .rrh-plan .rrh-tag{white-space:normal;max-width:230px}
+#rr-hurtigsjekk ol.rrh-priorities{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0;margin:22px 0 16px;gap:14px}
+#rr-hurtigsjekk li.rrh-priority{border:1px solid var(--line);background:#f5f8f6;border-radius:10px;padding:20px 18px;margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+#rr-hurtigsjekk .rrh-priority-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+#rr-hurtigsjekk .rrh-priority-number{font-size:24px;color:var(--teal);font-weight:700;font-variant-numeric:tabular-nums}
+#rr-hurtigsjekk .rrh-priority h3{font-size:19px}
+#rr-hurtigsjekk .rrh-priority p{font-size:14px;line-height:1.6;margin:0}
+#rr-hurtigsjekk .rrh-priority .rrh-meta{font-size:13px}
+#rr-hurtigsjekk .rrh-deliverable{border-top:1px solid var(--line);padding-top:12px;margin-top:auto!important}
+#rr-hurtigsjekk .rrh-plan-download{display:flex;align-items:center;gap:22px;background:var(--deep);color:#fff;border-radius:10px;padding:22px;margin:25px 0 15px}
+#rr-hurtigsjekk .rrh-plan-download button{background:var(--sand);border-color:var(--sand);color:var(--ink);flex:0 1 340px}
+#rr-hurtigsjekk .rrh-plan-download p{font-size:14px;line-height:1.55;flex:1;max-width:520px}
+#rr-hurtigsjekk .rrh-plan-detail{margin-top:10px;padding-top:12px}
+#rr-hurtigsjekk .rrh-plan-detail summary{font-size:16px;line-height:1.5;min-height:44px;padding:8px 0}
+#rr-hurtigsjekk .rrh-plan-detail h3{margin-top:20px;font-size:18px}
+#rr-hurtigsjekk .rrh-plan-detail p{font-size:15px;line-height:1.65;margin-top:10px}
+#rr-hurtigsjekk .rrh-plan-detail li{font-size:15px;line-height:1.65;margin:12px 0}
+#rr-hurtigsjekk .rrh-plan-detail .rrh-meta{font-size:13px}
+#rr-hurtigsjekk .rrh-phases{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px}
+#rr-hurtigsjekk .rrh-phases article{padding:5px 0 15px;border-bottom:1px solid var(--line)}
+#rr-hurtigsjekk .rrh-onboarding-step{margin:16px 0;border-left:3px solid #b5cdc5;padding-left:16px}
+#rr-hurtigsjekk .rrh-help{margin-top:25px;background:#ecf2ef}
+#rr-hurtigsjekk .rrh-help-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:25px}
+#rr-hurtigsjekk .rrh-help-grid article{display:flex;flex-direction:column;gap:12px;border-top:2px solid #b6cbc6;padding-top:17px;min-width:0}
+#rr-hurtigsjekk .rrh-help-grid h3{font-size:19px}
+#rr-hurtigsjekk .rrh-help-grid p{font-size:15px;line-height:1.6;color:var(--muted)}
+#rr-hurtigsjekk .rrh-help-grid a{font-size:15px;font-weight:650;margin-top:auto;padding:6px 0;min-height:44px;display:inline-flex;align-items:center}
+#rr-hurtigsjekk .rrh-more .rrh-result-actions{margin:15px 0}
+#rr-hurtigsjekk #rrh-prepare,#rr-hurtigsjekk #rrh-plan{scroll-margin-top:45px}
+body.rrh-journey main.site-content{margin-top:0!important}
+body.rrh-journey .rq-advanced{max-width:none!important;margin:0!important;padding:14px;background:#f5f2eb}
+body.rrh-journey .rq-advanced>summary{box-sizing:border-box;max-width:1060px;margin:auto;padding:16px 22px;background:#e8eeeb;color:#173b45;font:650 16px/1.5 Inter,system-ui,sans-serif;cursor:pointer;border:1px solid #c7d8d3;border-radius:8px}
+body.rrh-journey .rq-advanced>summary:focus-visible{outline:3px solid #46737f;outline-offset:3px}
+body.rrh-journey .rr26-next,body.rrh-journey #rrp-difficulty-v1,body.rrh-journey #rrp-decision-v1,body.rrh-journey #grundig-analyse .rr-seo-copy,body.rrh-journey #grundig-analyse .rrh-legacy-background,body.rrh-journey #rrp-export,body.rrh-journey #rrp-sim-copy,body.rrh-journey #rrpd-download{display:none!important}
+body.rrh-journey #grundig-analyse .rrh-guided-next{display:none!important}
+body.rrh-journey .rrh-deep-tool{box-sizing:border-box;max-width:1280px;margin:18px auto;border:1px solid #c5d7d5;background:#fff;border-radius:12px;color:#173a43}
+body.rrh-journey .rrh-deep-tool>summary{padding:19px 23px;font:650 18px/1.5 Inter,system-ui,sans-serif;cursor:pointer}
+body.rrh-journey .rrh-deep-tool>summary:focus-visible{outline:3px solid #46737f;outline-offset:3px}
+body.rrh-journey .rrh-deep-tool #rrwl-v1{padding-top:0}
+body.rrh-journey #rrp-v02{padding-top:0;padding-bottom:0}
+body.rrh-journey #rrp-v02 .rrp-wrap{max-width:1280px;padding-top:0}
+@media(max-width:850px){#rr-hurtigsjekk ol.rrh-priorities{grid-template-columns:1fr}#rr-hurtigsjekk .rrh-priority{padding:18px}#rr-hurtigsjekk .rrh-help-grid{grid-template-columns:1fr;gap:20px}#rr-hurtigsjekk .rrh-plan-download{align-items:stretch;flex-direction:column;gap:14px}#rr-hurtigsjekk .rrh-plan-download button{flex:auto}}
+@media(max-width:600px){#rr-hurtigsjekk[data-journey=true] .rrh-progress ol{grid-template-columns:repeat(2,minmax(0,1fr))}#rr-hurtigsjekk[data-journey=true] .rrh-progress button{font-size:14px;min-height:46px;padding:9px 11px}#rr-hurtigsjekk .rrh-plan{padding:22px 17px}#rr-hurtigsjekk .rrh-readiness-row{grid-template-columns:1fr;gap:10px;padding:18px 0}#rr-hurtigsjekk .rrh-readiness-row select{max-width:none}#rr-hurtigsjekk .rrh-prepare-top{display:block}#rr-hurtigsjekk .rrh-prepare-top a{display:inline-block;padding:10px 0}#rr-hurtigsjekk .rrh-plan-download{padding:18px}#rr-hurtigsjekk .rrh-phases{grid-template-columns:1fr}#rr-hurtigsjekk .rrh-plan .rrh-tag{max-width:none}#rr-hurtigsjekk .rrh-result-actions #rrh-clear-readiness{width:auto}body.rrh-journey .rrh-deep-tool>summary{font-size:16px;padding:16px}}
+@media print{body.rrh-journey .rq-advanced,#rr-hurtigsjekk .rrh-help,#rr-hurtigsjekk .rrh-prepare,#rr-hurtigsjekk .rrh-plan-download,#rr-hurtigsjekk .rrh-more{display:none!important}#rr-hurtigsjekk .rrh-plan{border:0}#rr-hurtigsjekk .rrh-priority{break-inside:avoid}#rr-hurtigsjekk .rrh-plan-detail{display:block}#rr-hurtigsjekk .rrh-plan-detail>*{display:block}}
