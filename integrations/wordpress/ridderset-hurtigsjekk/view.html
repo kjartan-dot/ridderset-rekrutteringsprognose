@@ -1,11 +1,11 @@
-<section id="rr-hurtigsjekk" data-guided="true" data-api="{{RRH_API}}" data-assets="{{RRH_ASSETS}}" data-market-api="{{RRH_MARKET_API}}" aria-labelledby="rrh-title">
+<section id="rr-hurtigsjekk" data-guided="true" data-journey="true" data-api="{{RRH_API}}" data-assets="{{RRH_ASSETS}}" data-market-api="{{RRH_MARKET_API}}" aria-labelledby="rrh-title">
   <div class="rrh-intro">
     <p class="rrh-eyebrow">RIDDERSET · REKRUTTERINGSINNSIKT</p>
-    <h1 id="rrh-title">Neste rekruttering.<br>Start med bedriften.</h1>
-    <p>Velg bedriften én gang. Vi foreslår roller, henter markedstall og tar deg videre i analysen.</p>
+    <h1 id="rrh-title">Før dere lyser ut.<br>Legg en plan som holder.</h1>
+    <p>Se hva markedet forteller, avklar hva dere må ha på plass og få en plan for rekrutteringen. Bedrift, rolle og arbeidssted følger med hele veien.</p>
   </div>
   <div class="rrh-wrap">
-    <nav class="rrh-progress" aria-label="Steg i analysen"><ol><li><button id="rrh-step-company" type="button" aria-current="step"><span>1</span> Bedrift</button></li><li><button id="rrh-step-role" type="button" disabled><span>2</span> Rolle og sted</button></li><li><button id="rrh-step-result" type="button" disabled><span>3</span> Vurdering</button></li></ol></nav>
+    <nav class="rrh-progress" aria-label="Steg i analysen"><ol><li><button id="rrh-step-company" type="button" aria-current="step"><span>1</span> Bedrift</button></li><li><button id="rrh-step-role" type="button" disabled><span>2</span> Rolle og sted</button></li><li><button id="rrh-step-result" type="button" disabled><span>3</span> Marked</button></li><li><button id="rrh-step-prepare" type="button" disabled><span>4</span> Prosess</button></li></ol></nav>
     <p id="rrh-guide-status" class="rrh-guide-status" role="status">Velg bedrift én gang. Vi tar valgene med videre.</p>
     <section id="rrh-start" class="rrh-start rrh-card" aria-labelledby="rrh-search-title">
       <h2 id="rrh-search-title" tabindex="-1">Hvilken bedrift gjelder det?</h2>
@@ -31,7 +31,7 @@
     </section>
 
     <section id="rrh-result" class="rrh-result" aria-labelledby="rrh-result-title" hidden>
-      <div class="rrh-resulthead"><p class="rrh-eyebrow">DERE VURDERER</p><h2 id="rrh-result-title" tabindex="-1"></h2><p id="rrh-result-location"></p></div>
+      <div class="rrh-resulthead"><p class="rrh-eyebrow">STEG 3 · MARKEDSGRUNNLAG</p><h2 id="rrh-result-title" tabindex="-1"></h2><p id="rrh-result-location"></p></div>
       <div class="rrh-card rrh-scorecard">
         <div class="rrh-sectionhead"><div><h3>Nasjonal yrkesindikator</h3><p class="rrh-muted">Hvordan mangelpresset i yrket ligger an.</p></div><span class="rrh-tag">NAV 2026 · Norge</span></div>
         <div id="rrh-score-output" aria-live="polite"></div>
@@ -44,12 +44,53 @@
         <article class="rrh-card" id="rrh-nav-card" aria-live="polite"><h3>Utlysninger i kommunen</h3><p>Henter NAV-treff …</p></article>
         <article class="rrh-card" id="rrh-pay-card" aria-live="polite"><h3>Lønn i yrket</h3><p>Henter SSB-tall …</p></article>
       </div>
-      <div class="rrh-action"><div><p class="rrh-eyebrow">NESTE GREP</p><h3 id="rrh-action-title"></h3><p id="rrh-action-text"></p></div><a href="https://ridderset.no/kontakt/?tema=rekruttering#book-mote">Få en konkret søkeplan</a></div>
+      <div class="rrh-action"><div><p class="rrh-eyebrow">NESTE GREP</p><h3 id="rrh-action-title"></h3><p id="rrh-action-text"></p></div><a href="#rrh-prepare" data-rrh-go="prepare">Gjør prosessen klar</a></div>
       <details class="rrh-card rrh-refine"><summary>Gjør vurderingen mer presis</summary><div class="rrh-refinegrid"><div><label for="rrh-sector">Sektor for lønnssammenligning</label><select id="rrh-sector"><option value="ALLE">Alle sektorer</option><option value="A+B+D+E">Privat og offentlig eide foretak</option><option value="6500">Kommuneforvaltningen</option><option value="6100">Statsforvaltningen</option></select></div><div><label for="rrh-offer">Tilbudt grunnlønn per måned</label><input id="rrh-offer" type="number" min="1" max="9999999" step="1" inputmode="numeric" placeholder="Valgfritt, kroner før skatt"></div></div><p id="rrh-offer-comparison" class="rrh-status" role="status"></p><p class="rrh-meta">Lønnen sammenlignes med SSB. Den endrer ikke den nasjonale yrkesindikatoren.</p><button type="button" class="rrh-secondary" id="rrh-commute-btn">Vis relevante pendlekommuner</button><div id="rrh-commute" aria-live="polite"></div></details>
-      <section class="rrh-card rrh-continue" aria-labelledby="rrh-continue-title"><p class="rrh-eyebrow">FORTSETT MED DE SAMME VALGENE</p><h3 id="rrh-continue-title">Gå fra markedstall til en plan</h3><p>Bedrift, rolle og arbeidssted følger med. Neste steg handler om krav, søkeområde og hva dere kan tilby.</p><div class="rrh-result-actions"><a id="rrh-advanced-link" class="rrh-primary-link" href="#grundig-analyse">Neste: tilpass rekrutteringen</a><a id="rrh-market-link" href="#markedstall">Se flere markedstall</a></div></section>
-      <div class="rrh-result-actions"><button type="button" id="rrh-download" class="rrh-secondary">Last ned vurderingen</button></div>
+      <section id="rrh-prepare" class="rrh-card rrh-prepare" aria-labelledby="rrh-prepare-title">
+        <p class="rrh-eyebrow">STEG 4 · FØR UTLYSNING</p>
+        <h2 id="rrh-prepare-title" tabindex="-1">Er dere klare til å lyse ut?</h2>
+        <p class="rrh-lead">En god annonse er bare starten. Avklar også hvordan dere skal vurdere kandidatene, holde dem orientert og ta imot den som blir ansatt.</p>
+        <div class="rrh-result-actions rrh-prepare-top"><button id="rrh-show-plan" type="button">Se planen før utlysning</button><p>Du trenger ikke svare på flere spørsmål for å få planen.</p></div>
+        <details id="rrh-readiness-questionnaire" class="rrh-plan-detail"><summary>Tilpass planen med fem korte avklaringer</summary>
+          <p class="rrh-meta">Svar på det dere vet. Ingen svar er forhåndsutfylt.</p>
+          <div id="rrh-readiness-fields"></div>
+          <div class="rrh-result-actions"><a href="#rrh-plan" data-rrh-go="plan">Se de oppdaterte prioriteringene</a><button id="rrh-clear-readiness" type="button" class="rrh-textbutton" hidden>Nullstill disse svarene</button></div>
+          <p class="rrh-meta">Svarene brukes bare i denne åpne siden og sendes ikke til Ridderset. Last ned planen før du lukker eller laster siden på nytt.</p>
+        </details>
+        <p id="rrh-readiness-status" class="rrh-meta" role="status">Ingen svar er forhåndsutfylt. Ubesvart betyr at forholdet ikke er vurdert.</p>
+      </section>
+      <section id="rrh-plan" class="rrh-card rrh-plan" aria-labelledby="rrh-plan-title">
+        <div class="rrh-sectionhead"><div><p class="rrh-eyebrow">DERES PLAN FØR UTLYSNING</p><h2 id="rrh-plan-title" tabindex="-1">Tre grep å begynne med</h2></div><span class="rrh-tag">Kan brukes uten å bestille hjelp</span></div>
+        <p id="rrh-plan-context" class="rrh-muted"></p>
+        <p id="rrh-plan-intro" class="rrh-lead"></p>
+        <ol id="rrh-plan-priorities" class="rrh-priorities"></ol>
+        <p class="rrh-meta">Prioriteringene følger svarene deres: ikke avklart først, deretter delvis avklart og ubesvart. Dette er en sjekkliste, ikke en måling av rekrutteringsrisiko. En bedre prosess kan ikke love flere kvalifiserte søkere.</p>
+        <div class="rrh-plan-download"><button type="button" id="rrh-download">Last ned planen og markedstallene</button><p>Tekstfil med prioriteringer, jobbbrief, intervjuguide, kandidatoppfølging og plan for oppstart. Ingen e-post kreves.</p></div>
+        <p id="rrh-download-status" class="rrh-meta" role="status"></p>
+        <details class="rrh-plan-detail"><summary>Se hele prosessen og hvem som bør eie stegene</summary><div id="rrh-plan-phases" class="rrh-phases"></div></details>
+        <details class="rrh-plan-detail"><summary>Jobbbrief og en kort intervjuguide</summary><div id="rrh-plan-interview"></div></details>
+        <details class="rrh-plan-detail"><summary>Kandidatoppfølging: slik tar dere vare på omdømmet</summary><p>Kandidaten vurderer dere gjennom hele prosessen. Gjør det lett å forstå jobben, hva som skal vurderes og når neste beskjed kommer. Et avslag kan være ryddig selv om det er skuffende.</p><div id="rrh-plan-communication"></div><p class="rrh-meta">Forskning finner en sammenheng mellom opplevelsen av utvelgelsen og synet på arbeidsgiveren. Den gir ikke grunnlag for å love en bestemt omdømmeeffekt. <a href="https://ecommons.cornell.edu/entities/publication/4ab12de5-15ca-4de2-b9d4-efb3609b51ae" target="_blank" rel="noopener noreferrer">Kilde: Hausknecht mfl. (2004)</a>.</p></details>
+        <details class="rrh-plan-detail"><summary>Fra tilbud til de første 30, 60 og 90 dagene</summary><div id="rrh-plan-onboarding"></div><p class="rrh-meta">Dette er et forslag til oppfølging etter oppstart, ikke en prognose for når stillingen blir besatt. Tilpass rytmen til rollen.</p></details>
+      </section>
+      <section class="rrh-card rrh-help" aria-labelledby="rrh-help-title">
+        <p class="rrh-eyebrow">VELG HVORDAN DERE VIL GÅ VIDERE</p><h2 id="rrh-help-title">Hvem tar ansvar for prosessen?</h2>
+        <p class="rrh-lead">Dere kan gjennomføre selv, få hjelp til noen deler eller bruke Ridderset gjennom rekrutteringen. Avklar behov, kapasitet og ansvar før dere velger.</p>
+        <div class="rrh-help-grid">
+          <article><h3>Vi gjennomfører selv</h3><p>Bruk planen med en ansvarlig leder. Sett frister, avtal vurderingskriterier og fordel kandidatoppfølgingen.</p><a href="#rrh-plan" data-rrh-go="plan">Bruk planen</a></article>
+          <article><h3>Vi vil kvalitetssikre noen deler</h3><p>Be om en faglig gjennomgang av jobbbrief, søkeopplegg, intervju eller vurderingsgrunnlag. Avtal hva dere trenger hjelp til.</p><a href="https://ridderset.no/kontakt/?tema=rekruttering#book-mote">Drøft planen med Kjartan</a></article>
+          <article><h3>Vi trenger hjelp gjennom prosessen</h3><p>Avklar hvem som skal holde tråden fra behov og kandidatsøk til vurdering, beslutning og oppstart.</p><a href="https://ridderset.no/tjeneste/rekruttering/">Se hvordan Ridderset jobber</a></article>
+        </div>
+      </section>
+      <details class="rrh-card rrh-plan-detail rrh-more"><summary>Flere verktøy og faglig grunnlag</summary>
+        <p>Du kan fordype deg i markedstall, søkevalg og Worklife. Bedriften og rollen er allerede med.</p>
+        <div class="rrh-result-actions"><a id="rrh-market-link" href="#markedstall">Flere markedstall</a><a id="rrh-advanced-link" href="#grundig-analyse">Søkevalg og Worklife</a><a href="https://ridderset.no/innsikt/#kandidat-og-ansattreisen">Verktøy langs kandidat- og ansattreisen</a></div>
+        <h3>Hvorfor denne rekkefølgen?</h3>
+        <p>Jobbanalyse og jobbrelaterte vurderinger gir grunnlag for hva dere spør om og hvordan dere vurderer svar. Metodene må tilpasses rollen. <a href="https://doi.org/10.1017/iop.2023.24" target="_blank" rel="noopener noreferrer">Sackett mfl. (2023)</a>.</p>
+        <p>Rolleklarhet, mestring og tilhørighet er sentrale temaer i forskning på nyansattes tilpasning. Vi bruker dem som utgangspunkt for oppstartsplanen. <a href="https://pdxscholar.library.pdx.edu/busadmin_fac/27/" target="_blank" rel="noopener noreferrer">Bauer mfl. (2007)</a>.</p>
+        <p class="rrh-meta">Sjekklisten, prioriteringen og malene er Riddersets praktiske anbefalinger. De er ikke en validert samlet modell. Markedstallene har egne kilder og avgrensninger ved hvert resultat.</p>
+      </details>
     </section>
-    <p class="rrh-footer">Valgene huskes i denne fanen i inntil åtte timer. Søket lagres ikke som en kundehenvendelse. <button id="rrh-reset" type="button" class="rrh-textbutton" hidden>Start ny analyse</button></p>
+    <p class="rrh-footer">Bedrift, rolle, arbeidssted og lønnsvalg huskes i denne fanen i inntil åtte timer. Prosessvarene varer bare til siden lastes på nytt. Søket blir ikke en kundehenvendelse. <button id="rrh-reset" type="button" class="rrh-textbutton" hidden>Start ny analyse</button></p>
     <noscript><p>Bedriftssøket trenger JavaScript. <a href="https://ridderset.no/kontakt/">Kontakt Ridderset for en vurdering.</a></p></noscript>
   </div>
 </section>

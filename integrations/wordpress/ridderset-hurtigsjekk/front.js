@@ -8,7 +8,7 @@
   const nf = new Intl.NumberFormat('nb-NO');
   const pf = new Intl.NumberFormat('nb-NO', {maximumFractionDigits:1});
   let catalog, survey, companySeq=0, unitSeq=0, revision=0, contextRevision=0, timer, companyController, resultController;
-  let manual=false, restoring=false;
+  let manual=false, restoring=false, activeStep=null;
   const storageKey='ridderset-recruitment-context-v1';
   let state = {company:null, main:null, units:[], role:null, town:'', nav:null, pay:null, indicator:null};
   const asset = name => new URL(name, new URL(root.dataset.assets, location.href));
@@ -37,22 +37,27 @@
   function number(value){return typeof value==='number' && Number.isFinite(value);}
   function date(value){if(!value)return 'ukjent dato';const d=new Date(value);return Number.isNaN(d.getTime())?'ukjent dato':d.toLocaleString('nb-NO',{timeZone:'Europe/Oslo',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}
   function openStep(step){
-    const ids={company:'rrh-start',role:'rrh-role-step',result:'rrh-result',advanced:'grundig-analyse',market:'markedstall'};
+    const ids={company:'rrh-start',role:'rrh-role-step',result:'rrh-result',advanced:'grundig-analyse',market:'markedstall',prepare:'rrh-prepare',plan:'rrh-plan'};
     const section=document.getElementById(ids[step]);
-    if(!section || section.hidden)return false;
-    if(section.tagName==='DETAILS')section.open=true;
+    if(!section || section.hidden || section.closest('[hidden]'))return false;
+    for(let parent=section;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
+    activeStep=step==='plan'?'prepare':['company','role','result','prepare'].includes(step)?step:activeStep;
+    for(const name of ['company','role','result','prepare']){const b=$('step-'+name);if(b)b.removeAttribute('aria-current');}
+    const active=$('step-'+(step==='plan'?'prepare':step));if(active)active.setAttribute('aria-current','step');
     const heading=section.querySelector('h2,summary,input');
     if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
     section.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
     window.dispatchEvent(new CustomEvent('rrh-open-step',{detail:{step}}));
     return true;
   }
-  window.RRHFlow=Object.freeze({openStep});
+  window.RRHFlow=Object.freeze({openStep,getMarketReport});
   function updateGuide(){
     const hasStart=Boolean(state.company||manual),complete=Boolean(state.role&&catalog?.towns[state.town]);
     $('step-role').disabled=!hasStart;$('step-result').disabled=!complete;
-    const current=complete?'result':hasStart?'role':'company';
-    for(const step of ['company','role','result']){
+    if($('step-prepare'))$('step-prepare').disabled=!complete;
+    const available={company:true,role:hasStart,result:complete,prepare:complete};
+    const current=activeStep&&available[activeStep]?activeStep:complete?'result':hasStart?'role':'company';
+    for(const step of ['company','role','result','prepare']){
       const button=$('step-'+step);button.removeAttribute('aria-current');
       if(step===current)button.setAttribute('aria-current','step');
     }
@@ -82,7 +87,7 @@
   }
   function resetCompany(notify=true){
     clearTimeout(timer);++unitSeq;clearResult();state={company:null,main:null,units:[],role:null,town:'',nav:null,pay:null,indicator:null};
-    manual=false;
+    manual=false;activeStep=null;
     $('company-summary').hidden=true;$('unit-wrap').hidden=true;$('role-step').hidden=true;
     $('company-form').hidden=false;$('manual').hidden=false;$('search-title').textContent='Hvilken bedrift gjelder det?';
     $('company-results').replaceChildren();$('role-results').replaceChildren();$('role-search').value='';$('town').value='';
@@ -162,6 +167,7 @@
     if(role)chooseRole(role,false);else publishContext();
   }
   function chooseRole(role,scroll){
+    if(scroll)activeStep='result';
     if(state.role?.code!==role.code)$('offer').value='';
     state.role=role;
     root.querySelectorAll('[data-code]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.code===role.code)));
@@ -179,8 +185,9 @@
       const line=el('div',undefined,'rrh-scoreline'),num=el('div',String(score),'rrh-scorevalue');num.append(el('span',' / 10'));
       const text=el('div');text.append(el('h4',score<=3?'Større nasjonalt mangelpress':score<=6?'Middels nasjonalt mangelpress':'Mindre nasjonalt mangelpress'));
       text.append(el('p',indicator.ci95?.low===0?'Foreløpig indikator. Mangelanslaget har stor usikkerhet.':'Foreløpig indikator basert på NAVs bedriftsundersøkelse.'));line.append(num,text);out.append(line);
-    }else{out.append(el('p','For lite grunnlag til en skår','rrh-no-score'),el('p','Se lønn og lokale utlysninger nedenfor. Manglende skår betyr ikke at rekrutteringen er enkel.','rrh-muted'));}
+    }else{out.append(el('p','Nasjonalt mangelsignal er ikke avklart','rrh-no-score'),el('p','Vi har ikke et tilstrekkelig publisert grunnlag for dette yrket. Bruk lønn, relevante utlysninger og en konkret kravprofil som utgangspunkt.','rrh-muted'));}
     const scale=root.querySelector('.rrh-scale');scale.classList.toggle('is-unknown',!hasScore);
+    scale.hidden=!hasScore;const labels=root.querySelector('.rrh-scale-labels');if(labels)labels.hidden=!hasScore;
     [...scale.children].forEach((s,i)=>s.classList.toggle('is-current',hasScore && i+1===score));
     const evidence=$('score-evidence');evidence.replaceChildren();
     evidence.append(el('p','Yrkesgruppe: '+catalog.roles[state.role.code][0]+' · STYRK-08 '+state.role.code+'.','rrh-meta'));
@@ -194,7 +201,7 @@
     if(indicator.referenceCount)evidence.append(el('p','Referansegrunnlag: '+indicator.referenceCount+' yrker. Skalaen er Riddersets presentasjon av statistikken, ikke en offisiell NAV-skår.','rrh-meta'));
     evidence.append(el('p','Tallene gjelder hele Norge i 2026. Kommunen, bedriftens størrelse og lønnsvalget endrer ikke denne indikatoren. Utvalgsusikkerhet og forskjeller innad i yrket kan være store.','rrh-meta'));
     evidence.append(link('NAV · Bedriftsundersøkelsen 2026',survey?.source?.url||'https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen'));
-    if(hasScore && score<=3){$('action-title').textContent='Start søket bredere fra første dag';$('action-text').textContent='Yrket har et tydelig nasjonalt mangelsignal. Avklar de ufravikelige kravene, lønnsrammen og hvilke nærliggende fagmiljøer som kan være aktuelle.';}
+    if(hasScore && score<=3){$('action-title').textContent='Avklar krav og aktuelle fagmiljøer tidlig';$('action-text').textContent='Yrket har et tydelig nasjonalt mangelsignal. Undersøk nødvendige krav, lønnsramme og relevant søkeområde før dere velger kanaler. Aktivt søk kan være aktuelt når kartleggingen viser behov for det.';}
     else if(hasScore){$('action-title').textContent='Avklar krav og tilbud før dere lyser ut';$('action-text').textContent='Bruk lønnstallet og de lokale utlysningene til å vurdere tilbudet deres. Det nasjonale signalet alene avgjør ikke hvor lett det blir å finne den riktige personen.';}
     else{$('action-title').textContent='Avklar det konkrete kandidatmarkedet';$('action-text').textContent='Vi har ikke grunnlag for en samlet tallskår. Begynn med nødvendige krav, lønnsramme og hvor langt dere kan søke. En konkret markedskartlegging kan gi et sikrere svar.';}
   }
@@ -253,7 +260,7 @@
     clearResult();publishContext();if(!state.role||!catalog.towns[state.town])return;
     const ticket=revision,s=snapshot();resultController=new AbortController();const signal=resultController.signal;
     $('result-title').textContent=s.role.label;$('result-location').textContent=(state.company?state.company.name+' · ':'')+s.townName;
-    $('result').hidden=false;$('download').disabled=true;drawIndicator();
+    $('result').hidden=false;$('download').disabled=root.dataset.journey!=='true';drawIndicator();
     $('nav-card').replaceChildren(el('h3','Utlysninger i '+s.townName),el('p','Henter NAV-treff …'));
     $('pay-card').replaceChildren(el('h3','Lønn i yrket'),el('p','Henter SSB-tall …'));
     if(scroll){$('result-title').focus({preventScroll:true});$('result').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
@@ -278,7 +285,7 @@
   $('town').addEventListener('change',()=>{state.town=$('town').value;$('town-origin').textContent='valgt av deg';if(state.role)analyse();else{clearResult();publishContext();}});
   $('sector').addEventListener('change',()=>{if(state.role)analyse();else publishContext();});
   $('offer').addEventListener('input',()=>{compareOffer();publishContext();});
-  for(const step of ['company','role','result'])$('step-'+step).onclick=()=>openStep(step);
+  for(const step of ['company','role','result','prepare'])if($('step-'+step))$('step-'+step).onclick=()=>openStep(step);
   for(const step of ['advanced','market'])$(step+'-link').onclick=e=>{if(openStep(step))e.preventDefault();};
   $('reset').onclick=()=>{++companySeq;companyController?.abort();resetCompany();window.dispatchEvent(new CustomEvent('rrh-context-reset'));$('company').value='';$('company-status').textContent='';openStep('company');$('company').focus({preventScroll:true});};
   $('commute-btn').onclick=async()=>{
@@ -288,18 +295,25 @@
       $('commute').append(el('p','SSB '+d.year+'. Bostedskommuner med flest sysselsatte som jobber i '+s.townName+'. Alle yrker samlet. Dette er ikke en oversikt over tilgjengelige kandidater.','rrh-meta'),link('SSB · pendlingsstrømmer','https://www.ssb.no/statbank/table/03321/'));
     }catch{if(ticket===revision)$('commute').textContent='Pendlingstallene er utilgjengelige akkurat nå.';}finally{if(ticket===revision)$('commute-btn').disabled=false;}
   };
-  $('download').onclick=()=>{
-    if(!state.role)return;const s=snapshot();
+  function getMarketReport(){
+    if(!state.role||!state.town)return '';const s=snapshot();
     const lines=['Ridderset · Rekrutteringsinnsikt','Oppslag: '+new Date().toLocaleString('nb-NO',{timeZone:'Europe/Oslo'}),
       state.company?'Bedrift: '+state.company.name+' · org.nr. '+state.company.org:'Ingen bedrift valgt',
       'Rolle: '+s.role.label+' · STYRK-08 '+s.role.code,'Arbeidskommune: '+s.townName,
       state.role.kind==='industry'?'Du valgte et bransjebasert rolleforslag. Dette er ikke en observert stilling hos bedriften.':'Rollen er valgt av brukeren.',
-      $('score-output').innerText,$('score-evidence').textContent,$('nav-card').innerText,$('pay-card').innerText,
+      $('score-output').innerText,$('score-evidence').textContent,
+      $('nav-card').innerText.replace('Henter NAV-treff …','NAV-treff var ikke ferdig hentet da planen ble lastet ned.'),
+      $('pay-card').innerText.replace('Henter SSB-tall …','SSB-lønn var ikke ferdig hentet da planen ble lastet ned.'),
       $('offer-comparison').textContent,$('action-title').textContent,$('action-text').textContent,
       'Metodeversjon: '+(state.indicator?.methodVersion||'rrh-v1'),
-      ...Array.from($('result').querySelectorAll('a')).map(a=>a.textContent+': '+a.href)
+      ...Array.from(root.querySelectorAll('#rrh-score-evidence a,#rrh-nav-card a,#rrh-pay-card a')).map(a=>a.textContent+': '+a.href)
     ].filter(Boolean);
-    const url=URL.createObjectURL(new Blob([lines.join('\n\n')],{type:'text/plain;charset=utf-8'}));const a=el('a');a.href=url;a.download='ridderset-rekrutteringsinnsikt.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
+    return lines.join('\n\n');
+  }
+  $('download').onclick=()=>{
+    if(window.RRHJourney?.download){window.RRHJourney.download();return;}
+    const report=getMarketReport();if(!report)return;
+    const url=URL.createObjectURL(new Blob([report],{type:'text/plain;charset=utf-8'}));const a=el('a');a.href=url;a.download='ridderset-rekrutteringsinnsikt.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
   };
   async function init(){
     $('search-btn').disabled=true;$('manual').disabled=true;$('company').disabled=true;$('search-units').disabled=true;$('company-status').textContent='Klargjør bedrifts- og yrkessøket …';

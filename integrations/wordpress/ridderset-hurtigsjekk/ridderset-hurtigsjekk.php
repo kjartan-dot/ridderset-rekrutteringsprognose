@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Ridderset – rask rekrutteringsanalyse
  * Description: Bedriftssøk, rolleforslag og dokumenterte markedssignaler i en kort flyt.
- * Version: 0.2.1
+ * Version: 0.3.3
  * Author: Ridderset Rekruttering
  * Requires at least: 6.3
  * Requires PHP: 7.4
@@ -14,9 +14,10 @@ if (!defined('ABSPATH')) {
 }
 
 final class Ridderset_Hurtigsjekk {
-    const VERSION = '0.2.1';
+    const VERSION = '0.3.3';
     const API = 'https://data.brreg.no/enhetsregisteret/api/';
     private static $guided = false;
+    private static $journey = false;
 
     public static function boot() {
         add_shortcode('rr_hurtigsjekk', array(__CLASS__, 'render'));
@@ -30,7 +31,7 @@ final class Ridderset_Hurtigsjekk {
     public static function maybe_enqueue() {
         $post = get_post();
         if (is_singular() && $post && has_shortcode($post->post_content, 'rr_hurtigsjekk')) {
-            self::enqueue(self::is_guided_page($post));
+            self::enqueue(self::is_guided_page($post), self::is_journey_page($post));
         }
     }
 
@@ -45,6 +46,17 @@ final class Ridderset_Hurtigsjekk {
             if (is_array($atts) && isset($atts['guided']) && (string) $atts['guided'] === '1') {
                 return true;
             }
+        }
+        return false;
+    }
+
+    private static function is_journey_page($post = null) {
+        $post = $post ?: get_post();
+        if (!$post || !is_singular()) return false;
+        preg_match_all('/\[rr_hurtigsjekk\b([^\]]*)\]/', $post->post_content, $matches);
+        foreach ($matches[1] as $attributes) {
+            $atts = shortcode_parse_atts($attributes);
+            if (is_array($atts) && ($atts['guided'] ?? '') === '1' && ($atts['journey'] ?? '') === '1') return true;
         }
         return false;
     }
@@ -70,10 +82,11 @@ final class Ridderset_Hurtigsjekk {
         }
     }
 
-    private static function enqueue($guided = false) {
+    private static function enqueue($guided = false, $journey = false) {
         self::$guided = self::$guided || $guided;
+        self::$journey = self::$journey || ($guided && $journey);
         $base = plugin_dir_url(__FILE__);
-        $version_path = $guided ? '' : 'previous/';
+        $version_path = $guided ? ($journey ? '' : 'stable-0.2.1/') : 'previous/';
         wp_enqueue_style('rr-hurtigsjekk', $base . $version_path . 'style.css', array(), self::VERSION);
         wp_enqueue_script('rr-hurtigsjekk-core', $base . 'core.js', array(), self::VERSION, true);
         if (!$guided) {
@@ -81,8 +94,13 @@ final class Ridderset_Hurtigsjekk {
             return;
         }
         wp_enqueue_script('rr-hurtigsjekk-context', $base . 'context.js', array(), self::VERSION, true);
-        wp_enqueue_script('rr-hurtigsjekk-front', $base . 'front.js', array('rr-hurtigsjekk-core', 'rr-hurtigsjekk-context'), self::VERSION, true);
-        wp_enqueue_script('rr-hurtigsjekk-bridge', $base . 'context-bridge.js', array('rr-hurtigsjekk-front'), self::VERSION, true);
+        wp_enqueue_script('rr-hurtigsjekk-front', $base . $version_path . 'front.js', array('rr-hurtigsjekk-core', 'rr-hurtigsjekk-context'), self::VERSION, true);
+        wp_enqueue_script('rr-hurtigsjekk-bridge', $base . $version_path . 'context-bridge.js', array('rr-hurtigsjekk-front'), self::VERSION, true);
+        if ($journey) {
+            wp_enqueue_style('rr-hurtigsjekk-journey', $base . 'journey.css', array('rr-hurtigsjekk'), self::VERSION);
+            wp_enqueue_script('rr-hurtigsjekk-process', $base . 'process-plan.js', array(), self::VERSION, true);
+            wp_enqueue_script('rr-hurtigsjekk-journey', $base . 'journey.js', array('rr-hurtigsjekk-front', 'rr-hurtigsjekk-process', 'rr-hurtigsjekk-bridge'), self::VERSION, true);
+        }
     }
 
     public static function render($atts = array()) {
@@ -91,10 +109,11 @@ final class Ridderset_Hurtigsjekk {
             return '';
         }
         $rendered = true;
-        $atts = shortcode_atts(array('guided' => '0'), (array) $atts, 'rr_hurtigsjekk');
+        $atts = shortcode_atts(array('guided' => '0', 'journey' => '0'), (array) $atts, 'rr_hurtigsjekk');
         $guided = (string) $atts['guided'] === '1';
-        self::enqueue($guided);
-        $file = __DIR__ . ($guided ? '/view.html' : '/previous/view.html');
+        $journey = $guided && (string) $atts['journey'] === '1';
+        self::enqueue($guided, $journey);
+        $file = __DIR__ . ($guided ? ($journey ? '/view.html' : '/stable-0.2.1/view.html') : '/previous/view.html');
         if (!is_readable($file)) {
             return '<p>Rekrutteringsanalysen er midlertidig utilgjengelig.</p>';
         }

@@ -1,12 +1,29 @@
 # Bedrift først: leveranse og utrulling
 
-## Status: publisert 21. november 2026
+## Gjeldende utrulling: 0.3.3 offentlig verifisert 21. november 2026
 
-Versjon 0.2.1 er installert og aktivert i WordPress. Etter den første produksjonssettingen av 0.1.0 og brukerens tilbakemelding om gjentatt valg av KUPA, er hele analyseflyten nå koblet sammen. Den er publisert på [Rekrutteringsprognose](https://ridderset.no/rekrutteringsprognose/), side 2124. Publiseringsautorisasjonen «Kjør den ut» gjelder fortsatt, og rettingen er kontrollert privat før aktivering på hovedsiden.
+Pluginversjon 0.3.3 er installert. Etter bestått privat sluttkontroll ble den nye kundereisen aktivert og verifisert på offentlig side 2124 den 21. november 2026. Aktiv shortcode er `[rr_hurtigsjekk guided="1" journey="1"]`. Se siste avsnitt og [holistic-customer-journey.md](holistic-customer-journey.md) for denne versjonen.
+
+### Offentlig aktivering og kontroll av 0.3.3
+
+Side 2124 har status `publish`. WordPress returnerte `modified: 2026-11-21T13:23:19` (WordPress-tid, uten antatt tidssone) og `content_hash: 4a4afa10e6d385dbfbd20d0d1548aa587ed26624`. Blokk 2 ble byttet først, deretter blokk 0 med `[rr_hurtigsjekk guided="1" journey="1"]`. Ingen innholdsvarsler ble returnert.
+
+Kontrollen i offentlig nettleser bekreftet:
+
+- KUPA AS, yrkeskode 2421 og Harstad ble beholdt etter ny lasting.
+- Fire navigasjonssteg var synlige.
+- De fem valgfrie spørsmålene lå i et lukket felt og var ubesvart.
+- Planen var tilgjengelig uten nye svar.
+- Planknappen flyttet fokus og visning riktig.
+- Én aktiv hovednedlasting var tilgjengelig.
+
+## Historikk: 0.2.1 publisert 21. november 2026
+
+Versjon 0.2.1 ble installert og aktivert i WordPress. Etter den første produksjonssettingen av 0.1.0 og brukerens tilbakemelding om gjentatt valg av KUPA ble hele analyseflyten koblet sammen. Den ble publisert på [Rekrutteringsprognose](https://ridderset.no/rekrutteringsprognose/), side 2124. Publiseringen var autorisert med «Kjør den ut», og rettingen ble kontrollert privat før aktivering på hovedsiden.
 
 ## Sammenhengende analyse, versjon 0.2.1
 
-Aktiv shortcode er `[rr_hurtigsjekk guided="1"]`. Ett sett med inngangsverdier styrer hurtigsjekken, markedssjekken og den grundige analysen. Bedrift, hovedenhet/avdeling, STYRK08-kode og faktisk arbeidskommune overføres uten et nytt registeroppslag. Endringer gjøres i hurtigsjekken; parallelle redigerbare bedrifts- og yrkesfelt skjules i fordypningene.
+Shortcoden ved publisering av 0.2.1 var `[rr_hurtigsjekk guided="1"]`. Ett sett med inngangsverdier styrer hurtigsjekken, markedssjekken og den grundige analysen. Bedrift, hovedenhet/avdeling, STYRK08-kode og faktisk arbeidskommune overføres uten et nytt registeroppslag. Endringer gjøres i hurtigsjekken; parallelle redigerbare bedrifts- og yrkesfelt skjules i fordypningene.
 
 Stegknapper og «Neste»-lenker leder fra bedrift til rolle, vurdering, fire rekrutteringsvalg, arbeidsgivervurdering og handlingsplan. I fordypningen kommer de fire konkrete rekrutteringsvalgene først. Bakgrunnstall og den eldre vurderingsmodellen er tilgjengelige i et eget åpne/lukke-felt.
 
@@ -29,13 +46,13 @@ WordPress-pluginen erstatter den registrerte kilden for `ridderset-markedssjekk/
 - Etter aktivering på side 2124 ble KUPA AS, STYRK08 2421 og Harstad kontrollert i de faktiske feltene i begge fordypninger. Bedriftssøket var skjult, og rekrutteringsvalgene kom først.
 - Utlogget HTTP-kontroll ga 200 for siden og den samlede JavaScript-filen. Den inneholdt den nye frontend, kontrakt, bro og guidede markedsruntime.
 
-Siste WordPress-verdier etter publisering: `modified: 2026-11-21T12:42:08`, innholdshash `35a2810793aa9416f560326bc93566e4e975e0fd`. Tidsverdien er lagret slik API-et returnerte den, uten antatt tidssone.
+WordPress-verdier etter publisering av 0.2.1: `modified: 2026-11-21T12:42:08`, innholdshash `35a2810793aa9416f560326bc93566e4e975e0fd`. Tidsverdien er lagret slik API-et returnerte den, uten antatt tidssone.
 
 ### Tilbakerulling av den guidede flyten
 
 Endre bare shortcoden til `[rr_hurtigsjekk]` etter fersk seksjonslesing og optimistisk lås. Pluginen inneholder den tidligere frontend i `previous/`. De nye legacy-hookene er inaktive uten `data-guided="true"`, og markedssjekken bruker da sin opprinnelige runtime. Tilbakerulling trenger ingen databaseendring eller deaktivering av andre utvidelser.
 
-## Resultat
+## Opprinnelig leveranse, versjon 0.1.0
 
 Ny, isolert WordPress-modul: `integrations/wordpress/ridderset-hurtigsjekk/`. Shortcode: `[rr_hurtigsjekk]`.
 
@@ -62,7 +79,7 @@ node scripts/hurtigsjekk-server.mjs
 
 Lokal adresse: `http://127.0.0.1:3101`. Bruk `node scripts/build-hurtigsjekk-worker.mjs /absolutt/preview-checkout` for å generere den private demonstrasjonen fra samme WordPress-filer og adapter. Ingen klientnøkler eller serverhemmeligheter inngår.
 
-## Verifisering før publisering, 21. november 2026
+## Verifisering av 0.1.0 før publisering, 21. november 2026
 
 - 40 Node-tester bestått, inkludert 12 nye tester for yrkessøk, bransjeregler, skala, ukjent data, rangering og usikkerhet.
 - Syntakskontroll for frontend, adapter og preview-generator bestått.
@@ -73,7 +90,7 @@ Lokal adresse: `http://127.0.0.1:3101`. Bruk `node scripts/build-hurtigsjekk-wor
 - Det automatiserte Playwright-scriptet `tests/hurtigsjekk.e2e.py` er skrevet og Python-syntakskontrollert. Det kunne ikke startes i executorens Chromium på grunn av en socket-restriksjon. Det er ikke rapportert som bestått.
 - Lokal PHP-runtime var ikke tilgjengelig. PHP-adapteren ble gjennomgått før installasjon; faktisk kjøring i WordPress er dokumentert nedenfor.
 
-## Produksjonssetting og kontroll
+## Produksjonssetting og kontroll av 0.1.0
 
 Den private demonstrasjonen ble levert før brukeren godkjente produksjonssetting. Pluginen er installert og aktivert via WordPress-administrasjonen. Bare inngangen til side 2124 og den tilhørende, avgrensede utformingen er endret:
 
@@ -93,7 +110,7 @@ Kontrollert i den publiserte WordPress-løsningen:
 - Rapportknappen fullfører filnedlasting på den publiserte siden.
 - Den publiserte WordPress-siden er kontrollert i en 390 × 844 iframe fra samme nettsted. Innholdets `clientWidth` og `scrollWidth` er begge 373 px: ingen horisontal overflyt. Det første søkefeltet og søkeknappen er synlige på første skjerm.
 
-## Enkel tilbakerulling
+## Tilbakerulling av den opprinnelige 0.1.0-inngangen
 
 1. Hent den nyeste versjonen av side 2124. Bruk WordPress-versjonen umiddelbart før produksjonssettingen som kilde for de tidligere toppblokkene.
 2. Erstatt bare den nye shortcode-inngangen med disse toppblokkene. Flytt den eksisterende markedssjekken ut av det nye åpne/lukke-feltet dersom hele den tidligere inngangen skal gjenopprettes. Bevar den grundige analysen, kontaktblokken og eventuelle senere, urelaterte endringer.
@@ -104,3 +121,11 @@ Ingen full WordPress-sidekopi, API-token eller andre tilganger lagres i dette of
 ## Det som kreves for faktisk modelltrening
 
 Den eksisterende tabellen for rekrutteringsutfall er tom ved kontroll. Trening er derfor ikke gjennomført. En senere modell må få et fast utfallsmål, for eksempel kvalifiserte kandidater etter en definert periode, samt rolle, faktisk arbeidssted, krav, lønnsramme og rekrutteringsopplegg. Treningsdata må skilles fra senere testdata og modellens sannsynligheter kontrolleres mot faktiske utfall. Antall annonser er ikke et treningsmål for antall kvalifiserte kandidater.
+
+## Helhetlig kundereise 0.3.3
+
+Flagget `journey="1"` gir en prosessplan uten krav om nye svar. Fem valgfrie avklaringer ligger i et lukket åpne/lukke-felt og kan brukes til å tilpasse tre prioriteringer. Ubesvart betyr «Ikke vurdert», ikke at et forhold er mangelfullt. Aktiv shortcode på side 2124 er `[rr_hurtigsjekk guided="1" journey="1"]`, offentlig verifisert 21. november 2026. Bevarte `stable-0.2.1/`-filer brukes fortsatt på sider med bare `guided="1"`.
+
+De tre rettede legacy-skriptene er eksterne filer: `legacy-worklife.js`, `legacy-scenario.js` og `legacy-decision.js`, alle med `?ver=0.3.3`. Behold dem installert ved tilbakerulling av bare shortcoden. Før pluginpakken erstattes med en eldre versjon uten disse filene, må den tilhørende eldre sideblokken også gjenopprettes.
+
+Se [holistic-customer-journey.md](holistic-customer-journey.md) for gjennomgang, faglig grunnlag, tilstandsregler, privat og offentlig kontroll samt tilbakerulling. Kontrollen dokumenterer funksjon og avgrensede tilgjengelighetssjekker. Den er ikke en full WCAG-test eller en måling av konverteringseffekt, søkerantall, ansettelseskvalitet eller omdømme.

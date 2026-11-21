@@ -8,6 +8,7 @@
     if (!quick || !advanced || advanced.dataset.rrhBridge === 'ready') return;
     advanced.dataset.rrhBridge = 'ready';
 
+    const journey = quick.dataset.journey === 'true';
     const originalHidden = new WeakMap();
     const section = document.createElement('section');
     section.id = 'rrh-legacy-context';
@@ -15,7 +16,7 @@
     section.setAttribute('aria-labelledby', 'rrh-legacy-context-title');
     const heading = document.createElement('h3');
     heading.id = 'rrh-legacy-context-title';
-    heading.textContent = 'Fortsett med valgene dine';
+    heading.textContent = journey ? 'Valgfri fordypning med de samme valgene' : 'Fortsett med valgene dine';
     const summary = document.createElement('p');
     const status = document.createElement('p');
     status.setAttribute('role', 'status');
@@ -57,19 +58,34 @@
       const next = document.createElement('a');
       next.href = '#rrwl-v1'; next.textContent = 'Neste: vurder arbeidsgivertilbudet';
       next.className = 'rrh-guided-next';
-      scenario.append(next);
+      if (!journey) scenario.append(next);
+      if (journey) {
+        const tool = document.createElement('details'); tool.className = 'rrh-deep-tool';
+        const title = document.createElement('summary'); title.textContent = 'Undersøk søkeområde, krav og søkemetode';
+        tool.append(title); scenario.before(tool); tool.append(scenario);
+        if (label) label.textContent = 'VALGFRITT VERKTØY · SØKEOPPLEGG';
+      }
     }
     const worklife = document.querySelector('#rrwl-v1 .rrwl-wrap');
-    if (worklife) {
+    if (worklife && !journey) {
       const next = document.createElement('a');
       next.href = '#rrp-decision-v1'; next.textContent = 'Neste: se handlingsplanen';
       next.className = 'rrh-guided-next'; worklife.append(next);
     }
 
+    if (journey) {
+      const worklifeRoot = document.getElementById('rrwl-v1');
+      if (worklifeRoot) {
+        const tool = document.createElement('details'); tool.className = 'rrh-deep-tool';
+        const title = document.createElement('summary'); title.textContent = 'Worklife: undersøk løfter og medarbeideropplevelse';
+        tool.append(title); worklifeRoot.before(tool); tool.append(worklifeRoot);
+      }
+    }
     const content = Array.from(advanced.children).filter(node =>
       node !== section && node !== detailsSummary && !['SCRIPT', 'STYLE'].includes(node.tagName));
     let highestRevision = -1;
     let lastEmployer = '';
+    let lastOccupation = '';
     let resetPending = false;
     let applying = false;
 
@@ -174,6 +190,12 @@
         if (lastEmployer && employer !== lastEmployer) resetPending = true;
         lastEmployer = employer;
       }
+      const selectedOccupation = ctx.occupation?.code || '';
+      if (journey && lastOccupation && selectedOccupation && selectedOccupation !== lastOccupation) {
+        const confirmation = document.getElementById('rrp-diff-confirm');
+        if (confirmation) { confirmation.checked = false; confirmation.dispatchEvent(new Event('change', { bubbles: true })); }
+      }
+      if (selectedOccupation) lastOccupation = selectedOccupation;
       const api = window.RRPLegacyContext;
       if (!api || typeof api.setCompany !== 'function' || typeof api.setSelection !== 'function' ||
           typeof api.clearSelection !== 'function') {
@@ -200,7 +222,7 @@
         }
         gate(!applied);
         if (applied) hideRepeatedFields(ctx);
-        describe(ctx, message || 'Valgene dine er tatt med. Avklar først de fire valgene nedenfor. Deretter kan du vurdere arbeidsgivertilbudet og se handlingsplanen.');
+        describe(ctx, message || (journey ? 'Åpne verktøyet du vil bruke. Fordypningen er valgfri. Planen før utlysning finner du i hovedløpet over.' : 'Valgene dine er tatt med. Avklar først de fire valgene nedenfor. Deretter kan du vurdere arbeidsgivertilbudet og se handlingsplanen.'));
         // Legacy report and difficulty listeners re-render from their shared context, without a search.
         window.dispatchEvent(new CustomEvent('rrp-company-selected', { detail: window.__rrpCompany || null }));
         window.dispatchEvent(new CustomEvent('rrh-legacy-context-applied', {
@@ -218,7 +240,7 @@
     window.addEventListener('rrh-context-changed', event => apply(event.detail));
     window.addEventListener('rrh-legacy-ready', () => apply());
     window.addEventListener('rrh-context-reset', () => {
-      lastEmployer = '';
+      lastEmployer = ''; lastOccupation = '';
       resetPending = true;
       resetEmployerAnswers(window.RRPLegacyContext || {});
     });
