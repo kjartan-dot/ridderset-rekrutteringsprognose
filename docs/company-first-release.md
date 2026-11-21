@@ -2,7 +2,38 @@
 
 ## Status: publisert 21. november 2026
 
-Versjon 0.1.0 er installert og aktivert i WordPress etter brukerens godkjenning «Kjør den ut». Den korte flyten er publisert på [Rekrutteringsprognose](https://ridderset.no/rekrutteringsprognose/), side 2124. Den eksisterende grundige analysen er bevart.
+Versjon 0.2.1 er installert og aktivert i WordPress. Etter den første produksjonssettingen av 0.1.0 og brukerens tilbakemelding om gjentatt valg av KUPA, er hele analyseflyten nå koblet sammen. Den er publisert på [Rekrutteringsprognose](https://ridderset.no/rekrutteringsprognose/), side 2124. Publiseringsautorisasjonen «Kjør den ut» gjelder fortsatt, og rettingen er kontrollert privat før aktivering på hovedsiden.
+
+## Sammenhengende analyse, versjon 0.2.1
+
+Aktiv shortcode er `[rr_hurtigsjekk guided="1"]`. Ett sett med inngangsverdier styrer hurtigsjekken, markedssjekken og den grundige analysen. Bedrift, hovedenhet/avdeling, STYRK08-kode og faktisk arbeidskommune overføres uten et nytt registeroppslag. Endringer gjøres i hurtigsjekken; parallelle redigerbare bedrifts- og yrkesfelt skjules i fordypningene.
+
+Stegknapper og «Neste»-lenker leder fra bedrift til rolle, vurdering, fire rekrutteringsvalg, arbeidsgivervurdering og handlingsplan. I fordypningen kommer de fire konkrete rekrutteringsvalgene først. Bakgrunnstall og den eldre vurderingsmodellen er tilgjengelige i et eget åpne/lukke-felt.
+
+`context.js` oppretter og validerer den felles kontrakten. `front.js` husker kun inngangsvalg i `sessionStorage` i inntil åtte timer. Feilformatert, utdatert eller inkompatibel lagring avvises. Resultater, skårer, NAV-treff og Worklife-svar lagres ikke i denne sesjonskopien. Brukeren kan tømme valgene med «Start ny analyse». Blokkert nettleserlagring hindrer ikke analysen på den åpne siden.
+
+`context-bridge.js` og avgrensede hooks i den eksisterende sidekoden oppdaterer faktisk intern tilstand, ikke bare synlig tekst. Sideendringene er dokumentert i `integrations/wordpress/guided-context.patch`. Worklife-svar og aktivt valgte rekrutteringsforutsetninger beholdes innen samme juridiske virksomhet, også ved avdelingsbytte. Ved ny juridisk bedrift nullstilles Worklife via den eksisterende reset-funksjonen, og scenariobekreftelsen fjernes. «Start ny analyse» gjør dette eksplisitt. Ingen urørte startverdier registreres som nye svar.
+
+Grunnlønn og sektor følger markedssjekken. Den eldre analysen bruker et annet lønnsmål, derfor lagres grunnlønnen separat som `salary_input`, og den gamle lønnsgrafen skjules i den guidede flyten. Registrert bedriftsadresse og brukerens arbeidskommune holdes adskilt. Ustøttet fylke eller ukjent yrke gir en tydelig begrensning; ingen standardrolle eller tilfeldig nordnorsk fylke velges.
+
+WordPress-pluginen erstatter den registrerte kilden for `ridderset-markedssjekk/marked.js` med `marked-guided.js` bare på den guidede siden. Dette skjer før footer- og Page Optimize-behandlingen, med opprinnelig script-handle og avhengigheter. Et `script_loader_src`-filter alene var utilstrekkelig i faktisk WordPress og ble supplert under privat QA.
+
+### Kontroll av rettingen
+
+- 57 Node-tester bestått. De 17 nye testene dekker kontrakt/lagring og den faktiske markedsruntime, blant annet sen kataloglasting, gamle revisjoner, avbrutte oppslag, ugyldige valg og arbeidskommune utenfor Nord-Norge.
+- De faktiske åtte legacy-scriptblokkene og broen ble kjørt i en avgrenset DOM-kontroll før WordPress-test. Den bekreftet riktig intern rolle og bedriftsidentitet, separat grunnlønn, Worklife-bevaring og nullstilling, manglende valg og ingen ekstra nettverkskall.
+- Privat WordPress-test med KUPA AS, org.nr. 986954848, og organisasjonsrådgivere, STYRK08 2421: markedssjekk og fordypning fikk samme bedrift, rolle og kommune uten et nytt søk eller «Bruk bedrift»-klikk.
+- Manuell endring fra Harstad til Tromsø ble videreført som arbeidskommune, mens registeradressen forble Harstad. Testbeløpet 75 000 i grunnlønn ble videreført separat.
+- Bytte til KUPA AS AVD. TROMSØ beholdt yrket, lønnsrammen, ett aktivt Worklife-svar og det bekreftede regionale søkeopplegget. Etter ny lasting ble avdeling, yrke, arbeidskommune og lønnsramme gjenopprettet fra sesjonsvalgene.
+- Mobilkontroll i en 390 × 844 iframe av den faktiske WordPress-testen: `clientWidth` og `scrollWidth` var begge 373 px. Stegknapper og fortsett-lenke ble kontrollert visuelt.
+- Etter aktivering på side 2124 ble KUPA AS, STYRK08 2421 og Harstad kontrollert i de faktiske feltene i begge fordypninger. Bedriftssøket var skjult, og rekrutteringsvalgene kom først.
+- Utlogget HTTP-kontroll ga 200 for siden og den samlede JavaScript-filen. Den inneholdt den nye frontend, kontrakt, bro og guidede markedsruntime.
+
+Siste WordPress-verdier etter publisering: `modified: 2026-11-21T12:42:08`, innholdshash `35a2810793aa9416f560326bc93566e4e975e0fd`. Tidsverdien er lagret slik API-et returnerte den, uten antatt tidssone.
+
+### Tilbakerulling av den guidede flyten
+
+Endre bare shortcoden til `[rr_hurtigsjekk]` etter fersk seksjonslesing og optimistisk lås. Pluginen inneholder den tidligere frontend i `previous/`. De nye legacy-hookene er inaktive uten `data-guided="true"`, og markedssjekken bruker da sin opprinnelige runtime. Tilbakerulling trenger ingen databaseendring eller deaktivering av andre utvidelser.
 
 ## Resultat
 

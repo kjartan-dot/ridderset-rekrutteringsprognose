@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Ridderset – rask rekrutteringsanalyse
  * Description: Bedriftssøk, rolleforslag og dokumenterte markedssignaler i en kort flyt.
- * Version: 0.1.0
+ * Version: 0.2.1
  * Author: Ridderset Rekruttering
  * Requires at least: 6.3
  * Requires PHP: 7.4
@@ -14,37 +14,87 @@ if (!defined('ABSPATH')) {
 }
 
 final class Ridderset_Hurtigsjekk {
-    const VERSION = '0.1.0';
+    const VERSION = '0.2.1';
     const API = 'https://data.brreg.no/enhetsregisteret/api/';
+    private static $guided = false;
 
     public static function boot() {
         add_shortcode('rr_hurtigsjekk', array(__CLASS__, 'render'));
         add_action('wp_enqueue_scripts', array(__CLASS__, 'maybe_enqueue'));
         add_action('rest_api_init', array(__CLASS__, 'routes'));
+        add_filter('script_loader_src', array(__CLASS__, 'guided_market_script'), 20, 2);
+        add_action('wp_enqueue_scripts', array(__CLASS__, 'replace_guided_market_runtime'), 1000);
+        add_action('wp_print_footer_scripts', array(__CLASS__, 'replace_guided_market_runtime'), 1);
     }
 
     public static function maybe_enqueue() {
         $post = get_post();
         if (is_singular() && $post && has_shortcode($post->post_content, 'rr_hurtigsjekk')) {
-            self::enqueue();
+            self::enqueue(self::is_guided_page($post));
         }
     }
 
-    private static function enqueue() {
-        $base = plugin_dir_url(__FILE__);
-        wp_enqueue_style('rr-hurtigsjekk', $base . 'style.css', array(), self::VERSION);
-        wp_enqueue_script('rr-hurtigsjekk-core', $base . 'core.js', array(), self::VERSION, true);
-        wp_enqueue_script('rr-hurtigsjekk-front', $base . 'front.js', array('rr-hurtigsjekk-core'), self::VERSION, true);
+    private static function is_guided_page($post = null) {
+        $post = $post ?: get_post();
+        if (!$post || !is_singular()) {
+            return false;
+        }
+        preg_match_all('/\[rr_hurtigsjekk\b([^\]]*)\]/', $post->post_content, $matches);
+        foreach ($matches[1] as $attributes) {
+            $atts = shortcode_parse_atts($attributes);
+            if (is_array($atts) && isset($atts['guided']) && (string) $atts['guided'] === '1') {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static function render() {
+    public static function guided_market_script($src, $handle) {
+        if ((self::$guided || self::is_guided_page()) && strpos(wp_parse_url($src, PHP_URL_PATH) ?: '', '/ridderset-markedssjekk/marked.js') !== false) {
+            return plugin_dir_url(__FILE__) . 'marked-guided.js?ver=' . self::VERSION;
+        }
+        return $src;
+    }
+
+    public static function replace_guided_market_runtime() {
+        if (!self::$guided && !self::is_guided_page()) {
+            return;
+        }
+        // Page Optimize reads registered sources before script_loader_src filters.
+        // Preserve the original handle/dependencies and replace exactly one known runtime.
+        foreach (wp_scripts()->registered as $script) {
+            if (is_string($script->src) && strpos(wp_parse_url($script->src, PHP_URL_PATH) ?: '', '/ridderset-markedssjekk/marked.js') !== false) {
+                $script->src = plugin_dir_url(__FILE__) . 'marked-guided.js';
+                $script->ver = self::VERSION;
+            }
+        }
+    }
+
+    private static function enqueue($guided = false) {
+        self::$guided = self::$guided || $guided;
+        $base = plugin_dir_url(__FILE__);
+        $version_path = $guided ? '' : 'previous/';
+        wp_enqueue_style('rr-hurtigsjekk', $base . $version_path . 'style.css', array(), self::VERSION);
+        wp_enqueue_script('rr-hurtigsjekk-core', $base . 'core.js', array(), self::VERSION, true);
+        if (!$guided) {
+            wp_enqueue_script('rr-hurtigsjekk-front', $base . 'previous/front.js', array('rr-hurtigsjekk-core'), self::VERSION, true);
+            return;
+        }
+        wp_enqueue_script('rr-hurtigsjekk-context', $base . 'context.js', array(), self::VERSION, true);
+        wp_enqueue_script('rr-hurtigsjekk-front', $base . 'front.js', array('rr-hurtigsjekk-core', 'rr-hurtigsjekk-context'), self::VERSION, true);
+        wp_enqueue_script('rr-hurtigsjekk-bridge', $base . 'context-bridge.js', array('rr-hurtigsjekk-front'), self::VERSION, true);
+    }
+
+    public static function render($atts = array()) {
         static $rendered = false;
         if ($rendered) {
             return '';
         }
         $rendered = true;
-        self::enqueue();
-        $file = __DIR__ . '/view.html';
+        $atts = shortcode_atts(array('guided' => '0'), (array) $atts, 'rr_hurtigsjekk');
+        $guided = (string) $atts['guided'] === '1';
+        self::enqueue($guided);
+        $file = __DIR__ . ($guided ? '/view.html' : '/previous/view.html');
         if (!is_readable($file)) {
             return '<p>Rekrutteringsanalysen er midlertidig utilgjengelig.</p>';
         }

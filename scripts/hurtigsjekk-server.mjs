@@ -125,7 +125,7 @@ export function makeServer() {
         const fragment = (await readFile(new URL('view.html', plugin), 'utf8'))
           .replaceAll('{{RRH_API}}', '/api/').replaceAll('{{RRH_ASSETS}}', '/assets/').replaceAll('{{RRH_MARKET_API}}', '/market/');
         response.writeHead(200, {...securityHeaders, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store'});
-        return response.end('<!doctype html><html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rekrutteringsanalyse | Ridderset</title><link rel="stylesheet" href="/assets/style.css"></head><body>' + fragment + '<script src="/assets/core.js"></script><script src="/assets/front.js"></script></body></html>');
+        return response.end('<!doctype html><html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rekrutteringsanalyse | Ridderset</title><link rel="stylesheet" href="/assets/style.css"></head><body>' + fragment + '<script src="/assets/core.js"></script><script src="/assets/context.js"></script><script src="/assets/front.js"></script><script src="/assets/context-bridge.js"></script></body></html>');
       }
       const asset = url.pathname.match(/^\/assets\/([a-zA-Z0-9][a-zA-Z0-9_-]*\.(js|css|json|svg|png))$/);
       if (asset) {

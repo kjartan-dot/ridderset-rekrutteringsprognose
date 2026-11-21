@@ -1,12 +1,14 @@
-<section id="rr-hurtigsjekk" data-api="{{RRH_API}}" data-assets="{{RRH_ASSETS}}" data-market-api="{{RRH_MARKET_API}}" aria-labelledby="rrh-title">
+<section id="rr-hurtigsjekk" data-guided="true" data-api="{{RRH_API}}" data-assets="{{RRH_ASSETS}}" data-market-api="{{RRH_MARKET_API}}" aria-labelledby="rrh-title">
   <div class="rrh-intro">
     <p class="rrh-eyebrow">RIDDERSET · REKRUTTERINGSINNSIKT</p>
     <h1 id="rrh-title">Neste rekruttering.<br>Start med bedriften.</h1>
-    <p>Vi foreslår aktuelle roller og henter markedstallene for deg.</p>
+    <p>Velg bedriften én gang. Vi foreslår roller, henter markedstall og tar deg videre i analysen.</p>
   </div>
   <div class="rrh-wrap">
-    <section class="rrh-start rrh-card" aria-labelledby="rrh-search-title">
-      <h2 id="rrh-search-title">Hvilken bedrift gjelder det?</h2>
+    <nav class="rrh-progress" aria-label="Steg i analysen"><ol><li><button id="rrh-step-company" type="button" aria-current="step"><span>1</span> Bedrift</button></li><li><button id="rrh-step-role" type="button" disabled><span>2</span> Rolle og sted</button></li><li><button id="rrh-step-result" type="button" disabled><span>3</span> Vurdering</button></li></ol></nav>
+    <p id="rrh-guide-status" class="rrh-guide-status" role="status">Velg bedrift én gang. Vi tar valgene med videre.</p>
+    <section id="rrh-start" class="rrh-start rrh-card" aria-labelledby="rrh-search-title">
+      <h2 id="rrh-search-title" tabindex="-1">Hvilken bedrift gjelder det?</h2>
       <form id="rrh-company-form" role="search">
         <label for="rrh-company">Bedriftsnavn eller organisasjonsnummer</label>
         <div class="rrh-searchrow"><input id="rrh-company" type="search" autocomplete="off" minlength="2" maxlength="100" placeholder="F.eks. Nordlaks" aria-describedby="rrh-company-status"><button type="submit" id="rrh-search-btn">Finn bedrift</button></div>
@@ -20,7 +22,7 @@
     </section>
 
     <section id="rrh-role-step" class="rrh-card" aria-labelledby="rrh-role-heading" hidden>
-      <div class="rrh-sectionhead"><div><p class="rrh-eyebrow">AKTUELLE ROLLER</p><h2 id="rrh-role-heading">Hva kan neste behov være?</h2></div><span class="rrh-tag">Du velger rollen</span></div>
+      <div class="rrh-sectionhead"><div><p class="rrh-eyebrow">STEG 2 · ROLLE OG ARBEIDSSTED</p><h2 id="rrh-role-heading" tabindex="-1">Hva kan neste behov være?</h2></div><span class="rrh-tag">Du velger rollen</span></div>
       <p id="rrh-role-reason" class="rrh-muted"></p>
       <div id="rrh-role-suggestions" class="rrh-rolegrid"></div>
       <details id="rrh-other-role"><summary>Velg en annen rolle</summary><label for="rrh-role-search">Stillingstittel eller yrke</label><input id="rrh-role-search" type="search" autocomplete="off" placeholder="F.eks. prosjektleder eller elektriker"><div id="rrh-role-results" class="rrh-choices"></div></details>
@@ -44,9 +46,10 @@
       </div>
       <div class="rrh-action"><div><p class="rrh-eyebrow">NESTE GREP</p><h3 id="rrh-action-title"></h3><p id="rrh-action-text"></p></div><a href="https://ridderset.no/kontakt/?tema=rekruttering#book-mote">Få en konkret søkeplan</a></div>
       <details class="rrh-card rrh-refine"><summary>Gjør vurderingen mer presis</summary><div class="rrh-refinegrid"><div><label for="rrh-sector">Sektor for lønnssammenligning</label><select id="rrh-sector"><option value="ALLE">Alle sektorer</option><option value="A+B+D+E">Privat og offentlig eide foretak</option><option value="6500">Kommuneforvaltningen</option><option value="6100">Statsforvaltningen</option></select></div><div><label for="rrh-offer">Tilbudt grunnlønn per måned</label><input id="rrh-offer" type="number" min="1" max="9999999" step="1" inputmode="numeric" placeholder="Valgfritt, kroner før skatt"></div></div><p id="rrh-offer-comparison" class="rrh-status" role="status"></p><p class="rrh-meta">Lønnen sammenlignes med SSB. Den endrer ikke den nasjonale yrkesindikatoren.</p><button type="button" class="rrh-secondary" id="rrh-commute-btn">Vis relevante pendlekommuner</button><div id="rrh-commute" aria-live="polite"></div></details>
-      <div class="rrh-result-actions"><button type="button" id="rrh-download" class="rrh-secondary">Last ned vurderingen</button><a href="https://ridderset.no/rekrutteringsprognose/#grundig-analyse">Åpne den grundige analysen</a></div>
+      <section class="rrh-card rrh-continue" aria-labelledby="rrh-continue-title"><p class="rrh-eyebrow">FORTSETT MED DE SAMME VALGENE</p><h3 id="rrh-continue-title">Gå fra markedstall til en plan</h3><p>Bedrift, rolle og arbeidssted følger med. Neste steg handler om krav, søkeområde og hva dere kan tilby.</p><div class="rrh-result-actions"><a id="rrh-advanced-link" class="rrh-primary-link" href="#grundig-analyse">Neste: tilpass rekrutteringen</a><a id="rrh-market-link" href="#markedstall">Se flere markedstall</a></div></section>
+      <div class="rrh-result-actions"><button type="button" id="rrh-download" class="rrh-secondary">Last ned vurderingen</button></div>
     </section>
-    <p class="rrh-footer">Ingen innlogging. Søket og valgene dine lagres ikke som en kundehenvendelse.</p>
+    <p class="rrh-footer">Valgene huskes i denne fanen i inntil åtte timer. Søket lagres ikke som en kundehenvendelse. <button id="rrh-reset" type="button" class="rrh-textbutton" hidden>Start ny analyse</button></p>
     <noscript><p>Bedriftssøket trenger JavaScript. <a href="https://ridderset.no/kontakt/">Kontakt Ridderset for en vurdering.</a></p></noscript>
   </div>
 </section>

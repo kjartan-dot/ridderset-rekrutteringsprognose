@@ -7,7 +7,9 @@
   const $ = id => root.querySelector('#rrh-' + id);
   const nf = new Intl.NumberFormat('nb-NO');
   const pf = new Intl.NumberFormat('nb-NO', {maximumFractionDigits:1});
-  let catalog, survey, companySeq=0, unitSeq=0, revision=0, timer, companyController, resultController;
+  let catalog, survey, companySeq=0, unitSeq=0, revision=0, contextRevision=0, timer, companyController, resultController;
+  let manual=false, restoring=false;
+  const storageKey='ridderset-recruitment-context-v1';
   let state = {company:null, main:null, units:[], role:null, town:'', nav:null, pay:null, indicator:null};
   const asset = name => new URL(name, new URL(root.dataset.assets, location.href));
   const endpoint = (base, path, params={}) => {
@@ -34,17 +36,58 @@
   function option(value,text){const o=el('option',text);o.value=value;return o;}
   function number(value){return typeof value==='number' && Number.isFinite(value);}
   function date(value){if(!value)return 'ukjent dato';const d=new Date(value);return Number.isNaN(d.getTime())?'ukjent dato':d.toLocaleString('nb-NO',{timeZone:'Europe/Oslo',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}
+  function openStep(step){
+    const ids={company:'rrh-start',role:'rrh-role-step',result:'rrh-result',advanced:'grundig-analyse',market:'markedstall'};
+    const section=document.getElementById(ids[step]);
+    if(!section || section.hidden)return false;
+    if(section.tagName==='DETAILS')section.open=true;
+    const heading=section.querySelector('h2,summary,input');
+    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
+    section.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    window.dispatchEvent(new CustomEvent('rrh-open-step',{detail:{step}}));
+    return true;
+  }
+  window.RRHFlow=Object.freeze({openStep});
+  function updateGuide(){
+    const hasStart=Boolean(state.company||manual),complete=Boolean(state.role&&catalog?.towns[state.town]);
+    $('step-role').disabled=!hasStart;$('step-result').disabled=!complete;
+    const current=complete?'result':hasStart?'role':'company';
+    for(const step of ['company','role','result']){
+      const button=$('step-'+step);button.removeAttribute('aria-current');
+      if(step===current)button.setAttribute('aria-current','step');
+    }
+    $('guide-status').textContent=complete?'Valgene dine følger med videre i analysen.':hasStart?'Neste: velg rollen og kontroller arbeidsstedet.':'Velg bedrift én gang. Vi tar valgene med videre.';
+    const next=$('company-next');if(next)next.textContent=complete?'Se vurderingen':'Neste: velg rolle';
+    $('reset').hidden=!hasStart;
+  }
+  function publishContext(){
+    if(restoring||!catalog)return;
+    const raw=$('offer').value;
+    const context=window.RRHContext.create({state,catalog,sector:$('sector').value,
+      offeredMonthlyBase:raw&&$('offer').checkValidity()?Number(raw):null,
+      searchTerm:state.role?marketTerm(state.role):'',revision:++contextRevision,manual});
+    if(!context)return;
+    window.__rrhContext=context;
+    updateGuide();
+    try{
+      if(state.company||manual)sessionStorage.setItem(storageKey,window.RRHContext.serialize(context));
+      else sessionStorage.removeItem(storageKey);
+    }catch{}
+    window.dispatchEvent(new CustomEvent('rrh-context-changed',{detail:context}));
+  }
   function clearResult(){
     revision++;resultController?.abort();state.nav=null;state.pay=null;state.indicator=null;
     $('result').hidden=true;$('commute').replaceChildren();$('offer-comparison').textContent='';
     $('commute-btn').disabled=false;
   }
-  function resetCompany(){
+  function resetCompany(notify=true){
     clearTimeout(timer);++unitSeq;clearResult();state={company:null,main:null,units:[],role:null,town:'',nav:null,pay:null,indicator:null};
+    manual=false;
     $('company-summary').hidden=true;$('unit-wrap').hidden=true;$('role-step').hidden=true;
     $('company-form').hidden=false;$('manual').hidden=false;$('search-title').textContent='Hvilken bedrift gjelder det?';
     $('company-results').replaceChildren();$('role-results').replaceChildren();$('role-search').value='';$('town').value='';
     $('offer').value='';$('sector').value='ALLE';
+    if(notify)publishContext();
   }
   async function searchCompany(){
     if(!catalog)return;
@@ -80,10 +123,13 @@
     details.append(el('p','Brønnøysundregistrene. Hentet '+date(c.retrievedAt)+'.','rrh-meta'));
     box.append(details);
     const change=el('button','Bytt bedrift','rrh-textbutton');change.type='button';
-    change.onclick=()=>{resetCompany();$('company').value='';$('company-status').textContent='';$('company').focus();};box.append(change);
+    change.onclick=()=>{resetCompany();$('company').value='';$('company-status').textContent='';$('company').focus();};
+    const actions=el('div',undefined,'rrh-company-actions');
+    const next=el('button',state.role?'Se vurderingen':'Neste: velg rolle');next.id='rrh-company-next';next.type='button';
+    next.onclick=()=>openStep(state.role&&state.town?'result':'role');actions.append(change,next);box.append(actions);
   }
   async function selectCompany(c){
-    ++companySeq;companyController?.abort();resetCompany();state.company=c;state.main=c;
+    ++companySeq;companyController?.abort();resetCompany(false);state.company=c;state.main=c;
     $('company-form').hidden=true;$('manual').hidden=true;$('company-results').replaceChildren();$('company-status').textContent='';
     $('search-title').textContent='Valgt bedrift';companySummary();populateRoles(c);
     if(c.kind==='underenheter')return;
@@ -91,15 +137,17 @@
     try{
       const data=await api('units',{org:c.org});if(ticket!==unitSeq)return;
       state.units=(data.companies||[]).filter(u=>u.org!==c.org);
+      publishContext();
       if(!state.units.length)return;
       const select=$('unit');select.replaceChildren(option('','Hovedadresse: '+(c.townName||c.name)));
       for(const u of state.units)select.append(option(u.org,u.name+' · '+(u.townName||'Ukjent kommune')));
       $('unit-wrap').hidden=false;$('unit-status').textContent=data.hasMore?'Viser inntil 100 avdelinger. Søk etter avdelingsnavnet hvis den mangler.':'Velg avdeling dersom jobben gjelder et annet arbeidssted.';
     }catch{if(ticket===unitSeq){$('unit-wrap').hidden=false;$('unit').replaceChildren(option('','Hovedadresse: '+(c.townName||c.name)));$('unit-status').textContent='Kunne ikke hente avdelingene. Arbeidskommunen kan endres under rollevalget.';}}
   }
-  function populateRoles(c){
-    $('offer').value='';
-    clearResult();state.role=null;$('role-step').hidden=false;$('role-results').replaceChildren();$('role-search').value='';$('role-status').textContent='';
+  function populateRoles(c,keepRole=false){
+    const role=keepRole?state.role:null;
+    if(!keepRole)$('offer').value='';
+    clearResult();state.role=role;$('role-step').hidden=false;$('role-results').replaceChildren();$('role-search').value='';$('role-status').textContent='';
     state.town=c?.town && catalog.towns[c.town]?c.town:'';$('town').value=state.town;
     $('town-origin').textContent=state.town?'fra bedriftsregisteret':'';
     const suggestions=c?core.suggestRoles(c,catalog.roles):[];
@@ -111,13 +159,14 @@
       b.append(el('small','Bransjebasert forslag'));b.onclick=()=>chooseRole(role,true);$('role-suggestions').append(b);
     }
     $('other-role').open=!suggestions.length;
+    if(role)chooseRole(role,false);else publishContext();
   }
   function chooseRole(role,scroll){
     if(state.role?.code!==role.code)$('offer').value='';
     state.role=role;
     root.querySelectorAll('[data-code]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.code===role.code)));
     $('role-status').textContent='Valgt: '+role.label+'.';
-    if(!state.town){clearResult();$('role-status').textContent+=' Velg arbeidskommune for å se vurderingen.';$('town').focus();return;}
+    if(!state.town){clearResult();publishContext();$('role-status').textContent+=' Velg arbeidskommune for å se vurderingen.';$('town').focus();return;}
     analyse(scroll);
   }
   function drawIndicator(){
@@ -201,7 +250,7 @@
   }
   function snapshot(){const role=state.role;return {role,town:state.town,townName:catalog.towns[state.town],term:marketTerm(role),sector:$('sector').value,sectorName:$('sector').selectedOptions[0].textContent};}
   async function analyse(scroll=false){
-    clearResult();if(!state.role||!catalog.towns[state.town])return;
+    clearResult();publishContext();if(!state.role||!catalog.towns[state.town])return;
     const ticket=revision,s=snapshot();resultController=new AbortController();const signal=resultController.signal;
     $('result-title').textContent=s.role.label;$('result-location').textContent=(state.company?state.company.name+' · ':'')+s.townName;
     $('result').hidden=false;$('download').disabled=true;drawIndicator();
@@ -217,18 +266,21 @@
   $('company-form').addEventListener('submit',e=>{e.preventDefault();if(catalog)searchCompany();});
   $('company').addEventListener('input',()=>{++companySeq;companyController?.abort();resetCompany();clearTimeout(timer);$('company-status').textContent='';if($('company').value.trim().length>=2)timer=setTimeout(searchCompany,350);});
   $('search-units').addEventListener('change',()=>{if($('company').value.trim().length>=2)searchCompany();});
-  $('manual').onclick=()=>{++companySeq;companyController?.abort();resetCompany();$('company-status').textContent='Du kan gjøre analysen uten bedriftsoppslag.';populateRoles(null);$('role-search').focus();};
-  $('unit').addEventListener('change',()=>{const c=state.units.find(u=>u.org===$('unit').value)||state.main;state.company=c;companySummary();populateRoles(c);});
+  $('manual').onclick=()=>{++companySeq;companyController?.abort();resetCompany(false);manual=true;$('company-status').textContent='Du kan gjøre analysen uten bedriftsoppslag.';populateRoles(null);openStep('role');$('role-search').focus({preventScroll:true});};
+  $('unit').addEventListener('change',()=>{const c=state.units.find(u=>u.org===$('unit').value)||state.main;state.company=c;companySummary();populateRoles(c,true);});
   $('role-search').addEventListener('input',()=>{
     clearResult();state.role=null;$('role-status').textContent='';root.querySelectorAll('[data-code]').forEach(b=>b.setAttribute('aria-pressed','false'));
-    const q=$('role-search').value.trim();$('role-results').replaceChildren();if(q.length<2)return;
+    publishContext();const q=$('role-search').value.trim();$('role-results').replaceChildren();if(q.length<2)return;
     const roles=core.searchRoles(q,catalog.roles);
     for(const r of roles){const b=el('button',r.label);b.type='button';b.dataset.code=r.code;b.setAttribute('aria-pressed','false');b.onclick=()=>chooseRole({...r,searchTerm:q},true);$('role-results').append(b);}
     if(!roles.length)$('role-results').append(el('p','Ingen treff. Prøv en bredere yrkestittel.','rrh-meta'));
   });
-  $('town').addEventListener('change',()=>{state.town=$('town').value;$('town-origin').textContent='valgt av deg';if(state.role)analyse();else clearResult();});
-  $('sector').addEventListener('change',()=>{if(state.role)analyse();});
-  $('offer').addEventListener('input',compareOffer);
+  $('town').addEventListener('change',()=>{state.town=$('town').value;$('town-origin').textContent='valgt av deg';if(state.role)analyse();else{clearResult();publishContext();}});
+  $('sector').addEventListener('change',()=>{if(state.role)analyse();else publishContext();});
+  $('offer').addEventListener('input',()=>{compareOffer();publishContext();});
+  for(const step of ['company','role','result'])$('step-'+step).onclick=()=>openStep(step);
+  for(const step of ['advanced','market'])$(step+'-link').onclick=e=>{if(openStep(step))e.preventDefault();};
+  $('reset').onclick=()=>{++companySeq;companyController?.abort();resetCompany();window.dispatchEvent(new CustomEvent('rrh-context-reset'));$('company').value='';$('company-status').textContent='';openStep('company');$('company').focus({preventScroll:true});};
   $('commute-btn').onclick=async()=>{
     if(!state.town)return;const ticket=revision,s=snapshot();$('commute-btn').disabled=true;$('commute').textContent='Henter pendling fra SSB …';
     try{const d=await market('pendling',{kommune:s.town},resultController?.signal);if(ticket!==revision)return;$('commute').replaceChildren();
@@ -252,13 +304,32 @@
   async function init(){
     $('search-btn').disabled=true;$('manual').disabled=true;$('company').disabled=true;$('search-units').disabled=true;$('company-status').textContent='Klargjør bedrifts- og yrkessøket …';
     const results=await Promise.allSettled([read(asset('catalog.json')),read(asset('nav-2026.json'))]);
-    if(!core || results[0].status!=='fulfilled' || !results[0].value.roles || !results[0].value.towns){
+    if(!core || !window.RRHContext || results[0].status!=='fulfilled' || !results[0].value.roles || !results[0].value.towns){
       $('company-status').textContent='Yrkeslisten kunne ikke lastes. ';const retry=el('button','Prøv igjen','rrh-textbutton');retry.type='button';retry.onclick=init;$('company-status').append(retry);return;
     }
     catalog=results[0].value;survey=results[1].status==='fulfilled'?results[1].value:null;
     const groups=new Map();for(const [key,label] of [['18','Nordland'],['55','Troms'],['56','Finnmark'],['other','Andre kommuner']]){const group=el('optgroup');group.label=label;groups.set(key,group);}
     for(const [code,name] of Object.entries(catalog.towns).sort((a,b)=>a[1].localeCompare(b[1],'nb')))(groups.get(code.slice(0,2))||groups.get('other')).append(option(code,name));
     $('town').replaceChildren(option('','Velg kommune'),...groups.values());$('company-status').textContent='';$('search-btn').disabled=false;$('manual').disabled=false;$('company').disabled=false;$('search-units').disabled=false;
+    let saved=null;
+    try{saved=window.RRHContext.restore(sessionStorage.getItem(storageKey),catalog);}catch{}
+    if(saved){
+      restoring=true;resetCompany(false);manual=saved.manual;
+      state.company=saved.selectedCompany;state.main=saved.mainCompany||saved.selectedCompany;state.units=saved.availableUnits;
+      if(state.company){$('company-form').hidden=true;$('manual').hidden=true;$('search-title').textContent='Valgt bedrift';companySummary();}
+      populateRoles(state.company);
+      if(state.units.length&&state.main){
+        $('unit').replaceChildren(option('','Hovedadresse: '+(state.main.townName||state.main.name)),...state.units.map(u=>option(u.org,u.name+' · '+(u.townName||'Ukjent kommune'))));
+        $('unit').value=state.company?.org===state.main.org?'':state.company?.org||'';$('unit-wrap').hidden=false;
+        $('unit-status').textContent='Velg avdeling dersom jobben gjelder et annet arbeidssted.';
+      }
+      state.town=saved.workplace.municipalityNumber||'';$('town').value=state.town;$('town-origin').textContent=state.town?'beholdt fra ditt forrige valg':'';
+      state.role=saved.occupation?{code:saved.occupation.code,label:saved.occupation.name,searchTerm:saved.occupation.searchTerm,kind:saved.occupation.kind}:null;
+      $('sector').value=saved.salary.sector;$('offer').value=saved.salary.offeredMonthlyBase??'';
+      restoring=false;
+      if(state.role)chooseRole(state.role,false);else publishContext();
+      $('guide-status').textContent='Vi har beholdt valgene dine i denne fanen. Du kan fortsette der du slapp.';
+    }else publishContext();
   }
   init();
 })();
