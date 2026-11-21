@@ -1,5 +1,9 @@
 # Bedrift først: leveranse og utrulling
 
+## Status: publisert 21. november 2026
+
+Versjon 0.1.0 er installert og aktivert i WordPress etter brukerens godkjenning «Kjør den ut». Den korte flyten er publisert på [Rekrutteringsprognose](https://ridderset.no/rekrutteringsprognose/), side 2124. Den eksisterende grundige analysen er bevart.
+
 ## Resultat
 
 Ny, isolert WordPress-modul: `integrations/wordpress/ridderset-hurtigsjekk/`. Shortcode: `[rr_hurtigsjekk]`.
@@ -27,26 +31,44 @@ node scripts/hurtigsjekk-server.mjs
 
 Lokal adresse: `http://127.0.0.1:3101`. Bruk `node scripts/build-hurtigsjekk-worker.mjs /absolutt/preview-checkout` for å generere den private demonstrasjonen fra samme WordPress-filer og adapter. Ingen klientnøkler eller serverhemmeligheter inngår.
 
-## Verifisering 21. november 2026
+## Verifisering før publisering, 21. november 2026
 
 - 40 Node-tester bestått, inkludert 12 nye tester for yrkessøk, bransjeregler, skala, ukjent data, rangering og usikkerhet.
 - Syntakskontroll for frontend, adapter og preview-generator bestått.
 - Reelt Brreg-oppslag: Nordlaks Oppdrett AS og underenheten i Stokmarknes. Riktig kommune og virksomhetsaktivitet kommer inn.
 - Direkte nettleserkontroll via godkjent nettleser: bedriftssøk, avdelingsvalg, bransjekort, nasjonal indikator, kildevisning, ukjent skår og endret kommune.
-- Mobilvisning kontrollert i en 390 × 844 iframe. Innholdets bredde var 375 px med rullefelt og ingen horisontal overflyt. Søkefeltet var synlig på første skjerm. Desktop kontrollert visuelt.
+- Den private demonstrasjonens mobilvisning ble kontrollert i en 390 × 844 iframe. Innholdets bredde var 375 px med rullefelt og ingen horisontal overflyt. Søkefeltet var synlig på første skjerm. Desktop ble kontrollert visuelt. Dette er ikke en produksjonstest.
 - Live SSB-svar for havbruksarbeidere: år 2025, avtalt median månedslønn 52 370 kroner, median med bonus/uregelmessige tillegg 59 710 kroner. Første forespørsel var treg; proxyens tidsavbrudd for markedsdata ble utvidet til 20 sekunder. Feil gir en synlig utilgjengelig-tilstand.
 - Det automatiserte Playwright-scriptet `tests/hurtigsjekk.e2e.py` er skrevet og Python-syntakskontrollert. Det kunne ikke startes i executorens Chromium på grunn av en socket-restriksjon. Det er ikke rapportert som bestått.
-- PHP-runtime finnes ikke i dette miljøet. PHP-adapteren er gjennomgått, men er ikke kjørt i WordPress. Aktiv siden er ikke erstattet.
+- Lokal PHP-runtime var ikke tilgjengelig. PHP-adapteren ble gjennomgått før installasjon; faktisk kjøring i WordPress er dokumentert nedenfor.
 
-## Publisering etter gjennomgang
+## Produksjonssetting og kontroll
 
-Prosjektets AGENTS.md krever at demonstrasjonen blir kontrollert før produksjon erstattes. Den private demonstrasjonen er derfor første leveranse.
+Den private demonstrasjonen ble levert før brukeren godkjente produksjonssetting. Pluginen er installert og aktivert via WordPress-administrasjonen. Bare inngangen til side 2124 og den tilhørende, avgrensede utformingen er endret:
 
-1. Pakk plugin-mappen til en ZIP med `ridderset-hurtigsjekk/` som toppmappe.
-2. Installer og aktiver på WordPress-staging. Opprett en testside med `[rr_hurtigsjekk]`. Kontroller Brreg, kildetall og mobilvisning i WordPress-temaet.
-3. Etter godkjenning: hent siste versjon og seksjonslås av side 2124, ta vare på originalblokkene og erstatt bare den gamle introduksjonen med den nye shortcoden. Legg den eksisterende markedssjekken sammen med fordypningen, slik at to konkurrerende innganger ikke vises.
-4. Behold den eksisterende grundige analysen og alle gamle inngående lenker. Pek snarveien i Innsikt og verktøy til den samme hovedadressen.
-5. Kontroller publisert og utlogget visning. Tilbakerulling er å gjeninnføre de arkiverte toppblokkene; pluginen påvirker ingen side uten shortcoden.
+- Toppen er erstattet med `[rr_hurtigsjekk]`.
+- Den eksisterende markedssjekken ligger i et lukket `core/details`-felt.
+- Den opprinnelige blokken `grundig-analyse` og kontaktblokken er uendret.
+- Fire CSS-regler avgrenset med `body.page-id-2124` fjerner temamellomrom over innholdet og gir fordypningsfeltene samme visuelle inngang som den nye løsningen.
+
+WordPress registrerte `modified: 2026-11-21T09:37:49`. Dette er WordPress-feltet som returnert, uten en antatt tidssone. Sidens innholdshash etter publisering er `8928035d3b640f5fa28d31fc5bb24435ba248644`. Bevarte blokkhasher: grundig analyse `bdcabb868503964ffd9fd637f478530aceb6d02e`, kontaktblokk `7bd80b3f1fd7e220c83166b777da6ae9a8d4490e`.
+
+Kontrollert i den publiserte WordPress-løsningen:
+
+- PHP-pluginen er aktiv og de reelle endepunktene for bedriftssøk og underenheter returnerer HTTP 200 med Brreg-data.
+- Nettleserflyten for Nordlaks Oppdrett AS viser bransjeforslag og havbruksarbeidere med nasjonal yrkesindikator 8 av 10. Tallet gjelder relativt nasjonalt mangelpress, ikke bedriftens forventede søkerantall.
+- SSB-kallet for havbruksarbeidere viser 2025-medianen for avtalt månedslønn, 52 370 kroner.
+- Den offentlige siden returnerer HTTP 200 uten innlogging. PageOptimize sin samlede lasting av kjerne-JavaScript, frontend og CSS er kontrollert med HTTP 200.
+- Rapportknappen fullfører filnedlasting på den publiserte siden.
+- Den publiserte WordPress-siden er kontrollert i en 390 × 844 iframe fra samme nettsted. Innholdets `clientWidth` og `scrollWidth` er begge 373 px: ingen horisontal overflyt. Det første søkefeltet og søkeknappen er synlige på første skjerm.
+
+## Enkel tilbakerulling
+
+1. Hent den nyeste versjonen av side 2124. Bruk WordPress-versjonen umiddelbart før produksjonssettingen som kilde for de tidligere toppblokkene.
+2. Erstatt bare den nye shortcode-inngangen med disse toppblokkene. Flytt den eksisterende markedssjekken ut av det nye åpne/lukke-feltet dersom hele den tidligere inngangen skal gjenopprettes. Bevar den grundige analysen, kontaktblokken og eventuelle senere, urelaterte endringer.
+3. Kontroller siden utlogget. Deaktiver pluginen først etter at shortcoden er fjernet fra siden. Pluginen påvirker ingen side uten shortcoden; de nye tematilpasningene er også avgrenset til side 2124.
+
+Ingen full WordPress-sidekopi, API-token eller andre tilganger lagres i dette offentlige repositoryet.
 
 ## Det som kreves for faktisk modelltrening
 
