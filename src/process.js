@@ -10,7 +10,17 @@ export function visibleProcess(process,viewer){
  const common={id:process.id,title:process.title,overallStage:process.overallStage};
  if(recruiter)return {...common,applications:process.applications.map(a=>({...a})),internalNotes:process.internalNotes};
  if(customer)return {...common,applications:process.applications.filter(a=>a.customerRelease?.approved===true).map(a=>({id:a.id,name:a.customerRelease.name,stage:a.stage,summary:a.customerRelease.summary})),nextAction:process.customerNextAction};
- return {...common,application:{id:application.id,stage:application.publishedUpdate?.stage??'received',message:application.publishedUpdate?.message??'Søknaden er mottatt.',nextUpdateAt:application.publishedUpdate?.nextUpdateAt??null}};
+ const update = application.publishedUpdate;
+ return {
+   id: process.id,
+   title: process.title,
+   application: {
+     id: application.id,
+     stage: update?.stage ?? 'received',
+     message: update?.message ?? 'Søknaden er mottatt.',
+     nextUpdateAt: update?.nextUpdateAt ?? null,
+   },
+ };
 }
 export function publishCandidateUpdate(process,actorId,applicationId,update,now){
  if(!process.recruiterIds.includes(actorId))throw new Error('Access denied');
