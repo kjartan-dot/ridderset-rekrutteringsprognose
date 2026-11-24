@@ -1,13 +1,32 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
+import {journeyScripts, journeyStyles} from './hurtigsjekk-server.mjs';
 const out=process.argv[2];
 if(!out)throw new Error('Provide the preview checkout path.');
 const plugin=new URL('../integrations/wordpress/ridderset-hurtigsjekk/',import.meta.url);
 const assets={};
-for(const file of ['front.js','core.js','context.js','context-bridge.js','style.css','catalog.json','nav-2026.json'])assets['/assets/'+file]=await readFile(new URL(file,plugin),'utf8');
+for(const file of [...journeyScripts, ...journeyStyles, 'catalog.json', 'nav-2026.json'])assets['/assets/'+file]=await readFile(new URL(file,plugin),'utf8');
 assets['/assets/preview.css']='body{margin:0;background:#f5f2eb;font-family:Inter,system-ui,sans-serif}.preview-top{min-height:70px;max-width:1108px;padding:15px 24px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;color:#173a43}.preview-top strong{font-size:23px;letter-spacing:-.04em}.preview-top span{font-size:13px;background:#e2eae7;padding:5px 10px;border-radius:20px}.preview-top a{font-size:14px;color:#173a43;text-underline-offset:3px}@media(max-width:500px){.preview-top{padding:13px 20px;min-height:64px}.preview-top a{display:none}.preview-top strong{font-size:21px}}';
 const fragment=(await readFile(new URL('view.html',plugin),'utf8')).replaceAll('{{RRH_API}}','/api/').replaceAll('{{RRH_ASSETS}}','/assets/').replaceAll('{{RRH_MARKET_API}}','/market/').replace('Ingen innlogging. Søket','Testversjon. Søket');
-const html='<!doctype html><html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Prøv en enklere rekrutteringsanalyse: bedriftssøk, rolleforslag og dokumenterte markedstall."><title>Rekrutteringsinnsikt · Ridderset</title><link rel="stylesheet" href="/assets/preview.css"><link rel="stylesheet" href="/assets/style.css"></head><body><header class="preview-top"><strong>Ridderset</strong><span>Privat testversjon</span><a href="https://ridderset.no/innsikt/">Innsikt og verktøy</a></header><main>'+fragment+'</main><script src="/assets/core.js"></script><script src="/assets/context.js"></script><script src="/assets/front.js"></script><script src="/assets/context-bridge.js"></script></body></html>';
+const styles = journeyStyles.map(file => `<link rel="stylesheet" href="/assets/${file}">`).join('\n');
+const scripts = journeyScripts.map(file => `<script src="/assets/${file}"></script>`).join('\n');
+const html = `<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Prøv en enklere rekrutteringsanalyse: bedriftssøk, rolleforslag og dokumenterte markedstall.">
+<title>Rekrutteringsinnsikt · Ridderset</title>
+<link rel="stylesheet" href="/assets/preview.css">
+${styles}
+</head>
+<body>
+<header class="preview-top"><strong>Ridderset</strong><span>Privat testversjon</span><a href="https://ridderset.no/innsikt/">Innsikt og verktøy</a></header>
+<main>${fragment}</main>
+${scripts}
+</body>
+</html>`;
 let adapter=await readFile(new URL('./hurtigsjekk-server.mjs',import.meta.url),'utf8');
 adapter=adapter.slice(adapter.indexOf('const brreg ='),adapter.indexOf('const securityHeaders =')).replaceAll('export function ','function ').replaceAll('export async function ','async function ');
 const handler=String.raw`

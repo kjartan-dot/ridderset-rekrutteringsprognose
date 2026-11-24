@@ -1,8 +1,8 @@
 # Ridderset Rekrutteringsinnsikt
 
-**Status 14. november 2026: lokal testversjon, ikke produksjonsklar.** Dagens WordPress-verktøy er ikke erstattet.
+Repoet inneholder en frittstående Node-app og den separate WordPress-integrasjonen for Hurtigsjekken. [WordPress-utgaven 0.3.3](docs/holistic-customer-journey.md) gir arbeidsgiveren en prioritert plan ved siden av dokumenterte markedssignaler.
 
-Testversjonen har serverbasert Brreg-søk for hoved-/underenheter, 407 yrkesnavn, SSB-lønnsoppslag, stillingsavklaring, seks eksplisitt bekreftede egenvurderinger og nedlastbar tekstrapport. Ingen NAV-feed, innlogging, database eller validert prognose.
+Den frittstående appen har serverbasert Brreg-søk for hoved- og underenheter, 407 yrkesgrupper, SSB-lønnsoppslag, stillingsavklaring, bekreftede egenvurderinger og en nedlastbar tekstrapport.
 
 ## Kjør lokalt
 
@@ -14,7 +14,27 @@ npm test
 npm start
 ```
 
-Åpne http://127.0.0.1:3100. Brreg/SSB krever internett. Appen lagrer ikke svar; omlasting tømmer dem. Ikke legg inn kandidatopplysninger. Kun testbruk inntil nettleser-, mobil- og driftstester er fullført.
+Åpne http://127.0.0.1:3100 for den frittstående appen. Brreg- og SSB-oppslag krever internett. Bruk fiktive opplysninger i tester.
+
+## Test den veiledede Hurtigsjekken
+
+Start forhåndsvisningen i én terminal. Åpne http://127.0.0.1:3101.
+
+```sh
+node scripts/hurtigsjekk-server.mjs
+```
+
+Med Python Playwright og Chromium installert kan nettlesertestene kjøres i en annen terminal. De dekker mobil og desktop, og bruker syntetiske kildesvar.
+
+```sh
+python3 tests/hurtigsjekk.e2e.py
+```
+
+Med PHP installert kan WordPress-adapterens Brreg-buffer testes med syntetiske svar.
+
+```sh
+php tests/wordpress-brreg-cache.php
+```
 
 ## Dokumentasjon
 
@@ -23,5 +43,6 @@ npm start
 - [Datakilderegister](docs/data-source-registry.md)
 - [Beregningsmetode](docs/calculation-method.md)
 - [Teststatus](docs/test-report.md)
+- [Booking i WordPress](docs/recruitment-hero-booking.md)
 
-13 automatiserte tester består. Visuell E2E-test er ikke fullført i dette miljøet. Se teststatus før demonstrasjon eller installasjon. Legacy-kilden er et urørt arkiv, ikke deploykode. Ingen hemmeligheter eller private dokumenter skal legges i dette offentlige repoet.
+Innholdet i `legacy/` er kildearkiv. Bruk syntetiske data og hold hemmeligheter og private dokumenter utenfor dette offentlige repoet.
