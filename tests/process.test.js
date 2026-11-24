@@ -27,7 +27,51 @@ test('candidate without a published update sees the receipt confirmation', () =>
     },
   });
 });
-test('customer sees only explicitly released candidate summaries',()=>{const v=visibleProcess(p,{id:'c'});assert.equal(v.applications.length,1);assert.doesNotMatch(JSON.stringify(v),/PRIVATE|HIDDEN|candidateId/);});
+test('customer sees only approved summary fields, and older releases have no stage', () => {
+  const view = visibleProcess(p, { id: 'c' });
+  assert.deepEqual(view.applications, [
+    { id: 'a1', name: 'Fiktiv A', stage: null, summary: 'Godkjent sammendrag' },
+  ]);
+});
+
+test('customer stage stays at the approved value when the internal stage changes', () => {
+  const [approved, unapproved] = p.applications;
+  const released = {
+    ...p,
+    applications: [
+      {
+        ...approved,
+        stage: 'review',
+        customerRelease: { ...approved.customerRelease, stage: 'review', internalNote: 'PRIVATE' },
+      },
+      unapproved,
+    ],
+  };
+  const moved = {
+    ...released,
+    applications: [{ ...released.applications[0], stage: 'references' }, unapproved],
+  };
+  const expected = [{ id: 'a1', name: 'Fiktiv A', stage: 'review', summary: 'Godkjent sammendrag' }];
+  assert.deepEqual(visibleProcess(released, { id: 'c' }).applications, expected);
+  assert.deepEqual(visibleProcess(moved, { id: 'c' }).applications, expected);
+  assert.equal(visibleProcess(moved, { id: 'r' }).applications[0].stage, 'references');
+});
+
+test('customer sees no stage when the approved snapshot has an unsupported value', () => {
+  const [approved] = p.applications;
+  const process = {
+    ...p,
+    applications: [{ ...approved, customerRelease: { ...approved.customerRelease, stage: 'private' } }],
+  };
+  assert.equal(visibleProcess(process, { id: 'c' }).applications[0].stage, null);
+});
+
+test('customer approval does not grant another customer access to the process', () => {
+  const otherProcess = { ...p, id: 'other', customerIds: ['other-customer'] };
+  assert.equal(visibleProcess(otherProcess, { id: 'other-customer' }).id, 'other');
+  assert.throws(() => visibleProcess(p, { id: 'other-customer' }), /Access denied/);
+  assert.throws(() => visibleProcess(otherProcess, { id: 'c' }), /Access denied/);
+});
 test('unknown, anonymous and self-declared recruiter are denied',()=>{for(const viewer of [null,{id:'stranger'},{id:'stranger',role:'recruiter'}])assert.throws(()=>visibleProcess(p,viewer),/Access denied/);});
 test('publication requires assigned recruiter, explicit text and future followup',()=>{assert.throws(()=>publishCandidateUpdate(p,'c','a1',{},'2026-11-14T12:00:00Z'),/Access denied/);assert.throws(()=>publishCandidateUpdate(p,'r','a1',{stage:'review',message:'',nextUpdateAt:'2026-11-20'},'2026-11-14'),/Invalid update/);const next=publishCandidateUpdate(p,'r','a1',{stage:'interview',message:'Ny avtalt oppfølging',nextUpdateAt:'2026-11-23T12:00:00Z'},'2026-11-14T12:00:00Z');assert.equal(next.applications[0].publishedUpdate.message,'Ny avtalt oppfølging');assert.notEqual(p.applications[0].publishedUpdate.message,'Ny avtalt oppfølging');});
 test('overdue promise becomes action for recruiter, no invented progress',()=>{assert.deepEqual(overdueUpdates(p,'2026-11-21T12:00:00Z').map(x=>x.applicationId),['a1']);assert.equal(p.applications[0].publishedUpdate.stage,'interview');});
