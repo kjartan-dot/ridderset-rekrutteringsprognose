@@ -1,0 +1,334 @@
+--- wordpress/page-2124-before.html
++++ wordpress/page-2124-after.html
+@@ -1,12 +1,12 @@
+ <!-- wp:shortcode -->
+-[rr_hurtigsjekk guided="1"]
++[rr_hurtigsjekk guided="1" journey="1"]
+ <!-- /wp:shortcode --><!-- wp:details {"className":"rq-advanced","anchor":"markedstall"} -->
+ <details class="wp-block-details rq-advanced" id="markedstall"><summary>Flere markedstall for den valgte rollen</summary>
+ <!-- wp:shortcode -->
+ [rr_markedssjekk]
+ <!-- /wp:shortcode -->
+ </details>
+-<!-- /wp:details --><!-- wp:details {"className":"rq-advanced"} --><details class="wp-block-details rq-advanced" id="grundig-analyse"><summary>Neste steg: tilpass rekrutteringen</summary><!-- wp:html -->
++<!-- /wp:details --><!-- wp:details {"className":"rq-advanced"} --><details class="wp-block-details rq-advanced" id="grundig-analyse"><summary>Flere verktøy: søkevalg og Worklife</summary><!-- wp:html -->
+ <div class="rrp-outer-shell" style="width:min(1680px,calc(100% - 22px));max-width:100%;margin:0 auto 32px;position:relative"><style id="rrp-v02-style">
+ #rrp-v02{--dark:#112f37;--deep:#09222b;--teal:#3d7280;--cream:#f5f2eb;--sand:#ddc39d;--ink:#17353d;--muted:#5e7980;--line:#d7e2df;color:var(--ink);font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden;background:var(--cream);margin:0 auto;max-width:100%;text-align:left}
+ #rrp-v02 *,#rrp-v02 *:before,#rrp-v02 *:after{box-sizing:border-box}
+@@ -264,24 +264,24 @@
+  <div class="rrp-signal"><span class="rrp-signal-index">✓</span><div><b>Yrkeslønn</b><p>Publiserte SSB-data for 2024 og 2025, når tall er tilgjengelige.</p></div></div>
+  <div class="rrp-signal"><span class="rrp-signal-index">✓</span><div><b>Regionalt bakteppe</b><p>NAVs ledighet, månedlige utlysninger og beregnet yrkesmangel for fylket på samlet nivå.</p></div></div>
+  <div class="rrp-signal"><span class="rrp-signal-index">✓</span><div><b>Nasjonalt anslag på yrkesmangel (NAV 2026)</b><p id="rrp-national-shortage">For noen yrker har NAV publisert et anslag med konfidensintervall.</p></div></div>
+- <div class="rrp-signal"><span class="rrp-signal-index">!</span><div><b>Etterspørsel per stillingstype i <span id="rrp-area-short">Troms</span></b><p>Krever NAVs stillingsfeed og god yrkeskoding på riktig geografisk nivå.</p></div></div>
++ <div class="rrp-signal"><span class="rrp-signal-index">!</span><div><b>Etterspørsel per stillingstype i <span id="rrp-area-short">Troms</span></b><p>Se NAV-treff og kildebegrensninger i hurtigsjekken. Utlysninger viser aktivitet i markedet, ikke hvor mange kvalifiserte kandidater som er tilgjengelige.</p></div></div>
+  <div class="rrp-signal"><span class="rrp-signal-index">!</span><div><b>Reell kandidattilgang og rekrutteringstid</b><p>Trenger anonymiserte rekrutteringsresultater og supplerende kompetansetall.</p></div></div>
+  </section></div>
+- <section class="rrp-gap"><div class="rrp-label">DATAGRUNNLAG OG FAGLIG FORBEHOLD · VERSJON 0.3</div><h2>Hvor krevende blir rekrutteringen?</h2><p>Vi viser dokumentert lønn og arbeidsmarkedsdata for <strong id="rrp-occupation-label2">valgt yrke</strong>, men vi kan ennå ikke beregne en pålitelig sannsynlighet eller ansettelsestid for denne stillingen. Yrkes- og regionspesifikk kandidattilgang og annonsekonkurranse må kobles til og kvalitetssikres først.</p><p>Derimot kan du allerede nå teste <strong>hvilke valg virksomheten selv kan påvirke</strong>. Analyseverktøyet nedenfor viser mulige hindringer i rekrutteringsopplegget, ikke hvor stor knappheten på kandidater faktisk er.</p></section>
++ <section class="rrp-gap"><div class="rrp-label">DATAGRUNNLAG OG FAGLIG FORBEHOLD · VERSJON 0.3</div><h2>Hvor krevende blir rekrutteringen?</h2><p>Vi viser dokumentert lønn og arbeidsmarkedsdata for <strong id="rrp-occupation-label2">valgt yrke</strong>, men vi kan ennå ikke beregne en pålitelig sannsynlighet eller ansettelsestid for denne stillingen. Observerte utlysninger vises i hurtigsjekken. Faktisk kandidattilgang og resultater fra rekrutteringer er fortsatt ikke målt.</p><p>Derimot kan du allerede nå teste <strong>hvilke valg virksomheten selv kan påvirke</strong>. Analyseverktøyet nedenfor viser mulige hindringer i rekrutteringsopplegget, ikke hvor stor knappheten på kandidater faktisk er.</p></section>
+ <section class="rrp-sim" id="rrp-scenario" aria-label="Simuler arbeidsgiverens rekrutteringsvalg">
+-  <div class="rrp-sim-head"><div><div class="rrp-label">04 · HANDLINGSROM · INTERAKTIV BESLUTNINGSSTØTTE</div><h2>Kan vi gjøre denne stillingen enklere å rekruttere til?</h2><p class="rrp-intro">Test hvordan geografisk søk, kravprofil, fleksibilitet og søkemetode påvirker hindringene dere selv legger inn i prosessen. Dette er en kvalitativ fagmodell, ikke en prognose for antall søkere.</p></div><span class="rrp-pill">Fire valg å teste</span></div>
++  <div class="rrp-sim-head"><div><div class="rrp-label">04 · HANDLINGSROM · INTERAKTIV BESLUTNINGSSTØTTE</div><h2>Avklar søkeopplegget for rollen</h2><p class="rrp-intro">Vurder søkeområde, nødvendige krav, arbeidsform og kanaler i sammenheng med oppgavene. Fysisk oppmøte og faglige krav kan være nødvendige rammer. Bekreft valgene før dere bruker rådene.</p></div><span class="rrp-pill">Fire valg å teste</span></div>
+   <div class="rrp-sim-grid">
+     <div class="rrp-sim-field"><label for="rrp-sim-area">Hvor langt vil dere søke?</label><small>En snever geografi kan begrense tilgjengelige kandidater.</small><select id="rrp-sim-area"><option value="local">Kun lokalt</option><option value="regional">Innenfor regionen</option><option value="national">Nasjonalt / mulighet for flytting</option></select></div>
+     <div class="rrp-sim-field"><label for="rrp-sim-criteria">Hvordan er må-kravene formulert?</label><small>Unødvendige krav kan avvise aktuelle kandidater.</small><select id="rrp-sim-criteria"><option value="strict">Mange absolutte krav</option><option value="focused">Kun tydelig dokumenterte må-krav</option><option value="equivalent">Realkompetanse og utviklingsmulighet vurderes</option></select></div>
+     <div class="rrp-sim-field"><label for="rrp-sim-flex">Hvor fleksibel er arbeidsformen?</label><small>Endres bare hvis oppgavene gjør det mulig.</small><select id="rrp-sim-flex"><option value="onsite">Fast arbeidssted og oppmøte</option><option value="some">Noe fleksibilitet i arbeidstid / reise</option><option value="flexible">Fleksibilitet der oppgavene tillater det</option></select></div>
+     <div class="rrp-sim-field"><label for="rrp-sim-method">Hvordan vil dere finne kandidater?</label><small>En annonse alene når ikke nødvendigvis passive kandidater.</small><select id="rrp-sim-method"><option value="ads">Kun stillingsannonse</option><option value="mixed">Annonse og nettverksarbeid</option><option value="active">Aktivt søk med målrettet kandidatdialog</option></select></div>
+   </div>
+-  <div class="rrp-sim-result" aria-live="polite"><header><span>FAGLIG SAMMENLIGNING · IKKE MARKEDSSTATISTIKK</span><span id="rrp-sim-tag" class="rrp-pill">Startprofil</span></header>
+-    <h3 id="rrp-sim-title">Flere unødvendige hindringer i startoppsettet</h3>
+-    <p id="rrp-sim-description">Juster valgene ovenfor for å se hvordan dere kan åpne kandidatmarkedet.</p>
+-    <div class="rrp-sim-bars"><div class="rrp-sim-bar"><span>Illustrativ startprofil</span><div class="rrp-sim-track"><b style="width:100%"></b></div><strong>8</strong></div><div class="rrp-sim-bar after"><span>Valgt tilnærming</span><div class="rrp-sim-track"><b id="rrp-sim-progress"></b></div><strong id="rrp-sim-points">8</strong></div></div>
++  <div class="rrp-sim-result" aria-live="polite"><header><span>FAGLIG SAMMENLIGNING · IKKE MARKEDSSTATISTIKK</span><span id="rrp-sim-tag" class="rrp-pill">Ikke bekreftet</span></header>
++    <h3 id="rrp-sim-title">Gå gjennom valgene før de brukes</h3>
++    <p id="rrp-sim-description">Standardvalgene er eksempler. Bekreft at valgene beskriver rekrutteringen deres før de brukes.</p>
++    <div class="rrp-sim-bars" hidden style="display:none"><div class="rrp-sim-bar"><span>Illustrativ startprofil</span><div class="rrp-sim-track"><b style="width:100%"></b></div><strong>8</strong></div><div class="rrp-sim-bar after"><span>Valgt tilnærming</span><div class="rrp-sim-track"><b id="rrp-sim-progress"></b></div><strong id="rrp-sim-points">Ikke bekreftet</strong></div></div>
+     <div id="rrp-sim-steps" class="rrp-sim-steps" aria-label="Tre anbefalte første tiltak"></div>
+-    <p class="rrp-sim-note">Skalaen viser antall poeng for selvvalgte begrensninger (0–8), ikke rekrutteringsrisiko, sannsynlighet eller antall søkere. Alle fire faktorer vektes likt som et transparent illustrativt utgangspunkt. Det er ingen validert modell for årsakssammenheng eller effektstørrelse.</p>
++    <p class="rrp-sim-note">Rådene følger de valgene dere bekrefter. De er praktiske forslag som må vurderes mot jobben og målgruppen, ikke en beregning av søkerantall eller ansettelsessannsynlighet.</p>
+     <div class="rrp-sim-actions"><button type="button" id="rrp-sim-copy">Kopier beslutningsnotat</button><a href="https://ridderset.no/kontakt/?tema=rekruttering#book-mote" target="_blank" rel="noopener">Drøft rekrutteringsstrategien med Ridderset ↗</a></div><div id="rrp-sim-status" class="rrp-sim-status" role="status"></div>
+   </div>
+ </section>
+@@ -420,7 +420,7 @@
+    $("rrp-region-label").textContent=area.name;
+    $("rrp-occupation-label").textContent=selected.name;$("rrp-occupation-label2").textContent=selected.name;
+    const shortage=window.__rrpOccupationShortages?.[selected.code]||null;
+-   $("rrp-national-shortage").textContent=shortage?"NAV anslår "+fmt(shortage.estimate)+" personer i udekket behov for "+selected.name+" i Norge i 2026 (95 % konfidensintervall "+fmt(shortage.low)+"–"+fmt(shortage.high)+"). Dette gjelder ikke spesielt "+area.name+".":"For dette yrket har vi ikke koblet et verifisert yrkesanslag fra NAV til STYRK08 i testdatabasen.";
++   $("rrp-national-shortage").textContent=shortage?"NAV anslår "+fmt(shortage.estimate)+" personer i udekket behov for "+selected.name+" i Norge i 2026 (95 % konfidensintervall "+fmt(shortage.low)+"–"+fmt(shortage.high)+"). Dette gjelder ikke spesielt "+area.name+".":"Denne bakgrunnstabellen har ikke et eget mangelanslag for yrket. Se hurtigsjekkens yrkesindikator og kildegrunnlag for den valgte rollen.";
+    $("rrp-salary-name").textContent=selected.name;
+    const med=selected.median25;
+    const max=Math.max(selected.median24||0,med||0,offer||0,1)*1.07;
+@@ -441,7 +441,7 @@
+    $("rrp-advice-salary").textContent=offer===null?"Få på plass et realistisk lønnsspenn. Sammenlign med ansvar, sektor og relevant kompetanse, ikke bare landsgjennomsnittet.":(med!==null ? offer<med : false)?"Test om lønnstilbudet kan gjøre det vanskeligere å tiltrekke relevante kandidater. Undersøk regionalt nivå og stillingens ansvar.":"Kvalitetssikre lønnstilbudet opp mot ansvar, erfaring og marked. En nasjonal median er bare ett sammenligningspunkt.";
+    $("rrp-advice-role").textContent="Avklar hva rollen faktisk skal levere. En tittel som prosjektleder kan høre til flere STYRK08-grupper. Kontroller at "+selected.name+" er riktig yrkeskode før du bruker tallene.";
+    $("rrp-selection-note").textContent="STYRK08 "+selected.code+" · "+selected.name+" · "+area.name+(offer===null?"":" · tilbud "+money(offer));
+-   window.__rrpCurrent={...(window.__rrpCurrent||{}),model_version:"ridderset-market-0.4-occupation-search",as_of:"2026-11-11",occupation:selected,area,national_occupation_shortage:window.__rrpOccupationShortages?.[selected.code]||null,monthly_salary_offer:offer,company:window.__rrpCompany||null,risk:{status:"ikke_beregnbar",validated_probability:null,reason:"Mangler yrkesvise etterspørsels- og kandidatdata for regionen."},source_links:["https://data.ssb.no/api/pxwebapi/v2/tables/11418","https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger"]};
++   window.__rrpCurrent={...(window.__rrpCurrent||{}),model_version:"ridderset-market-0.4-occupation-search",as_of:"2026-11-11",occupation:selected,area,national_occupation_shortage:window.__rrpOccupationShortages?.[selected.code]||null,monthly_salary_offer:offer,company:window.__rrpCompany||null,risk:{status:"ikke_beregnbar",validated_probability:null,reason:"Mangler dokumentert kandidattilgang og validerte rekrutteringsutfall for rollen og arbeidsstedet."},source_links:["https://data.ssb.no/api/pxwebapi/v2/tables/11418","https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger"]};
+  }
+  function clearSelection(ctx){
+    guidedContext=ctx||null;selected=null;input.value="";d.hidden=true;
+@@ -482,73 +482,7 @@
+ })();
+ </script>
+ 
+-<script id="rrp-scenario-v03">
+-(function(){
+-"use strict";
+-const root=document.getElementById("rrp-v02");if(!root)return;
+-const $=id=>document.getElementById(id);
+-const labels={
+-area:{local:"Kun lokalt",regional:"Innenfor regionen",national:"Nasjonalt / mulighet for flytting"},
+-criteria:{strict:"Mange absolutte krav",focused:"Kun tydelig dokumenterte må-krav",equivalent:"Realkompetanse og utviklingsmulighet vurderes"},
+-flex:{onsite:"Fast arbeidssted og oppmøte",some:"Noe fleksibilitet i arbeidstid / reise",flexible:"Fleksibilitet der oppgavene tillater det"},
+-method:{ads:"Kun stillingsannonse",mixed:"Annonse og nettverksarbeid",active:"Aktivt søk med målrettet kandidatdialog"}};
+-const pts={area:{local:2,regional:1,national:0},criteria:{strict:2,focused:1,equivalent:0},flex:{onsite:2,some:1,flexible:0},method:{ads:2,mixed:1,active:0}};
+-const ids=["area","criteria","flex","method"];
+-function calc(){const chosen=Object.fromEntries(ids.map(k=>[k,$("rrp-sim-"+k).value]));return {chosen,points:ids.reduce((n,k)=>n+pts[k][chosen[k]],0)};}
+-function actions(chosen){
+-const options=[];
+-if(chosen.criteria==="strict")options.push("Gå gjennom må-kravene med fagansvarlig. Behold bare krav som er nødvendige for å utføre oppgavene.");
+-else if(chosen.criteria==="focused")options.push("Vurder om dokumentert realkompetanse kan dekke deler av kompetansebehovet.");
+-else options.push("Beskriv hva kandidaten må beherske ved oppstart, og hva som kan læres etter ansettelse.");
+-if(chosen.area==="local")options.push("Test en regional kartlegging før dere konkluderer med at kandidatmarkedet er for lite.");
+-else if(chosen.area==="regional")options.push("Undersøk om pendling, flytting eller nasjonalt søk kan gi relevante kandidater.");
+-else options.push("Sett av tid til å avklare reise, flytting og lokalt nettverk når dere søker nasjonalt.");
+-if(chosen.method==="ads")options.push("Kombiner en målrettet annonse med aktiv kartlegging og dialog med aktuelle kandidater.");
+-else if(chosen.method==="mixed")options.push("Lag en konkret plan for hvem dere skal kontakte aktivt, og hvilke nettverk dere skal bruke.");
+-else options.push("Definer relevante fagmiljøer og en strukturert plan for direkte kandidatkontakt.");
+-if(chosen.flex==="onsite")options.push("Undersøk om noe fleksibilitet er mulig uten at arbeidets kvalitet eller sikkerhet svekkes.");
+-else if(chosen.flex==="some")options.push("Tydeliggjør hvilken fleksibilitet dere faktisk kan tilby, og hvor grensene går.");
+-else options.push("Beskriv fleksibiliteten presist i stillingsprofilen, ikke som et uforpliktende løfte.");
+-return options.slice(0,3);
+-}
+-function buildMemo(result,actionsList){
+-const current=window.__rrpCurrent||{};
+-const occupation=current.occupation?.name||"Yrke ikke oppgitt";
+-const county=current.area?.name||"Fylke ikke oppgitt";
+-const sal=current.occupation?.median25;
+-const offer=current.monthly_salary_offer;
+-const base=current.salary_input?.measure==="base"?current.salary_input.offeredMonthlyBase:null;
+-const guided=Boolean(document.querySelector('#rr-hurtigsjekk[data-guided="true"]'));
+-return ["RIDDERSET | REKRUTTERINGSPROGNOSE | BESLUTNINGSNOTAT","Dato: "+new Date().toLocaleDateString("nb-NO"),"Yrke: "+occupation+" / STYRK08 "+(current.occupation?.code||"—"),"Område: "+county,"SSB median månedslønn 2025 (Norge): "+(sal==null?"Ikke publisert":new Intl.NumberFormat("nb-NO").format(sal)+" kr"),(guided?"Tilbudt grunnlønn: "+(base==null?"Ikke oppgitt":new Intl.NumberFormat("nb-NO").format(base)+" kr per måned. Vurderes mot grunnlønn i hurtigsjekken, ikke mot samlet månedslønn."):"Tilbudt månedslønn: "+(offer==null?"Ikke oppgitt":new Intl.NumberFormat("nb-NO").format(offer)+" kr")),"","VALGT REKRUTTERINGSOPPLEGG",...ids.map(k=>"- "+labels[k][result.chosen[k]]),"","ILLUSTRATIV VURDERING AV SELVVALGTE BEGRENSNINGER",result.points+" av 8 indikatorpoeng (startoppsett 8). Ikke en risiko- eller sannsynlighetsmodell.","","TRE FØRSTE TILTAK",...actionsList.map((v,i)=>(i+1)+". "+v),"","FORBEHOLD: SSB-tall gjelder landsgjennomsnitt og 2025. NAVs regionale tall gjelder fylkesnivå og er ikke yrkesspesifikke. Hindringsmodellen er kvalitativ og ikke validert mot faktisk tid til ansettelse eller antall søkere.","Kilder: https://www.ssb.no/statbank/table/11418 og https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen"].join("\n");
+-}
+-let memo="";
+-function update(){
+-const state=calc(),steps=actions(state.chosen);
+-const tag=$("rrp-sim-tag"),title=$("rrp-sim-title"),desc=$("rrp-sim-description");
+-tag.textContent=state.points===8?"Startprofil":state.points<=2?"Færre selvvalgte hindringer":"Endret opplegg";
+-title.textContent=state.points>=6?"Flere selvvalgte begrensninger":state.points>=3?"Noen begrensninger kan fortsatt reduseres":"Færre selvvalgte hindringer i opplegget";
+-const changed=8-state.points;
+-desc.textContent=changed>0?"Du har redusert antallet illustrative hindringspoeng med "+changed+" fra startprofilen. Det kan gi flere muligheter i kandidatsøket, men sier ikke hvor mange kvalifiserte kandidater som faktisk finnes.":"Startopplegget er relativt snevert. Test bredere søkeområde, mer presise krav, fleksibilitet eller aktivt kandidatsøk for å se alternative grep.";
+-$("rrp-sim-progress").style.width=(state.points/8*100).toFixed(1)+"%";
+-$("rrp-sim-points").textContent=String(state.points);
+-const grid=$("rrp-sim-steps");grid.replaceChildren();
+-for(const step of steps){const card=document.createElement("article");card.textContent=step;grid.appendChild(card);}
+-memo=buildMemo(state,steps);
+-if(window.__rrpCurrent)window.__rrpCurrent.recruitment_scenario={source:"Ridderset kvalitativ hindringsmodell v0.3 – ikke validert",choices:state.chosen,illustrative_points:state.points,illustrative_start_points:8,advice:steps,note:"Poeng er ikke en empirisk eller regional rekrutteringsprognose."};
+-}
+-for(const k of ids)$("rrp-sim-"+k).addEventListener("change",update);
+-const selected=$("rrp-selected");if(selected&&"MutationObserver" in window){new MutationObserver(update).observe(selected,{childList:true,characterData:true,subtree:true});}
+-$("rrp-region").addEventListener("change",update);
+-$("rrp-offer").addEventListener("input",update);
+-$("rrp-sim-copy").addEventListener("click",async()=>{
+-try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(memo);}else{
+-const ta=document.createElement("textarea");ta.value=memo;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();}
+-$("rrp-sim-status").textContent="Beslutningsnotatet er kopiert.";}
+-catch(e){$("rrp-sim-status").textContent="Kopiering ble blokkert av nettleseren. Bruk Eksporter JSON nedenfor.";}
+-});
+-update();
+-})();
+-</script>
++<script id="rrp-scenario-v03" src="https://ridderset.no/wp-content/plugins/ridderset-hurtigsjekk/legacy-scenario.js?ver=0.3.3"></script>
+ <script id="rrpc-company-script">
+ (function(){
+ "use strict";
+@@ -795,14 +729,14 @@
+   <div class="rrwl-card">
+    <div class="rrwl-card-head"><h3>Vurder seks forhold ved virksomheten</h3><p>Startverdiene er satt til 5 av 10. De er ikke dokumenterte resultater. Dra hver søyle for å angi egen vurdering. 0 = svært svakt, 10 = svært sterkt.</p></div>
+    <div class="rrwl-group"><div class="rrwl-group-heading">WORKLIFE BRAND · OMVERDENENS BILDE <span>To forhold</span></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-reputation">1. Omdømme i kandidatmarkedet</label><output for="rrwl-reputation" id="rrwl-reputation-value">5/10</output></div><span class="rrwl-hint">Hvor attraktiv tror dere virksomheten oppleves av kvalifiserte kandidater, også dem som ikke søker aktivt?</span><input type="range" id="rrwl-reputation" min="0" max="10" step="1" value="5" aria-label="Omdømme i kandidatmarkedet"><div class="rrwl-scale"><span>Lite attraktiv / svakt omdømme</span><span>Svært attraktiv</span></div></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-visibility">2. Synlighet og troverdighet</label><output for="rrwl-visibility" id="rrwl-visibility-value">5/10</output></div><span class="rrwl-hint">Kan kandidater finne troverdig informasjon om arbeidsmiljø, oppgaver og utviklingsmuligheter?</span><input type="range" id="rrwl-visibility" min="0" max="10" step="1" value="5" aria-label="Synlighet som arbeidsgiver"><div class="rrwl-scale"><span>Lite synlig</span><span>Synlig og godt dokumentert</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-reputation">1. Omdømme i kandidatmarkedet</label><output for="rrwl-reputation" id="rrwl-reputation-value">Ikke vurdert</output></div><span class="rrwl-hint">Hvor attraktiv tror dere virksomheten oppleves av kvalifiserte kandidater, også dem som ikke søker aktivt?</span><input type="range" id="rrwl-reputation" min="0" max="10" step="1" value="5" aria-label="Omdømme i kandidatmarkedet"><div class="rrwl-scale"><span>Lite attraktiv / svakt omdømme</span><span>Svært attraktiv</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-visibility">2. Synlighet og troverdighet</label><output for="rrwl-visibility" id="rrwl-visibility-value">Ikke vurdert</output></div><span class="rrwl-hint">Kan kandidater finne troverdig informasjon om arbeidsmiljø, oppgaver og utviklingsmuligheter?</span><input type="range" id="rrwl-visibility" min="0" max="10" step="1" value="5" aria-label="Synlighet som arbeidsgiver"><div class="rrwl-scale"><span>Lite synlig</span><span>Synlig og godt dokumentert</span></div></div>
+    </div>
+    <div class="rrwl-group"><div class="rrwl-group-heading">WORKLIFE INDEX · DEN FAKTISKE MEDARBEIDERREISEN <span>Fire forhold</span></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-promise">3. Vi innfrir løftene fra rekrutteringen</label><output for="rrwl-promise" id="rrwl-promise-value">5/10</output></div><span class="rrwl-hint">Stemmer arbeidsoppgaver, kultur og muligheter med forventningene dere skapte før ansettelsen?</span><input type="range" id="rrwl-promise" min="0" max="10" step="1" value="5" aria-label="Innfrir vi løftene fra rekrutteringen"><div class="rrwl-scale"><span>Løftene følges sjelden opp</span><span>Løftene innfris systematisk</span></div></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-onboarding">4. Oppstart og integrering</label><output for="rrwl-onboarding" id="rrwl-onboarding-value">5/10</output></div><span class="rrwl-hint">Har nye medarbeidere plan, støtte fra leder og tydelige milepæler gjennom den første tiden?</span><input type="range" id="rrwl-onboarding" min="0" max="10" step="1" value="5" aria-label="Kvalitet på onboarding"><div class="rrwl-scale"><span>Tilfeldig oppstart</span><span>Gjennomført og fulgt opp</span></div></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-development">5. Utvikling og mestring</label><output for="rrwl-development" id="rrwl-development-value">5/10</output></div><span class="rrwl-hint">Får ansatte utvikle kompetanse, prøve nye oppgaver og se en fremtid hos dere?</span><input type="range" id="rrwl-development" min="0" max="10" step="1" value="5" aria-label="Kompetanseutvikling og mestring"><div class="rrwl-scale"><span>Lite utvikling</span><span>Systematisk utvikling</span></div></div>
+-    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-leadership">6. Ledelse og oppfølging</label><output for="rrwl-leadership" id="rrwl-leadership-value">5/10</output></div><span class="rrwl-hint">Gir nærmeste leder jevnlig tilbakemelding, anerkjennelse og tydelig retning?</span><input type="range" id="rrwl-leadership" min="0" max="10" step="1" value="5" aria-label="Ledelse og oppfølging"><div class="rrwl-scale"><span>Sjelden oppfølging</span><span>Tett, god oppfølging</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-promise">3. Vi innfrir løftene fra rekrutteringen</label><output for="rrwl-promise" id="rrwl-promise-value">Ikke vurdert</output></div><span class="rrwl-hint">Stemmer arbeidsoppgaver, kultur og muligheter med forventningene dere skapte før ansettelsen?</span><input type="range" id="rrwl-promise" min="0" max="10" step="1" value="5" aria-label="Innfrir vi løftene fra rekrutteringen"><div class="rrwl-scale"><span>Løftene følges sjelden opp</span><span>Løftene innfris systematisk</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-onboarding">4. Oppstart og integrering</label><output for="rrwl-onboarding" id="rrwl-onboarding-value">Ikke vurdert</output></div><span class="rrwl-hint">Har nye medarbeidere plan, støtte fra leder og tydelige milepæler gjennom den første tiden?</span><input type="range" id="rrwl-onboarding" min="0" max="10" step="1" value="5" aria-label="Kvalitet på onboarding"><div class="rrwl-scale"><span>Tilfeldig oppstart</span><span>Gjennomført og fulgt opp</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-development">5. Utvikling og mestring</label><output for="rrwl-development" id="rrwl-development-value">Ikke vurdert</output></div><span class="rrwl-hint">Får ansatte utvikle kompetanse, prøve nye oppgaver og se en fremtid hos dere?</span><input type="range" id="rrwl-development" min="0" max="10" step="1" value="5" aria-label="Kompetanseutvikling og mestring"><div class="rrwl-scale"><span>Lite utvikling</span><span>Systematisk utvikling</span></div></div>
++    <div class="rrwl-field"><div class="rrwl-field-head"><label for="rrwl-leadership">6. Ledelse og oppfølging</label><output for="rrwl-leadership" id="rrwl-leadership-value">Ikke vurdert</output></div><span class="rrwl-hint">Gir nærmeste leder jevnlig tilbakemelding, anerkjennelse og tydelig retning?</span><input type="range" id="rrwl-leadership" min="0" max="10" step="1" value="5" aria-label="Ledelse og oppfølging"><div class="rrwl-scale"><span>Sjelden oppfølging</span><span>Tett, god oppfølging</span></div></div>
+    </div>
+    <div class="rrwl-support">
+     <label for="rrwl-hr">Hvem har kompetanse og kapasitet til å støtte rekrutteringen?</label>
+@@ -814,8 +748,8 @@
+    <div class="rrwl-dark">
+     <div class="rrwl-over">Foreløpig Worklife-profil</div><h3>Hvordan påvirker dette rekrutteringen?</h3><p>To ulike sider ved arbeidsgiveren vises separat. Tallene er ikke Worklife-sertifisering, ekstern merkevareundersøkelse eller en validert prognose.</p>
+     <div class="rrwl-scores">
+-     <div class="rrwl-score"><small>BRAND · EGENVURDERING</small><strong id="rrwl-brand-score">50<span style="font-size:15px">/100</span></strong><div class="rrwl-gauge"><b id="rrwl-brand-bar" style="width:50%"></b></div><span>Kandidatenes antatte inntrykk</span></div>
+-     <div class="rrwl-score"><small>INDEX · EGENVURDERING</small><strong id="rrwl-index-score">50<span style="font-size:15px">/100</span></strong><div class="rrwl-gauge"><b id="rrwl-index-bar" style="width:50%"></b></div><span>Antatt medarbeideropplevelse</span></div>
++     <div class="rrwl-score"><small>BRAND · EGENVURDERING</small><strong id="rrwl-brand-score">Ikke vurdert</strong><div class="rrwl-gauge"><b id="rrwl-brand-bar" style="width:0%"></b></div><span>Kandidatenes antatte inntrykk</span></div>
++     <div class="rrwl-score"><small>INDEX · EGENVURDERING</small><strong id="rrwl-index-score">Ikke vurdert</strong><div class="rrwl-gauge"><b id="rrwl-index-bar" style="width:0%"></b></div><span>Antatt medarbeideropplevelse</span></div>
+     </div>
+     <div class="rrwl-signal"><span class="rrwl-over">Foreløpig vurdering av rekrutteringsforutsetninger</span><b id="rrwl-readiness">Startverdier: ingen vurdering ennå</b><p id="rrwl-explanation">Endre søylene for å identifisere styrker, utviklingsbehov og mulige gap mellom det virksomheten lover og faktisk leverer.</p></div>
+     <p class="rrwl-small" id="rrwl-hr-note" style="color:#c8dfdb!important">HR-støtte er ennå ikke avklart.</p>
+@@ -826,58 +760,7 @@
+   </div>
+  </div>
+ </div>
+-<script id="rrwl-script">
+-(function(){
+-"use strict";
+-const root=document.getElementById("rrwl-v1");if(!root)return;
+-const $=id=>document.getElementById(id);
+-const fields=["reputation","visibility","promise","onboarding","development","leadership"];
+-const names={reputation:"omdømme blant aktuelle kandidater",visibility:"synlighet og troverdighet",promise:"samsvar mellom rekrutteringsløfter og arbeidshverdag",onboarding:"oppstart og integrering",development:"medarbeiderutvikling",leadership:"ledelse og oppfølging"};
+-const hrLabels={unknown:"Ikke avklart",dedicated:"Intern HR-avdeling / dedikert HR-ressurs",shared:"HR-ansvar fordelt mellom ledere/administrasjon",external:"Ekstern HR-partner",both:"Intern HR og ekstern støtte",none:"Ingen etablert HR-støtte"};
+-const touched=new Set();
+-const vals=()=>Object.fromEntries(fields.map(key=>[key,Number($("rrwl-"+key).value)]));
+-const round=n=>Math.round(n);
+-function calculate(){
+- const s=vals();
+- const brand=round((s.reputation*.65+s.visibility*.35)*10);
+- const index=round((s.promise*.35+s.onboarding*.2+s.development*.3+s.leadership*.15)*10);
+- const composite=round(brand*.4+index*.6);
+- const hr=$("rrwl-hr").value;
+- const low=fields.slice().sort((a,b)=>s[a]-s[b])[0];
+- const assessed=touched.size===6;
+- for(const key of fields){$("rrwl-"+key+"-value").textContent=s[key]+"/10";}
+- $("rrwl-brand-score").textContent=brand+"/100";
+- $("rrwl-index-score").textContent=index+"/100";
+- $("rrwl-brand-bar").style.width=brand+"%";$("rrwl-index-bar").style.width=index+"%";
+- let label="Foreløpig: flere forhold bør undersøkes",expl="Resultatet er basert på arbeidsgiverens egne vurderinger, ikke på en kandidatundersøkelse eller ansattmåling.";
+- if(assessed){
+-  label=composite>=75?"Gode oppgitte forutsetninger":composite>=55?"Blandet bilde, mulige svakheter":"Flere oppgitte forhold kan svekke tiltrekning og lojalitet";
+-  expl=composite>=75?"Egenvurderingen tyder på at virksomheten har flere forhold som kan gjøre den attraktiv. Kontroller om ansatte og kandidater bekrefter bildet.":composite>=55?"Noen forhold kan styrke rekrutteringen, mens andre bør dokumenteres og forbedres. Prioriter de svakeste faktorene.":"Lav egenvurdering på flere forhold tilsier at det kan bli vanskeligere å overbevise kandidater og beholde ansatte. Kartlegg hva som faktisk skjer før dere lover endringer.";
+- }
+- if((s.reputation>=7 ? s.promise<=4 : false))expl+=" Vær spesielt oppmerksom på gap mellom godt omdømme og en svak opplevelse etter oppstart.";
+- if((s.reputation<=4 ? s.development>=7 : false))expl+=" En styrke kan være å synliggjøre reelle utviklingsmuligheter gjennom ansatte og konkrete historier.";
+- $("rrwl-readiness").textContent=label;
+- $("rrwl-explanation").textContent=expl;
+- $("rrwl-answered").textContent=touched.size+" av 6 forhold aktivt vurdert. "+(assessed?"Dette er fortsatt kun en egenvurdering.":"Uendret startverdi 5 er ikke en innrapportert observasjon.");
+- $("rrwl-hr-note").textContent=hr==="none"?"Det er ikke oppgitt etablert HR-støtte. Utpek ansvarlig for stillingsanalyse, søk, vurdering og oppstart, eller vurder ekstern bistand.":hr==="unknown"?"HR-støtte er ennå ikke avklart. Avklar hvem som skal eie og gjennomføre prosessen.":hr==="shared"?"HR-ansvaret ligger hos ledere/administrasjon. Kontroller kapasitet og kompetanse før prosessen starter.":hr==="external"?"Ekstern HR-partner er oppgitt. Avklar oppgavefordeling mot leder og ansvar for oppfølging etter ansettelse.":"Det er oppgitt formalisert HR-støtte. Kontroller kapasitet, rollefordeling og samarbeid med ansettende leder.";
+- $("rrwl-action").textContent="Prioriter "+names[low]+". "+(low==="promise"?"Undersøk om nyansatte møter løftene fra utlysning og intervju, og korriger eventuelle gap.":low==="development"?"Lag konkrete kompetanse- og utviklingsløp som medarbeiderne faktisk får anledning til å følge.":low==="onboarding"?"Innfør en enkel plan med ledersamtaler og forventningsavklaring ved oppstart.":low==="reputation"?"Undersøk kandidatmarkedet før dere konkluderer: hva forbinder målgruppen med virksomheten?":low==="visibility"?"Vis dokumenterbare arbeidsoppgaver, medarbeiderhistorier og realistiske utviklingsmuligheter.":"Avtal tydelig lederoppfølging, tilbakemeldinger og ansvar for utvikling.");
+- const profile={as_of:new Date().toISOString().slice(0,10),source:"Arbeidsgiverens egenvurdering, inspirert av Worklife Index og Worklife Brand",not_validated:true,assessed_dimensions:touched.size,all_dimensions_assessed:assessed,brand_self_assessed:brand,index_self_assessed:index,illustrative_readiness:composite,dimensions:s,weakest_dimension:low,hr_support:hr,hr_support_text:hrLabels[hr],note:"Scorene er selvrapporterte og er ikke resultat fra medarbeidere eller kandidater. Ingen validert prediksjon av rekrutteringstid, sannsynlighet eller effekt."};
+- window.__rrpWorklife=profile;
+- if(window.__rrpCurrent)window.__rrpCurrent.worklife_self_assessment=profile;
+- window.dispatchEvent(new CustomEvent("rrp-worklife-updated",{detail:profile}));
+-}
+-for(const key of fields){
+- $("rrwl-"+key).addEventListener("input",()=>{touched.add(key);calculate()});
+- $("rrwl-"+key).addEventListener("change",()=>{touched.add(key);calculate()});
+-}
+-$("rrwl-hr").addEventListener("change",calculate);
+-$("rrwl-reset").addEventListener("click",()=>{touched.clear();for(const key of fields)$("rrwl-"+key).value="5";$("rrwl-hr").value="unknown";calculate();});
+-calculate();
+-const contextApi=window.RRPLegacyContext=window.RRPLegacyContext||{};
+-contextApi.worklifeReady=true;
+-window.dispatchEvent(new CustomEvent("rrh-legacy-ready"));
+-})();
+-</script>
++<script id="rrwl-script" src="https://ridderset.no/wp-content/plugins/ridderset-hurtigsjekk/legacy-worklife.js?ver=0.3.3"></script>
+ </section>
+ <!-- /wp:html --><!-- wp:html -->
+ <section id="rrp-decision-v1" aria-labelledby="rrp-decision-title">
+@@ -943,7 +826,7 @@
+  <div class="rrpd-metrics" aria-live="polite">
+   <div class="rrpd-metric"><small>01 · Yrkesvis mangel · nasjonalt</small><strong id="rrpd-shortage">Kontrollerer datagrunnlag</strong><p id="rrpd-shortage-detail">NAVs bedriftsundersøkelse 2026</p></div>
+   <div class="rrpd-metric"><small>02 · Lønnstilbud mot nasjonal median</small><strong id="rrpd-pay">Ikke vurdert</strong><p id="rrpd-pay-detail">SSBs månedslønn 2025 er et sammenligningspunkt, ikke en lokal fasit.</p></div>
+-  <div class="rrpd-metric"><small>03 · Lokal rekrutteringskonkurranse</small><strong id="rrpd-local">Mangler yrkesvise tall</strong><p id="rrpd-local-detail">Fylkestall kan ikke fortelle hvor mange konkurrerende stillinger som finnes innen ett yrke.</p></div>
++  <div class="rrpd-metric"><small>03 · Kandidattilgang</small><strong id="rrpd-local">Mangler yrkesvise tall</strong><p id="rrpd-local-detail">Fylkestall kan ikke fortelle hvor mange konkurrerende stillinger som finnes innen ett yrke.</p></div>
+  </div>
+  <div class="rrpd-grid">
+   <div class="rrpd-report">
+@@ -963,79 +846,7 @@
+   </div>
+  </div>
+ </div>
+-<script id="rrpd-v1-script">
+-(function(){
+-"use strict";
+-const el=id=>document.getElementById(id);
+-if(!el("rrp-decision-v1")||!el("rrpd-build"))return;
+-const money=n=>new Intl.NumberFormat("nb-NO",{maximumFractionDigits:0}).format(n)+" kr";
+-const fmt=n=>new Intl.NumberFormat("nb-NO",{maximumFractionDigits:0}).format(n);
+-const phrase=(s)=>String(s||"").trim();
+-let note="";
+-function update(){
+- const city=phrase(el("rrpd-town").value).toLocaleLowerCase("nb-NO");
+- const countyCodes={"harstad":"55","tromsø":"55","senja":"55","narvik":"18","sortland":"18","hadsel":"18","vågan":"18","vestvågøy":"18","bodø":"18","fauske":"18","rana":"18","alta":"56","hammerfest":"56","sør-varanger":"56","vadsø":"56"};
+- const county=document.querySelector('#rr-hurtigsjekk[data-guided="true"]')?null:countyCodes[city],regionControl=el("rrp-region");
+- if(county&&regionControl&&regionControl.value!==county){
+-   regionControl.value=county;
+-   regionControl.dispatchEvent(new Event("change",{bubbles:true}));
+-   return;
+- }
+- const m=window.__rrpCurrent||{};
+- const company=window.__rrpCompany||null;
+- const wl=window.__rrpWorklife||null;
+- const job=m.occupation||{},area=m.area||{}, med=Number.isFinite(Number(job.median25))&&job.median25!=null?Number(job.median25):null;
+- const offer=m.monthly_salary_offer!=null&&Number.isFinite(Number(m.monthly_salary_offer))?Number(m.monthly_salary_offer):null;
+- const lack=(window.__rrpOccupationShortages||{})[job.code];
+- const town=phrase(el("rrpd-town").value),place=town?(town+", "+(area.name||"valgt fylke")):(area.name||"valgt fylke");
+- const qty=Math.max(1,Math.min(100,Math.round(Number(el("rrpd-count").value)||1)));
+- const wished=el("rrpd-date").value;
+- const shortage=lack&&Number.isFinite(lack.estimate)?("NAV anslår en nasjonal mangel på "+fmt(lack.estimate)+" personer i "+(job.name||"dette yrket")+". Dette sier ikke hvor mange som mangler i "+place+"."):"NAVs utvalgte yrkesspesifikke mangelanslag i denne dataversjonen gir ikke et tilstrekkelig tallgrunnlag for "+(job.name||"dette yrket")+". Manglende anslag betyr ikke at det er lett å rekruttere.";
+- el("rrpd-shortage").textContent=lack&&Number.isFinite(lack.estimate)?fmt(lack.estimate)+" personer":"Ikke dokumentert for yrket";
+- el("rrpd-shortage-detail").textContent=lack&&Number.isFinite(lack.estimate)?("NAV 2026 · landsanslag"+(Number.isFinite(lack.low)&&Number.isFinite(lack.high)?" · 95 % KI "+fmt(lack.low)+"–"+fmt(lack.high):"")+" · ikke lokalt"):"NAV 2026 · manglende yrkestall er ikke lik null mangel";
+- let pay="Lønnstilbud er ikke oppgitt. Sammenlign den konkrete lønnsrammen med riktig nivå for ansvar, erfaring og geografi.";
+- if(med!=null&&offer!=null&&offer>0){
+-  const diff=(offer/med-1)*100,ab=Math.round(Math.abs(diff));
+-  pay="Tilbudt månedslønn ("+money(offer)+") er "+(Math.abs(diff)<2?"omtrent lik":diff<0?ab+" % under":ab+" % over")+" den nasjonale medianen for yrket ("+money(med)+") i 2025. Dette alene dokumenterer ikke lokal markedslønn.";
+-  el("rrpd-pay").textContent=Math.abs(diff)<2?"Omtrent på landsmedian":diff<0?ab+" % under landsmedian":ab+" % over landsmedian";
+- }else if(med!=null){el("rrpd-pay").textContent="Median "+money(med);pay="SSB oppgir en nasjonal median på "+money(med)+" for dette yrket i 2025. Du har ikke oppgitt lønnstilbud.";}
+- else{el("rrpd-pay").textContent="Mangler sammenlignbare tall";pay="Nasjonal yrkesvis medianlønn er ikke publisert for denne yrkeskoden i vårt datasett.";}
+- el("rrpd-pay-detail").textContent=med!=null?"SSB tabell 11418 · Norge · 2025 · ikke lokalt nivå":"SSB tabell 11418 · yrkestall ikke tilgjengelig";
+- if(document.querySelector('#rr-hurtigsjekk[data-guided="true"]')){
+-  const base=m.salary_input?.measure==="base"?m.salary_input.offeredMonthlyBase:null;
+-  pay=base>0?"Tilbudt grunnlønn er "+money(base)+" per måned, oppgitt i hurtigsjekken. Lønnssammenligningen med riktig SSB-mål vises der. Grunnlønn sammenlignes ikke med samlet månedslønn i fordypningen.":"Tilbudt grunnlønn er ikke oppgitt. Legg eventuelt inn lønnsrammen i hurtigsjekken.";
+-  el("rrpd-pay").textContent=base>0?money(base)+" i grunnlønn":"Grunnlønn ikke oppgitt";
+-  el("rrpd-pay-detail").textContent="Lønnsvurderingen følger valgene i hurtigsjekken. Grunnlønn og samlet månedslønn er ulike mål.";
+- }
+- el("rrpd-local").textContent="Ikke målt for "+(town||area.name||"arbeidsstedet");
+- el("rrpd-local-detail").textContent="Yrkesvise aktive stillinger, kandidater og rekrutteringstid er ennå ikke koblet til for "+place+".";
+- const controls=["area","criteria","flex","method"].map(k=>el("rrp-sim-"+k)?.value||"");
+- const penalties={area:{local:2,regional:1,national:0},criteria:{strict:2,focused:1,equivalent:0},flex:{onsite:2,some:1,flexible:0},method:{ads:2,mixed:1,active:0}};
+- const pts=controls.reduce((sum,v,i)=>sum+(penalties[["area","criteria","flex","method"][i]][v]??0),0);
+- const restriction="Dere har valgt et rekrutteringsopplegg med "+pts+" av 8 illustrative hindringspoeng. Dette er ikke rekrutteringsrisiko. "+(pts>=5?"En bredere kandidatkartlegging, færre unødvendige krav eller mer aktivt søk bør vurderes før utlysning.":pts<=2?"Opplegget åpner for flere søkekanaler, men tilgang på kvalifiserte kandidater er fortsatt uavklart.":"Det er fortsatt noen selvvalgte begrensninger dere bør teste mot behovet.");
+- const timing=wished?("Ønsket oppstart: "+new Date(wished+"T12:00:00").toLocaleDateString("nb-NO")+". Dette er en ønsket dato, ikke en beregnet ansettelsesprognose."):"Ingen ønsket oppstartsdato er lagt inn.";
+- const companyContext=company?("For virksomheten "+company.name+" (org.nr. "+(company.organization_number||"ikke oppgitt")+"), registrert i næringen "+company.industry+" med "+(company.registered_employees==null?"ukjent registrert antall ansatte":company.registered_employees+" registrerte ansatte")+". "):"";
+- const worklifeContext=wl?(" Arbeidsgiverens Worklife-egenvurdering: Brand "+wl.brand_self_assessed+"/100, Index "+wl.index_self_assessed+"/100. "+(wl.all_dimensions_assessed?"Alle seks forhold er vurdert.":"Noen faktorer står fortsatt på nøytral startverdi.")+" HR-støtte: "+wl.hr_support_text+". Ingen av disse tallene er validert mot rekrutteringsutfall. "):"";
+- const intro=companyContext+worklifeContext+"For "+qty+" "+(qty===1?"ansettelse":"ansettelser")+" innen "+(job.name||"valgt yrke")+" i "+place+": "+shortage+" "+pay+" "+timing;
+- el("rrpd-report-head").textContent=(job.name||"Valgt yrke")+" · "+place;
+- el("rrpd-report-text").textContent=intro;
+- el("rrpd-restriction").textContent=restriction;
+- el("rrpd-step1").textContent="Fastsett oppgaver og ufravikelige kvalifikasjoner for "+(job.name||"rollen")+". Kontroller om tilbudt lønn og mulighet for kompetanseutvikling faktisk er konkurransedyktig i "+place+".";
+- el("rrpd-step2").textContent=(qty>1?"Planlegg parallelle kandidatløp for "+qty+" ansettelser. ":"")+"Undersøk NAV-utlysninger i relevant yrke og område, og gjennomfør en målrettet markedskartlegging. Ikke bruk fylkets samlede stillingstall som antall direkte konkurrenter.";
+- el("rrpd-step3").textContent="Registrer kvalifiserte kandidater, årsaker til frafall og tilbakemeldinger fra kandidater og nyansatte. Revider søk, lønn og krav, og kontroller at arbeidsplassens løfter kan følges opp etter ansettelse.";
+- note=["RIDDERSET REKRUTTERING | BESLUTNINGSNOTAT","Datagrunnlag: NAV 2026 og SSB 2025. Utarbeidet: "+new Date().toLocaleDateString("nb-NO"),"","Yrke: "+(job.name||"Ikke valgt")+" / STYRK08 "+(job.code||"–"),"Arbeidssted: "+place,"Virksomhet: "+(company?company.name:"Ikke valgt"),"Organisasjonsnummer: "+(company?company.organization_number:"Ikke oppgitt"),"Bransje: "+(company?company.industry:"Ikke oppgitt"),"Registerført antall ansatte: "+(company?(company.registered_employees??"Ikke oppgitt"):"Ikke oppgitt"),"Registrert forretningsadresse / underenhet: "+(company?company.registered_address:"Ikke oppgitt"),"Antall ansettelser: "+qty,"","WORKLIFE · ARBEIDSGIVERS EGENVURDERING","Brand (ikke målt): "+(wl?wl.brand_self_assessed+"/100":"Ikke vurdert"),"Index (ikke målt): "+(wl?wl.index_self_assessed+"/100":"Ikke vurdert"),"HR-støtte: "+(wl?wl.hr_support_text:"Ikke vurdert"),"Seks faktorer vurdert: "+(wl?wl.assessed_dimensions:"0")+"/6","Egenvurdering er ikke en validert Worklife-måling.","","Ønsket oppstart: "+(wished||"Ikke oppgitt"),"","YRKE OG ARBEIDSMARKED",shortage,"","LØNN",pay,"","REKRUTTERINGSOPPLEGG",restriction,"","30-DAGERS PLAN","Dag 1–7: "+el("rrpd-step1").textContent,"Dag 8–14: "+el("rrpd-step2").textContent,"Dag 15–30: "+el("rrpd-step3").textContent,"","FORBEHOLD","Dette er ikke en validert sannsynlighetsmodell. Worklife-scorene er arbeidsgiverens egne anslag, ikke uavhengige kandidat-/ansattmålinger eller prediktive faktorer. NAVs nasjonale anslag kan ikke lokaliseres uten regional yrkesdata. Lønn er SSBs nasjonale median, ikke lønnskrav i kommunen. 0–8 er illustrativt og er ikke et empirisk risikoestimat.","Kilder: https://www.ssb.no/statbank/table/11418 | https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen","www.ridderset.no"].join("\n");
+-}
+-for(const id of ["rrpd-town","rrpd-count","rrpd-date"]){el(id).addEventListener("input",update);el(id).addEventListener("change",update);}
+-for(const id of ["rrp-region","rrp-offer","rrp-sim-area","rrp-sim-criteria","rrp-sim-flex","rrp-sim-method"]){el(id)?.addEventListener("change",update);el(id)?.addEventListener("input",update);}
+-const chosen=el("rrp-selected");
+-if(chosen&&typeof MutationObserver!=="undefined"){new MutationObserver(update).observe(chosen,{childList:true,subtree:true,characterData:true});}
+-el("rrpd-build").addEventListener("click",()=>{update();el("rrpd-status").textContent="Vurderingen er oppdatert ut fra opplysningene over.";});
+-window.addEventListener("rrp-company-selected",update);
+-window.addEventListener("rrp-worklife-updated",update);
+-el("rrpd-download").addEventListener("click",()=>{update();try{const url=URL.createObjectURL(new Blob([note],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="ridderset-rekrutteringsvurdering.txt";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200);el("rrpd-status").textContent="Vurderingen er lastet ned.";}catch(e){el("rrpd-status").textContent="Nedlasting ble blokkert av nettleseren. Prøv igjen.";}});
+-update();
+-})();
+-</script>
++<script id="rrpd-v1-script" src="https://ridderset.no/wp-content/plugins/ridderset-hurtigsjekk/legacy-decision.js?ver=0.3.3"></script>
+ </section>
+ <!-- /wp:html --><!-- wp:html -->
+ <style id="rrp-seo-layout-fix">
+@@ -1078,7 +889,7 @@
+   <h2>Ofte stilte spørsmål om rekrutteringsrisiko</h2>
+   <div class="rr-seo-faq"><h3>Hvordan kan vi vite om det blir vanskelig å rekruttere?</h3><p>Vi må se flere forhold i sammenheng: hvor mange virksomheter som etterspør kompetansen, hvor kandidatene finnes, hva de kan forvente av lønn og hvilke krav arbeidsgiveren stiller. Én statistikk er sjelden nok. I dagens versjon får du et første bilde av markedet, ikke et dokumentert risikoestimat.</p></div>
+   <div class="rr-seo-faq"><h3>Hvorfor viser modellen lønn for hele Norge når jeg velger Troms eller Nordland?</h3><p>Fordi SSBs yrkesfordelte lønnstall vi bruker, gjelder nasjonalt nivå. Vi merker dem derfor som nasjonale. Fylkesvalget endrer NAV-tallene, ikke lønnsstatistikken. Det er heller ikke gitt at nasjonal median tilsvarer riktig lønn for en stilling med særskilt ansvar, erfaring eller arbeidssted.</p></div>
+-  <div class="rr-seo-faq"><h3>Hva betyr det at NAV har mange ledige stillinger i et fylke?</h3><p>Det viser at det er etterspørsel etter arbeidskraft, men ikke nødvendigvis etter akkurat den kompetansen du leter etter. Dagens fylkestall omfatter alle yrker. De må ikke leses som antall konkurrerende arbeidsgivere for valgt stilling. Vi arbeider med å koble yrkesspesifikke utlysninger inn når tilgangen er klar.</p></div>
++  <div class="rr-seo-faq"><h3>Hva betyr det at NAV har mange ledige stillinger i et fylke?</h3><p>Det viser at det er etterspørsel etter arbeidskraft, men ikke nødvendigvis etter akkurat den kompetansen du leter etter. Dagens fylkestall omfatter alle yrker. De må ikke leses som antall konkurrerende arbeidsgivere for valgt stilling. Hurtigsjekken viser tilgjengelige NAV-treff for valgt rolle og kommune, med søkemåte og kildebegrensninger. Treffene er ikke et mål på kandidattilgang.</p></div>
+   <div class="rr-seo-faq"><h3>Kan modellen fortelle hvor lang tid rekrutteringen vil ta?</h3><p>Ikke ennå. Det vil kreve data fra faktiske prosesser, blant annet tid til ansettelse, kvalifiserte kandidater og om stillingene ble besatt. Før vi har et godt nok datagrunnlag, ville det vært misvisende å vise en presis tidsprognose eller en prosentvis sannsynlighet.</p></div>
+   <div class="rr-seo-faq"><h3>Hva kan arbeidsgiveren gjøre dersom kandidatmarkedet er krevende?</h3><p>Først ville jeg undersøkt behovet: Hva skal rollen faktisk løse? Deretter kan vi vurdere om kravene er nødvendige, om kompetansen finnes internt, om lønnsrammen er realistisk, og om vi bør lete i et større geografisk område. En god <a href="https://ridderset.no/innsikt/hvorfor-bransjekunnskap-endrer-alt-i-rekruttering/">forståelse av virksomheten og bransjen</a> betyr ofte mer enn en lengre annonse.</p></div>
+   <div class="rr-seo-faq"><h3>Hvor kommer dataene fra, og når er de oppdatert?</h3><p>Yrkeslønn er hentet fra <a href="https://www.ssb.no/statbank/table/11418" target="_blank" rel="noopener">SSB tabell 11418</a> (2024–2025). Regiontallene bygger på <a href="https://www.nav.no/no/lokalt/troms-og-finnmark/pressemeldinger/nav-troms-og-finnmark-ledighetstall-oktober-2026" target="_blank" rel="noopener">NAVs tall for Troms og Finnmark</a> og <a href="https://www.nav.no/no/lokalt/nordland/pressemeldinger/sma-endringer-pa-arbeidsmarkedet-i-nordland" target="_blank" rel="noopener">NAV Nordland</a> for oktober 2026. Dataversjonen er samlet per 11. november 2026. Dette er foreløpig en kvalitetssikret dataversjon, ikke løpende sanntidsoppdatering.</p></div>

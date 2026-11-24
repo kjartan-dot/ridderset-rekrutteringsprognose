@@ -1,0 +1,3159 @@
+{
+  "year": 2026,
+  "scope": "national",
+  "retrievedAt": "2026-11-21",
+  "source": {
+    "publisher": "Nav",
+    "title": "Navs bedriftsundersøkelse 2026: vedvarende mangel på helsepersonell",
+    "url": "https://www.nav.no/_/attachment/download/4849fd6f-b3c8-4608-aab6-a30a14023370%3Ad323c9fb1ebd14d3096a146aafcf3f890926b032/Navs%20bedriftsunders%C3%B8kelse%202026%20Figurer%20og%20tabeller.xlsx",
+    "landing_url": "https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen",
+    "report_url": "https://bibliotek.nav.no/nanna/record/6225/files/Bedriftsunders%C3%B8kelsen_2026.pdf?registerDownload=1&version=1&withMetadata=0&withWatermark=0",
+    "table": "Excel: Tabell V2 - 26; PDF: Tabell V1, s. 31–37",
+    "definition": "100 * estimert mangel / (faktisk sysselsetting + estimert mangel)",
+    "definition_page": 11,
+    "employment_reference": "SSB registerbasert sysselsettingsstatistikk, 4. kvartal 2025",
+    "survey_start": "2026-01-26",
+    "survey_end": "2026-03-06",
+    "file_sha256": "f201888fc3d87638134c02f311a6a52454207c26bcaf3df2fd549b8eee6135a1"
+  },
+  "unit": "tightness_percent is percentage points: 3.7 means 3.7%",
+  "mapping": {
+    "method": "Exact equality after OOXML escape decoding, Unicode NFKD/casefold, combining-mark removal and removal of non-alphanumeric characters. No stemming, singular/plural changes, synonyms or fuzzy matches.",
+    "catalogue_role_count": 406,
+    "mapped_count": 258,
+    "unmapped_count": 4,
+    "unmapped_reference_rows_retained": true
+  },
+  "occupations": [
+    {
+      "occupation_name": "Helsefagarbeidere",
+      "shortage_estimate": 3650,
+      "shortage_ci95_low": 2850,
+      "shortage_ci95_high": 4450,
+      "tightness_percent": 3.726479661674873,
+      "quality_flags": [],
+      "source_row": 4,
+      "code": "5321"
+    },
+    {
+      "occupation_name": "Sykepleiere",
+      "shortage_estimate": 1850,
+      "shortage_ci95_low": 1550,
+      "shortage_ci95_high": 2400,
+      "tightness_percent": 3.013901641456853,
+      "quality_flags": [],
+      "source_row": 5,
+      "code": "2223"
+    },
+    {
+      "occupation_name": "Andre helseyrker",
+      "shortage_estimate": 1350,
+      "shortage_ci95_low": 1000,
+      "shortage_ci95_high": 1800,
+      "tightness_percent": 44.23645320197044,
+      "quality_flags": [],
+      "source_row": 6,
+      "code": "3259"
+    },
+    {
+      "occupation_name": "Tømrere og snekkere",
+      "shortage_estimate": 1150,
+      "shortage_ci95_low": 700,
+      "shortage_ci95_high": 1750,
+      "tightness_percent": 2.82108209855688,
+      "quality_flags": [],
+      "source_row": 7,
+      "code": "7115"
+    },
+    {
+      "occupation_name": "Elektrikere",
+      "shortage_estimate": 1100,
+      "shortage_ci95_low": 650,
+      "shortage_ci95_high": 1650,
+      "tightness_percent": 3.2582510238496747,
+      "quality_flags": [],
+      "source_row": 8,
+      "code": "7411"
+    },
+    {
+      "occupation_name": "Andre håndverkere",
+      "shortage_estimate": 950,
+      "shortage_ci95_low": 600,
+      "shortage_ci95_high": 1300,
+      "tightness_percent": 53.03203661327232,
+      "quality_flags": [],
+      "source_row": 9,
+      "code": "7549"
+    },
+    {
+      "occupation_name": "Kokker",
+      "shortage_estimate": 700,
+      "shortage_ci95_low": 500,
+      "shortage_ci95_high": 950,
+      "tightness_percent": 3.1728568913923603,
+      "quality_flags": [],
+      "source_row": 10,
+      "code": "5120"
+    },
+    {
+      "occupation_name": "Førskolelærere",
+      "shortage_estimate": 650,
+      "shortage_ci95_low": 450,
+      "shortage_ci95_high": 850,
+      "tightness_percent": 1.8226558699819737,
+      "quality_flags": [],
+      "source_row": 11,
+      "code": null
+    },
+    {
+      "occupation_name": "Rørleggere og VVS-montører",
+      "shortage_estimate": 600,
+      "shortage_ci95_low": 450,
+      "shortage_ci95_high": 800,
+      "tightness_percent": 3.3610230626297954,
+      "quality_flags": [],
+      "source_row": 12,
+      "code": "7126"
+    },
+    {
+      "occupation_name": "Bilmekanikere",
+      "shortage_estimate": 600,
+      "shortage_ci95_low": 350,
+      "shortage_ci95_high": 900,
+      "tightness_percent": 2.659073584144209,
+      "quality_flags": [],
+      "source_row": 13,
+      "code": "7231"
+    },
+    {
+      "occupation_name": "Anleggsmaskin- og industrimekanikere",
+      "shortage_estimate": 600,
+      "shortage_ci95_low": 450,
+      "shortage_ci95_high": 800,
+      "tightness_percent": 2.7914687696030107,
+      "quality_flags": [],
+      "source_row": 14,
+      "code": "7233"
+    },
+    {
+      "occupation_name": "Legespesialister",
+      "shortage_estimate": 550,
+      "shortage_ci95_low": 450,
+      "shortage_ci95_high": 700,
+      "tightness_percent": 3.1858800022201255,
+      "quality_flags": [],
+      "source_row": 15,
+      "code": "2212"
+    },
+    {
+      "occupation_name": "Lastebil- og trailersjåfører",
+      "shortage_estimate": 550,
+      "shortage_ci95_low": 300,
+      "shortage_ci95_high": 1000,
+      "tightness_percent": 2.3236952025629587,
+      "quality_flags": [],
+      "source_row": 16,
+      "code": "8332"
+    },
+    {
+      "occupation_name": "Bussjåfører og trikkeførere",
+      "shortage_estimate": 500,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 900,
+      "tightness_percent": 3.040065604498594,
+      "quality_flags": [],
+      "source_row": 17,
+      "code": "8331"
+    },
+    {
+      "occupation_name": "Fengselsbetjenter",
+      "shortage_estimate": 450,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 850,
+      "tightness_percent": 10.563552085874603,
+      "quality_flags": [],
+      "source_row": 18,
+      "code": "5413"
+    },
+    {
+      "occupation_name": "Renholdere i bedrifter",
+      "shortage_estimate": 450,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 800,
+      "tightness_percent": 0.7750992823799903,
+      "quality_flags": [],
+      "source_row": 19,
+      "code": "9112"
+    },
+    {
+      "occupation_name": "Yrkesfaglærere",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 30.33175355450237,
+      "quality_flags": [],
+      "source_row": 20,
+      "code": "2320"
+    },
+    {
+      "occupation_name": "Grunnskolelærere",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 600,
+      "tightness_percent": 0.5024130676896423,
+      "quality_flags": [],
+      "source_row": 21,
+      "code": "2341"
+    },
+    {
+      "occupation_name": "Politibetjenter mv.",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 650,
+      "tightness_percent": 3.1287413201372813,
+      "quality_flags": [],
+      "source_row": 22,
+      "code": "3355"
+    },
+    {
+      "occupation_name": "Barnehage- og skolefritidsassistenter mv.",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 600,
+      "tightness_percent": 0.43127494314036824,
+      "quality_flags": [],
+      "source_row": 23,
+      "code": "5311"
+    },
+    {
+      "occupation_name": "Andre bygningsarbeidere",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 9.326038298930614,
+      "quality_flags": [],
+      "source_row": 24,
+      "code": "7119"
+    },
+    {
+      "occupation_name": "Overflatebehandlere og lakkerere",
+      "shortage_estimate": 400,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 12.169637369391518,
+      "quality_flags": [],
+      "source_row": 25,
+      "code": "7132"
+    },
+    {
+      "occupation_name": "Spesialsykepleiere",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 1.2396140444920933,
+      "quality_flags": [],
+      "source_row": 26,
+      "code": "2221"
+    },
+    {
+      "occupation_name": "Servitører",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 250,
+      "shortage_ci95_high": 500,
+      "tightness_percent": 1.442826903969934,
+      "quality_flags": [],
+      "source_row": 27,
+      "code": "5131"
+    },
+    {
+      "occupation_name": "Butikkmedarbeidere",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 800,
+      "tightness_percent": 0.20500607652741804,
+      "quality_flags": [],
+      "source_row": 28,
+      "code": "5223"
+    },
+    {
+      "occupation_name": "Andre salgsmedarbeidere",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 500,
+      "tightness_percent": 9.434927128611609,
+      "quality_flags": [],
+      "source_row": 29,
+      "code": "5249"
+    },
+    {
+      "occupation_name": "Andre pleiemedarbeidere",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 500,
+      "tightness_percent": 0.47574959048500814,
+      "quality_flags": [],
+      "source_row": 30,
+      "code": "5329"
+    },
+    {
+      "occupation_name": "Energimontører",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 700,
+      "tightness_percent": 7.256637168141593,
+      "quality_flags": [],
+      "source_row": 31,
+      "code": "7413"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere i husdyrproduksjon",
+      "shortage_estimate": 350,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 650,
+      "tightness_percent": 33.733826247689464,
+      "quality_flags": [],
+      "source_row": 32,
+      "code": "9212"
+    },
+    {
+      "occupation_name": "Elektronikkingeniører",
+      "shortage_estimate": 300,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 2.014509651509263,
+      "quality_flags": [],
+      "source_row": 33,
+      "code": "3114"
+    },
+    {
+      "occupation_name": "Sveisere",
+      "shortage_estimate": 300,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 450,
+      "tightness_percent": 5.258402602096133,
+      "quality_flags": [],
+      "source_row": 34,
+      "code": "7212"
+    },
+    {
+      "occupation_name": "Andre stasjonære maskinoperatører",
+      "shortage_estimate": 300,
+      "shortage_ci95_low": 200,
+      "shortage_ci95_high": 400,
+      "tightness_percent": 100,
+      "quality_flags": [
+        "tightness_at_100_percent_extreme_denominator"
+      ],
+      "source_row": 35,
+      "code": "8189"
+    },
+    {
+      "occupation_name": "Vernepleiere",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 600,
+      "tightness_percent": 1.0486891385767791,
+      "quality_flags": [],
+      "source_row": 36,
+      "code": "2224"
+    },
+    {
+      "occupation_name": "Andre ingeniører",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 400,
+      "tightness_percent": 0.7621951219512195,
+      "quality_flags": [],
+      "source_row": 37,
+      "code": "3119"
+    },
+    {
+      "occupation_name": "Bioingeniører",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 3.0605366050964,
+      "quality_flags": [],
+      "source_row": 38,
+      "code": "3212"
+    },
+    {
+      "occupation_name": "Kontormedarbeidere",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 0.43681980249771324,
+      "quality_flags": [],
+      "source_row": 39,
+      "code": "4110"
+    },
+    {
+      "occupation_name": "Andre personlige tjenesteytere",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 41.55251141552511,
+      "quality_flags": [],
+      "source_row": 40,
+      "code": "5169"
+    },
+    {
+      "occupation_name": "Andre dyreoppdrettere og røktere",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 100,
+      "quality_flags": [
+        "tightness_at_100_percent_extreme_denominator"
+      ],
+      "source_row": 41,
+      "code": "6129"
+    },
+    {
+      "occupation_name": "Metalldreiere mv.",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 150,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 8.665906499429875,
+      "quality_flags": [],
+      "source_row": 42,
+      "code": "7223"
+    },
+    {
+      "occupation_name": "Operatører innen næringsmiddelproduksjon",
+      "shortage_estimate": 250,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 0.9417441724714948,
+      "quality_flags": [],
+      "source_row": 43,
+      "code": "8160"
+    },
+    {
+      "occupation_name": "Psykologer",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 1.9121447028423773,
+      "quality_flags": [],
+      "source_row": 44,
+      "code": "2634"
+    },
+    {
+      "occupation_name": "Reiseledere og guider",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 9.994568169473112,
+      "quality_flags": [],
+      "source_row": 45,
+      "code": "5113"
+    },
+    {
+      "occupation_name": "Bartendere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 2.57201646090535,
+      "quality_flags": [],
+      "source_row": 46,
+      "code": "5132"
+    },
+    {
+      "occupation_name": "Gatekjøkken- og kafémedarbeidere mv.",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 1.3059584353613363,
+      "quality_flags": [],
+      "source_row": 47,
+      "code": "5246"
+    },
+    {
+      "occupation_name": "Vektere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 1.7574021012416428,
+      "quality_flags": [],
+      "source_row": 48,
+      "code": "5414"
+    },
+    {
+      "occupation_name": "Betongarbeidere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 2.5045955882352944,
+      "quality_flags": [],
+      "source_row": 49,
+      "code": "7114"
+    },
+    {
+      "occupation_name": "Isolatører mv.",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 16.96344892221181,
+      "quality_flags": [],
+      "source_row": 50,
+      "code": "7124"
+    },
+    {
+      "occupation_name": "Automatikere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 450,
+      "tightness_percent": 2.9633113828786453,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 51,
+      "code": "7412"
+    },
+    {
+      "occupation_name": "Slaktere, fiskehandlere mv.",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 400,
+      "tightness_percent": 9.933774834437086,
+      "quality_flags": [],
+      "source_row": 52,
+      "code": "7511"
+    },
+    {
+      "occupation_name": "Bil-, drosje- og varebilførere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 400,
+      "tightness_percent": 1.2837393021724819,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 53,
+      "code": "8322"
+    },
+    {
+      "occupation_name": "Anleggsmaskinførere",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 0.9509838636248671,
+      "quality_flags": [],
+      "source_row": 54,
+      "code": "8342"
+    },
+    {
+      "occupation_name": "Kjøkkenassistenter",
+      "shortage_estimate": 200,
+      "shortage_ci95_low": 100,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 0.8958280010238036,
+      "quality_flags": [],
+      "source_row": 55,
+      "code": "9412"
+    },
+    {
+      "occupation_name": "Forsknings- og utviklingsledere",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 550,
+      "tightness_percent": 4.281725100837728,
+      "quality_flags": [],
+      "source_row": 56,
+      "code": "1223"
+    },
+    {
+      "occupation_name": "Sivilingeniører (industri og produksjon",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 10.047468354430379,
+      "quality_flags": [],
+      "source_row": 57,
+      "code": "2141"
+    },
+    {
+      "occupation_name": "Sivilingeniører (maskin- og marin- teknikk)",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 2.621648460774578,
+      "quality_flags": [],
+      "source_row": 58,
+      "code": "2144"
+    },
+    {
+      "occupation_name": "Spesiallærere / spesialpedagoger",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 4.757249918540241,
+      "quality_flags": [],
+      "source_row": 59,
+      "code": "2352"
+    },
+    {
+      "occupation_name": "Andre lærere",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 4.915824915824916,
+      "quality_flags": [],
+      "source_row": 60,
+      "code": "2359"
+    },
+    {
+      "occupation_name": "Programvareutviklere",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 1.6519956589895093,
+      "quality_flags": [],
+      "source_row": 61,
+      "code": "2512"
+    },
+    {
+      "occupation_name": "Elkraftingeniører",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 250,
+      "tightness_percent": 2.0913501756734147,
+      "quality_flags": [],
+      "source_row": 62,
+      "code": "3113"
+    },
+    {
+      "occupation_name": "Maskiningeniører",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 1.887428378833839,
+      "quality_flags": [],
+      "source_row": 63,
+      "code": "3115"
+    },
+    {
+      "occupation_name": "Miljøarbeidere innen sosiale fagfelt",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 500,
+      "tightness_percent": 0.7594936708860759,
+      "quality_flags": [],
+      "source_row": 64,
+      "code": "3412"
+    },
+    {
+      "occupation_name": "Regnskapsmedarbeidere",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.971936148300721,
+      "quality_flags": [],
+      "source_row": 65,
+      "code": "4311"
+    },
+    {
+      "occupation_name": "Platearbeidere",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 3.304078471863707,
+      "quality_flags": [],
+      "source_row": 66,
+      "code": "7214"
+    },
+    {
+      "occupation_name": "Bakere, konditorer mv.",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 8.213429256594724,
+      "quality_flags": [],
+      "source_row": 67,
+      "code": "7512"
+    },
+    {
+      "occupation_name": "Prosessoperatører (oppredning)",
+      "shortage_estimate": 150,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 42.20963172804532,
+      "quality_flags": [],
+      "source_row": 68,
+      "code": "8112"
+    },
+    {
+      "occupation_name": "Andre administrative ledere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.4209705710387839,
+      "quality_flags": [],
+      "source_row": 69,
+      "code": "1219"
+    },
+    {
+      "occupation_name": "Ledere av industriproduksjon mv.",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.682323072040622,
+      "quality_flags": [],
+      "source_row": 70,
+      "code": "1321"
+    },
+    {
+      "occupation_name": "Ledere av helsetjenester",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.7992966189753018,
+      "quality_flags": [],
+      "source_row": 71,
+      "code": "1342"
+    },
+    {
+      "occupation_name": "Andre ledere av produksjon og tjenesteyting",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 1.716148961729878,
+      "quality_flags": [],
+      "source_row": 72,
+      "code": "1349"
+    },
+    {
+      "occupation_name": "Sivilingeniører (elektronikk)",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 350,
+      "tightness_percent": 1.7419354838709675,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 73,
+      "code": "2152"
+    },
+    {
+      "occupation_name": "Allmennpraktiserende leger",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 1.2822207534699273,
+      "quality_flags": [],
+      "source_row": 74,
+      "code": "2211"
+    },
+    {
+      "occupation_name": "Jordmødre",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 3.565306822077477,
+      "quality_flags": [],
+      "source_row": 75,
+      "code": "2222"
+    },
+    {
+      "occupation_name": "Universitets_x001E_ og høyskolelektorer/-lærere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 0.2846299810246679,
+      "quality_flags": [],
+      "source_row": 76,
+      "code": "2310"
+    },
+    {
+      "occupation_name": "Spesialister i pedagogikk",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 4.101838755304102,
+      "quality_flags": [],
+      "source_row": 77,
+      "code": "2351"
+    },
+    {
+      "occupation_name": "Revisorer, regnskapsrådgivere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 0.58,
+      "quality_flags": [],
+      "source_row": 78,
+      "code": "2411"
+    },
+    {
+      "occupation_name": "Høyere saksbehandlere i offentlig og privat virksomhet",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.08297194441986017,
+      "quality_flags": [],
+      "source_row": 79,
+      "code": "2422"
+    },
+    {
+      "occupation_name": "Systemanalytikere/-arkitekter",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.22510354763191068,
+      "quality_flags": [],
+      "source_row": 80,
+      "code": "2511"
+    },
+    {
+      "occupation_name": "Applikasjonsprogrammerere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 17.942583732057415,
+      "quality_flags": [],
+      "source_row": 81,
+      "code": "2514"
+    },
+    {
+      "occupation_name": "Jurister og advokater",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 0.8861739654134044,
+      "quality_flags": [],
+      "source_row": 82,
+      "code": "2611"
+    },
+    {
+      "occupation_name": "Radiografer mv.",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 2.8386300524529466,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 83,
+      "code": "3211"
+    },
+    {
+      "occupation_name": "Nettverks- og systemteknikere, IKT",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 9.080459770114944,
+      "quality_flags": [],
+      "source_row": 84,
+      "code": "3513"
+    },
+    {
+      "occupation_name": "Frisører",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 1.3613861386138615,
+      "quality_flags": [],
+      "source_row": 85,
+      "code": "5141"
+    },
+    {
+      "occupation_name": "Telefon- og nettselgere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 2.456499488229273,
+      "quality_flags": [],
+      "source_row": 86,
+      "code": "5244"
+    },
+    {
+      "occupation_name": "Murere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 2.508404447892423,
+      "quality_flags": [],
+      "source_row": 87,
+      "code": "7112"
+    },
+    {
+      "occupation_name": "Taktekkere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 5.886475122634898,
+      "quality_flags": [],
+      "source_row": 88,
+      "code": "7121"
+    },
+    {
+      "occupation_name": "Serviceelektronikere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 6.548042704626335,
+      "quality_flags": [],
+      "source_row": 89,
+      "code": "7421"
+    },
+    {
+      "occupation_name": "Møbelsnekkere",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 5.903128153380424,
+      "quality_flags": [],
+      "source_row": 90,
+      "code": "7522"
+    },
+    {
+      "occupation_name": "Operatører innen metallflatebehandling",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 100,
+      "quality_flags": [
+        "tightness_at_100_percent_extreme_denominator"
+      ],
+      "source_row": 91,
+      "code": "8122"
+    },
+    {
+      "occupation_name": "Operatører innen plastprodukter",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 4.714226115978306,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 92,
+      "code": "8142"
+    },
+    {
+      "occupation_name": "Montører av elektriske og elektroniske produkter",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 300,
+      "tightness_percent": 1.5413070283600494,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 93,
+      "code": "8212"
+    },
+    {
+      "occupation_name": "Jernbanetrafikkoperatører",
+      "shortage_estimate": 100,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 59.01639344262295,
+      "quality_flags": [],
+      "source_row": 94,
+      "code": null
+    },
+    {
+      "occupation_name": "Toppledere i offentlig administrasjon",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 2.4777006937561943,
+      "quality_flags": [],
+      "source_row": 95,
+      "code": "1112"
+    },
+    {
+      "occupation_name": "Finans- og økonomisjefer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.3775311749227777,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 96,
+      "code": "1211"
+    },
+    {
+      "occupation_name": "Personalsjefer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 1.6891891891891893,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 97,
+      "code": "1212"
+    },
+    {
+      "occupation_name": "Salgs- og markedssjefer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 50,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.20648229257915154,
+      "quality_flags": [],
+      "source_row": 98,
+      "code": "1221"
+    },
+    {
+      "occupation_name": "Ledere av bygge- og",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.2528604842278273,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 99,
+      "code": null
+    },
+    {
+      "occupation_name": "Ledere av eldreomsorg",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 1.8578727357176035,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 100,
+      "code": "1343"
+    },
+    {
+      "occupation_name": "Restaurantsjefer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 1.1892177589852009,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 101,
+      "code": "1412"
+    },
+    {
+      "occupation_name": "Matematikere, statistikere mv.",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.6769144773616547,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 102,
+      "code": "2120"
+    },
+    {
+      "occupation_name": "Sivilingeniører (bygg og anlegg)",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 200,
+      "tightness_percent": 0.14264799729719585,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 103,
+      "code": "2142"
+    },
+    {
+      "occupation_name": "Andre sivilingeniører (unntatt elektroteknologi",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 150,
+      "tightness_percent": 0.8123689727463311,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 104,
+      "code": "2149"
+    },
+    {
+      "occupation_name": "Lektorer mv. (videregående skole)",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.25543256950357235,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 105,
+      "code": "2330"
+    },
+    {
+      "occupation_name": "Reklame- og markedsføringsrådgivere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.3904131872898818,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 106,
+      "code": "2431"
+    },
+    {
+      "occupation_name": "Andre programvare- og applikasjonsutviklere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.2502047129469566,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 107,
+      "code": "2519"
+    },
+    {
+      "occupation_name": "Databasedesignere og -administratorer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 5.656934306569343,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 108,
+      "code": "2521"
+    },
+    {
+      "occupation_name": "Systemadministratorer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 2.2881880024737167,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 109,
+      "code": "2522"
+    },
+    {
+      "occupation_name": "Rådgivere/forskere, samfunns-økonomi",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 2.259414225941423,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 110,
+      "code": "2631"
+    },
+    {
+      "occupation_name": "Rådgivere innen sosiale fagfelt",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.3575143005720229,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 111,
+      "code": "2635"
+    },
+    {
+      "occupation_name": "Geistlige yrker",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.7465293327362292,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 112,
+      "code": "2636"
+    },
+    {
+      "occupation_name": "Bygningsingeniører",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.43108470231853663,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 113,
+      "code": "3112"
+    },
+    {
+      "occupation_name": "Arbeidsleder, industri",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.8553100498930863,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 114,
+      "code": "3122"
+    },
+    {
+      "occupation_name": "Arbeidsleder, bygg og anlegg",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.301659125188537,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 115,
+      "code": "3123"
+    },
+    {
+      "occupation_name": "Skipsmaskinister",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.146131805157593,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 116,
+      "code": "3151"
+    },
+    {
+      "occupation_name": "Helsesekretærer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.5387350501023597,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 117,
+      "code": "3256"
+    },
+    {
+      "occupation_name": "Ambulansepersonell",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.514823362329132,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 118,
+      "code": "3258"
+    },
+    {
+      "occupation_name": "Eiendomsmeglere og –forvaltere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.5270655270655271,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 119,
+      "code": "3334"
+    },
+    {
+      "occupation_name": "Religiøse yrker",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.3937282229965158,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 120,
+      "code": "3413"
+    },
+    {
+      "occupation_name": "Sports- og aktivitetsinstruktører",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.603920695032301,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 121,
+      "code": "3423"
+    },
+    {
+      "occupation_name": "Sjefskokker",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.5089594467148697,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 122,
+      "code": "3434"
+    },
+    {
+      "occupation_name": "Andre yrker innen estetiske fag",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.7316017316017316,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 123,
+      "code": "3439"
+    },
+    {
+      "occupation_name": "Driftsteknikere, IKT",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.19793406321519147,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 124,
+      "code": "3511"
+    },
+    {
+      "occupation_name": "Hotellresepsjonister",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.36014405762304924,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 125,
+      "code": "4224"
+    },
+    {
+      "occupation_name": "Renholdsledere i bedrifter",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.4163090128755365,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 126,
+      "code": "5151"
+    },
+    {
+      "occupation_name": "Butikkavdelingssjefer",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.7474931631722881,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 127,
+      "code": "5222"
+    },
+    {
+      "occupation_name": "Skoleassistenter",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.25441369208233755,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 128,
+      "code": "5312"
+    },
+    {
+      "occupation_name": "Melke_x001E_ og husdyrprodusenter",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.5142150803461063,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 129,
+      "code": "6121"
+    },
+    {
+      "occupation_name": "Havbruksarbeidere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.6206459784673845,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 130,
+      "code": "6221"
+    },
+    {
+      "occupation_name": "Gulv- og flisleggere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.863041289023162,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 131,
+      "code": "7122"
+    },
+    {
+      "occupation_name": "Kuldemontører mv.",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 4.8517520215633425,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 132,
+      "code": "7127"
+    },
+    {
+      "occupation_name": "Malere og byggtapetserere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.9234029669996973,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 133,
+      "code": "7131"
+    },
+    {
+      "occupation_name": "Kopper- og blikkenslagere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.0640608034744843,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 134,
+      "code": "7213"
+    },
+    {
+      "occupation_name": "Verktøymaker, låsesmeder mv.",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.6374714394516376,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 135,
+      "code": "7222"
+    },
+    {
+      "occupation_name": "Innbindere mv.",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 19.140625,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 136,
+      "code": "7323"
+    },
+    {
+      "occupation_name": "Tele- og IKT-installatører",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.2449186991869918,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 137,
+      "code": "7422"
+    },
+    {
+      "occupation_name": "Operatører innen produksjon av betong mv.",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 2.6066350710900474,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 138,
+      "code": "8114"
+    },
+    {
+      "occupation_name": "Operatører innen metallurgiske prosessfag",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.5957552438873029,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 139,
+      "code": "8121"
+    },
+    {
+      "occupation_name": "Operatører innen kjemisk industri",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.24769642326364807,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 140,
+      "code": "8131"
+    },
+    {
+      "occupation_name": "Operatører innen treforedling",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.8887308922858158,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 141,
+      "code": "8171"
+    },
+    {
+      "occupation_name": "Montører av mekaniske produkter",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 3.5543766578249336,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 142,
+      "code": "8211"
+    },
+    {
+      "occupation_name": "Andre montører",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 36.03603603603604,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 143,
+      "code": "8219"
+    },
+    {
+      "occupation_name": "Truckførere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 5.333333333333334,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 144,
+      "code": "8344"
+    },
+    {
+      "occupation_name": "Renholdere i private hjem",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 13.245033112582782,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 145,
+      "code": "9111"
+    },
+    {
+      "occupation_name": "Bilvaskere",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.1595111250391725,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 146,
+      "code": "9122"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere i bergverk",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 52.112676056338024,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 147,
+      "code": "9311"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere i anlegg",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.5034658883619118,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 148,
+      "code": "9312"
+    },
+    {
+      "occupation_name": "Andre hjelpearbeidere i industri",
+      "shortage_estimate": 50,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.5638604773144507,
+      "quality_flags": [
+        "published_ci_low_zero"
+      ],
+      "source_row": 149,
+      "code": "9329"
+    },
+    {
+      "occupation_name": "Administrerende direktører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.01358068283673303,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 150,
+      "code": "1120"
+    },
+    {
+      "occupation_name": "Strategi- og planleggingssjefer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.2857726066544193,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 151,
+      "code": "1213"
+    },
+    {
+      "occupation_name": "PR- og informasjonssjefer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.2679528403001072,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 152,
+      "code": "1222"
+    },
+    {
+      "occupation_name": "Ledere av omsorgstjenester for barn",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 0.4722843649018146,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 153,
+      "code": "1341"
+    },
+    {
+      "occupation_name": "Ledere av sosialomsorg",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.1052937754508436,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 154,
+      "code": "1344"
+    },
+    {
+      "occupation_name": "Hotellsjefer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.837270341207349,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 155,
+      "code": "1411"
+    },
+    {
+      "occupation_name": "Varehandelssjefer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.014721469791543988,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 156,
+      "code": "1420"
+    },
+    {
+      "occupation_name": "Andre daglige ledere i tjenesteytende virksomheter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 100,
+      "tightness_percent": 1.6060862214708367,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 157,
+      "code": "1439"
+    },
+    {
+      "occupation_name": "Meteorologer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.9736842105263157,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 158,
+      "code": "2112"
+    },
+    {
+      "occupation_name": "Kjemikere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.2834224598930482,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 159,
+      "code": "2113"
+    },
+    {
+      "occupation_name": "Geologer og geofysikere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.21652832912306025,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 160,
+      "code": "2114"
+    },
+    {
+      "occupation_name": "Sivilagronomer mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.001669449081803,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 161,
+      "code": "2132"
+    },
+    {
+      "occupation_name": "Miljøvernrådgivere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.0498687664041995,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 162,
+      "code": "2133"
+    },
+    {
+      "occupation_name": "Sivilingeniører (miljøteknikk)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 2.1699819168173597,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 163,
+      "code": "2143"
+    },
+    {
+      "occupation_name": "Sivilingeniører (kjemi)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7075471698113208,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 164,
+      "code": "2145"
+    },
+    {
+      "occupation_name": "Sivilingeniører (geofag, petro- leumsteknologi, metallurgi mv.)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.10355540214014498,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 165,
+      "code": "2146"
+    },
+    {
+      "occupation_name": "Sivilingeniører (elkraftteknikk)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3920714441298192,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 166,
+      "code": "2151"
+    },
+    {
+      "occupation_name": "Arealplanleggere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.4143646408839779,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 167,
+      "code": "2164"
+    },
+    {
+      "occupation_name": "Landmålere, kartografer mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.6944444444444444,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 168,
+      "code": "2165"
+    },
+    {
+      "occupation_name": "Tannleger",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.2967359050445104,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 169,
+      "code": "2261"
+    },
+    {
+      "occupation_name": "Farmasøyter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.2182203389830508,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 170,
+      "code": "2262"
+    },
+    {
+      "occupation_name": "Helse- og miljørådgivere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7633587786259541,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 171,
+      "code": "2263"
+    },
+    {
+      "occupation_name": "Audiografer og logopeder",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.40816326530612246,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 172,
+      "code": "2266"
+    },
+    {
+      "occupation_name": "Ergoterapeuter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.09615384615384616,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 173,
+      "code": "2267"
+    },
+    {
+      "occupation_name": "Kiropraktorer mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7957559681697612,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 174,
+      "code": "2269"
+    },
+    {
+      "occupation_name": "Andre språklærere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 8.12720848056537,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 175,
+      "code": "2353"
+    },
+    {
+      "occupation_name": "Finans- og investeringsrådgivere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.05124525981346726,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 176,
+      "code": "2412"
+    },
+    {
+      "occupation_name": "Finansanalytikere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.029270577215782696,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 177,
+      "code": "2413"
+    },
+    {
+      "occupation_name": "Rådgivere innen kompetanseutvikling",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.4484304932735426,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 178,
+      "code": "2424"
+    },
+    {
+      "occupation_name": "Salgskonsulenter innen IKT-produkter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7204610951008645,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 179,
+      "code": "2434"
+    },
+    {
+      "occupation_name": "Nett- og multimediautviklere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.5270092226613966,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 180,
+      "code": "2513"
+    },
+    {
+      "occupation_name": "Nettverksansvarlige",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 60.71428571428571,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 181,
+      "code": "2523"
+    },
+    {
+      "occupation_name": "Sikkerhetsanalytikere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.9555930297920181,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 182,
+      "code": "2529"
+    },
+    {
+      "occupation_name": "Andre juridiske yrker",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.4061207609594708,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 183,
+      "code": "2619"
+    },
+    {
+      "occupation_name": "Arkivarer og kuratorer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3101736972704715,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 184,
+      "code": "2621"
+    },
+    {
+      "occupation_name": "Bibliotekarer og andre informasjonsarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.44336960902861755,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 185,
+      "code": "2622"
+    },
+    {
+      "occupation_name": "Rådgivere/forskere, samfunns-vitenskap",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.938566552901024,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 186,
+      "code": "2632"
+    },
+    {
+      "occupation_name": "Rådgivere/forskere, humanistiske fag",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.893939393939394,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 187,
+      "code": "2633"
+    },
+    {
+      "occupation_name": "Journalister",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.1463933989885547,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 188,
+      "code": "2642"
+    },
+    {
+      "occupation_name": "Oversettere, tolker mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.9655172413793104,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 189,
+      "code": "2643"
+    },
+    {
+      "occupation_name": " Dirigenter, komponister, musikere og sangere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7391304347826086,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 190,
+      "code": "2652"
+    },
+    {
+      "occupation_name": "Ingeniører innen petroleum, bergverk og metallurgi",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.07051688879486638,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 191,
+      "code": "3117"
+    },
+    {
+      "occupation_name": "Tekniske tegnere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.4668534080298786,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 192,
+      "code": "3118"
+    },
+    {
+      "occupation_name": "Dekksoffiserer og loser",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.14336917562724014,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 193,
+      "code": "3152"
+    },
+    {
+      "occupation_name": "Reseptarer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.09095043201455207,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 194,
+      "code": "3213"
+    },
+    {
+      "occupation_name": "Protese- og tannteknikere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.7759456838021339,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 195,
+      "code": "3214"
+    },
+    {
+      "occupation_name": "Yrker innen alternativ medisin",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 3.7383177570093453,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 196,
+      "code": "3230"
+    },
+    {
+      "occupation_name": "Tannpleiere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.1142061281337048,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 197,
+      "code": "3251"
+    },
+    {
+      "occupation_name": "Optikere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.0395010395010396,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 198,
+      "code": "3254"
+    },
+    {
+      "occupation_name": "Helse- og miljøkontrollører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.14461315979754158,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 199,
+      "code": "3257"
+    },
+    {
+      "occupation_name": "Finansmeglere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.13415101571483326,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 200,
+      "code": "3311"
+    },
+    {
+      "occupation_name": "Kundebehandlere lån og kreditt",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.04746084480303749,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 201,
+      "code": "3312"
+    },
+    {
+      "occupation_name": "Regnskapsførere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.09726630490426949,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 202,
+      "code": "3313"
+    },
+    {
+      "occupation_name": "Innkjøpere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.03878474466709761,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 203,
+      "code": "3323"
+    },
+    {
+      "occupation_name": "Speditører og befraktere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.06462731581214994,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 204,
+      "code": "3331"
+    },
+    {
+      "occupation_name": "Andre yrker innen forretningstjenester",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 11.979166666666668,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 205,
+      "code": "3339"
+    },
+    {
+      "occupation_name": "Saksbehandlere innen sosiale ytelser",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.24460751612185905,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 206,
+      "code": "3353"
+    },
+    {
+      "occupation_name": "Andre yrker innen offentlig forvaltning",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3611809045226131,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 207,
+      "code": "3359"
+    },
+    {
+      "occupation_name": "Idrettsutøvere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3216911764705882,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 208,
+      "code": "3421"
+    },
+    {
+      "occupation_name": "Trenere og idrettsdommere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.32596371882086167,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 209,
+      "code": "3422"
+    },
+    {
+      "occupation_name": "Fotografer og filmfotografer",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.5728314238952537,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 210,
+      "code": "3431"
+    },
+    {
+      "occupation_name": "Brukerstøtte, IKT",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.14061872237846523,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 211,
+      "code": "3512"
+    },
+    {
+      "occupation_name": "Kundebehandlere, bank og postkontor",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 2.392947103274559,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 212,
+      "code": "4211"
+    },
+    {
+      "occupation_name": "Bingoverter, bookmakere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 2.0876826722338206,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 213,
+      "code": "4212"
+    },
+    {
+      "occupation_name": "Kundesentermedarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3512014787430684,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 214,
+      "code": "4222"
+    },
+    {
+      "occupation_name": "Resepsjonister (ekskl. hotell)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.23866348448687352,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 215,
+      "code": "4226"
+    },
+    {
+      "occupation_name": "Andre opplysningsmedarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 2.1939953810623556,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 216,
+      "code": "4229"
+    },
+    {
+      "occupation_name": "Forsikrings- og finansmedarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 5.277777777777778,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 217,
+      "code": "4312"
+    },
+    {
+      "occupation_name": "Lagermedarbeidere og materialforvaltere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.051568776462924765,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 218,
+      "code": "4321"
+    },
+    {
+      "occupation_name": "Logistikkmedarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.16950664644482114,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 219,
+      "code": "4322"
+    },
+    {
+      "occupation_name": "Kosmetologer mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.5466347796378545,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 220,
+      "code": "5142"
+    },
+    {
+      "occupation_name": "Vaktmestre",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.07475936828333801,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 221,
+      "code": "5153"
+    },
+    {
+      "occupation_name": "Dyrepassere og –trenere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 1.4842300556586272,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 222,
+      "code": "5164"
+    },
+    {
+      "occupation_name": "Billettselgere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 3.9408866995073892,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 223,
+      "code": "5230"
+    },
+    {
+      "occupation_name": "Servicemedarbeidere (bensinstasjon)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 3.7094281298299845,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 224,
+      "code": "5245"
+    },
+    {
+      "occupation_name": "Hjemmehjelper",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.11159935830368976,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 225,
+      "code": "5322"
+    },
+    {
+      "occupation_name": "Brannkonstabler",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.6153846153846154,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 226,
+      "code": "5411"
+    },
+    {
+      "occupation_name": "Andre sikkerhetsarbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.5037783375314862,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 227,
+      "code": "5419"
+    },
+    {
+      "occupation_name": "Frukt- og bærprodusenter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 42.10526315789473,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 228,
+      "code": "6112"
+    },
+    {
+      "occupation_name": "Gartnere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.3339882121807466,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 229,
+      "code": "6113"
+    },
+    {
+      "occupation_name": "Kombinasjonsbrukere, nyttevekster",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 100,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "tightness_at_100_percent_extreme_denominator"
+      ],
+      "source_row": 230,
+      "code": "6114"
+    },
+    {
+      "occupation_name": "Egg- og fjærfeprodusenter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 2.2988505747126435,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 231,
+      "code": "6122"
+    },
+    {
+      "occupation_name": "Plante- og husdyrprodusenter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.07608902415826517,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 232,
+      "code": null
+    },
+    {
+      "occupation_name": "Skogbrukere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.4778972520908005,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 233,
+      "code": "6210"
+    },
+    {
+      "occupation_name": "Fiskere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.9237875288683602,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 234,
+      "code": "6222"
+    },
+    {
+      "occupation_name": "Feiere, fasaderenholdere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.1264080100125156,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 235,
+      "code": "7133"
+    },
+    {
+      "occupation_name": "Metallslipere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 16.27906976744186,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 236,
+      "code": "7224"
+    },
+    {
+      "occupation_name": "Mekanikere innen flytekniske fag",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.5150214592274678,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 237,
+      "code": "7232"
+    },
+    {
+      "occupation_name": "Sykkelreparatører mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.6348773841961852,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 238,
+      "code": "7234"
+    },
+    {
+      "occupation_name": "Presisjonsinstrumentmakere og -reparatører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.8382352941176472,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 239,
+      "code": "7311"
+    },
+    {
+      "occupation_name": "Musikkinstrumentmakere og – stemmere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 26.436781609195403,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 240,
+      "code": "7312"
+    },
+    {
+      "occupation_name": "Vevere, strikkere mv. (innen husflidsproduksjon)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 5.361305361305361,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 241,
+      "code": "7318"
+    },
+    {
+      "occupation_name": "Andre kunsthåndverkere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 5.747126436781609,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 242,
+      "code": "7319"
+    },
+    {
+      "occupation_name": "Trykkere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.9671179883945842,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 243,
+      "code": "7322"
+    },
+    {
+      "occupation_name": "Skreddere, buntmakere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 3.356890459363958,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 244,
+      "code": "7531"
+    },
+    {
+      "occupation_name": "Skomakere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 30.158730158730158,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 245,
+      "code": "7536"
+    },
+    {
+      "occupation_name": "Yrkesdykkere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.2773722627737227,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 246,
+      "code": "7541"
+    },
+    {
+      "occupation_name": "Desinfeksjonsarbeidere og skadedyrbekjempere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.583710407239819,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 247,
+      "code": "7544"
+    },
+    {
+      "occupation_name": "Operatører innen produksjon av fotofilm og –papir mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 10.638297872340425,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 248,
+      "code": "8132"
+    },
+    {
+      "occupation_name": "Operatører innen produksjon av gummiprodukter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 4.878048780487805,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 249,
+      "code": "8141"
+    },
+    {
+      "occupation_name": "Operatører innen papirprodukter",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 3.542673107890499,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 250,
+      "code": "8143"
+    },
+    {
+      "occupation_name": "Spinne- og nøstemaskinoperatører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 3.225806451612903,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 251,
+      "code": "8151"
+    },
+    {
+      "occupation_name": "Operatører innen tekstilproduksjon mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.5184381778741864,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 252,
+      "code": "8152"
+    },
+    {
+      "occupation_name": "Renseri- og vaskerimaskinoperatører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.19179133103183738,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 253,
+      "code": "8157"
+    },
+    {
+      "occupation_name": "Operatører innen trelastproduksjon",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 50,
+      "tightness_percent": 0.6374963778614894,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero"
+      ],
+      "source_row": 254,
+      "code": "8172"
+    },
+    {
+      "occupation_name": "Pakke-, tappe- og etikettmaskinoperatører",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.5151515151515151,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 255,
+      "code": "8183"
+    },
+    {
+      "occupation_name": "Lokomotiv og T-baneførere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.2376425855513308,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 256,
+      "code": "8311"
+    },
+    {
+      "occupation_name": "Jordbruks- og skogbruksmaskin- førere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 1.66865315852205,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 257,
+      "code": "8341"
+    },
+    {
+      "occupation_name": "Kran- og heisførere mv.",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.27502750275027504,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 258,
+      "code": "8343"
+    },
+    {
+      "occupation_name": "Dekks- og maskinmannskap (skip)",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.08394895903290799,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 259,
+      "code": "8350"
+    },
+    {
+      "occupation_name": "Andre rengjørere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 68.57142857142857,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 260,
+      "code": "9129"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere i nyttevekstproduksjon",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 12.931034482758621,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 261,
+      "code": "9211"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere i skogbruk",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 24.742268041237114,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 262,
+      "code": "9215"
+    },
+    {
+      "occupation_name": "Hjelpearbeidere innen havbruk",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 17.77777777777778,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 263,
+      "code": "9216"
+    },
+    {
+      "occupation_name": "Altmuligmann",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.4396248534583822,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 264,
+      "code": "9622"
+    },
+    {
+      "occupation_name": "Andre hjelpearbeidere",
+      "shortage_estimate": 0,
+      "shortage_ci95_low": 0,
+      "shortage_ci95_high": 0,
+      "tightness_percent": 0.4792332268370607,
+      "quality_flags": [
+        "published_shortage_zero",
+        "published_ci_low_zero",
+        "published_ci_high_zero"
+      ],
+      "source_row": 265,
+      "code": "9629"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+--- wordpress-page-2124-before.html
++++ wordpress-page-2124-guided.html
+@@ -1,5 +1,5 @@
+ <!-- wp:shortcode -->
+-[rr_hurtigsjekk]
+-<!-- /wp:shortcode --><!-- wp:details {"className":"rq-advanced"} -->
+-<details class="wp-block-details rq-advanced"><summary>Se flere markedstall: utlysninger, lønn og pendling</summary>
++[rr_hurtigsjekk guided="1"]
++<!-- /wp:shortcode --><!-- wp:details {"className":"rq-advanced","anchor":"markedstall"} -->
++<details class="wp-block-details rq-advanced" id="markedstall"><summary>Flere markedstall for den valgte rollen</summary>
+ <!-- wp:shortcode -->
+@@ -8,3 +8,3 @@
+ </details>
+-<!-- /wp:details --><!-- wp:details {"className":"rq-advanced"} --><details class="wp-block-details rq-advanced" id="grundig-analyse"><summary>Vil du gå dypere? Åpne yrkessøk, NAV- og SSB-data</summary><!-- wp:html -->
++<!-- /wp:details --><!-- wp:details {"className":"rq-advanced"} --><details class="wp-block-details rq-advanced" id="grundig-analyse"><summary>Neste steg: tilpass rekrutteringen</summary><!-- wp:html -->
+ <div class="rrp-outer-shell" style="width:min(1680px,calc(100% - 22px));max-width:100%;margin:0 auto 32px;position:relative"><style id="rrp-v02-style">
+@@ -305,2 +305,4 @@
+  const occ=window.__rrpOccupations,areas=window.__rrpAreas;
++ const guided=Boolean(document.querySelector('#rr-hurtigsjekk[data-guided="true"]'));
++ let guidedContext=null;
+  const $=id=>document.getElementById(id);
+@@ -310,3 +312,3 @@
+  const normalized=s=>String(s||"").toLocaleLowerCase("nb-NO").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+- let selected=occ.find(x=>x.code==="2142")||occ[0];
++ let selected=guided?null:(occ.find(x=>x.code==="2142")||occ[0]);
+  let focus=false;
+@@ -399,6 +401,6 @@
+  const input=$("rrp-job-input");
+- input.value=selected.name+" ("+selected.code+")";
++ input.value=selected?selected.name+" ("+selected.code+")":"";
+  input.addEventListener("focus",()=>{input.value="";showMatches();});
+  input.addEventListener("input",showMatches);
+- input.addEventListener("blur",()=>{setTimeout(()=>{if(!document.activeElement?.closest("#rrp-occupation")){input.value=selected.name+" ("+selected.code+")";d.hidden=true;}},130);});
++ input.addEventListener("blur",()=>{setTimeout(()=>{if(!document.activeElement?.closest("#rrp-occupation")){input.value=selected?selected.name+" ("+selected.code+")":"";d.hidden=true;}},130);});
+  input.addEventListener("keydown",e=>{if(e.key==="Escape")d.hidden=true; if((e.key==="Enter" ? !d.hidden : false)){e.preventDefault();const first=d.querySelector("button:not(:disabled)");if(first)first.click();}});
+@@ -408,3 +410,4 @@
+  function render(){
+-   const area=areas.find(x=>x.code===$("rrp-region").value)||areas[0];
++   const area=areas.find(x=>x.code===$("rrp-region").value)||(guided?null:areas[0]);
++   if(!selected||!area){clearSelection(guidedContext);return;}
+    const offerInput=$("rrp-offer").value.trim();
+@@ -440,6 +443,32 @@
+    $("rrp-selection-note").textContent="STYRK08 "+selected.code+" · "+selected.name+" · "+area.name+(offer===null?"":" · tilbud "+money(offer));
+-   window.__rrpCurrent={model_version:"ridderset-market-0.4-occupation-search",as_of:"2026-11-11",occupation:selected,area,national_occupation_shortage:window.__rrpOccupationShortages?.[selected.code]||null,monthly_salary_offer:offer,company:window.__rrpCompany||null,risk:{status:"ikke_beregnbar",validated_probability:null,reason:"Mangler yrkesvise etterspørsels- og kandidatdata for regionen."},source_links:["https://data.ssb.no/api/pxwebapi/v2/tables/11418","https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger"]};
++   window.__rrpCurrent={...(window.__rrpCurrent||{}),model_version:"ridderset-market-0.4-occupation-search",as_of:"2026-11-11",occupation:selected,area,national_occupation_shortage:window.__rrpOccupationShortages?.[selected.code]||null,monthly_salary_offer:offer,company:window.__rrpCompany||null,risk:{status:"ikke_beregnbar",validated_probability:null,reason:"Mangler yrkesvise etterspørsels- og kandidatdata for regionen."},source_links:["https://data.ssb.no/api/pxwebapi/v2/tables/11418","https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/ledige-stillinger"]};
+  }
++ function clearSelection(ctx){
++   guidedContext=ctx||null;selected=null;input.value="";d.hidden=true;
++   $("rrp-region").value="";$("rrp-offer").value="";
++   $("rrp-selected").textContent="Velg rolle og arbeidssted i hurtigsjekken.";
++   for(const id of ["rrp-stat-salary","rrp-stat-unemployment","rrp-stat-vacancies","rrp-stat-shortage"]){$(id).textContent="Ikke valgt";}
++   if($("rrpd-town"))$("rrpd-town").value=ctx?.workplace?.municipalityName||"";
++   const previous=window.__rrpCurrent||{};
++   window.__rrpCurrent={...previous,occupation:null,area:null,national_occupation_shortage:null,monthly_salary_offer:null,company:window.__rrpCompany||null,workplace:ctx?.workplace||null,salary_input:ctx?.salary||null,worklife_self_assessment:window.__rrpWorklife||previous.worklife_self_assessment||null};
++   return true;
++ }
++ const contextApi=window.RRPLegacyContext=window.RRPLegacyContext||{};
++ contextApi.clearSelection=clearSelection;
++ contextApi.setSelection=function(ctx){
++   if(!guided)return false;
++   const job=occ.find(x=>x.code===ctx?.occupation?.code);
++   const area=areas.find(x=>x.code===ctx?.workplace?.countyCode);
++   if(!job||!area){clearSelection(ctx);return false;}
++   guidedContext=ctx;$("rrp-region").value=area.code;$("rrp-offer").value="";
++   if($("rrpd-town"))$("rrpd-town").value=ctx.workplace.municipalityName||"";
++   choose(job);
++   window.__rrpCurrent.workplace=ctx.workplace;
++   window.__rrpCurrent.salary_input=ctx.salary;
++   window.__rrpCurrent.guided_context_revision=ctx.revision;
++   window.__rrpCurrent.worklife_self_assessment=window.__rrpWorklife||window.__rrpCurrent.worklife_self_assessment||null;
++   return true;
++ };
+  $("rrp-export").addEventListener("click",()=>{
+-   const data=window.__rrpCurrent;if(!data)return;
++   const data=window.__rrpCurrent;if(!data?.occupation)return;
+    const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:"application/json"}));
+@@ -448,4 +477,5 @@
+  $("rrp-job-input").setAttribute("aria-label","Søk i 407 STYRK08-yrker");
+- $("rrp-region").value="55";
+- choose(selected);
++ if(guided){clearSelection(window.__rrhContext);if(window.__rrhContext)contextApi.setSelection(window.__rrhContext);}
++ else{$("rrp-region").value="55";choose(selected);}
++ window.dispatchEvent(new CustomEvent("rrh-legacy-ready"));
+  const ready=$("rrp-runtime-state");if(ready){ready.textContent="Yrkesøket er aktivt. 407 yrkesgrupper tilgjengelig.";ready.style.color="#376d63";}
+@@ -489,3 +519,5 @@
+ const offer=current.monthly_salary_offer;
+-return ["RIDDERSET | REKRUTTERINGSPROGNOSE | BESLUTNINGSNOTAT","Dato: "+new Date().toLocaleDateString("nb-NO"),"Yrke: "+occupation+" / STYRK08 "+(current.occupation?.code||"—"),"Område: "+county,"SSB median månedslønn 2025 (Norge): "+(sal==null?"Ikke publisert":new Intl.NumberFormat("nb-NO").format(sal)+" kr"),"Tilbudt månedslønn: "+(offer==null?"Ikke oppgitt":new Intl.NumberFormat("nb-NO").format(offer)+" kr"),"","VALGT REKRUTTERINGSOPPLEGG",...ids.map(k=>"- "+labels[k][result.chosen[k]]),"","ILLUSTRATIV VURDERING AV SELVVALGTE BEGRENSNINGER",result.points+" av 8 indikatorpoeng (startoppsett 8). Ikke en risiko- eller sannsynlighetsmodell.","","TRE FØRSTE TILTAK",...actionsList.map((v,i)=>(i+1)+". "+v),"","FORBEHOLD: SSB-tall gjelder landsgjennomsnitt og 2025. NAVs regionale tall gjelder fylkesnivå og er ikke yrkesspesifikke. Hindringsmodellen er kvalitativ og ikke validert mot faktisk tid til ansettelse eller antall søkere.","Kilder: https://www.ssb.no/statbank/table/11418 og https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen"].join("\n");
++const base=current.salary_input?.measure==="base"?current.salary_input.offeredMonthlyBase:null;
++const guided=Boolean(document.querySelector('#rr-hurtigsjekk[data-guided="true"]'));
++return ["RIDDERSET | REKRUTTERINGSPROGNOSE | BESLUTNINGSNOTAT","Dato: "+new Date().toLocaleDateString("nb-NO"),"Yrke: "+occupation+" / STYRK08 "+(current.occupation?.code||"—"),"Område: "+county,"SSB median månedslønn 2025 (Norge): "+(sal==null?"Ikke publisert":new Intl.NumberFormat("nb-NO").format(sal)+" kr"),(guided?"Tilbudt grunnlønn: "+(base==null?"Ikke oppgitt":new Intl.NumberFormat("nb-NO").format(base)+" kr per måned. Vurderes mot grunnlønn i hurtigsjekken, ikke mot samlet månedslønn."):"Tilbudt månedslønn: "+(offer==null?"Ikke oppgitt":new Intl.NumberFormat("nb-NO").format(offer)+" kr")),"","VALGT REKRUTTERINGSOPPLEGG",...ids.map(k=>"- "+labels[k][result.chosen[k]]),"","ILLUSTRATIV VURDERING AV SELVVALGTE BEGRENSNINGER",result.points+" av 8 indikatorpoeng (startoppsett 8). Ikke en risiko- eller sannsynlighetsmodell.","","TRE FØRSTE TILTAK",...actionsList.map((v,i)=>(i+1)+". "+v),"","FORBEHOLD: SSB-tall gjelder landsgjennomsnitt og 2025. NAVs regionale tall gjelder fylkesnivå og er ikke yrkesspesifikke. Hindringsmodellen er kvalitativ og ikke validert mot faktisk tid til ansettelse eller antall søkere.","Kilder: https://www.ssb.no/statbank/table/11418 og https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen"].join("\n");
+ }
+@@ -571,3 +603,3 @@
+ }
+-function syncCompany(){
++function syncCompany(emit){
+  if(!current)return;
+@@ -586,3 +618,3 @@
+  $("rrpc-loc-note").textContent=c?"Registrert kommune er "+town(loc)+". Trykk på knappen for å fylle dette som arbeidssted. Kontroller at stillingen faktisk skal være her.":"Virksomheten har ikke en registrert adresse i Troms, Nordland eller Finnmark. Prognosen er foreløpig avgrenset til disse fylkene. Velg en relevant underenhet, eller fyll arbeidsstedet manuelt.";
+- window.dispatchEvent(new CustomEvent("rrp-company-selected",{detail:window.__rrpCompany}));
++ if(emit!==false)window.dispatchEvent(new CustomEvent("rrp-company-selected",{detail:window.__rrpCompany}));
+ }
+@@ -638,2 +670,21 @@
+ }
++const contextApi=window.RRPLegacyContext=window.RRPLegacyContext||{};
++function fromQuick(c){
++ if(!c)return null;
++ const address={adresse:c.address?[c.address]:[],kommune:c.townName||"",kommunenummer:c.town||""};
++ return {navn:c.name,organisasjonsnummer:c.org,naeringskode1:{kode:c.industryCode||"",beskrivelse:c.industry||""},antallAnsatte:c.employees,organisasjonsform:{kode:c.organization_type_code||""},overordnetEnhet:c.parent||null,[c.kind==="underenheter"?"beliggenhetsadresse":"forretningsadresse"]:address};
++}
++contextApi.setCompany=function(ctx){
++ if(!document.querySelector('#rr-hurtigsjekk[data-guided="true"]'))return false;
++ clearTimeout(debounce);if(controller)controller.abort();seq++;setOpen(false);
++ const chosen=ctx?.selectedCompany||null,main=ctx?.mainCompany?.kind==="enheter"?ctx.mainCompany:null;
++ current=fromQuick(main||chosen);active=main&&chosen?.kind==="underenheter"?fromQuick(chosen):null;
++ units=(ctx?.availableUnits||[]).map(fromQuick);$("rrpc-card").hidden=!current;
++ if(!current){window.__rrpCompany=null;if(window.__rrpCurrent)window.__rrpCurrent.company=null;return true;}
++ syncCompany(false);
++ Object.assign(window.__rrpCompany,{registered_address:chosen.address||"Adresse ikke oppgitt",registered_municipality:chosen.townName||"",municipality_number:chosen.town||null,organization_type_code:(main||chosen).organization_type_code||null,unit_name:chosen.kind==="underenheter"?chosen.name:null,unit_organization_number:chosen.kind==="underenheter"?chosen.org:null,parent_organization_number:chosen.parent||null,source:chosen.source||"Brønnøysundregistrene / Enhetsregisteret",source_url:chosen.sourceUrl||base+"/"+chosen.kind+"/"+chosen.org,retrieved_on:chosen.retrievedAt?chosen.retrievedAt.slice(0,10):null,retrieved_at:chosen.retrievedAt||null});
++ if(window.__rrpCurrent)window.__rrpCurrent.company=window.__rrpCompany;
++ $("rrpc-input").value=current.navn;$("rrpc-source").href=window.__rrpCompany.source_url;
++ return true;
++};
+ $("rrpc-subunit-search").addEventListener("change",()=>{
+@@ -678,2 +729,4 @@
+ document.addEventListener("click",e=>{if(!e.target.closest("#rrpc-company .rrpc-search"))setOpen(false);});
++if(window.__rrhContext)contextApi.setCompany(window.__rrhContext);
++window.dispatchEvent(new CustomEvent("rrh-legacy-ready"));
+ })();
+@@ -822,2 +875,5 @@
+ calculate();
++const contextApi=window.RRPLegacyContext=window.RRPLegacyContext||{};
++contextApi.worklifeReady=true;
++window.dispatchEvent(new CustomEvent("rrh-legacy-ready"));
+ })();
+@@ -921,3 +977,3 @@
+  const countyCodes={"harstad":"55","tromsø":"55","senja":"55","narvik":"18","sortland":"18","hadsel":"18","vågan":"18","vestvågøy":"18","bodø":"18","fauske":"18","rana":"18","alta":"56","hammerfest":"56","sør-varanger":"56","vadsø":"56"};
+- const county=countyCodes[city],regionControl=el("rrp-region");
++ const county=document.querySelector('#rr-hurtigsjekk[data-guided="true"]')?null:countyCodes[city],regionControl=el("rrp-region");
+  if(county&&regionControl&&regionControl.value!==county){
+@@ -947,2 +1003,8 @@
+  el("rrpd-pay-detail").textContent=med!=null?"SSB tabell 11418 · Norge · 2025 · ikke lokalt nivå":"SSB tabell 11418 · yrkestall ikke tilgjengelig";
++ if(document.querySelector('#rr-hurtigsjekk[data-guided="true"]')){
++  const base=m.salary_input?.measure==="base"?m.salary_input.offeredMonthlyBase:null;
++  pay=base>0?"Tilbudt grunnlønn er "+money(base)+" per måned, oppgitt i hurtigsjekken. Lønnssammenligningen med riktig SSB-mål vises der. Grunnlønn sammenlignes ikke med samlet månedslønn i fordypningen.":"Tilbudt grunnlønn er ikke oppgitt. Legg eventuelt inn lønnsrammen i hurtigsjekken.";
++  el("rrpd-pay").textContent=base>0?money(base)+" i grunnlønn":"Grunnlønn ikke oppgitt";
++  el("rrpd-pay-detail").textContent="Lønnsvurderingen følger valgene i hurtigsjekken. Grunnlønn og samlet månedslønn er ulike mål.";
++ }
+  el("rrpd-local").textContent="Ikke målt for "+(town||area.name||"arbeidsstedet");
+@@ -1067,2 +1129,6 @@
+    else{out("rrp-diff-offer").textContent="Lønn ikke sammenlignet";out("rrp-diff-offer-note").textContent="Oppgi lønn for rollen, og undersøk arbeidsgiverens styrker nedenfor."}
++   if(document.querySelector('#rr-hurtigsjekk[data-guided="true"]')){
++     out("rrp-diff-offer").textContent=m.salary_input?.offeredMonthlyBase>0?"Grunnlønn lagt inn øverst":"Grunnlønn ikke oppgitt";
++     out("rrp-diff-offer-note").textContent="Se lønnsvurderingen i hurtigsjekken. Grunnlønn brukes ikke som samlet månedslønn i denne hindringsmodellen.";
++   }
+    const showProcess=mode==="specific";
+@@ -1103,2 +1169,3 @@
+    out("rrp-diff-jump").textContent=mode==="general"?"Velg yrke og område ↓":"Vurder rekrutteringsopplegget ↓";
++   if(document.querySelector('#rr-hurtigsjekk[data-guided="true"]')){if(mode==="general"){out("rrp-diff-jump").href="#rrh-role-step";out("rrp-diff-jump").textContent="Endre rolle og arbeidssted ↑";}}
+    out("rrp-diff-method").textContent="Metode: Kvalitativ screening av eksplisitte valgmuligheter. Bare de seks yrkene med NAVs dokumenterte, nasjonale mangelanslag kan få dette markedssignalet. Skalaen er ikke kalibrert mot faktiske rekrutteringsutfall, og et lavere hindringsnivå betyr ikke at en rekruttering blir enkel.";

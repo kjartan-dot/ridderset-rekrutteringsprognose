@@ -1,0 +1,52 @@
+<section id="rr-hurtigsjekk" data-api="{{RRH_API}}" data-assets="{{RRH_ASSETS}}" data-market-api="{{RRH_MARKET_API}}" aria-labelledby="rrh-title">
+  <div class="rrh-intro">
+    <p class="rrh-eyebrow">RIDDERSET · REKRUTTERINGSINNSIKT</p>
+    <h1 id="rrh-title">Neste rekruttering.<br>Start med bedriften.</h1>
+    <p>Vi foreslår aktuelle roller og henter markedstallene for deg.</p>
+  </div>
+  <div class="rrh-wrap">
+    <section class="rrh-start rrh-card" aria-labelledby="rrh-search-title">
+      <h2 id="rrh-search-title">Hvilken bedrift gjelder det?</h2>
+      <form id="rrh-company-form" role="search">
+        <label for="rrh-company">Bedriftsnavn eller organisasjonsnummer</label>
+        <div class="rrh-searchrow"><input id="rrh-company" type="search" autocomplete="off" minlength="2" maxlength="100" placeholder="F.eks. Nordlaks" aria-describedby="rrh-company-status"><button type="submit" id="rrh-search-btn">Finn bedrift</button></div>
+        <label class="rrh-checkbox"><input type="checkbox" id="rrh-search-units"> Søk etter avdeling eller arbeidssted</label>
+      </form>
+      <p id="rrh-company-status" class="rrh-status" role="status"></p>
+      <div id="rrh-company-results" class="rrh-choices"></div>
+      <button type="button" class="rrh-textbutton" id="rrh-manual">Start med rolle og kommune</button>
+      <div id="rrh-company-summary" hidden></div>
+      <div id="rrh-unit-wrap" hidden><label for="rrh-unit">Avdeling eller arbeidssted</label><select id="rrh-unit"><option value="">Bruk registrert hovedadresse</option></select><p id="rrh-unit-status" class="rrh-meta" role="status"></p></div>
+    </section>
+
+    <section id="rrh-role-step" class="rrh-card" aria-labelledby="rrh-role-heading" hidden>
+      <div class="rrh-sectionhead"><div><p class="rrh-eyebrow">AKTUELLE ROLLER</p><h2 id="rrh-role-heading">Hva kan neste behov være?</h2></div><span class="rrh-tag">Du velger rollen</span></div>
+      <p id="rrh-role-reason" class="rrh-muted"></p>
+      <div id="rrh-role-suggestions" class="rrh-rolegrid"></div>
+      <details id="rrh-other-role"><summary>Velg en annen rolle</summary><label for="rrh-role-search">Stillingstittel eller yrke</label><input id="rrh-role-search" type="search" autocomplete="off" placeholder="F.eks. prosjektleder eller elektriker"><div id="rrh-role-results" class="rrh-choices"></div></details>
+      <div class="rrh-workplace"><label for="rrh-town">Arbeidskommune <span id="rrh-town-origin" class="rrh-meta"></span></label><select id="rrh-town"><option value="">Velg kommune</option></select><p class="rrh-meta">Kontroller at dette er stedet personen skal jobbe.</p></div>
+      <p id="rrh-role-status" class="rrh-status" role="status"></p>
+    </section>
+
+    <section id="rrh-result" class="rrh-result" aria-labelledby="rrh-result-title" hidden>
+      <div class="rrh-resulthead"><p class="rrh-eyebrow">DERE VURDERER</p><h2 id="rrh-result-title" tabindex="-1"></h2><p id="rrh-result-location"></p></div>
+      <div class="rrh-card rrh-scorecard">
+        <div class="rrh-sectionhead"><div><h3>Nasjonal yrkesindikator</h3><p class="rrh-muted">Hvordan mangelpresset i yrket ligger an.</p></div><span class="rrh-tag">NAV 2026 · Norge</span></div>
+        <div id="rrh-score-output" aria-live="polite"></div>
+        <div class="rrh-scale" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+        <div class="rrh-scale-labels"><span>Mer press</span><span>Mindre press</span></div>
+        <p class="rrh-meta">Skalaen viser relativt, nasjonalt mangelpress. Den anslår ikke hvor mange kvalifiserte søkere dere vil få.</p>
+        <details><summary>Se grunnlaget for indikatoren</summary><div id="rrh-score-evidence"></div></details>
+      </div>
+      <div class="rrh-factgrid">
+        <article class="rrh-card" id="rrh-nav-card" aria-live="polite"><h3>Utlysninger i kommunen</h3><p>Henter NAV-treff …</p></article>
+        <article class="rrh-card" id="rrh-pay-card" aria-live="polite"><h3>Lønn i yrket</h3><p>Henter SSB-tall …</p></article>
+      </div>
+      <div class="rrh-action"><div><p class="rrh-eyebrow">NESTE GREP</p><h3 id="rrh-action-title"></h3><p id="rrh-action-text"></p></div><a href="https://ridderset.no/kontakt/?tema=rekruttering#book-mote">Få en konkret søkeplan</a></div>
+      <details class="rrh-card rrh-refine"><summary>Gjør vurderingen mer presis</summary><div class="rrh-refinegrid"><div><label for="rrh-sector">Sektor for lønnssammenligning</label><select id="rrh-sector"><option value="ALLE">Alle sektorer</option><option value="A+B+D+E">Privat og offentlig eide foretak</option><option value="6500">Kommuneforvaltningen</option><option value="6100">Statsforvaltningen</option></select></div><div><label for="rrh-offer">Tilbudt grunnlønn per måned</label><input id="rrh-offer" type="number" min="1" max="9999999" step="1" inputmode="numeric" placeholder="Valgfritt, kroner før skatt"></div></div><p id="rrh-offer-comparison" class="rrh-status" role="status"></p><p class="rrh-meta">Lønnen sammenlignes med SSB. Den endrer ikke den nasjonale yrkesindikatoren.</p><button type="button" class="rrh-secondary" id="rrh-commute-btn">Vis relevante pendlekommuner</button><div id="rrh-commute" aria-live="polite"></div></details>
+      <div class="rrh-result-actions"><button type="button" id="rrh-download" class="rrh-secondary">Last ned vurderingen</button><a href="https://ridderset.no/rekrutteringsprognose/#grundig-analyse">Åpne den grundige analysen</a></div>
+    </section>
+    <p class="rrh-footer">Ingen innlogging. Søket og valgene dine lagres ikke som en kundehenvendelse.</p>
+    <noscript><p>Bedriftssøket trenger JavaScript. <a href="https://ridderset.no/kontakt/">Kontakt Ridderset for en vurdering.</a></p></noscript>
+  </div>
+</section>
