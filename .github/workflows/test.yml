@@ -10,3 +10,5 @@ jobs:
           node-version: 22
       - run: npm run check
       - run: npm test
+      - run: php -l integrations/wordpress/ridderset-hurtigsjekk/ridderset-hurtigsjekk.php
+      - run: php tests/wordpress-brreg-cache.php
