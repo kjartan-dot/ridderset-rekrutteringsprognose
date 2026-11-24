@@ -43,11 +43,19 @@ UNIT = {
     "parent": COMPANY["org"],
 }
 SURVEY = {
-    "year": 2026,
+    "year": 2024,
     "scope": "national",
     "occupations": [
-        {"code": "6221", "tightness_percent": 1, "shortage_estimate": 15},
-        {"code": "7411", "tightness_percent": 2, "shortage_estimate": 25},
+        {
+            "code": "6221",
+            "tightness_percent": 3,
+            "shortage_estimate": 15,
+            "shortage_ci95_low": 0,
+            "shortage_ci95_high": 30,
+        },
+        {"code": "7411", "tightness_percent": 1, "shortage_estimate": 25},
+        {"code": "1312", "tightness_percent": 2, "shortage_estimate": 8000},
+        {"code": "1312", "tightness_percent": 2.5, "shortage_estimate": 9000},
     ],
 }
 
@@ -99,11 +107,11 @@ async def fixture_page(browser, base, source_route=None, **options):
         await context.close()
 
 
-def nav_fixture(ads):
+def nav_fixture(ads, *, complete=True):
     return {
         "coverage": True,
         "ads": ads,
-        "backfilled": True,
+        "backfilled": complete,
         "employers": [],
         "checked_at": "2026-11-21T08:00:00Z",
     }
@@ -116,7 +124,8 @@ async def available_sources(route, url):
     elif url.path == "/api/units" and params.get("org") == [COMPANY["org"]]:
         await route.fulfill(json={"companies": [UNIT], "hasMore": False})
     elif url.path == "/market/annonser":
-        await route.fulfill(json=nav_fixture(3))
+        incomplete = params.get("kommune") == ["5503"]
+        await route.fulfill(json=nav_fixture(0, complete=False) if incomplete else nav_fixture(3))
     elif url.path == "/market/lonn":
         await route.fulfill(json={"base": 50000, "total": 54000, "year": "2025"})
     else:
@@ -178,10 +187,17 @@ async def guided_journey(browser, base, output, viewport):
         await expect(page.locator("#rrh-result-title")).to_have_text("Havbruksarbeidere")
         await expect(page.locator("#rrh-result-location")).to_contain_text("Hadsel")
         await expect(page.locator("#rrh-score-output")).to_contain_text("/ 10")
+        await expect(page.locator(".rrh-scorecard .rrh-tag")).to_have_text("NAV 2024 · Norge")
+        await expect(page.locator("#rrh-score-output")).to_contain_text("konfidensintervall for mangelanslaget inkluderer null")
+        await expect(page.locator("#rrh-action-text")).to_contain_text("begrenset grunnlag for kanalvalg")
         await expect(page.locator(".rrh-scale .is-current")).to_have_count(1)
         await expect(page.locator("#rrh-nav-card")).to_contain_text("3 annonser")
         await expect(page.locator("#rrh-pay-card")).to_contain_text(re.compile(r"50\s*000"))
         layout.append(await no_overflow(page, "market-result"))
+        report = await download_plan(page)
+        assert "0–30 personer.\nRidderset rangerer" in report
+        assert "Av 2 sammenlignbare yrker har 1 lavere stramhet og 1 samme stramhet" in report
+        assert "Metodeversjon: rr-national-tightness-midrank-1.1" in report
 
         await page.locator("#rrh-role-suggestions [data-code='1312']").click()
         await page.locator("#rrh-town").select_option("5503")
@@ -189,6 +205,8 @@ async def guided_journey(browser, base, output, viewport):
         await expect(page.locator("#rrh-nav-card h3")).to_have_text("Utlysninger i Harstad")
         await expect(page.locator("#rrh-score-output")).to_contain_text("Nasjonalt mangelsignal er ikke avklart")
         await expect(page.locator(".rrh-scale")).to_be_hidden()
+        await expect(page.locator("#rrh-nav-card")).to_contain_text("Foreløpig ingen treff")
+        await expect(page.locator("#rrh-nav-card .rrh-factvalue")).to_have_count(0)
         await expect(page.locator("#rrh-pay-card")).to_contain_text(re.compile(r"50\s*000"))
 
         await open_plan(page)
@@ -207,6 +225,9 @@ async def guided_journey(browser, base, output, viewport):
         assert "STYRK08 1312" in report and UNIT["name"] in report
         assert "MARKEDSGRUNNLAG FRA DETTE OPPSLAGET" in report
         assert "Nasjonalt mangelsignal er ikke avklart" in report
+        assert "Yrket har flere rader i datakilden" in report
+        assert "NAV anslår mangel på" not in report
+        assert "Foreløpig ingen treff" in report
         (output / f"{name}-download.txt").write_text(report, encoding="utf-8")
         layout.append(await no_overflow(page, "plan"))
         await page.screenshot(path=output / f"{name}-plan.png", full_page=True)

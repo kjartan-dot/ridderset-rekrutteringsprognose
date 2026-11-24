@@ -61,9 +61,13 @@ Ingen kildeverdi er gjort om fra manglende til null. Alle 262 yrkesrader har pos
 
 ## Betydningen av en relativ skår
 
-En invers percentil/rangering av stramheten kan gi en lesbar 1–10-skala. Det er Riddersets presentasjonsregel, ikke en offisiell NAV-skår. Referansegruppe, årgang, behandling av like verdier og eventuelle utelatelser må beskrives i modellmetoden. Nullkoder skal ikke stille forsvinne fra referansegruppen bare fordi de ikke kunne kobles til katalogen.
+Ridderset bruker en invers midtrang på skalaen 1–10. Metodeversjon `rr-national-tightness-midrank-1.1` bruker publiserte yrkesrader med positivt mangelanslag og stramhet over 0 og under 100 prosent. Undertrykte og ugyldige rader utelates. Yrker uten katalogkode beholdes i referansen. Flere rader med samme STYRK08-kode gjør koden tvetydig. Alle slike rader utelates fra ranggrunnlaget, og verktøyet viser ingen rang eller tall for den valgte koden.
+
+Med `N` sammenlignbare yrker, `L` yrker med lavere stramhet og `T` med samme stramhet (inkludert valgt yrke) blir relativ midtrang `(L + (T − 1) / 2) / (N − 1)`. Ridderset runder `10 − 9 × relativ midtrang` til nærmeste heltall, med halve verdier rundet opp. Minst to ulike stramhetsverdier kreves. Resultatet og rapporten oppgir kildeår, `N`, `L` og `T` for beregnede rangeringer.
 
 Skalaen må omtales som **relativt nasjonalt yrkespress** eller en tilsvarende presis nasjonal indikator. En høy skår betyr relativt lavere press blant yrkene i referansegruppen. Hvert yrke får lik rangvekt uansett antall sysselsatte. Små yrker, restkategorier og vide konfidensintervaller kan gi ustabile rangeringer. Det finnes ikke et dokumentert konfidensintervall for produktets 1–10-skår i dette datasettet.
+
+Konfidensintervallet gjelder NAVs mangelanslag i personer. Det vises ved siden av anslaget når grensene er gyldige. Hvis intervallet omfatter null eller mangler, bør arbeidsgiveren undersøke relevante fagmiljøer og avklare søkeområde før kanalvalg. Dette endrer ikke den beregnede rangen. Ufullstendig NAV-innlesing uten teksttreff vises som foreløpig status. Antallet vises som et minstetall når den ufullstendige innlesingen gir positive treff.
 
 Skalaen er ikke kalibrert mot rekrutteringsutfall. Den gir verken antall kvalifiserte søkere, sannsynlighet for å lykkes, tid til ansettelse eller bedriftens neste ansettelsesbehov. Bedriftsvise forhold som krav, lønn, mobilitet og kanalbruk er ikke observert i denne indikatoren. Slike prediksjoner krever faktiske prosessutfall og separat validering.
 
