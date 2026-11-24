@@ -101,6 +101,8 @@ const securityHeaders = {
   'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'",
 };
 const assetTypes = {'js': 'text/javascript', 'css': 'text/css', 'json': 'application/json', 'svg': 'image/svg+xml', 'png': 'image/png'};
+export const journeyStyles = ['style.css', 'journey.css'];
+export const journeyScripts = ['core.js', 'context.js', 'front.js', 'context-bridge.js', 'process-plan.js', 'journey.js'];
 
 export function makeServer() {
   return http.createServer(async (request, response) => {
@@ -124,8 +126,22 @@ export function makeServer() {
       if (url.pathname === '/') {
         const fragment = (await readFile(new URL('view.html', plugin), 'utf8'))
           .replaceAll('{{RRH_API}}', '/api/').replaceAll('{{RRH_ASSETS}}', '/assets/').replaceAll('{{RRH_MARKET_API}}', '/market/');
+        const styles = journeyStyles.map(file => `<link rel="stylesheet" href="/assets/${file}">`).join('\n');
+        const scripts = journeyScripts.map(file => `<script src="/assets/${file}"></script>`).join('\n');
         response.writeHead(200, {...securityHeaders, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store'});
-        return response.end('<!doctype html><html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rekrutteringsanalyse | Ridderset</title><link rel="stylesheet" href="/assets/style.css"></head><body>' + fragment + '<script src="/assets/core.js"></script><script src="/assets/context.js"></script><script src="/assets/front.js"></script><script src="/assets/context-bridge.js"></script></body></html>');
+        return response.end(`<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rekrutteringsanalyse | Ridderset</title>
+${styles}
+</head>
+<body>
+${fragment}
+${scripts}
+</body>
+</html>`);
       }
       const asset = url.pathname.match(/^\/assets\/([a-zA-Z0-9][a-zA-Z0-9_-]*\.(js|css|json|svg|png))$/);
       if (asset) {

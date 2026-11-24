@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Ridderset – rask rekrutteringsanalyse
  * Description: Bedriftssøk, rolleforslag og dokumenterte markedssignaler i en kort flyt.
- * Version: 0.3.3
+ * Version: 0.3.4
  * Author: Ridderset Rekruttering
  * Requires at least: 6.3
  * Requires PHP: 7.4
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 final class Ridderset_Hurtigsjekk {
-    const VERSION = '0.3.3';
+    const VERSION = '0.3.4';
     const API = 'https://data.brreg.no/enhetsregisteret/api/';
     private static $guided = false;
     private static $journey = false;
@@ -167,7 +167,8 @@ final class Ridderset_Hurtigsjekk {
         if ($query) {
             $url = add_query_arg($query, $url);
         }
-        $key = 'rrh_brreg_' . hash('sha256', $url);
+        // The previous cache held the upstream response. Cache only the public projection.
+        $key = 'rrh_brreg_v2_' . hash('sha256', $url);
         $cached = get_transient($key);
         if (is_array($cached)) {
             return $cached;
@@ -193,8 +194,10 @@ final class Ridderset_Hurtigsjekk {
         if (!is_array($body)) {
             return new WP_Error('rrh_source_invalid', 'Bedriftsregisteret returnerte et uventet svar. Prøv igjen senere.', array('status' => 503));
         }
-        $result = array('body' => $body, 'retrievedAt' => gmdate('c'));
-        set_transient($key, $result, 5 * MINUTE_IN_SECONDS);
+        $result = self::normalize_response($body, $kind, $suffix !== '', gmdate('c'));
+        if (!is_wp_error($result)) {
+            set_transient($key, $result, 5 * MINUTE_IN_SECONDS);
+        }
         return $result;
     }
 
@@ -235,14 +238,7 @@ final class Ridderset_Hurtigsjekk {
         );
     }
 
-    private static function list_response($data, $kind, $direct = false) {
-        if (is_wp_error($data)) {
-            return $data;
-        }
-        if (!empty($data['missing'])) {
-            return rest_ensure_response(array('companies' => array(), 'hasMore' => false));
-        }
-        $body = $data['body'];
+    private static function normalize_response($body, $kind, $direct, $retrieved_at) {
         if (($direct && !isset($body['organisasjonsnummer'])) || (!$direct && !isset($body['_embedded'][$kind]) && ($body['page']['totalElements'] ?? null) !== 0)) {
             return new WP_Error('rrh_source_invalid', 'Bedriftsregisteret returnerte et uventet svar.', array('status' => 503));
         }
@@ -252,15 +248,25 @@ final class Ridderset_Hurtigsjekk {
         }
         $companies = array();
         foreach ($rows as $row) {
-            $company = self::company($row, $kind, $data['retrievedAt']);
+            $company = self::company($row, $kind, $retrieved_at);
             if ($company !== null) {
                 $companies[] = $company;
             }
         }
-        return rest_ensure_response(array(
+        return array(
             'companies' => $companies,
             'hasMore' => !$direct && (($body['page']['totalElements'] ?? count($rows)) > count($rows)),
-        ));
+        );
+    }
+
+    private static function list_response($data) {
+        if (is_wp_error($data)) {
+            return $data;
+        }
+        if (!empty($data['missing'])) {
+            $data = array('companies' => array(), 'hasMore' => false);
+        }
+        return rest_ensure_response($data);
     }
 
     public static function companies($request) {
@@ -284,9 +290,9 @@ final class Ridderset_Hurtigsjekk {
                 $kind = 'underenheter';
                 $data = self::read($kind, '/' . $number);
             }
-            return self::list_response($data, $kind, true);
+            return self::list_response($data);
         }
-        return self::list_response(self::read($kind, '', array('navn' => $query, 'size' => 12)), $kind);
+        return self::list_response(self::read($kind, '', array('navn' => $query, 'size' => 12)));
     }
 
     public static function units($request) {
@@ -301,7 +307,7 @@ final class Ridderset_Hurtigsjekk {
         if (!preg_match('/^[0-9]{9}$/D', $org)) {
             return new WP_Error('rrh_invalid_org', 'Velg et gyldig organisasjonsnummer.', array('status' => 400));
         }
-        return self::list_response(self::read('underenheter', '', array('overordnetEnhet' => $org, 'size' => 100)), 'underenheter');
+        return self::list_response(self::read('underenheter', '', array('overordnetEnhet' => $org, 'size' => 100)));
     }
 }
 

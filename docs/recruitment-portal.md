@@ -17,13 +17,15 @@ Intern flytting i en kandidatpipeline skal ikke automatisk publisere et avslag e
 
 Hvis datoen passeres, får rekruttereren en oppgave. Systemet skal aldri finne på fremdrift. Kunde- og kandidatmeldinger godkjennes separat. E-postvarsler skal si at en oppdatering finnes, uten å ta med vurderinger. Ingen utsending er aktivert.
 
+Kundens kandidatsammendrag viser godkjent navn, sammendrag og eventuell godkjent status fra samme publisering. Status beholdes når kandidaten flyttes internt, og oppdateres ved ny godkjenning. Eldre godkjenninger uten status kan fortsatt vises. Statusfeltet får da verdien `null`.
+
 ## Kommersielt løp
 Relevant artikkel eller behovsverktøy → konkret behov → kvalifisert samtale → avtalt oppdrag → kundeportal → ryddig kandidatoppfølging → oppstart → videre HR-oppfølging.
 
 Portalen skaper ikke trafikk alene. Den kan gjøre leveransen tydeligere, redusere usikkerhet og støtte gjenkjøp. Mål derfor kvalifiserte henvendelser, møter, tilbud, oppdrag og gjenkjøp separat fra kandidatopplevelse, overholdte oppdateringsfrister og fullførte søknader.
 
 ## Bygget i denne endringen
-`src/process.js` har en ren domenemodell for filtrerte prosessvisninger, eksplisitt statuspublisering og forfalte oppdateringsløfter. Fem tester bruker utelukkende fiktive opplysninger. Sammen med eksisterende tester består 18 tester.
+`src/process.js` har en ren domenemodell for filtrerte prosessvisninger, eksplisitt statuspublisering og forfalte oppdateringsløfter. Testene bruker fiktive opplysninger og dekker tilgang per kunde, separat publisering og eldre godkjente sammendrag.
 
 Dette er ikke autentisering eller databasebeskyttelse. Modulen er ikke koblet til en offentlig API-rute. Brukeridentitet må komme fra verifisert serversesjon, og medlemskap må hentes server-side. Klienten kan aldri velge sin rolle eller sende inn medlemslister som autoritativ tilgangskontroll.
 

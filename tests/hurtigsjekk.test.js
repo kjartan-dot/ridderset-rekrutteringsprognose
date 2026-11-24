@@ -94,6 +94,7 @@ test('national indicator inverts normalized tightness, not absolute shortage', (
   assert.equal(result.scope, 'national');
   assert.equal(result.sourceYear, 2026);
   assert.equal(result.referenceCount, 3);
+  assert.deepEqual(result.comparison, { lower: 1, tied: 1 });
   assert.equal(result.tightnessPercent, 4);
   assert.equal(result.shortageEstimate, 100);
   assert.equal(result.source.publisher, 'NAV');
@@ -136,6 +137,30 @@ test('suppressed, duplicate, single-valued and nonnational datasets abstain', ()
   assert.equal(nationalIndicator('1111', dataset([row('1111', 1)])).score, null);
   assert.equal(nationalIndicator('1111', dataset([row('1111', 1), row('2222', 1)])).score, null);
   assert.equal(nationalIndicator('1111', { ...dataset([row('1111', 1), row('2222', 2)]), scope: 'Troms' }).score, null);
+});
+
+test('duplicate occupation codes do not distort the comparison for other occupations', () => {
+  const data = dataset([row('1111', 1), row('2222', 3), row('2222', 3.5), row('3333', 4), row(null, 5)]);
+  const result = nationalIndicator('3333', data);
+  assert.equal(result.referenceCount, 3);
+  assert.deepEqual(result.comparison, { lower: 1, tied: 1 });
+  assert.equal(result.score, 6);
+});
+
+test('suppressed and out-of-range evidence is withheld while published zero is preserved', () => {
+  const suppressed = nationalIndicator('1111', dataset([row('1111', 1, 100, { published: false }), row('2222', 2)]));
+  assert.equal(suppressed.tightnessPercent, null);
+  assert.equal(suppressed.shortageEstimate, null);
+  assert.equal(suppressed.ci95, null);
+
+  const invalid = nationalIndicator('1111', dataset([row('1111', 101, -100, { shortage_ci95_low: 200 }), row('2222', 2)]));
+  assert.equal(invalid.tightnessPercent, null);
+  assert.equal(invalid.shortageEstimate, null);
+  assert.equal(invalid.ci95, null);
+
+  const roundedZero = nationalIndicator('1111', dataset([row('1111', 1, 0, { shortage_ci95_low: 0 }), row('2222', 2)]));
+  assert.equal(roundedZero.status, 'unknown');
+  assert.equal(roundedZero.shortageEstimate, 0);
 });
 
 test('confidence interval and evidence flags remain separate from the score', () => {

@@ -175,47 +175,105 @@
     if(!state.town){clearResult();publishContext();$('role-status').textContent+=' Velg arbeidskommune for å se vurderingen.';$('town').focus();return;}
     analyse(scroll);
   }
-  function drawIndicator(){
+  function drawIndicator() {
     let indicator;
-    try{indicator=core.nationalIndicator(state.role.code,survey);}catch{indicator={status:'unknown',score:null,reason:'Vi kunne ikke lese datagrunnlaget.'};}
-    state.indicator=indicator;
-    const score=indicator.score,hasScore=indicator.status==='available' && number(score);
-    const out=$('score-output');out.replaceChildren();
-    if(hasScore){
-      const line=el('div',undefined,'rrh-scoreline'),num=el('div',String(score),'rrh-scorevalue');num.append(el('span',' / 10'));
-      const text=el('div');text.append(el('h4',score<=3?'Større nasjonalt mangelpress':score<=6?'Middels nasjonalt mangelpress':'Mindre nasjonalt mangelpress'));
-      text.append(el('p',indicator.ci95?.low===0?'Foreløpig indikator. Mangelanslaget har stor usikkerhet.':'Foreløpig indikator basert på NAVs bedriftsundersøkelse.'));line.append(num,text);out.append(line);
-    }else{out.append(el('p','Nasjonalt mangelsignal er ikke avklart','rrh-no-score'),el('p','Vi har ikke et tilstrekkelig publisert grunnlag for dette yrket. Bruk lønn, relevante utlysninger og en konkret kravprofil som utgangspunkt.','rrh-muted'));}
-    const scale=root.querySelector('.rrh-scale');scale.classList.toggle('is-unknown',!hasScore);
-    scale.hidden=!hasScore;const labels=root.querySelector('.rrh-scale-labels');if(labels)labels.hidden=!hasScore;
-    [...scale.children].forEach((s,i)=>s.classList.toggle('is-current',hasScore && i+1===score));
-    const evidence=$('score-evidence');evidence.replaceChildren();
-    evidence.append(el('p','Yrkesgruppe: '+catalog.roles[state.role.code][0]+' · STYRK-08 '+state.role.code+'.','rrh-meta'));
-    const row=survey?.occupations?.find(r=>r.code===state.role.code);
-    if(row){
-      if(number(row.tightness_percent))evidence.append(el('p','NAVs nasjonale stramhetsindikator: '+pf.format(row.tightness_percent)+' %.','rrh-meta'));
-      if(number(row.shortage_estimate))evidence.append(el('p','Anslått mangel: '+nf.format(row.shortage_estimate)+' personer nasjonalt'+(number(row.shortage_ci95_low)&&number(row.shortage_ci95_high)?'. 95 % konfidensintervall: '+nf.format(row.shortage_ci95_low)+'–'+nf.format(row.shortage_ci95_high)+' personer.':'.'),'rrh-meta'));
+    try {
+      indicator = core.nationalIndicator(state.role.code, survey);
+    } catch {
+      indicator = { status: 'unknown', score: null, reason: 'Vi kunne ikke lese datagrunnlaget.' };
     }
-    if(!hasScore)evidence.append(el('p',indicator.reason||'Yrket mangler et tilstrekkelig publisert mangelgrunnlag i denne versjonen.','rrh-meta'));
-    evidence.append(el('p','Skåren rangerer relativt mangelpress blant yrker med et brukbart, positivt publisert mangelanslag. Like indikatorverdier får samme skår. Den er ikke trent på Riddersets rekrutteringsutfall.','rrh-meta'));
-    if(indicator.referenceCount)evidence.append(el('p','Referansegrunnlag: '+indicator.referenceCount+' yrker. Skalaen er Riddersets presentasjon av statistikken, ikke en offisiell NAV-skår.','rrh-meta'));
-    evidence.append(el('p','Tallene gjelder hele Norge i 2026. Kommunen, bedriftens størrelse og lønnsvalget endrer ikke denne indikatoren. Utvalgsusikkerhet og forskjeller innad i yrket kan være store.','rrh-meta'));
-    evidence.append(link('NAV · Bedriftsundersøkelsen 2026',survey?.source?.url||'https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/arbeid-og-velferd/bedriftsundersokelsen'));
-    if(hasScore && score<=3){$('action-title').textContent='Avklar krav og aktuelle fagmiljøer tidlig';$('action-text').textContent='Yrket har et tydelig nasjonalt mangelsignal. Undersøk nødvendige krav, lønnsramme og relevant søkeområde før dere velger kanaler. Aktivt søk kan være aktuelt når kartleggingen viser behov for det.';}
-    else if(hasScore){$('action-title').textContent='Avklar krav og tilbud før dere lyser ut';$('action-text').textContent='Bruk lønnstallet og de lokale utlysningene til å vurdere tilbudet deres. Det nasjonale signalet alene avgjør ikke hvor lett det blir å finne den riktige personen.';}
-    else{$('action-title').textContent='Avklar det konkrete kandidatmarkedet';$('action-text').textContent='Vi har ikke grunnlag for en samlet tallskår. Begynn med nødvendige krav, lønnsramme og hvor langt dere kan søke. En konkret markedskartlegging kan gi et sikrere svar.';}
+    state.indicator = indicator;
+    const { score, sourceYear, shortageEstimate, ci95, tightnessPercent, comparison } = indicator;
+    const hasScore = indicator.status === 'available' && number(score);
+    const yearLabel = sourceYear ? ' ' + sourceYear : '';
+    root.querySelector('.rrh-scorecard .rrh-tag').textContent = 'NAV' + yearLabel + ' · Norge';
+
+    const out = $('score-output');
+    out.replaceChildren();
+    if (hasScore) {
+      const line = el('div', undefined, 'rrh-scoreline');
+      const value = el('div', String(score), 'rrh-scorevalue');
+      value.append(el('span', ' / 10'));
+      const description = el('div');
+      description.append(
+        el('h4', score <= 3 ? 'Større nasjonalt mangelpress' : score <= 6 ? 'Middels nasjonalt mangelpress' : 'Mindre nasjonalt mangelpress'),
+        el('p', ci95?.low === 0
+          ? 'NAVs 95 % konfidensintervall for mangelanslaget inkluderer null.'
+          : 'Relativ rangering basert på NAVs bedriftsundersøkelse.'),
+      );
+      line.append(value, description);
+      out.append(line);
+    } else {
+      out.append(
+        el('p', 'Nasjonalt mangelsignal er ikke avklart', 'rrh-no-score'),
+        el('p', 'Vi har ikke et tilstrekkelig grunnlag for å rangere dette yrket. Bruk lønn, relevante utlysninger og en konkret kravprofil som utgangspunkt.', 'rrh-muted'),
+      );
+    }
+
+    const scale = root.querySelector('.rrh-scale');
+    scale.classList.toggle('is-unknown', !hasScore);
+    scale.hidden = !hasScore;
+    const labels = root.querySelector('.rrh-scale-labels');
+    if (labels) labels.hidden = !hasScore;
+    [...scale.children].forEach((item, index) => item.classList.toggle('is-current', hasScore && index + 1 === score));
+
+    const evidence = $('score-evidence');
+    evidence.replaceChildren(el('p', catalog.roles[state.role.code][0] + ' · STYRK-08 ' + state.role.code, 'rrh-meta'));
+    if (number(tightnessPercent)) {
+      evidence.append(el('p', 'NAVs nasjonale stramhetsindikator er ' + pf.format(tightnessPercent) + ' %.', 'rrh-meta'));
+    }
+    if (number(shortageEstimate)) {
+      const interval = ci95
+        ? '95 % konfidensintervall for mangelanslaget er ' + nf.format(ci95.low) + '–' + nf.format(ci95.high) + ' personer.'
+        : 'Konfidensintervall for mangelanslaget er utilgjengelig i dette datagrunnlaget.';
+      evidence.append(
+        el('p', 'NAV anslår mangel på ' + nf.format(shortageEstimate) + ' personer i Norge.', 'rrh-meta'),
+        el('p', interval, 'rrh-meta'),
+      );
+    }
+    if (!hasScore) evidence.append(el('p', indicator.reason, 'rrh-meta'));
+    evidence.append(el('p', 'Ridderset rangerer yrker etter NAVs nasjonale stramhetsindikator. Hvert yrke teller likt, og like verdier får samme rang.', 'rrh-meta'));
+    if (comparison) {
+      const { lower, tied } = comparison;
+      const rankBasis = 'Av ' + nf.format(indicator.referenceCount) + ' sammenlignbare yrker har ' + nf.format(lower)
+        + ' lavere stramhet og ' + nf.format(tied) + ' samme stramhet, inkludert det valgte yrket.';
+      evidence.append(el('p', rankBasis, 'rrh-meta'));
+    }
+    const scope = sourceYear ? 'Tallene fra NAV gjelder hele Norge i ' + sourceYear + '.' : 'Sammenligningsgrunnlaget er nasjonalt.';
+    evidence.append(
+      el('p', scope + ' Arbeidskommune og lønn inngår ikke i rangeringen.', 'rrh-meta'),
+      link('NAV · Bedriftsundersøkelsen' + yearLabel, indicator.source?.url || 'https://www.nav.no/no/nav-og-samfunn/kunnskap/analyser-fra-nav/arbeid-og-velferd/bedriftsundersokelsen'),
+    );
+
+    if (hasScore && score <= 3) {
+      $('action-title').textContent = 'Undersøk relevante fagmiljøer tidlig';
+      $('action-text').textContent = ci95?.low > 0
+        ? 'Yrket ligger relativt høyt i den nasjonale rangeringen av mangelpress. Bruk arbeidssted, krav og lønnsramme til å avgrense hvor og hvordan dere bør søke.'
+        : 'Det nasjonale mangelanslaget gir begrenset grunnlag for kanalvalg. Sjekk relevante fagmiljøer i søkeområdet, og avklar krav og lønnsramme før dere velger kanaler.';
+    } else if (hasScore) {
+      $('action-title').textContent = 'Avklar krav og tilbud før dere lyser ut';
+      $('action-text').textContent = 'Bruk lønnsreferansen og relevante utlysninger når de er tilgjengelige. Undersøk hva som kjennetegner kandidatmarkedet der dere vil søke.';
+    } else {
+      $('action-title').textContent = 'Avklar det konkrete kandidatmarkedet';
+      $('action-text').textContent = 'Det nasjonale datagrunnlaget er begrenset. Begynn med nødvendige krav, lønnsramme og hvor langt dere kan søke.';
+    }
   }
   function drawNav(data,s){
     state.nav=data;const box=$('nav-card');box.replaceChildren(el('h3','Utlysninger i '+s.townName));
     if(!data){box.append(el('p','Ferske NAV-treff er utilgjengelige akkurat nå. Prøv igjen senere.'));}
     else if(!data.coverage){box.append(el('p','Denne annonsesjekken dekker Nordland, Troms og Finnmark.'));}
-    else if(!number(data.ads)){box.append(el('p','Vi kunne ikke bekrefte et annonsetall.'));}
+    else if(!Number.isInteger(data.ads) || data.ads < 0){box.append(el('p','Vi kunne ikke bekrefte et annonsetall.'));}
     else{
-      box.append(el('strong',(data.backfilled?'':'Minst ')+nf.format(data.ads)+(data.ads===1?' annonse':' annonser'),'rrh-factvalue'));
+      const complete = data.backfilled === true;
+      if (data.ads === 0 && !complete) {
+        box.append(el('p','Foreløpig ingen treff i den delen av NAV-innlesingen som er klar.'));
+      } else {
+        box.append(el('strong',(complete?'':'Minst ')+nf.format(data.ads)+(data.ads===1?' annonse':' annonser'),'rrh-factvalue'));
+      }
       box.append(el('p','Aktive NAV-treff på «'+s.term+'» i kommunen.'));
       if(data.employers?.length){const ul=el('ul');data.employers.slice(0,3).forEach(e=>ul.append(el('li',e.name+' · '+e.ads+(e.ads===1?' annonse':' annonser'))));box.append(ul);}
-      if(data.ads===0)box.append(el('p','Ingen treff er ikke det samme som god kandidattilgang.'));
-      box.append(el('small','Kontrollert '+date(data.checked_at)+'. '+(!data.backfilled?'Innlesingen er ikke komplett. ':'')+'Søket bygger på tekst i tittel og yrkesfelt. Det omfatter ikke FINN-annonsene.'));
+      if(data.ads===0 && complete)box.append(el('p','Tallet gjelder bare dette tekstsøket i NAV-annonsene.'));
+      box.append(el('small','Kontrollert '+date(data.checked_at)+'. '+(!complete?'Innlesingen er ikke komplett. ':'')+'Søket bygger på tekst i tittel og yrkesfelt. Det omfatter ikke FINN-annonsene.'));
       box.append(el('small','Vi teller annonser, ikke antall stillinger eller kvalifiserte kandidater.'));
     }
     const params=new URLSearchParams({q:s.term});const municipal=catalog.navMunicipalities?.[s.town];
@@ -297,11 +355,12 @@
   };
   function getMarketReport(){
     if(!state.role||!state.town)return '';const s=snapshot();
+    const evidence = Array.from($('score-evidence').querySelectorAll('p'), paragraph => paragraph.textContent).join('\n');
     const lines=['Ridderset · Rekrutteringsinnsikt','Oppslag: '+new Date().toLocaleString('nb-NO',{timeZone:'Europe/Oslo'}),
       state.company?'Bedrift: '+state.company.name+' · org.nr. '+state.company.org:'Ingen bedrift valgt',
       'Rolle: '+s.role.label+' · STYRK-08 '+s.role.code,'Arbeidskommune: '+s.townName,
       state.role.kind==='industry'?'Du valgte et bransjebasert rolleforslag. Dette er ikke en observert stilling hos bedriften.':'Rollen er valgt av brukeren.',
-      $('score-output').innerText,$('score-evidence').textContent,
+      $('score-output').innerText,evidence,
       $('nav-card').innerText.replace('Henter NAV-treff …','NAV-treff var ikke ferdig hentet da planen ble lastet ned.'),
       $('pay-card').innerText.replace('Henter SSB-tall …','SSB-lønn var ikke ferdig hentet da planen ble lastet ned.'),
       $('offer-comparison').textContent,$('action-title').textContent,$('action-text').textContent,

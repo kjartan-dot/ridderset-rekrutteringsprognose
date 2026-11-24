@@ -2,8 +2,8 @@
 (function (root) {
   'use strict';
 
-  const METHOD_VERSION = 'rr-national-tightness-midrank-1.0';
-  const REFERENCE = 'Publiserte yrker med positivt mangelanslag og stramhet mellom 0 og 100 prosent.';
+  const METHOD_VERSION = 'rr-national-tightness-midrank-1.1';
+  const REFERENCE = 'Publiserte yrker med positivt mangelanslag og stramhet over 0 og under 100 prosent, uten tvetydige yrkeskoder.';
 
   function normalize(value) {
     return String(value ?? '').toLocaleLowerCase('nb-NO')
@@ -106,32 +106,39 @@
 
   function nationalIndicator(code, dataset) {
     const rows = Array.isArray(dataset?.occupations) ? dataset.occupations : [];
-    const sourceYear = typeof dataset?.year === 'number' ? dataset.year : null;
+    const sourceYear = Number.isInteger(dataset?.year) && dataset.year > 0 ? dataset.year : null;
     const common = { methodVersion: METHOD_VERSION, scope: 'national', source: dataset?.source ?? null,
       sourceYear, referenceDefinition: REFERENCE, referenceCount: 0, score: null, tightnessPercent: null,
       shortageEstimate: null, ci95: null, evidenceFlags: [] };
     const unknown = (reason, extra = {}) => ({ ...common, status: 'unknown', reason, ...extra, score: null });
     if (dataset?.scope && !['national', 'NO', 'Norge', 'Hele landet'].includes(dataset.scope)) {
-      return unknown('Datakilden er ikke nasjonal og kan ikke brukes i denne indikatoren.');
+      return unknown('Datakilden er ikke nasjonal og kan ikke brukes i denne indikatoren.', { source: null, sourceYear: null });
     }
     if (!/^\d{4}$/.test(String(code ?? ''))) return unknown('Velg et yrke med en gyldig STYRK08-kode.');
-    const matches = rows.filter(row => row && String(row.code ?? row.styrk08 ?? '') === String(code));
+    const occupationCode = row => String(row?.code ?? row?.styrk08 ?? '');
+    const matches = rows.filter(row => occupationCode(row) === String(code));
     if (!matches.length) return unknown('Vi mangler et publisert mangelanslag for dette yrket.');
     if (matches.length > 1) return unknown('Yrket har flere rader i datakilden. Grunnlaget må avklares før vi viser en indikator.');
 
     const row = matches[0];
-    const tightness = row.tightness_percent ?? row.shortage_percent;
-    const estimate = row.shortage_estimate;
+    const suppressed = item => item.suppressed === true || item.published === false
+      || (Array.isArray(item.quality_flags) && item.quality_flags.some(flag => /suppressed|not_published|missing|unreliable/i.test(flag)));
+    if (suppressed(row)) return unknown('Tallgrunnlaget er undertrykt eller merket som utilgjengelig.');
+
+    const rawTightness = row.tightness_percent ?? row.shortage_percent;
+    const rawEstimate = row.shortage_estimate;
+    const { shortage_ci95_low: low, shortage_ci95_high: high } = row;
     const flags = Array.isArray(row.quality_flags) ? row.quality_flags.filter(flag => typeof flag === 'string') : [];
     const finite = value => typeof value === 'number' && Number.isFinite(value);
+    const tightness = finite(rawTightness) && rawTightness >= 0 && rawTightness <= 100 ? rawTightness : null;
+    const estimate = finite(rawEstimate) && rawEstimate >= 0 ? rawEstimate : null;
     const evidence = {
-      tightnessPercent: finite(tightness) ? tightness : null,
-      shortageEstimate: finite(estimate) ? estimate : null,
-      ci95: finite(row.shortage_ci95_low) && finite(row.shortage_ci95_high)
-        ? { low: row.shortage_ci95_low, high: row.shortage_ci95_high } : null,
+      tightnessPercent: tightness,
+      shortageEstimate: estimate,
+      ci95: estimate !== null && finite(low) && finite(high) && low >= 0 && high >= low ? { low, high } : null,
       evidenceFlags: [...flags]
     };
-    if (!finite(tightness) || !finite(estimate) || tightness < 0 || tightness > 100 || estimate < 0) {
+    if (tightness === null || estimate === null) {
       return unknown('Datakilden mangler et gyldig tallgrunnlag for dette yrket.', evidence);
     }
     if (tightness === 0 || estimate === 0) {
@@ -140,14 +147,15 @@
     if (tightness === 100) {
       return unknown('Stramhet på 100 prosent gir et usikkert sammenligningsgrunnlag. Vi viser ikke en skår.', evidence);
     }
-    const suppressed = item => item.suppressed === true || item.published === false
-      || (Array.isArray(item.quality_flags) && item.quality_flags.some(flag => /suppressed|not_published|missing|unreliable/i.test(flag)));
-    if (suppressed(row)) return unknown('Tallgrunnlaget er undertrykt eller merket som utilgjengelig.', evidence);
 
-    // Every usable published occupation is a comparator, even when its code has not yet
-    // been mapped. Mapping coverage must not silently redefine the reference population.
+    const countsByCode = new Map();
+    for (const item of rows) {
+      const mappedCode = occupationCode(item);
+      if (/^\d{4}$/.test(mappedCode)) countsByCode.set(mappedCode, (countsByCode.get(mappedCode) ?? 0) + 1);
+    }
+    // Unmapped published occupations remain eligible. Ambiguous mapped codes contribute no observations.
     const comparable = rows.filter(item => {
-      if (!item || suppressed(item)) return false;
+      if (!item || suppressed(item) || countsByCode.get(occupationCode(item)) > 1) return false;
       const value = item.tightness_percent ?? item.shortage_percent;
       return finite(value) && value > 0 && value < 100
         && finite(item.shortage_estimate) && item.shortage_estimate > 0;
@@ -164,7 +172,7 @@
     if (evidence.ci95?.low === 0 && !evidence.evidenceFlags.includes('estimate_interval_includes_zero')) {
       evidence.evidenceFlags.push('estimate_interval_includes_zero');
     }
-    return { ...common, ...evidence, status: 'available', score, referenceCount, percentile,
+    return { ...common, ...evidence, status: 'available', score, referenceCount, percentile, comparison: { lower, tied },
       reason: 'Relativt nasjonalt mangelpress blant yrker med et brukbart publisert mangelanslag. 1 betyr mer press, 10 betyr mindre press. Indikatoren sier ikke hvor mange kandidater bedriften vil få.' };
   }
 

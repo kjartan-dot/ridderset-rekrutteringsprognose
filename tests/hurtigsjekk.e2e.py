@@ -1,129 +1,257 @@
-"""Browser QA for the company-first recruitment flow.
+"""Exercise the guided recruitment journey with synthetic source responses.
 
-Run the local adapter first: node scripts/hurtigsjekk-server.mjs
-Then: python3 tests/hurtigsjekk.e2e.py
-
-The live scenarios use Brreg and the deployed NAV/SSB adapters. Separate,
-explicitly labelled fixture scenarios exercise failure and stale-response
-handling. Fixture numbers are never written to application files or services.
-Screenshots and the JSON report are scratch QA outputs, not product data.
+Start the local preview with `node scripts/hurtigsjekk-server.mjs`, then run
+`python3 tests/hurtigsjekk.e2e.py`. Install Playwright and Chromium first.
+Only local HTML and static assets reach the preview. Source requests are
+fulfilled in Chromium and unexpected traffic is blocked and fails the test.
+Use --output to choose a directory for the report, screenshots and test files.
 """
 
 import argparse
 import asyncio
+from contextlib import asynccontextmanager
 import json
 from pathlib import Path
 import re
-from urllib.parse import parse_qs, urlparse
+from shutil import which
+from tempfile import mkdtemp
+from urllib.parse import parse_qs, urlsplit
 
-from playwright.async_api import async_playwright, expect
+from playwright.async_api import Error, async_playwright, expect
+
+
+MOBILE = {"width": 390, "height": 844}
+DESKTOP = {"width": 1280, "height": 800}
+COMPANY = {
+    "name": "FIKTIV TESTBEDRIFT AS",
+    "org": "111111110",
+    "kind": "enheter",
+    "town": "5503",
+    "townName": "Harstad",
+    "industryCode": "03.211",
+    "industry": "Akvakultur",
+    "employees": 12,
+    "retrievedAt": "2026-11-21T08:00:00Z",
+}
+UNIT = {
+    **COMPANY,
+    "name": "FIKTIV TESTBEDRIFT AS AVD TEST",
+    "org": "222222220",
+    "kind": "underenheter",
+    "town": "1866",
+    "townName": "Hadsel",
+    "parent": COMPANY["org"],
+}
+SURVEY = {
+    "year": 2024,
+    "scope": "national",
+    "occupations": [
+        {
+            "code": "6221",
+            "tightness_percent": 3,
+            "shortage_estimate": 15,
+            "shortage_ci95_low": 0,
+            "shortage_ci95_high": 30,
+        },
+        {"code": "7411", "tightness_percent": 1, "shortage_estimate": 25},
+        {"code": "1312", "tightness_percent": 2, "shortage_estimate": 8000},
+        {"code": "1312", "tightness_percent": 2.5, "shortage_estimate": 9000},
+    ],
+}
+
+
+def local_base(value):
+    url = urlsplit(value)
+    if (
+        url.scheme != "http"
+        or url.hostname not in {"localhost", "127.0.0.1", "::1"}
+        or url.username is not None
+        or url.password is not None
+        or url.path not in {"", "/"}
+        or url.query
+        or url.fragment
+    ):
+        raise argparse.ArgumentTypeError("--base must be the root URL of the local HTTP preview")
+    return value.rstrip("/")
+
+
+@asynccontextmanager
+async def fixture_page(browser, base, source_route=None, **options):
+    context = await browser.new_context(service_workers="block", **options)
+    origin = urlsplit(base)[:2]
+    unexpected = []
+    errors = []
+
+    async def route_request(route):
+        url = urlsplit(route.request.url)
+        if url[:2] == origin and route.request.method == "GET":
+            if url.path == "/assets/nav-2026.json":
+                await route.fulfill(json=SURVEY)
+                return
+            if url.path == "/" or url.path.startswith("/assets/"):
+                await route.continue_()
+                return
+            if source_route and await source_route(route, url):
+                return
+        unexpected.append(route.request.url)
+        await route.abort()
+
+    await context.route("**/*", route_request)
+    page = await context.new_page()
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    try:
+        yield page
+        assert not unexpected, f"Unexpected requests blocked by the fixture: {unexpected}"
+        assert not errors, errors
+    finally:
+        await context.close()
+
+
+def nav_fixture(ads, *, complete=True):
+    return {
+        "coverage": True,
+        "ads": ads,
+        "backfilled": complete,
+        "employers": [],
+        "checked_at": "2026-11-21T08:00:00Z",
+    }
+
+
+async def available_sources(route, url):
+    params = parse_qs(url.query)
+    if url.path == "/api/companies" and params.get("q") == ["Fiktiv testbedrift"]:
+        await route.fulfill(json={"companies": [COMPANY], "hasMore": False})
+    elif url.path == "/api/units" and params.get("org") == [COMPANY["org"]]:
+        await route.fulfill(json={"companies": [UNIT], "hasMore": False})
+    elif url.path == "/market/annonser":
+        incomplete = params.get("kommune") == ["5503"]
+        await route.fulfill(json=nav_fixture(0, complete=False) if incomplete else nav_fixture(3))
+    elif url.path == "/market/lonn":
+        await route.fulfill(json={"base": 50000, "total": 54000, "year": "2025"})
+    else:
+        return False
+    return True
 
 
 async def ready(page, base):
     await page.goto(base, wait_until="domcontentloaded")
-    await expect(page.locator("#rrh-manual")).to_be_enabled(timeout=15000)
+    await expect(page.locator("#rrh-manual")).to_be_enabled()
+    await expect(page.locator("#rr-hurtigsjekk")).to_have_attribute("data-journey-ready", "true")
 
 
 async def no_overflow(page, stage):
-    measurements = await page.evaluate("""() => ({
-      viewport: innerWidth,
-      document: document.documentElement.scrollWidth,
-      offenders: [...document.querySelectorAll('#rr-hurtigsjekk *')]
-        .map(el => ({tag:el.tagName,id:el.id,rect:el.getBoundingClientRect()}))
-        .filter(x => x.rect.width && (x.rect.right > innerWidth + 1 || x.rect.left < -1))
-        .slice(0, 8).map(x => ({tag:x.tag,id:x.id,left:x.rect.left,right:x.rect.right}))
-    })""")
-    assert measurements["document"] <= measurements["viewport"] + 1, f"Overflow at {stage}: {measurements}"
-    return {"stage": stage, **measurements}
+    viewport, width = await page.evaluate("() => [innerWidth, document.documentElement.scrollWidth]")
+    assert width <= viewport + 1, f"Horizontal overflow at {stage}: {width}px on {viewport}px"
+    return {"stage": stage, "viewport": viewport, "document": width}
 
 
-async def wait_market(page):
-    await expect(page.locator("#rrh-nav-card")).not_to_contain_text("Henter NAV-treff", timeout=20000)
-    await expect(page.locator("#rrh-pay-card")).not_to_contain_text("Henter SSB-tall", timeout=20000)
+async def open_plan(page):
+    await page.locator("#rrh-show-plan").click()
+    await expect(page.locator("#rrh-plan-title")).to_be_focused()
+    await expect(page.locator("#rrh-step-prepare")).to_have_attribute("aria-current", "step")
+    await expect(page.locator("#rrh-plan-priorities > li")).to_have_count(3)
+    await expect(page.locator("#rrh-download")).to_be_enabled()
 
 
-async def live_flow(browser, base, shots, viewport):
-    name = "mobile" if viewport["width"] < 600 else "desktop"
-    context = await browser.new_context(viewport=viewport, reduced_motion="reduce", accept_downloads=True)
-    page = await context.new_page()
-    errors = []
-    page.on("pageerror", lambda error: errors.append(str(error)))
-    try:
+async def download_plan(page):
+    async with page.expect_download() as pending:
+        await page.locator("#rrh-download").click()
+    download = await pending.value
+    assert download.suggested_filename == "ridderset-plan-for-rekruttering.txt"
+    return Path(await download.path()).read_text(encoding="utf-8")
+
+
+async def guided_journey(browser, base, output, viewport):
+    name = "mobile" if viewport == MOBILE else "desktop"
+    async with fixture_page(
+        browser, base, available_sources, viewport=viewport, reduced_motion="reduce", accept_downloads=True
+    ) as page:
         await ready(page, base)
         layout = [await no_overflow(page, "initial")]
         input_bounds = await page.locator("#rrh-company").bounding_box()
-        assert input_bounds and input_bounds["y"] + input_bounds["height"] < viewport["height"], "Company input is below first viewport"
-        await page.screenshot(path=str(shots / f"{name}-start.png"), full_page=True)
+        assert input_bounds and input_bounds["y"] + input_bounds["height"] < viewport["height"]
+        await page.screenshot(path=output / f"{name}-start.png", full_page=True)
 
-        await page.locator("#rrh-company").fill("Nordlaks")
+        await page.locator("#rrh-company").fill("Fiktiv testbedrift")
         await page.locator("#rrh-search-btn").click()
-        main = page.locator("#rrh-company-results button").filter(has_text=re.compile(r"^NORDLAKS OPPDRETT AS\n"))
-        await expect(main).to_have_count(1, timeout=20000)
-        await main.click()
-        await expect(page.locator("#rrh-company-summary")).to_contain_text("NORDLAKS OPPDRETT AS")
-        await expect(page.locator("#rrh-unit-wrap")).to_be_visible(timeout=15000)
-        await expect(page.locator("#rrh-unit option[value='980183130']")).to_have_count(1)
-        await page.locator("#rrh-unit").select_option("980183130")
-        await expect(page.locator("#rrh-company-summary")).to_contain_text("NORDLAKS OPPDRETT AS AVD STOKMARKNES")
-        await expect(page.locator("#rrh-town")).to_have_value("1866")
+        await page.locator("#rrh-company-results button").filter(has_text=COMPANY["name"]).click()
+        await expect(page.locator("#rrh-company-summary")).to_contain_text(COMPANY["name"])
+        await page.locator("#rrh-unit").select_option(UNIT["org"])
+        await expect(page.locator("#rrh-company-summary")).to_contain_text(UNIT["name"])
+        await expect(page.locator("#rrh-town")).to_have_value(UNIT["town"])
         await expect(page.locator("#rrh-town-origin")).to_have_text("fra bedriftsregisteret")
-        suggestions = await page.locator("#rrh-role-suggestions button").all_text_contents()
-        assert len(suggestions) == 3, suggestions
-        await expect(page.locator("#rrh-role-suggestions [data-code='6221']")).to_contain_text("Havbruksarbeidere")
+        await expect(page.locator("#rrh-role-suggestions button")).to_have_count(3)
         layout.append(await no_overflow(page, "company-and-unit"))
 
         await page.locator("#rrh-role-suggestions [data-code='6221']").click()
         await expect(page.locator("#rrh-result-title")).to_have_text("Havbruksarbeidere")
         await expect(page.locator("#rrh-result-location")).to_contain_text("Hadsel")
         await expect(page.locator("#rrh-score-output")).to_contain_text("/ 10")
+        await expect(page.locator(".rrh-scorecard .rrh-tag")).to_have_text("NAV 2024 · Norge")
+        await expect(page.locator("#rrh-score-output")).to_contain_text("konfidensintervall for mangelanslaget inkluderer null")
+        await expect(page.locator("#rrh-action-text")).to_contain_text("begrenset grunnlag for kanalvalg")
         await expect(page.locator(".rrh-scale .is-current")).to_have_count(1)
-        await wait_market(page)
-        market_text = {
-            "nav": await page.locator("#rrh-nav-card").inner_text(),
-            "salary": await page.locator("#rrh-pay-card").inner_text(),
-        }
-        layout.append(await no_overflow(page, "result"))
-        await page.screenshot(path=str(shots / f"{name}-result.png"), full_page=True)
+        await expect(page.locator("#rrh-nav-card")).to_contain_text("3 annonser")
+        await expect(page.locator("#rrh-pay-card")).to_contain_text(re.compile(r"50\s*000"))
+        layout.append(await no_overflow(page, "market-result"))
+        report = await download_plan(page)
+        assert "0–30 personer.\nRidderset rangerer" in report
+        assert "Av 2 sammenlignbare yrker har 1 lavere stramhet og 1 samme stramhet" in report
+        assert "Metodeversjon: rr-national-tightness-midrank-1.1" in report
 
-        # A relevant leadership role in the same company has no published score.
         await page.locator("#rrh-role-suggestions [data-code='1312']").click()
-        await expect(page.locator("#rrh-result-title")).to_have_text("Ledere innen akvakultur mv.")
-        await expect(page.locator("#rrh-score-output")).to_contain_text("For lite grunnlag til en skår")
-        await expect(page.locator(".rrh-scale .is-current")).to_have_count(0)
-
-        # Changing place must update the visible analysis immediately.
         await page.locator("#rrh-town").select_option("5503")
-        await expect(page.locator("#rrh-result-location")).to_contain_text("Harstad")
-        await expect(page.locator("#rrh-nav-card h3")).to_have_text("Utlysninger i Harstad")
         await expect(page.locator("#rrh-town-origin")).to_have_text("valgt av deg")
-        await wait_market(page)
-        async with page.expect_download() as pending:
-            await page.locator("#rrh-download").click()
-        download = await pending.value
-        report_path = shots / f"{name}-download.txt"
-        await download.save_as(report_path)
-        report = report_path.read_text(encoding="utf-8")
+        await expect(page.locator("#rrh-nav-card h3")).to_have_text("Utlysninger i Harstad")
+        await expect(page.locator("#rrh-score-output")).to_contain_text("Nasjonalt mangelsignal er ikke avklart")
+        await expect(page.locator(".rrh-scale")).to_be_hidden()
+        await expect(page.locator("#rrh-nav-card")).to_contain_text("Foreløpig ingen treff")
+        await expect(page.locator("#rrh-nav-card .rrh-factvalue")).to_have_count(0)
+        await expect(page.locator("#rrh-pay-card")).to_contain_text(re.compile(r"50\s*000"))
+
+        await open_plan(page)
+        await expect(page.locator("#rrh-readiness-questionnaire")).not_to_have_attribute("open", "")
+        await expect(page.locator("#rrh-plan-intro")).to_contain_text("Her er et startpunkt")
+        await expect(page.locator("#rrh-plan-context")).to_contain_text(f"{UNIT['name']} · Ledere innen akvakultur mv. · Harstad")
+        await page.locator("#rrh-readiness-questionnaire summary").click()
+        await expect(page.locator("#rrh-readiness-fields select")).to_have_count(5)
+        await page.locator("#rrh-ready-selection").select_option("missing")
+        await expect(page.locator("#rrh-plan-priorities > li").first).to_contain_text("Dere har oppgitt at dette ikke er avklart")
+        await expect(page.locator("#rrh-readiness-status")).to_contain_text("1 av 5 forhold er vurdert")
+        report = await download_plan(page)
+        assert "Planregel: rr-process-plan-1.0" in report
         assert "Arbeidskommune: Harstad" in report
-        assert "STYRK-08 1312" in report
-        assert "For lite grunnlag til en skår" in report
-        assert "NORDLAKS OPPDRETT AS AVD STOKMARKNES" in report
-        layout.append(await no_overflow(page, "missing-score-and-changed-place"))
-        assert not errors, errors
-        return {"kind": "live", "viewport": viewport, "company": "NORDLAKS OPPDRETT AS", "unit": "980183130", "suggestions": suggestions, "market": market_text, "layout": layout, "page_errors": errors}
-    finally:
-        await context.close()
+        assert "Strukturert intervju og vurdering: Ikke avklart" in report
+        assert "STYRK08 1312" in report and UNIT["name"] in report
+        assert "MARKEDSGRUNNLAG FRA DETTE OPPSLAGET" in report
+        assert "Nasjonalt mangelsignal er ikke avklart" in report
+        assert "Yrket har flere rader i datakilden" in report
+        assert "NAV anslår mangel på" not in report
+        assert "Foreløpig ingen treff" in report
+        (output / f"{name}-download.txt").write_text(report, encoding="utf-8")
+        layout.append(await no_overflow(page, "plan"))
+        await page.screenshot(path=output / f"{name}-plan.png", full_page=True)
+
+        await page.reload(wait_until="domcontentloaded")
+        await expect(page.locator("#rrh-plan-context")).to_contain_text(f"{UNIT['name']} · Ledere innen akvakultur mv. · Harstad")
+        await expect(page.locator("#rrh-plan-intro")).to_contain_text("Her er et startpunkt")
+        await expect(page.locator("#rrh-readiness-status")).to_contain_text("Ingen svar er forhåndsutfylt")
+        return {"name": f"guided journey {name}", "layout": layout}
+
+
+async def unavailable_sources(route, url):
+    if url.path in {"/api/companies", "/market/annonser", "/market/lonn"}:
+        await route.fulfill(status=503, json={"error": "Test: kilden er utilgjengelig"})
+        return True
+    return False
 
 
 async def failure_fixture(browser, base):
-    context = await browser.new_context(viewport={"width": 390, "height": 844}, reduced_motion="reduce")
-    page = await context.new_page()
-    errors = []
-    page.on("pageerror", lambda error: errors.append(str(error)))
-    await page.route("**/api/companies?*", lambda route: route.fulfill(status=503, content_type="application/json", body='{"error":"TEST FIXTURE: source unavailable"}'))
-    await page.route("**/market/*", lambda route: route.fulfill(status=503, content_type="application/json", body='{"error":"TEST FIXTURE: market unavailable"}'))
-    try:
+    async with fixture_page(
+        browser, base, unavailable_sources, viewport=MOBILE, reduced_motion="reduce", accept_downloads=True
+    ) as page:
         await ready(page, base)
-        await page.locator("#rrh-company").fill("Fixture failure")
+        await page.locator("#rrh-company").fill("Fiktiv testbedrift")
         await page.locator("#rrh-search-btn").click()
         await expect(page.locator("#rrh-company-status")).to_contain_text("svarer ikke akkurat nå")
         await expect(page.locator("#rrh-company-results button")).to_have_count(0)
@@ -132,111 +260,116 @@ async def failure_fixture(browser, base):
         await page.locator("#rrh-role-results [data-code='7411']").click()
         await expect(page.locator("#rrh-result")).to_be_hidden()
         await page.locator("#rrh-town").select_option("5503")
-        await wait_market(page)
         await expect(page.locator("#rrh-nav-card")).to_contain_text("utilgjengelige")
         await expect(page.locator("#rrh-pay-card")).to_contain_text("kunne ikke hentes")
-        assert not errors, errors
-        return {"kind": "fixture", "name": "company and market source failure", "manual_fallback": True, "no_fake_counts": True, "page_errors": errors}
-    finally:
-        await context.close()
+        await expect(page.locator("#rrh-nav-card .rrh-factvalue")).to_have_count(0)
+        await expect(page.locator("#rrh-pay-card .rrh-factvalue")).to_have_count(0)
+        await open_plan(page)
+        report = await download_plan(page)
+        assert "Analyse uten registeroppslag" in report and "standardplan" in report
+        return {"name": "manual plan during source failure"}
 
 
 async def stale_fixture(browser, base):
-    context = await browser.new_context(viewport={"width": 1280, "height": 800}, reduced_motion="reduce")
-    page = await context.new_page()
-    errors = []
-    page.on("pageerror", lambda error: errors.append(str(error)))
     old_started = asyncio.Event()
     release_old = asyncio.Event()
     old_finished = asyncio.Event()
+    pending_old = set()
 
-    async def market_route(route):
-        request = urlparse(route.request.url)
-        params = parse_qs(request.query)
+    async def delayed_market(route, url):
+        if url.path not in {"/market/annonser", "/market/lonn"}:
+            return False
+        params = parse_qs(url.query)
         is_old = params.get("yrke") == ["7411"] or params.get("q") == ["elektriker"]
         if is_old:
-            old_started.set()
+            pending_old.add(url.path)
+            if len(pending_old) == 2:
+                old_started.set()
             await release_old.wait()
-        if request.path.endswith("/lonn"):
-            body = {"base": 11111 if is_old else 22222, "total": 22222, "year": "2025", "fixture": True}
-        else:
-            body = {"coverage": True, "ads": 99 if is_old else 2, "backfilled": True, "employers": [], "checked_at": "2026-11-21T08:00:00Z", "fixture": True}
+        body = nav_fixture(99 if is_old else 2) if url.path == "/market/annonser" else {
+            "base": 11111 if is_old else 22222, "total": 22222, "year": "2025",
+        }
         try:
-            await route.fulfill(status=200, content_type="application/json", body=json.dumps(body))
-        except Exception:
-            # AbortController may have already cancelled this intentionally old request.
+            await route.fulfill(json=body)
+        except Error:
+            # The old request may already have been canceled when the role changed.
             if not is_old:
                 raise
         finally:
             if is_old:
-                old_finished.set()
+                pending_old.remove(url.path)
+                if not pending_old:
+                    old_finished.set()
+        return True
 
-    await page.route("**/market/*", market_route)
-    try:
-        await ready(page, base)
-        await page.locator("#rrh-manual").click()
-        await page.locator("#rrh-town").select_option("5503")
-        await page.locator("#rrh-role-search").fill("elektriker")
-        await page.locator("#rrh-role-results [data-code='7411']").click()
-        await asyncio.wait_for(old_started.wait(), timeout=10)
-        await page.locator("#rrh-role-search").fill("industrimekaniker")
-        await expect(page.locator("#rrh-result")).to_be_hidden()
-        await page.locator("#rrh-role-results [data-code='7233']").click()
-        await wait_market(page)
-        new_salary = await page.locator("#rrh-pay-card").inner_text()
-        assert "22222" in re.sub(r"\s", "", new_salary), new_salary
-        await expect(page.locator("#rrh-nav-card")).to_contain_text("2 annonser")
-        release_old.set()
-        await asyncio.wait_for(old_finished.wait(), timeout=10)
-        await page.wait_for_timeout(150)
-        assert await page.locator("#rrh-pay-card").inner_text() == new_salary, "Old salary response replaced the current role"
-        await expect(page.locator("#rrh-nav-card")).not_to_contain_text("99 annonser")
-        await expect(page.locator("#rrh-result-title")).to_have_text("Anleggsmaskin- og industrimekanikere")
-        assert not errors, errors
-        return {"kind": "fixture", "name": "late market responses cannot overwrite selected role", "page_errors": errors}
-    finally:
-        release_old.set()
-        await context.close()
+    async with fixture_page(
+        browser, base, delayed_market, viewport=DESKTOP, reduced_motion="reduce", accept_downloads=True
+    ) as page:
+        try:
+            await ready(page, base)
+            await page.locator("#rrh-manual").click()
+            await page.locator("#rrh-town").select_option("5503")
+            await page.locator("#rrh-role-search").fill("elektriker")
+            await page.locator("#rrh-role-results [data-code='7411']").click()
+            await asyncio.wait_for(old_started.wait(), timeout=10)
+            await open_plan(page)
+            report = await download_plan(page)
+            assert "NAV-treff var ikke ferdig hentet" in report
+            assert "SSB-lønn var ikke ferdig hentet" in report
+
+            await page.locator("#rrh-role-search").fill("industrimekaniker")
+            await expect(page.locator("#rrh-result")).to_be_hidden()
+            await page.locator("#rrh-role-results [data-code='7233']").click()
+            await expect(page.locator("#rrh-pay-card")).to_contain_text(re.compile(r"22\s*222"))
+            await expect(page.locator("#rrh-nav-card")).to_contain_text("2 annonser")
+            release_old.set()
+            await asyncio.wait_for(old_finished.wait(), timeout=10)
+            await expect(page.locator("#rrh-pay-card")).not_to_contain_text(re.compile(r"11\s*111"))
+            await expect(page.locator("#rrh-nav-card")).not_to_contain_text("99 annonser")
+            await expect(page.locator("#rrh-result-title")).to_have_text("Anleggsmaskin- og industrimekanikere")
+            return {"name": "early download and stale market responses"}
+        finally:
+            release_old.set()
 
 
 async def no_javascript(browser, base):
-    context = await browser.new_context(java_script_enabled=False, viewport={"width": 390, "height": 844})
-    page = await context.new_page()
-    try:
+    async with fixture_page(browser, base, java_script_enabled=False, viewport=MOBILE) as page:
         await page.goto(base, wait_until="domcontentloaded")
-        await expect(page.locator("noscript")).to_contain_text("Bedriftssøket trenger JavaScript")
-        await expect(page.locator("noscript a")).to_have_attribute("href", "https://ridderset.no/kontakt/")
+        await expect(page.locator("noscript p")).to_contain_text("Bedriftssøket trenger JavaScript")
+        contact = page.get_by_role("link", name="Kontakt Ridderset for en vurdering.")
+        await expect(contact).to_be_visible()
+        await expect(contact).to_have_attribute("href", "https://ridderset.no/kontakt/?tema=rekruttering#book-mote")
         await expect(page.locator("#rrh-result")).to_be_hidden()
         await no_overflow(page, "javascript-disabled")
-        return {"kind": "no-javascript", "contact_fallback": True}
-    finally:
-        await context.close()
+        return {"name": "no-JavaScript contact fallback"}
 
 
 async def run(args):
-    shots = Path(args.output)
-    shots.mkdir(parents=True, exist_ok=True)
+    output = args.output or Path(mkdtemp(prefix="ridderset-hurtigsjekk-e2e-"))
+    output.mkdir(parents=True, exist_ok=True)
     results = []
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(executable_path=args.chromium, headless=True, args=["--no-sandbox"])
+        browser = await playwright.chromium.launch(executable_path=args.chromium)
         try:
-            for viewport in [{"width": 390, "height": 844}, {"width": 1280, "height": 800}]:
-                result = await live_flow(browser, args.base, shots, viewport)
+            for viewport in [MOBILE, DESKTOP]:
+                result = await guided_journey(browser, args.base, output, viewport)
                 results.append(result)
-                print(f"PASS live flow {viewport['width']}×{viewport['height']}", flush=True)
+                print(f"PASS {result['name']}", flush=True)
             for case in [failure_fixture, stale_fixture, no_javascript]:
                 result = await case(browser, args.base)
                 results.append(result)
-                print(f"PASS {result.get('name', result['kind'])}", flush=True)
+                print(f"PASS {result['name']}", flush=True)
         finally:
             await browser.close()
-            (shots / "hurtigsjekk-e2e.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"PASS all {len(results)} browser scenarios; report: {shots / 'hurtigsjekk-e2e.json'}")
+            (output / "hurtigsjekk-e2e.json").write_text(
+                json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+    print(f"PASS all {len(results)} browser scenarios; report: {output / 'hurtigsjekk-e2e.json'}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base", default="http://127.0.0.1:3101")
-    parser.add_argument("--output", default="/workspace/scratch/ef3e496bd143/qa")
-    parser.add_argument("--chromium", default="/usr/bin/chromium")
+    parser.add_argument("--base", type=local_base, default="http://127.0.0.1:3101")
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--chromium", default=which("chromium"))
     asyncio.run(run(parser.parse_args()))
