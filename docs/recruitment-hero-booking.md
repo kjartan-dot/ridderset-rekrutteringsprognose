@@ -1,23 +1,26 @@
-# Booking fra rekrutteringssiden
+# Booking fra rekruttering og HR
 
-På `/tjeneste/rekruttering/` går knappen øverst i dag direkte til den generelle Google-kalenderen. Lenker i tjenesteteksten fører til kontaktsidens rekrutteringsspor, som gir valg mellom rekrutteringskalender, telefon og e-post. Bruk den samme kontaktsiden fra hovedknappen.
+Hovedknappene på `/tjeneste/rekruttering/` og `/hr-partner/` bruker de samme kontakttemaene som lenkene i tjenestetekstene. Hovedknappen på kontaktsiden går til bookingseksjonen og beholder valgt tema.
 
 ## Klargjør i WordPress-testmiljøet
 
-1. Hent fersk, rå blokkmarkering fra `ridderset//single-services` i miljøet som skal testes. Før godkjenning ble endringen bygget fra den publiserte malens blokkmarkering. Testinnhold og kontaktmottak kan erstattes med lokale eksempler.
-2. Generer en mal for den ene tjenesten.
+1. Ta vare på en fersk kopi av malene `ridderset//single-services`, `ridderset//page` og `ridderset//wp-custom-template-pages-simple-header`, og av kontaktsidens HTML-blokk. Bruk rå blokkmarkering. Kontroller at bare kontaktsiden er tilordnet simple-header-malen før den oppdateres.
+2. Generer oppdaterte maler og kontaktblokk.
 
    ```sh
    node scripts/prepare-recruitment-template.mjs single-services.html single-services-rekruttering.html
+   node scripts/prepare-recruitment-template.mjs page.html page-hr-partner.html hr
+   node scripts/prepare-recruitment-template.mjs simple-header.html simple-header-booking.html kontakt
+   node scripts/prepare-contact-booking.mjs kontakt-original.html kontakt-booking.html
    ```
 
-3. Opprett blokkmalen med slug `single-services-rekruttering` under det aktive Ridderset-temaet. Bruk den genererte markeringen som innhold. WordPress velger denne malen for `services`-innlegget med slug `rekruttering`. Den delte `single-services`-malen brukes fortsatt for de øvrige tjenestene.
-4. Sammenlign på mobil og desktop. Kontroller at samme knapp har samme etikett og stil, at tastaturaktivering åpner `/kontakt/?tema=rekruttering#book-mote`, og at rekruttering er valgt ved ankomst. Kontroller en annen tjeneste som referanse. Bruk en lokalt simulert kalender for innsendingstester.
+3. Installer den oppdaterte HTML-blokken på kontaktsiden først. Opprett `single-services-rekruttering` for tjenesten og `page-hr-partner` for HR-siden. Oppdater simple-header-malen for kontaktsiden. Ta vare på de delte sidemalene som grunnlag for øvrige sider. Ved innlegging i WordPress, sammenlign gjeldende mal og blokk med kildene som ble brukt til generering.
+4. Test rekruttering, HR og direkte kontakt på mobil og desktop, med tastatur og med en simulert kalender. Kontroller valgt tema, fokus på bookingseksjonen, korrekt kalender, kontaktlenker uten JavaScript og generiske maler på to andre sider.
 
-Skriptet stopper hvis den opprinnelige lenken eller hovedseksjonen har endret seg slik at treffet blir uklart. Når fellestemplaten endres senere, generer tjenestemalen på nytt fra den nye kilden.
+Skriptene stopper ved tvetydig eller endret kilde. Generer de spesifikke malene på nytt når de delte malene endres.
 
 ## Tilbakeføring og måling
 
-Ta bort overstyringen `single-services-rekruttering` for å gå tilbake til den delte malen. Verifiser at den opprinnelige knappen vises igjen etter oppdatering av eventuell sidecache.
+Tilbakefør malene `single-services-rekruttering` og `page-hr-partner` ved å fjerne overstyringene. Gjenopprett simple-header-malen og kontaktsidens HTML-blokk fra de lagrede versjonene. Verifiser de opprinnelige lenkene etter oppdatering av eventuell sidecache.
 
-Kontaktsiden måler kontaktintensjon. Sammenlign gjennomførte, kvalifiserte samtaler per besøk på tjenestesiden når kobling til bekreftede bookinger og øvrige henvendelser er verifisert.
+Kontaktsiden måler valg av tema og bruk av telefon, e-post eller den direkte kalenderlenken. Temaet sendes som én av de fire faste verdiene. En kobling til bekreftede bookinger og kvalifiserte henvendelser trengs for å måle konvertering.
