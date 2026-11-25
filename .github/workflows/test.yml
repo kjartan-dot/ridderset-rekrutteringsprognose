@@ -12,3 +12,34 @@ jobs:
       - run: npm test
       - run: php -l integrations/wordpress/ridderset-hurtigsjekk/ridderset-hurtigsjekk.php
       - run: php tests/wordpress-brreg-cache.php
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install playwright==1.62.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Kjør Hurtigsjekk med syntetiske kilder
+        run: |
+          node scripts/hurtigsjekk-server.mjs > "${RUNNER_TEMP}/hurtigsjekk-server.log" 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:3101/ > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent http://127.0.0.1:3101/ > /dev/null
+          python tests/hurtigsjekk.e2e.py --output "${RUNNER_TEMP}/hurtigsjekk-browser"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hurtigsjekk-browser
+          path: ${{ runner.temp }}/hurtigsjekk-browser
+          if-no-files-found: ignore
+          retention-days: 7
